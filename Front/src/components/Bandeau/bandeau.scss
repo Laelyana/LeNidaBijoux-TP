@@ -1,0 +1,15 @@
+.bandeau{
+  width: 100vw;
+  background-color: pink;
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+
+  &__timer{
+    align-self: center;
+  }
+  &__form{
+    align-self: center;
+  }
+  
+}
