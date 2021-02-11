@@ -1,0 +1,41 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: pink;
+  width: 80vw;
+  height: 100px;
+  margin: 1rem auto;
+
+  &__legals{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+  }
+
+  &__social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+  }
+}
