@@ -2,6 +2,9 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import favoriteLogo from './heart.png';
+import shopLogo from './shopping.png';
+
 import './bandeau.scss';
 
 const Bandeau = () => (
@@ -14,8 +17,8 @@ const Bandeau = () => (
       <a href="#">Créer un compte</a>
     </form>
     <div className="bandeau__icons">
-      <a href="#"> <img src="#" alt="#" /> </a>
-      <a href="#"> <img src="#" alt="#" /> </a>
+      <a href="#"> <img className="favoriteLogo" src={favoriteLogo} alt="Favoris" />Mes favoris</a>
+      <a href="#"> <img className="favoriteLogo" src={shopLogo} alt="Shop" />Mon panier</a>
     </div>
   </div>
 
