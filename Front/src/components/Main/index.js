@@ -4,7 +4,7 @@ import React from 'react';
 import './main.scss';
 
 const Main = () => (
-  <div classNameNameName="main">
+  <div className="main">
 
   <div className="card">
     <div className="card__img bijou1"></div>
