@@ -15,8 +15,8 @@ class testController extends AbstractController
     {
         $testVariable = ['membre 1' => 'Lauriane',
                          'membre 2' => 'Nicolas',
-                         'membre 3' => 'Pierre',
-                         'membre 4' => 'Benoit' ];
+                         'membre 3' => 'Benoit',
+                         'membre 4' => 'Pierre' ];
        
 
         return $this->json($testVariable);
