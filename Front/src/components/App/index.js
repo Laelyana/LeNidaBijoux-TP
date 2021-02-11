@@ -9,6 +9,7 @@ import Bandeau from 'src/components/Bandeau';
 import Header from 'src/components/Header';
 import Slider from 'src/components/Slider';
 import Main from 'src/components/Main';
+import Footer from 'src/components/Footer';
 
 // == Composant
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
     <Header />
     <Slider />
     <Main />
+    <Footer />
   </div>
 );
 
