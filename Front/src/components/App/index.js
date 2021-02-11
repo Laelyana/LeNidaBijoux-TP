@@ -8,6 +8,7 @@ import './styles.scss';
 import Bandeau from 'src/components/Bandeau';
 import Header from 'src/components/Header';
 import Slider from 'src/components/Slider';
+import Main from 'src/components/Main';
 
 // == Composant
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
     <Bandeau />
     <Header />
     <Slider />
+    <Main />
   </div>
 );
 
