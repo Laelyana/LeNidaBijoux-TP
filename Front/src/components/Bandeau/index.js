@@ -13,6 +13,10 @@ const Bandeau = () => (
       <button>OK</button>
       <a href="#">Créer un compte</a>
     </form>
+    <div className="bandeau__icons">
+      <a href="#"> <img src="#" alt="#" /> </a>
+      <a href="#"> <img src="#" alt="#" /> </a>
+    </div>
   </div>
 
 )
