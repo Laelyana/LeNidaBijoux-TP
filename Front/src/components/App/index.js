@@ -1,17 +1,40 @@
 // == Import npm
 import React from 'react';
+import axios from 'axios';
 
 // == Import
-import reactLogo from './img.jpg';
 import './styles.scss';
 
+// Import Local
+import Bandeau from 'src/components/Bandeau';
+import Header from 'src/components/Header';
+import Slider from 'src/components/Slider';
+import Main from 'src/components/Main';
+import Footer from 'src/components/Footer';
+
 // == Composant
-const App = () => (
-  <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Projet VP Bijoux Front Power</h1>
-  </div>
-);
+const App = () => {
+
+  const testApi = () => {
+    axios.get("/api/test")
+      .then((response) => {
+        return console.log(response)
+      }
+      )
+  };
+  testApi();
+
+
+  return (
+    <div className="app">
+      <Bandeau />
+      <Header />
+      <Slider />
+      <Main />
+      <Footer />
+    </div>
+  );
+}
 
 // == Export
 export default App;

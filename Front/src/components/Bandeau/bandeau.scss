@@ -1,0 +1,27 @@
+.bandeau{
+  width: 100vw;
+  background-color: pink;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 3;
+
+  &__timer{
+    align-self: center;
+    padding-left: 3rem;
+  }
+  &__form{
+    align-self: center;
+    padding-right: 3rem;
+  }
+  &__icons{
+    display: flex;
+    align-items: center;
+  }
+  
+}
+.favoriteLogo{
+  width: 2rem;
+  height: auto;
+}
