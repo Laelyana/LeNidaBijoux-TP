@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import axios from 'axios';
 
 // == Import
 import './styles.scss';
@@ -12,15 +13,28 @@ import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
 
 // == Composant
-const App = () => (
-  <div className="app">
-    <Bandeau />
-    <Header />
-    <Slider />
-    <Main />
-    <Footer />
-  </div>
-);
+const App = () => {
+
+  const testApi = () => {
+    axios.get("/api/test")
+      .then((response) => {
+        return console.log(response)
+      }
+      )
+  };
+  testApi();
+
+
+  return (
+    <div className="app">
+      <Bandeau />
+      <Header />
+      <Slider />
+      <Main />
+      <Footer />
+    </div>
+  );
+}
 
 // == Export
 export default App;
