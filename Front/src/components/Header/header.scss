@@ -1,0 +1,22 @@
+.header{
+  padding-top: 5rem;
+
+  &__ul{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+
+    &--li{
+      height: 2rem;
+      width: 9rem;
+      align-self: center;
+      padding: 0.5rem;
+      border: solid 2px pink;
+      border-radius: 1rem;
+    }
+
+    &--li:hover{
+      background-color: pink;
+    }
+  }
+}

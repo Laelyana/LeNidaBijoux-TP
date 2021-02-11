@@ -3,13 +3,16 @@
   background-color: pink;
   display: flex;
   height: 50px;
-  justify-content: center;
+  justify-content: space-between;
+  position: fixed;
 
   &__timer{
     align-self: center;
+    padding-left: 3rem;
   }
   &__form{
     align-self: center;
+    padding-right: 3rem;
   }
   
 }
