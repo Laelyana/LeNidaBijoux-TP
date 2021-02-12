@@ -15,6 +15,7 @@ import Login from 'src/components/Login';
 import LegalsMentions from 'src/components/LegalsMentions';
 import Presentation from 'src/components/Presentation';
 import Contact from 'src/components/Contact';
+import Cgv from 'src/components/Cgv';
 
 // == Composant
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
       <LegalsMentions />
       <Presentation />
       <Contact />
+      <Cgv />
       <Footer />
     </div>
   );
