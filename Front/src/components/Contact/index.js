@@ -9,6 +9,7 @@ const Contact = () => (
       <input className="contact__form--input" placeholder="Nom / Prénom"></input>
       <input className="contact__form--input" placeholder="Sujet"></input>
       <textarea className="contact__form--textarea" placeholder="Descriptif de votre demande"></textarea>
+      <button className="contact__form--button">Envoyer</button>
     </form>
 )
 
