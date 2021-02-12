@@ -21,20 +21,21 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         // On crée une instance de Faker en français
-        $generator = Faker\Factory::create('fr_FR');
+        $faker = Faker\Factory::create('fr_FR');
 
-        $category = New Category();
 
-        $category->setName('plouf');
-        $category->setPicture('image.jpg');
-
+        for ($i=0; $i < 4; $i++) { 
+            $category = New Category();
+            $category->setName($faker->name());
+            $category->setPicture('image.jpg');
         $manager->persist($category);
+        }
+        
 
         for ($i=0; $i < 5; $i++) {
-            
-        $style = new Style();
-        $style->setName('Style n° '.$i);
-        $style->setCategory($category);
+            $style = new Style();
+            $style->setName('Style n° '.$i);
+            $style->setCategory($category);
         
         $manager->persist($style);
         }
