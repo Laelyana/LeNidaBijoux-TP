@@ -12,6 +12,7 @@ import Slider from 'src/components/Slider';
 import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
 import Login from 'src/components/Login';
+import LegalsMentions from 'src/components/LegalsMentions';
 
 // == Composant
 const App = () => {
@@ -30,9 +31,10 @@ const App = () => {
     <div className="app">
       <Bandeau />
       <Header />
-      {/* <Slider />
-      <Main /> */}
+      <Slider />
+      <Main />
       <Login />
+      <LegalsMentions />
       <Footer />
     </div>
   );
