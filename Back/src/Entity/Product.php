@@ -26,7 +26,7 @@ class Product
     private $name;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="float", nullable=true, options={"unsigned":true})
      */
     private $price;
 

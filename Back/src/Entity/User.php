@@ -46,7 +46,7 @@ class User
     private $password;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="bigint", options={"unsigned":true})
      */
     private $phoneNumber;
 
