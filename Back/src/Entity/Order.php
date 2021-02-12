@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\OrderRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -39,6 +40,7 @@ class Order
     public function __construct()
     {
         $this->orderLines = new ArrayCollection();
+        $this->date = new DateTime();
     }
 
     public function getId(): ?int
