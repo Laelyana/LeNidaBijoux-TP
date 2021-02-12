@@ -11,6 +11,7 @@ import Header from 'src/components/Header';
 import Slider from 'src/components/Slider';
 import Main from 'src/components/Main';
 import Categories from 'src/components/Categories';
+import Collections from 'src/components/Collections';
 import Footer from 'src/components/Footer';
 import Login from 'src/components/Login';
 import LegalsMentions from 'src/components/LegalsMentions';
@@ -38,6 +39,7 @@ const App = () => {
       <Slider />
       <Main />
       <Categories />
+      <Collections />
       <Login />
       <LegalsMentions />
       <Presentation />
