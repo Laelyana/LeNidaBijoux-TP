@@ -22,7 +22,6 @@
   border-radius: 3rem;
 
 
-
 &__img{
   height: 350px;
   max-width: 350px;
@@ -37,8 +36,6 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-
- 
   
   &--title{
       margin: 1rem 0 0 1rem;
@@ -56,6 +53,7 @@
 
   &--txt{
   padding: .3rem;
+  background-color: rgb(243, 243, 237);
   }
 }
   &__link{
