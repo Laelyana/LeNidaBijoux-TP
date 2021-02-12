@@ -14,6 +14,7 @@ import Footer from 'src/components/Footer';
 import Login from 'src/components/Login';
 import LegalsMentions from 'src/components/LegalsMentions';
 import Presentation from 'src/components/Presentation';
+import Contact from 'src/components/Contact';
 
 // == Composant
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
       <Login />
       <LegalsMentions />
       <Presentation />
+      <Contact />
       <Footer />
     </div>
   );
