@@ -13,6 +13,7 @@ import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
 import Login from 'src/components/Login';
 import LegalsMentions from 'src/components/LegalsMentions';
+import Presentation from 'src/components/Presentation';
 
 // == Composant
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
       <Main />
       <Login />
       <LegalsMentions />
+      <Presentation />
       <Footer />
     </div>
   );
