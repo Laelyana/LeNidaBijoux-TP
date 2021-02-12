@@ -1,7 +1,7 @@
 @use '/src/styles/vars';
 
-//bloc général du slider
-.categories{
+//bloc général de collections
+.collections{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -10,9 +10,9 @@
   padding: 2rem;
 }
 
-.cat{
-  width: vars.$categoriesW;
-  height: vars.$categoriesH;
+.col{
+  width: vars.$collectionsW;
+  height: vars.$collectionsH;
   border: rgb(207, 206, 205) 1px solid;
   box-shadow: 0 0 1px 2px rgb(230, 229, 229);
   overflow: hidden;
@@ -50,15 +50,15 @@
 
 
 &__img--un{
-  background-image: url(./img/boucles-d-oreille-a7tna-bijoux-1-75-double-color.jpg);
+  background-image: url(./img/1.jpg);
  }
  
  &__img--deux{
- background-image: url(./img/pendentif-fleur-de-vie-11_1600x.webp);
+  background-image: url(./img/2.jpg);
  }
  
  &__img--trois{
-background-image: url(./img/764-2.jpg);
+  background-image: url(./img/3.jpg);
  }
 
 } 
