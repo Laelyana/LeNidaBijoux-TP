@@ -7,6 +7,7 @@ const Main = () => (
   <div className="main">
 
   <div className="card">
+    <div className="card__header">test</div>
     <div className="card__img bijou1"></div>
     <div className="card__infos">
     <h1 className="card__infos--title">Titre Card</h1>
