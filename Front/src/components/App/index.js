@@ -21,6 +21,7 @@ import Contact from 'src/components/Contact';
 import Cgv from 'src/components/Cgv';
 import Dashboard from 'src/components/Dashboard';
 import Favorites from 'src/components/Favorites';
+import UserData from 'src/components/UserData';
 
 // == Composant
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
       <Cgv />
       <Dashboard />
       <Favorites />
+      <UserData />
       <Footer />
     </div>
   );

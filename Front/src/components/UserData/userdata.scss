@@ -1,0 +1,25 @@
+.userdata{
+  width: 60vw;
+  margin: 1rem auto;
+
+  &>h2{
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  &__form{
+    display: flex;
+    flex-direction: column;
+
+    &--input{
+      width: 50%;
+      margin: 0.5rem auto;
+      border-radius: 5px;
+    }
+
+    &--button{
+      width: 50%;
+      margin: 0.5rem auto;
+    }
+  }
+}
