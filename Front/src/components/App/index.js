@@ -23,6 +23,7 @@ import Dashboard from 'src/components/Dashboard';
 import Favorites from 'src/components/Favorites';
 import UserData from 'src/components/UserData';
 import UserOrder from 'src/components/UserOrder';
+import UserShop from 'src/components/UserShop';
 
 // == Composant
 const App = () => {
@@ -55,6 +56,7 @@ const App = () => {
       <Favorites />
       <UserData />
       <UserOrder />
+      <UserShop />
       <Footer />
     </div>
   );
