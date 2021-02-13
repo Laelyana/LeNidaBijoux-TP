@@ -5,7 +5,7 @@ import './userdata.scss';
 const UserData = () => (
 <div  className="userdata">
   <h2>Vos données personnelles</h2>
-  <a href="#" className="userdata__back">Revenir au tableau de bord</a>
+  <a href="/mon-compte" className="userdata__back">Revenir au tableau de bord</a>
   <form className="userdata__form">
     <input className="userdata__form--input" placeholder="Nom"></input>
     <input className="userdata__form--input" placeholder="Prénom"></input>

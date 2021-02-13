@@ -5,7 +5,7 @@ import './usershop.scss';
 const UserShop = () => (
   <div className="usershop">
     <h2>Mon panier</h2>
-    <a href="#" className="usershop__back">Revenir au tableau de bord</a>
+    <a href="/mon-compte" className="usershop__back">Revenir au tableau de bord</a>
     <div className="usershop__list">
       <div className="usershop__list--item">
         <h5 className="usershop__list--item--name">Produit n°1</h5>

@@ -5,7 +5,7 @@ import './userorder.scss';
 const UserOrder = () => (
   <div className="userorder">
     <h2>Mes commandes</h2>
-    <a href="#" className="userorder__back">Revenir au tableau de bord</a>
+    <a href="/mon-compte" className="userorder__back">Revenir au tableau de bord</a>
     <div className="userorder__list">
       <div className="userorder__list--item">
         <h5 className="userorder__list--item--name">Commande n°1</h5>
