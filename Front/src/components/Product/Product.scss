@@ -1,0 +1,38 @@
+@use '/src/styles/vars';
+
+//bloc général de collections
+.product{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: vars.$mi-full;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.prod{
+  width: vars.$productionsW;
+  height: vars.$productionsH;
+  border: rgb(207, 206, 205) 1px solid;
+  box-shadow: 0 0 1px 2px rgb(230, 229, 229);
+  overflow: hidden;
+  z-index: 1;
+  margin: 1rem auto 1rem auto; 
+  border-radius: 3rem;
+  position: relative;
+
+
+&__img{
+  background-position: center;
+  perspective: 100px;
+  background-repeat: no-repeat;
+  background-size: 130%;
+}
+
+
+}
+
+
+  
+
+
