@@ -14,7 +14,7 @@ const Bandeau = () => (
       <button>Connexion</button>
       <div className="bandeau__icons">
         <a href="#"> <img className="favoriteLogo" src={favoriteLogo} alt="Favoris" /></a>
-        {/* <a href="#"> <img className="favoriteLogo" src={shopLogo} alt="Shop" />Mon panier</a> */}
+        <a href="#"> <img className="favoriteLogo" src={shopLogo} alt="Shop" /></a>
       </div>
     </div>
   </div>
