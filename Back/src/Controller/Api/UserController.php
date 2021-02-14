@@ -2,11 +2,12 @@
 
 namespace App\Controller\Api;
 
+use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 
 class UserController extends AbstractController
 {
@@ -15,11 +16,16 @@ class UserController extends AbstractController
      */
     public function browse(UserRepository $userRepo): Response
     {
+        return $this->json($userRepo->findAll());
 
-        return $this->json($userRepo->findAll(),200, [], [
-            AbstractNormalizer::IGNORED_ATTRIBUTES => [
-                'product',
-                'orders'
-            ]]);
     }
+
+    /**
+     * @Route("/api/users/{id}", name="api_users_read", methods="GET")
+     */
+    public function read(User $user): Response
+    {
+        return $this->json($user);
+    }
+    
 }
