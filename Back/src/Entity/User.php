@@ -80,6 +80,7 @@ class User implements UserInterface
         $this->product = new ArrayCollection();
         $this->orders = new ArrayCollection();
         $this->createdAt = new DateTime();
+        $this->roles = ['ROLE_USER'];
     }
 
     public function getId(): ?int
