@@ -7,9 +7,11 @@ const Product = () => (
   <div className="product">
 <div className="product__box__img">
 <div className="product__box__img--un image__un"></div>
+<div className="product__box__img__sub">
 <div className="product__box__img__sub--unBis image__un"></div>
 <div className="product__box__img__sub--deux image__deux"></div>
 <div className="product__box__img__sub--trois image__trois"></div>
+</div>
 </div>
 <div className="product__box__txt">
   <div className="product__box__txt--title">Titre de l'article</div>
@@ -18,6 +20,9 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique a
 </div>
 <div className="product__box__cart">
   <div className="product__box__cart--price">40$</div>
+  <input className="product__box__cart--number" type="number" id="nomber" name="nomber" min="0" max="100" placeholder="Quantité"></input>
+  <button className="product__box__cart--btn-add">Ajouter au panier</button>
+  <button className="product__box__cart--btn-fav">Ajouter au favoris</button>
   
   </div>
 </div>
