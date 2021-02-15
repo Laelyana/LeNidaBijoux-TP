@@ -3,14 +3,15 @@ import React from 'react';
 
 import './Product.scss';
 
+
 const Product = () => (
-  <div className="product">
+<div className="product">
 <div className="product__box__img">
-<div className="product__box__img--un image__un"></div>
+<div className="product__box__img--un image__un" id="general"></div>
 <div className="product__box__img__sub">
-<div className="product__box__img__sub--unBis image__un"></div>
-<div className="product__box__img__sub--deux image__deux"></div>
-<div className="product__box__img__sub--trois image__trois"></div>
+<div className="product__box__img__sub--unBis image__un" id="bis" onclick="bis()"></div>
+<div className="product__box__img__sub--deux image__deux" id="deux" onClick="deux()"></div>
+<div className="product__box__img__sub--trois image__trois" id="trois" onclick="trois()"></div>
 </div>
 </div>
 <div className="product__box__txt">
@@ -28,5 +29,22 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique a
 </div>
 );
 
+let general = document.getElementById("general");
+  
+  function bis() {
+    general.className = "product__box__img--un image__bis";
+    console.log('Cliqué');
+  };
+  
+  function deux() {
+    general.className = "product__box__img--un image__deux";
+    console.log('Cliqué');
+  };
+  
+  function trois() {
+    general.className = "product__box__img--un image__trois";
+    console.log('Cliqué');
+  };
+  
 
 export default Product;
