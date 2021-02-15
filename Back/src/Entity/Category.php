@@ -6,6 +6,7 @@ use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Ignore;
 
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
@@ -31,11 +32,13 @@ class Category
 
     /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="category")
+     * @Ignore()
      */
     private $products;
 
     /**
      * @ORM\OneToMany(targetEntity=Style::class, mappedBy="category")
+     * @Ignore()
      */
     private $styles;
 

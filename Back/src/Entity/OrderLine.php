@@ -18,7 +18,7 @@ class OrderLine
     private $id;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="smallint", options={"unsigned":true})
      */
     private $quantity;
 
@@ -28,7 +28,7 @@ class OrderLine
     private $labelProduct;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", options={"unsigned":true})
      */
     private $priceProduct;
 
