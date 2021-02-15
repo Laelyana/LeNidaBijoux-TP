@@ -1,63 +1,66 @@
 @use '/src/styles/vars';
 
 //bloc général de collections
-.product{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: vars.$mi-full;
-  margin: 2rem auto;
-}
+
 
 .product{
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: vars.$mi_full;
+  margin: 3rem auto;
+  justify-content: center;
+  
  
 
 &__box__img{
 width: vars.$productW;
-background-color: yellow;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
+
 
 &--un{
   width: vars.$productW;
   height: vars.$productH;
   background-color: violet;
   border-radius: 3rem;
+  margin: 0 .0 .5rem 0;
 }
 
+&__sub{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
 &--unBis{
-  width: vars.$productW/3;
+  width: vars.$productW/3.2;
   height: vars.$productH/3;
   background-color: rgb(130, 238, 166);
   border-radius: 3rem;
 }
 
 &--deux{
-  width: vars.$productW/3;
+  width: vars.$productW/3.2;
   height: vars.$productH/3;
   background-color: rgb(130, 238, 166);
   border-radius: 3rem;
 }
 
 &--trois{
-  width: vars.$productW/3;
+  width: vars.$productW/3.2;
   height: vars.$productH/3;
   background-color: rgb(130, 238, 166);
   border-radius: 3rem;
+}
 }
 
 }
 
 &__box__txt{
-  width: 60%;
-  background-color: yellowgreen;
+  width: vars.$productW;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   padding: 1rem;
 
@@ -66,9 +69,37 @@ flex-wrap: wrap;
   color: #1A3E51;
   }
 }
+
+&__box__cart{
+  width: vars.$productW;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 1rem;
+
+  &--price{
+  font-weight: bold;
+  color: #1A3E51;
+  font-size: 40px;
+  }
+}
 }
 
 
-  
+.image__un{
+  background-image: url(./img/goldengate.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.image__deux{
+  background-image: url(./img/pendentif-fleur-de-vie-11_1600x.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.image__trois{
+  background-image: url(./img/boucles-d-oreille-a7tna-bijoux-1-75-double-color.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
