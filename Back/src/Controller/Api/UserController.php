@@ -3,11 +3,14 @@
 namespace App\Controller\Api;
 
 use App\Entity\User;
+use App\Form\UserType;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserController extends AbstractController
 {
@@ -27,5 +30,48 @@ class UserController extends AbstractController
     {
         return $this->json($user);
     }
-    
+
+    /**
+     * @Route("/api/users", name="add", methods="POST")
+     */
+    public function add(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder): Response
+    {
+        // on récupère les infos fournies en json et on les convertis en tableau php
+        $infoFromClientAsArray = json_decode($request->getContent(), true);
+
+        $user = new User();
+        // on créé un formulaire de type User
+        $form = $this->createForm(UserType::class, $user, ['csrf_protection' => false]);
+        // on block la verification csrf car les infos sont envoyé à partir du formulaire react et non d'un formulaire symfo
+        
+        // on simule la soumission du formulaire 
+        // pour activer le système de validations des contraintes
+        $form->submit($infoFromClientAsArray);
+
+        if ($form->isValid())
+        {   
+            // récupérer le mot de passe en clair
+            $rawPassword = $infoFromClientAsArray['password'];
+
+            if (! empty($rawPassword))
+            {
+                $encodedPassword = $passwordEncoder->encodePassword($user, $rawPassword);
+            
+                $user->setPassword($encodedPassword);
+            }
+
+            $em->persist($user);
+            $em->flush();
+
+            // après ajout on renvoit les données modifiées
+            return $this->json($user);
+        }
+        else 
+        {
+            return $this->json((string) $form->getErrors(true, false), Response::HTTP_BAD_REQUEST); // renvoie les erreurs de validations de formulaire
+        }
+
+    }
+
+
 }
