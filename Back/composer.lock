@@ -59,13 +59,10 @@
                 }
             ],
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/composer/package-versions-deprecated/issues",
                 "source": "https://github.com/composer/package-versions-deprecated/tree/1.11.99.1"
             },
-=======
->>>>>>> back
             "time": "2020-11-11T10:22:58+00:00"
         },
         {
@@ -137,6 +134,10 @@
                 "docblock",
                 "parser"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/annotations/issues",
+                "source": "https://github.com/doctrine/annotations/tree/1.11.1"
+            },
             "time": "2020-10-26T10:28:16+00:00"
         },
         {
@@ -219,13 +220,10 @@
                 "redis",
                 "xcache"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/cache/issues",
                 "source": "https://github.com/doctrine/cache/tree/1.10.x"
             },
-=======
->>>>>>> back
             "time": "2020-07-07T18:54:01+00:00"
         },
         {
@@ -291,6 +289,10 @@
                 "iterators",
                 "php"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/collections/issues",
+                "source": "https://github.com/doctrine/collections/tree/1.6.7"
+            },
             "time": "2020-07-27T17:53:49+00:00"
         },
         {
@@ -362,13 +364,10 @@
                 "doctrine",
                 "php"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/common/issues",
                 "source": "https://github.com/doctrine/common/tree/3.1.1"
             },
-=======
->>>>>>> back
             "time": "2021-01-20T19:58:05+00:00"
         },
         {
@@ -462,13 +461,10 @@
                 "sqlserver",
                 "sqlsrv"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
                 "source": "https://github.com/doctrine/dbal/tree/2.12.1"
             },
-=======
->>>>>>> back
             "time": "2020-11-14T20:26:58+00:00"
         },
         {
@@ -561,13 +557,10 @@
                 "orm",
                 "persistence"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineBundle/issues",
                 "source": "https://github.com/doctrine/DoctrineBundle/tree/2.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-19T20:29:53+00:00"
         },
         {
@@ -638,13 +631,10 @@
                 "migrations",
                 "schema"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineMigrationsBundle/issues",
                 "source": "https://github.com/doctrine/DoctrineMigrationsBundle/tree/3.0.2"
             },
-=======
->>>>>>> back
             "time": "2020-12-23T15:13:22+00:00"
         },
         {
@@ -721,13 +711,10 @@
                 "event system",
                 "events"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/event-manager/issues",
                 "source": "https://github.com/doctrine/event-manager/tree/1.1.x"
             },
-=======
->>>>>>> back
             "time": "2020-05-29T18:28:51+00:00"
         },
         {
@@ -805,13 +792,10 @@
                 "uppercase",
                 "words"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/inflector/issues",
                 "source": "https://github.com/doctrine/inflector/tree/2.0.x"
             },
-=======
->>>>>>> back
             "time": "2020-05-29T15:13:26+00:00"
         },
         {
@@ -863,13 +847,10 @@
                 "constructor",
                 "instantiate"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/instantiator/issues",
                 "source": "https://github.com/doctrine/instantiator/tree/1.4.0"
             },
-=======
->>>>>>> back
             "time": "2020-11-10T18:47:58+00:00"
         },
         {
@@ -932,13 +913,10 @@
                 "parser",
                 "php"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/lexer/issues",
                 "source": "https://github.com/doctrine/lexer/tree/1.2.1"
             },
-=======
->>>>>>> back
             "time": "2020-05-25T17:44:05+00:00"
         },
         {
@@ -1028,13 +1006,10 @@
                 "dbal",
                 "migrations"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/migrations/issues",
                 "source": "https://github.com/doctrine/migrations/tree/3.1.0"
             },
-=======
->>>>>>> back
             "time": "2021-02-07T21:16:17+00:00"
         },
         {
@@ -1123,6 +1098,10 @@
                 "database",
                 "orm"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/orm/issues",
+                "source": "https://github.com/doctrine/orm/tree/2.8.1"
+            },
             "time": "2020-12-04T19:53:07+00:00"
         },
         {
@@ -1203,6 +1182,10 @@
                 "orm",
                 "persistence"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/persistence/issues",
+                "source": "https://github.com/doctrine/persistence/tree/2.1.0"
+            },
             "time": "2020-10-24T22:13:54+00:00"
         },
         {
@@ -1256,6 +1239,10 @@
                 "highlight",
                 "sql"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/sql-formatter/issues",
+                "source": "https://github.com/doctrine/sql-formatter/tree/1.1.x"
+            },
             "time": "2020-07-30T16:57:33+00:00"
         },
         {
@@ -1314,6 +1301,10 @@
                 "validation",
                 "validator"
             ],
+            "support": {
+                "issues": "https://github.com/egulias/EmailValidator/issues",
+                "source": "https://github.com/egulias/EmailValidator/tree/2.1.25"
+            },
             "time": "2020-12-29T14:50:06+00:00"
         },
         {
@@ -1347,9 +1338,6 @@
                     "Faker\\": "src/Faker/"
                 }
             },
-<<<<<<< HEAD
-            "time": "2020-12-29T14:50:06+00:00"
-=======
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -1366,7 +1354,6 @@
                 "fixtures"
             ],
             "time": "2020-12-18T16:50:48+00:00"
->>>>>>> back
         },
         {
             "name": "friendsofphp/proxy-manager-lts",
@@ -1434,13 +1421,10 @@
                 "proxy pattern",
                 "service proxies"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/FriendsOfPHP/proxy-manager-lts/issues",
                 "source": "https://github.com/FriendsOfPHP/proxy-manager-lts/tree/v1.0.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-14T21:52:44+00:00"
         },
         {
@@ -1502,6 +1486,14 @@
                 "code",
                 "laminas"
             ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-code/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-code/issues",
+                "rss": "https://github.com/laminas/laminas-code/releases.atom",
+                "source": "https://github.com/laminas/laminas-code"
+            },
             "time": "2019-12-31T16:28:24+00:00"
         },
         {
@@ -1560,7 +1552,6 @@
                 "events",
                 "laminas"
             ],
-<<<<<<< HEAD
             "support": {
                 "chat": "https://laminas.dev/chat",
                 "docs": "https://docs.laminas.dev/laminas-eventmanager/",
@@ -1569,8 +1560,6 @@
                 "rss": "https://github.com/laminas/laminas-eventmanager/releases.atom",
                 "source": "https://github.com/laminas/laminas-eventmanager"
             },
-=======
->>>>>>> back
             "time": "2020-08-25T11:10:44+00:00"
         },
         {
@@ -1619,15 +1608,12 @@
                 "laminas",
                 "zf"
             ],
-<<<<<<< HEAD
             "support": {
                 "forum": "https://discourse.laminas.dev/",
                 "issues": "https://github.com/laminas/laminas-zendframework-bridge/issues",
                 "rss": "https://github.com/laminas/laminas-zendframework-bridge/releases.atom",
                 "source": "https://github.com/laminas/laminas-zendframework-bridge"
             },
-=======
->>>>>>> back
             "time": "2020-09-14T14:23:00+00:00"
         },
         {
@@ -1710,72 +1696,11 @@
                 "logging",
                 "psr-3"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
                 "source": "https://github.com/Seldaek/monolog/tree/2.2.0"
             },
             "time": "2020-12-14T13:15:25+00:00"
-        },
-        {
-            "name": "nelmio/cors-bundle",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nelmio/NelmioCorsBundle.git",
-                "reference": "be4d5824caebc86da9e224e935e02e1201b3ea54"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/NelmioCorsBundle/zipball/be4d5824caebc86da9e224e935e02e1201b3ea54",
-                "reference": "be4d5824caebc86da9e224e935e02e1201b3ea54",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/framework-bundle": "^4.3 || ^5.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.2",
-                "symfony/phpunit-bridge": "^4.3 || ^5.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Nelmio\\CorsBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nelmio",
-                    "homepage": "http://nelm.io"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://github.com/nelmio/NelmioCorsBundle/contributors"
-                }
-            ],
-            "description": "Adds CORS (Cross-Origin Resource Sharing) headers support in your Symfony application",
-            "keywords": [
-                "api",
-                "cors",
-                "crossdomain"
-            ],
-            "time": "2020-07-22T11:44:28+00:00"
-=======
-            "time": "2020-12-14T13:15:25+00:00"
->>>>>>> back
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -1824,6 +1749,10 @@
                 "reflection",
                 "static analysis"
             ],
+            "support": {
+                "issues": "https://github.com/phpDocumentor/ReflectionCommon/issues",
+                "source": "https://github.com/phpDocumentor/ReflectionCommon/tree/2.x"
+            },
             "time": "2020-06-27T09:03:43+00:00"
         },
         {
@@ -1876,6 +1805,10 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
+            "support": {
+                "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/master"
+            },
             "time": "2020-09-03T19:13:55+00:00"
         },
         {
@@ -1921,6 +1854,10 @@
                 }
             ],
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
+            "support": {
+                "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.4.0"
+            },
             "time": "2020-09-17T18:55:26+00:00"
         },
         {
@@ -1967,6 +1904,9 @@
                 "psr",
                 "psr-6"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/master"
+            },
             "time": "2016-08-06T20:24:11+00:00"
         },
         {
@@ -2016,6 +1956,10 @@
                 "container-interop",
                 "psr"
             ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/master"
+            },
             "time": "2017-02-14T16:28:37+00:00"
         },
         {
@@ -2062,6 +2006,10 @@
                 "psr",
                 "psr-14"
             ],
+            "support": {
+                "issues": "https://github.com/php-fig/event-dispatcher/issues",
+                "source": "https://github.com/php-fig/event-dispatcher/tree/1.0.0"
+            },
             "time": "2019-01-08T18:20:26+00:00"
         },
         {
@@ -2111,6 +2059,9 @@
                 "psr-13",
                 "rest"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/link/tree/master"
+            },
             "time": "2016-10-28T16:06:13+00:00"
         },
         {
@@ -2158,6 +2109,9 @@
                 "psr",
                 "psr-3"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/1.1.3"
+            },
             "time": "2020-03-23T09:12:05+00:00"
         },
         {
@@ -2234,6 +2188,10 @@
                 "annotations",
                 "controllers"
             ],
+            "support": {
+                "issues": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/issues",
+                "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/v5.6.1"
+            },
             "time": "2020-08-25T19:10:18+00:00"
         },
         {
@@ -2286,12 +2244,9 @@
             ],
             "description": "Manages URL generation and versioning of web assets such as CSS stylesheets, JavaScript files and image files",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/asset/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:01:46+00:00"
         },
         {
@@ -2370,12 +2325,9 @@
                 "caching",
                 "psr6"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/cache/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T11:24:50+00:00"
         },
         {
@@ -2438,12 +2390,9 @@
                 "interoperability",
                 "standards"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/cache-contracts/tree/v2.2.0"
             },
-=======
->>>>>>> back
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -2505,12 +2454,9 @@
             ],
             "description": "Helps you find, load, combine, autofill and validate configuration values of any kind",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/config/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -2591,12 +2537,9 @@
                 "console",
                 "terminal"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/console/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-28T22:06:19+00:00"
         },
         {
@@ -2667,12 +2610,9 @@
             ],
             "description": "Allows you to standardize and centralize the way objects are constructed in your application",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/dependency-injection/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T12:56:27+00:00"
         },
         {
@@ -2723,12 +2663,9 @@
             ],
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/deprecation-contracts/tree/master"
             },
-=======
->>>>>>> back
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -2826,12 +2763,9 @@
             ],
             "description": "Provides integration for Doctrine with various Symfony components",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/doctrine-bridge/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-02-03T04:42:09+00:00"
         },
         {
@@ -2885,12 +2819,9 @@
                 "env",
                 "environment"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/dotenv/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:01:46+00:00"
         },
         {
@@ -2943,12 +2874,9 @@
             ],
             "description": "Provides tools to manage errors and ease debugging PHP code",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/error-handler/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-28T22:06:19+00:00"
         },
         {
@@ -3017,12 +2945,9 @@
             ],
             "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/event-dispatcher/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:36:42+00:00"
         },
         {
@@ -3085,12 +3010,9 @@
                 "interoperability",
                 "standards"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v2.2.0"
             },
-=======
->>>>>>> back
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -3138,12 +3060,9 @@
             ],
             "description": "Provides an engine that can compile and evaluate expressions",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/expression-language/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -3189,12 +3108,9 @@
             ],
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/filesystem/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:01:46+00:00"
         },
         {
@@ -3239,12 +3155,9 @@
             ],
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/finder/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-28T22:06:19+00:00"
         },
         {
@@ -3295,13 +3208,10 @@
                 }
             ],
             "description": "Composer plugin for Symfony",
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/symfony/flex/issues",
                 "source": "https://github.com/symfony/flex/tree/v1.12.1"
             },
-=======
->>>>>>> back
             "time": "2021-02-02T16:29:45+00:00"
         },
         {
@@ -3386,12 +3296,9 @@
             ],
             "description": "Allows to easily create, process and reuse HTML forms",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/form/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-28T22:06:19+00:00"
         },
         {
@@ -3523,12 +3430,9 @@
             ],
             "description": "Provides a tight integration between Symfony components and the Symfony full-stack framework",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/framework-bundle/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T11:19:04+00:00"
         },
         {
@@ -3598,12 +3502,9 @@
             ],
             "description": "Provides powerful methods to fetch HTTP resources synchronously or asynchronously",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/http-client/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -3666,12 +3567,9 @@
                 "interoperability",
                 "standards"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/http-client-contracts/tree/v2.3.1"
             },
-=======
->>>>>>> back
             "time": "2020-10-14T17:08:19+00:00"
         },
         {
@@ -3728,12 +3626,9 @@
             ],
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/http-foundation/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-02-03T04:42:09+00:00"
         },
         {
@@ -3829,12 +3724,9 @@
             ],
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/http-kernel/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-02-03T04:51:58+00:00"
         },
         {
@@ -3906,12 +3798,9 @@
                 "l10n",
                 "localization"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/intl/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:01:46+00:00"
         },
         {
@@ -3976,12 +3865,9 @@
             ],
             "description": "Helps sending emails",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/mailer/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-02-02T06:10:15+00:00"
         },
         {
@@ -4047,12 +3933,9 @@
                 "mime",
                 "mime-type"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/mime/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-02-02T06:10:15+00:00"
         },
         {
@@ -4118,12 +4001,9 @@
             ],
             "description": "Provides integration for Monolog with various Symfony components",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/monolog-bridge/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T11:24:50+00:00"
         },
         {
@@ -4187,13 +4067,10 @@
                 "log",
                 "logging"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/symfony/monolog-bundle/issues",
                 "source": "https://github.com/symfony/monolog-bundle/tree/v3.6.0"
             },
-=======
->>>>>>> back
             "time": "2020-10-06T15:12:11+00:00"
         },
         {
@@ -4261,12 +4138,9 @@
                 "notification",
                 "notifier"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/notifier/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-14T15:42:36+00:00"
         },
         {
@@ -4319,12 +4193,9 @@
                 "configuration",
                 "options"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/options-resolver/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T12:56:27+00:00"
         },
         {
@@ -4389,12 +4260,9 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.22.0"
             },
-=======
->>>>>>> back
             "time": "2021-01-07T16:49:33+00:00"
         },
         {
@@ -4465,12 +4333,9 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-icu/tree/v1.22.0"
             },
-=======
->>>>>>> back
             "time": "2021-01-07T16:49:33+00:00"
         },
         {
@@ -4541,12 +4406,9 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.22.0"
             },
-=======
->>>>>>> back
             "time": "2021-01-07T16:49:33+00:00"
         },
         {
@@ -4614,12 +4476,9 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.22.0"
             },
-=======
->>>>>>> back
             "time": "2021-01-07T17:09:11+00:00"
         },
         {
@@ -4683,12 +4542,9 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.22.0"
             },
-=======
->>>>>>> back
             "time": "2021-01-07T16:49:33+00:00"
         },
         {
@@ -4751,12 +4607,9 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-php73/tree/v1.22.0"
             },
-=======
->>>>>>> back
             "time": "2021-01-07T16:49:33+00:00"
         },
         {
@@ -4823,12 +4676,9 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-php80/tree/v1.22.0"
             },
-=======
->>>>>>> back
             "time": "2021-01-07T16:49:33+00:00"
         },
         {
@@ -4874,12 +4724,9 @@
             ],
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/process/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -4944,12 +4791,9 @@
                 "property path",
                 "reflection"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/property-access/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -5023,12 +4867,9 @@
                 "type",
                 "validator"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/property-info/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -5079,12 +4920,9 @@
             ],
             "description": "Provides integration for ProxyManager with various Symfony components",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/proxy-manager-bridge/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:01:46+00:00"
         },
         {
@@ -5158,12 +4996,9 @@
                 "uri",
                 "url"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/routing/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -5246,12 +5081,9 @@
             ],
             "description": "Provides a tight integration of the Security component into the Symfony full-stack framework",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-bundle/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -5324,12 +5156,9 @@
             ],
             "description": "Symfony Security Component - Core Library",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-core/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-28T22:06:19+00:00"
         },
         {
@@ -5384,12 +5213,9 @@
             ],
             "description": "Symfony Security Component - CSRF Library",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-csrf/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:01:46+00:00"
         },
         {
@@ -5440,12 +5266,9 @@
             ],
             "description": "Symfony Security Component - Guard",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-guard/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -5512,12 +5335,9 @@
             ],
             "description": "Symfony Security Component - HTTP Integration",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-http/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-28T22:06:19+00:00"
         },
         {
@@ -5603,12 +5423,9 @@
             ],
             "description": "Handles serializing and deserializing data structures, including object graphs, into array structures or other formats like XML and JSON.",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/serializer/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-02-03T04:42:09+00:00"
         },
         {
@@ -5671,12 +5488,9 @@
                 "interoperability",
                 "standards"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/service-contracts/tree/master"
             },
-=======
->>>>>>> back
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -5722,12 +5536,9 @@
             ],
             "description": "Provides a way to profile code",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/stopwatch/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -5794,12 +5605,9 @@
                 "utf-8",
                 "utf8"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/string/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-25T15:14:59+00:00"
         },
         {
@@ -5876,12 +5684,9 @@
             ],
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/translation/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -5943,12 +5748,9 @@
                 "interoperability",
                 "standards"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/translation-contracts/tree/v2.3.0"
             },
-=======
->>>>>>> back
             "time": "2020-09-28T13:05:58+00:00"
         },
         {
@@ -6051,12 +5853,9 @@
             ],
             "description": "Provides integration for Twig with various Symfony components",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/twig-bridge/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-02-03T04:42:09+00:00"
         },
         {
@@ -6127,12 +5926,9 @@
             ],
             "description": "Provides a tight integration of Twig into the Symfony full-stack framework",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/twig-bundle/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -6227,12 +6023,9 @@
             ],
             "description": "Provides tools to validate values",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/validator/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-28T22:06:19+00:00"
         },
         {
@@ -6304,12 +6097,9 @@
                 "debug",
                 "dump"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/var-dumper/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:15:41+00:00"
         },
         {
@@ -6366,12 +6156,9 @@
                 "instantiate",
                 "serialize"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/var-exporter/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:01:46+00:00"
         },
         {
@@ -6442,12 +6229,9 @@
                 "psr13",
                 "push"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/web-link/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-10T16:29:19+00:00"
         },
         {
@@ -6506,12 +6290,9 @@
             ],
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/yaml/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-02-03T04:42:09+00:00"
         },
         {
@@ -6577,12 +6358,9 @@
                 "extra",
                 "twig"
             ],
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.3.0"
             },
-=======
->>>>>>> back
             "time": "2021-02-06T21:13:17+00:00"
         },
         {
@@ -6645,13 +6423,10 @@
             "keywords": [
                 "templating"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
                 "source": "https://github.com/twigphp/Twig/tree/v3.3.0"
             },
-=======
->>>>>>> back
             "time": "2021-02-08T09:54:36+00:00"
         },
         {
@@ -6701,6 +6476,10 @@
                 "check",
                 "validate"
             ],
+            "support": {
+                "issues": "https://github.com/webmozarts/assert/issues",
+                "source": "https://github.com/webmozarts/assert/tree/1.9.1"
+            },
             "time": "2020-07-08T17:02:28+00:00"
         }
     ],
@@ -6877,6 +6656,10 @@
                 "parser",
                 "php"
             ],
+            "support": {
+                "issues": "https://github.com/nikic/PHP-Parser/issues",
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.10.4"
+            },
             "time": "2020-12-20T10:01:03+00:00"
         },
         {
@@ -6931,12 +6714,9 @@
             ],
             "description": "Simulates the behavior of a web browser, allowing you to make requests, click on links and submit forms programmatically",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/browser-kit/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T12:56:27+00:00"
         },
         {
@@ -6985,12 +6765,9 @@
             ],
             "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/css-selector/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:01:46+00:00"
         },
         {
@@ -7052,12 +6829,9 @@
             ],
             "description": "Provides a tight integration of the Symfony Debug component into the Symfony full-stack framework",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/debug-bundle/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-10T16:30:10+00:00"
         },
         {
@@ -7115,12 +6889,9 @@
             ],
             "description": "Eases DOM navigation for HTML and XML documents",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/dom-crawler/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-27T10:01:46+00:00"
         },
         {
@@ -7191,13 +6962,10 @@
                 "scaffold",
                 "scaffolding"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/symfony/maker-bundle/issues",
                 "source": "https://github.com/symfony/maker-bundle/tree/v1.29.1"
             },
-=======
->>>>>>> back
             "time": "2021-02-10T19:21:31+00:00"
         },
         {
@@ -7264,12 +7032,9 @@
             ],
             "description": "Provides utilities for PHPUnit, especially user deprecation notices management",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/phpunit-bridge/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-25T13:54:05+00:00"
         },
         {
@@ -7331,12 +7096,9 @@
             ],
             "description": "Provides a development tool that gives detailed information about the execution of any request",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/web-profiler-bundle/tree/v5.2.3"
             },
-=======
->>>>>>> back
             "time": "2021-01-28T22:06:19+00:00"
         }
     ],
