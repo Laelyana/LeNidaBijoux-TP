@@ -44,19 +44,6 @@ const App = () => {
     <div className="app">
       <Bandeau />
       <Header />
-<<<<<<< HEAD
-      <Slider />
-      <Main />
-      <Categories />
-      <Collections />
-      <Products />
-      <Product />
-      <Login />
-      <LegalsMentions />
-      <Presentation />
-      <Contact />
-      <Cgv />
-=======
       <Route path="/" exact>
         <Slider />
         <Main />
@@ -103,7 +90,6 @@ const App = () => {
       <Route path="/mon-compte/mon-panier">
         <UserShop />
       </Route>
->>>>>>> front
       <Footer />
     </div>
   );
