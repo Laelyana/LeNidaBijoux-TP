@@ -1,25 +1,39 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import Field from './Field';
 
 import "./loginform.scss";
-import { changeUserField } from '../../../actions/user';
 
 const LoginForm = ({
   email,
   password,
   changeField,
+  handleLogin,
 }) => { 
-  const handleChange = (evt) => {
-    changeField(evt.target.value)
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    handleLogin();
   }
-  
   return (
     <div className="form__rightside">
       <h3>Vous avez déjà un compte ? Connectez vous !</h3>
-      <form  className="form__login">
-        <input onChange={handleChange} className="form__input" placeholder="Votre email" value={email}></input>
-        <input onChange={handleChange} className="form__input" placeholder="Votre mot de passe" value={password}></input>
+      <form  onSubmit={handleSubmit}  className="form__login">
+        <Field
+        name="email"
+        placeholder="Votre email"
+        onChange={changeField}
+        value={email}
+        />
+         <Field
+        name="password"
+        type="password"
+        placeholder="Votre mot de passe"
+        onChange={changeField}
+        value={password}
+        />
+        
         <button type="submit" className="form__input">Se connecter</button>
       </form>
     </div>
@@ -29,6 +43,7 @@ LoginForm.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
+  handleLogin: PropTypes.func.isRequired,
 }
 
 export default LoginForm;
