@@ -4,11 +4,10 @@ import React from 'react';
 import './Product.scss';
 
 
-let general = document.getElementById("general");
+let general = document.getElementById('general');
   
   function bis() {
     general.className = "product__box__img--un image__bis";
-    console.log('clic');
   };
   
   function deux() {
