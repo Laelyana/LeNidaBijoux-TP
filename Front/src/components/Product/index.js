@@ -22,7 +22,7 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique a
   <div className="product__box__cart--price">40$</div>
   <input className="product__box__cart--number" type="number" id="nomber" name="nomber" min="0" max="100" placeholder="Quantité"></input>
   <button className="product__box__cart--btn-add">Ajouter au panier</button>
-  <button className="product__box__cart--btn-fav">Ajouter au favoris</button>
+  <button className="product__box__cart--btn-fav">Ajouter aux favoris</button>
   
   </div>
 </div>
