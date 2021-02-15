@@ -1,27 +1,58 @@
 .bandeau{
   width: 100vw;
-  background-color: pink;
+  background-color: #e0b5ba;
   display: flex;
   height: 50px;
-  justify-content: space-between;
   position: fixed;
   z-index: 3;
+  border-radius: 0 0 3rem 3rem;
+  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+
 
   &__timer{
     align-self: center;
-    padding-left: 3rem;
+    width: 60%;
+  }
+  &__rightside{
+    display: flex;
+    width: 40%;
   }
   &__form{
+    display: flex;
     align-self: center;
-    padding-right: 3rem;
+    justify-content: flex-end;
+    width: 70%;
+    flex-wrap: wrap;
+    margin-left: 4rem;
+  }
+  &__form > a{
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    margin-right: 5rem;
   }
   &__icons{
     display: flex;
     align-items: center;
+    margin-left: 3rem;
+  }
+  &__input--email{
+    width: 40%;
+    border-radius: 5px;
+  }
+  &__input--password{
+    width: 30%;
+    margin: auto 1rem;
+    border-radius: 5px;
   }
   
 }
 .favoriteLogo{
   width: 2rem;
   height: auto;
+}
+
+@media (max-width: 700px) {
+  .bandeau__timer{
+    font-size: 0.8rem;
+  }
 }

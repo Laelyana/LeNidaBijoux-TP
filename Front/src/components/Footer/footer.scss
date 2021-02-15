@@ -5,7 +5,9 @@
   background-color: pink;
   width: 80vw;
   height: 100px;
-  margin: 1rem auto;
+  margin: 0 auto;
+  border-radius: 3rem 3rem 0 0;
+  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
 
   &__legals{
     display: flex;
@@ -38,4 +40,10 @@
       height: 100%;
     }
   }
+}
+
+.socialLogo{
+  height: 60px;
+  width: auto;
+  margin-left: 1rem;
 }

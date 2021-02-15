@@ -8,14 +8,13 @@ import './header.scss';
 
 const Header = () => (
   <header className="header">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Projet VP Bijoux Front Power</h1>
+    <a href="/"><img src={reactLogo} alt="react logo" /></a>
     <nav className="header__nav">
       <ul className="header__ul">
-        <a href="#"><li className="header__ul--li">Accueil</li></a>
-        <a href="#"><li className="header__ul--li">L'atelier</li></a>
-        <a href="#"><li className="header__ul--li">Catégories</li></a>
-        <a href="#"><li className="header__ul--li">Collections</li></a>
+        <a href="/"><li className="header__ul--li">Accueil</li></a>
+        <a href="/l-atelier"><li className="header__ul--li">L'atelier</li></a>
+        <a href="/categories"><li className="header__ul--li">Catégories</li></a>
+        <a href="/collections"><li className="header__ul--li">Collections</li></a>
       </ul>
     </nav>
   </header>
