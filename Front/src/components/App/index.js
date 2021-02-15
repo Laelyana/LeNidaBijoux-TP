@@ -57,6 +57,9 @@ const App = () => {
       <Route path="/collection/produits">
         <Products />
       </Route>
+      <Route path="/produit">
+        <Product />
+      </Route>
       <Route path="/categorie/produits">
         <Products />
       </Route>
