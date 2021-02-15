@@ -56,9 +56,9 @@ class UserController extends AbstractController
             // récupérer le mot de passe en clair
             $rawPassword = $infoFromClientAsArray['password'];
 
-                $encodedPassword = $passwordEncoder->encodePassword($user, $rawPassword);
+            $encodedPassword = $passwordEncoder->encodePassword($user, $rawPassword);
 
-                $user->setPassword($encodedPassword);
+            $user->setPassword($encodedPassword);
 
             $em->persist($user);
             $em->flush();
@@ -86,14 +86,14 @@ class UserController extends AbstractController
 
         if ($form->isValid())
         {   
-            if(isset($infoFromClientAsArray['password'])){
-
+            if(isset($infoFromClientAsArray['password']))
+            {
                     $rawPassword = $infoFromClientAsArray['password'];
 
                     $encodedPassword = $passwordEncoder->encodePassword($user, $rawPassword);
                     
                     $user->setPassword($encodedPassword);
-                }
+            }
 
             $em->flush();
 
@@ -105,6 +105,5 @@ class UserController extends AbstractController
         }
 
     }
-
 
 }
