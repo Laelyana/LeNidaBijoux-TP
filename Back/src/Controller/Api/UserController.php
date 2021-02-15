@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/api/users", name="api_users_browse", methods="GET")
+     * @Route("/api/users", name="api_users_browse", methods={"GET"})
      */
     public function browse(UserRepository $userRepo): Response
     {
@@ -24,7 +24,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/api/users/{id}", name="api_users_read", methods="GET")
+     * @Route("/api/users/{id}", name="api_users_read", methods={"GET"}, requirements={"id": "\d+"})
      */
     public function read(User $user): Response
     {
@@ -32,12 +32,13 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/api/users", name="add", methods="POST")
+     * @Route("/api/users", name="add", methods={"POST"})
      */
     public function add(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         // on récupère les infos fournies en json et on les convertis en tableau php
         $infoFromClientAsArray = json_decode($request->getContent(), true);
+    dump($infoFromClientAsArray);
 
         $user = new User();
         // on créé un formulaire de type User
@@ -46,19 +47,18 @@ class UserController extends AbstractController
         
         // on simule la soumission du formulaire 
         // pour activer le système de validations des contraintes
+    dump($form);
         $form->submit($infoFromClientAsArray);
+    dd($form);
 
         if ($form->isValid())
         {   
             // récupérer le mot de passe en clair
             $rawPassword = $infoFromClientAsArray['password'];
 
-            if (! empty($rawPassword))
-            {
-                $encodedPassword = $passwordEncoder->encodePassword($user, $rawPassword);
+            $encodedPassword = $passwordEncoder->encodePassword($user, $rawPassword);
             
-                $user->setPassword($encodedPassword);
-            }
+            $user->setPassword($encodedPassword);
 
             $em->persist($user);
             $em->flush();
@@ -69,6 +69,39 @@ class UserController extends AbstractController
         else 
         {
             return $this->json((string) $form->getErrors(true, false), Response::HTTP_BAD_REQUEST); // renvoie les erreurs de validations de formulaire
+        }
+
+    }
+
+    /**
+     * @Route("/api/users/{id}", name="edit", methods={"PATCH"}, requirements={"id": "\d+"})
+     */
+    public function edit(User $user, Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder): Response
+    {
+        $infoFromClientAsArray = json_decode($request->getContent(), true);
+
+        $form = $this->createForm(UserType::class, $user, ['csrf_protection' => false]);
+        
+        $form->submit($infoFromClientAsArray, false);
+
+        if ($form->isValid())
+        {   
+            if(isset($infoFromClientAsArray['password'])){
+
+                    $rawPassword = $infoFromClientAsArray['password'];
+
+                    $encodedPassword = $passwordEncoder->encodePassword($user, $rawPassword);
+                    
+                    $user->setPassword($encodedPassword);
+                }
+
+            $em->flush();
+
+            return $this->json($user);
+        }
+        else 
+        {
+            return $this->json((string) $form->getErrors(true, false), Response::HTTP_BAD_REQUEST);
         }
 
     }
