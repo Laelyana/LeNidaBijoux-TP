@@ -103,7 +103,7 @@ class AppFixtures extends Fixture
         for ($i=0; $i < 20; $i++) { 
             $product = new Product();
             $product->setName($faker->word());
-            $product->setPrice($faker->numberBetween(0, 100));
+            $product->setPrice($faker->randomFloat(2,1,100));
             $product->setDescription($faker->text(100));
             $product->setPicture1($faker->word().'.jpg');
             $product->setPicture2($faker->word().'.jpg');
@@ -115,23 +115,8 @@ class AppFixtures extends Fixture
                 $manager->persist($product);
             $products[] = $product;
         }
-
-        // Création des lignes de commandes
-        // On les stock dans un tableau
-        $orderLines = [];
-        for ($i=0; $i < 35; $i++) { 
-        $orderLine = new OrderLine();
-        $orderLine->setQuantity($faker->numberBetween(0, 5));
-        // On sélectionne un produit random dans le tableau des produits, puis le convertit en objet
-        $orderedProduct = (object)array_rand($products,1);
-        $orderLine->setLabelProduct($orderedProduct->getName());
-        $orderLine->setPriceProduct($orderedProduct->getPrice());
-        //TODO
-        // $orderLine->setOrderEntity();
-            $manager->persist($orderLine);
-        $orderLines[] = $orderLine;
-        }
         
+
         // Création des utilisateurs
         // On les range dans un tableau pour pouvoir les réutiliser plus tard
         $users = []; 
@@ -150,20 +135,38 @@ class AppFixtures extends Fixture
         }
 
         // Création des commandes
+        $orders = [];  
         for ($i=0; $i < 6; $i++) { 
-        $order= new Order();
-        $order->addOrderLine($orderLines[array_rand($orderLines,rand(1,10))]);
-        $order->setUser($users[array_rand($users,1)]);
-            $manager->persist($order);
+            $order= new Order();
+            // $order->addOrderLine($orderLines[array_rand($orderLines,1)]);
+            $order->setUser($users[array_rand($users,1)]);
+                $manager->persist($order);
+            $orders[] = $order;
+            }
+
+
+        // Création des lignes de commandes
+        // On les stock dans un tableau
+        $orderLines = [];
+        for ($i=0; $i < 35; $i++) { 
+            $orderLine = new OrderLine();
+            $orderLine->setQuantity($faker->numberBetween(1,5));
+            // On sélectionne un produit random dans le tableau des produits, puis le convertit en objet
+            $orderLine->setLabelProduct('Produit n° '.$i);
+            $orderLine->setPriceProduct($faker->randomFloat(2,1,100));
+            $orderLine->setOrderEntity($orders[array_rand($orders,1)]);
+                $manager->persist($orderLine);
+            $orderLines[] = $orderLine;
         }
+        
+        
+
+        
         
         // Statut du site
         $status1 = new StatusSite();
-        $status1->setActive(true);
             $manager->persist($status1);
-        $status2 = new StatusSite();
-        $status2->setActive(false);
-            $manager->persist($status2);
+        
 
         // Slider
         $slider1 = new Slider();
