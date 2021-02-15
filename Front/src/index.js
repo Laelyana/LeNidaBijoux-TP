@@ -9,10 +9,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 // On importe notre store
-import store from 'src/store';
 
 // == Import : local
 // Composants
+import store from 'src/store';
 import App from 'src/components/App';
 
 // == Render

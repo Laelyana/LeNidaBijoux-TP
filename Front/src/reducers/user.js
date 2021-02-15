@@ -1,5 +1,6 @@
 const initialState = {
-  // différents propriétés / valeurs
+  email: '',
+  password: '',
 };
 
 export default (state = initialState, action) => {

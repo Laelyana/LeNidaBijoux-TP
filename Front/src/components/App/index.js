@@ -30,14 +30,7 @@ import UserShop from 'src/components/UserShop';
 // == Composant
 const App = () => {
 
-  const testApi = () => {
-    axios.get("/api/test")
-      .then((response) => {
-        return console.log(response)
-      }
-      )
-  };
-  testApi();
+  const testApi = ""
 
 
   return (
