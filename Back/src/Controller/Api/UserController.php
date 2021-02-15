@@ -47,18 +47,18 @@ class UserController extends AbstractController
         
         // on simule la soumission du formulaire 
         // pour activer le système de validations des contraintes
-    dump($form);
+
         $form->submit($infoFromClientAsArray);
-    dd($form);
+
 
         if ($form->isValid())
         {   
             // récupérer le mot de passe en clair
             $rawPassword = $infoFromClientAsArray['password'];
 
-            $encodedPassword = $passwordEncoder->encodePassword($user, $rawPassword);
-            
-            $user->setPassword($encodedPassword);
+                $encodedPassword = $passwordEncoder->encodePassword($user, $rawPassword);
+
+                $user->setPassword($encodedPassword);
 
             $em->persist($user);
             $em->flush();
@@ -81,7 +81,7 @@ class UserController extends AbstractController
         $infoFromClientAsArray = json_decode($request->getContent(), true);
 
         $form = $this->createForm(UserType::class, $user, ['csrf_protection' => false]);
-        
+
         $form->submit($infoFromClientAsArray, false);
 
         if ($form->isValid())

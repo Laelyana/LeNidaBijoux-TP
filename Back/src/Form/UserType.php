@@ -28,7 +28,7 @@ class UserType extends AbstractType
                     new Length(['max'=>180])
                 ]
             ])
-            ->add('password', PasswordType::class, ['constraints' => [new NotBlank()]])
+            ->add('password')
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
                 'constraints' => [
