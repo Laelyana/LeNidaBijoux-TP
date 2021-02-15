@@ -15,7 +15,7 @@ const Login = () => (
         <input className="form__input" placeholder="Votre email"></input>
         <input className="form__input" placeholder="Votre mot de passe"></input>
         <input className="form__input" placeholder="Confirmation du mot de passe"></input>
-        <button className="form__input">Envoyer le formulaire</button>
+        <button type="submit" className="form__input">Envoyer le formulaire</button>
       </form>
     </div>
     <div className="form__rightside">
@@ -23,7 +23,7 @@ const Login = () => (
       <form className="form__login">
         <input className="form__input" placeholder="Votre email"></input>
         <input className="form__input" placeholder="Votre mot de passe"></input>
-        <button className="form__input">Se connecter</button>
+        <button type="submit" className="form__input">Se connecter</button>
       </form>
     </div>
   </div>
