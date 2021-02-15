@@ -11,15 +11,15 @@ const LoginForm = ({
   changeField,
 }) => { 
   const handleChange = (evt) => {
-    changeField(evt.target.value, name)
+    changeField(evt.target.value)
   }
   
   return (
     <div className="form__rightside">
       <h3>Vous avez déjà un compte ? Connectez vous !</h3>
       <form  className="form__login">
-        <input  className="form__input" placeholder="Votre email" value={email} name="email"></input>
-        <input  className="form__input" placeholder="Votre mot de passe" value={password}></input>
+        <input onChange={handleChange} className="form__input" placeholder="Votre email" value={email}></input>
+        <input onChange={handleChange} className="form__input" placeholder="Votre mot de passe" value={password}></input>
         <button type="submit" className="form__input">Se connecter</button>
       </form>
     </div>
