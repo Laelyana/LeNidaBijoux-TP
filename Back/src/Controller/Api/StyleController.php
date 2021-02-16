@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class StyleController extends AbstractController
 {
     /**
-     * @Route("/api/style/categories/{id}", name="api_styles_browse_by_category", methods={"GET"})
+     * @Route("/api/styles/categories/{id}", name="api_styles_browse_by_category", methods={"GET"})
      */
     public function browseByCategory(StyleRepository $styleRepo, $id): Response
     {
