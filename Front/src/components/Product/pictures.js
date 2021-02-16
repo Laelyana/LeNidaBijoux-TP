@@ -1,19 +1,20 @@
 
-let Pictures {
+let img = {
 
-  init: function () {
+function pictures()
 
-let general = document.getElementById("general");
+{let general = document.getElementById("general");
 let bis = document.getElementById("bis");
 let deux = document.getElementById("deux");
 let trois = document.getElementById("trois");
 
-bis.addEventListener("click", Pictures.bisF);
-deux.addEventListener("click", Pictures.deuxF);
-trois.addEventListener("click", Pictures.troisF);
+bis.addEventListener("click", img.bisF);
+deux.addEventListener("click", img.deuxF);
+trois.addEventListener("click", img.troisF);
   
   function bisF() {
     general.className = bis;
+    console.log("click");
   };
   
   function deuxF() {
@@ -22,11 +23,6 @@ trois.addEventListener("click", Pictures.troisF);
   
   function troisF() {
     general.className = trois;
-  };
+  };}
 }
-}
-
-document.addEventListener('DOMContentLoaded', app.init);
-
-
-export default Pictures;
+export default img.pictures;

@@ -3,7 +3,29 @@ import React from 'react';
 
 import './Product.scss';
 
-import Pictures from 'src/components/Product';
+
+// let general = document.getElementById("general");
+// let bis = document.getElementById("bis");
+// let deux = document.getElementById("deux");
+// let trois = document.getElementById("trois");
+
+// bis.addEventListener("click", bisF);
+// deux.addEventListener("click", deuxF);
+// trois.addEventListener("click", troisF);
+  
+//   function bisF() {
+//     general.className = bis;
+//     console.log("click");
+//   };
+  
+//   function deuxF() {
+//     general.className = deux;
+//   };
+  
+//   function troisF() {
+//     general.className = trois;
+//   };
+
 
 
 const Product = () => (
