@@ -105,4 +105,19 @@ class UserController extends AbstractController
 
     }
 
+    /**
+     * @Route("/api/users/{id}", name="api_users_delete", methods={"DELETE"}, requirements={"id": "\d+"})
+     */
+    public function delete(UserRepository $userRepo, EntityManagerInterface $em, int $id): Response
+    {
+        if($userRepo->find($id)){
+            $em->remove($userRepo->find($id));
+            $em->flush();
+            return $this->json(null,204);
+        }else{
+            return $this->json(null,204);
+        }
+        
+    }
+
 }
