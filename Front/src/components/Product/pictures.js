@@ -1,9 +1,5 @@
 
-let img = {
-
-function pictures()
-
-{let general = document.getElementById("general");
+let general = document.getElementById("general");
 let bis = document.getElementById("bis");
 let deux = document.getElementById("deux");
 let trois = document.getElementById("trois");
@@ -23,6 +19,4 @@ trois.addEventListener("click", img.troisF);
   
   function troisF() {
     general.className = trois;
-  };}
-}
-export default img.pictures;
+  };

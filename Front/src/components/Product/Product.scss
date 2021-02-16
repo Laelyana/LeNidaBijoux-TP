@@ -20,11 +20,13 @@ flex-wrap: wrap;
 &--un{
   width: vars.$productW;
   height: vars.$productH;
-  background-color: violet;
   border-radius: 3rem;
   margin: 0 .0 .5rem 0;
   border: rgb(207, 206, 205) 1px solid;
   box-shadow: 0 0 1px 2px rgb(230, 229, 229);
+  overflow: hidden;
+  transition: all 0.4s;
+  display: block;
 }
 
 //bloc pour la gestion des miniatures
@@ -97,6 +99,12 @@ flex-wrap: wrap;
   color: #1A3E51;
   margin-bottom: .4rem;
   }
+
+  &--quantite{
+    margin-top: 1rem;
+    color: green;
+    font-weight: 700;
+  }
 }
 
 //bloc droit pour le prix et options
@@ -112,6 +120,11 @@ flex-wrap: wrap;
   font-weight: bold;
   color: #1A3E51;
   font-size: 40px;
+  }
+
+  &--price__quantite{
+    width: 40%;
+    color: green;
   }
 
   //style des btns
@@ -190,3 +203,5 @@ flex-wrap: wrap;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
