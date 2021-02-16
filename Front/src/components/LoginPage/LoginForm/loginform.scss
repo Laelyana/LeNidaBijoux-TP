@@ -1,0 +1,25 @@
+.form__rightside {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  border: 3px #C2858C;
+  border-style: dashed solid;
+  padding: 2rem;
+  
+  & h3{
+    margin-bottom: 2rem;
+  }
+}
+
+.form__login {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.form__input {
+margin: 0.5rem auto;
+width: 50%;
+padding: 0.5rem;
+border-radius: 10px;
+}

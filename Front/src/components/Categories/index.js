@@ -1,36 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './categories.scss';
+import Categorie from './Categorie';
 
 
-const Categories = () => (
-  <div className="categories">
+const Categories = ({ manageLoad, categories }) => {
+  useEffect(
+    manageLoad,
+    [],
+  )
 
-    <div className="cat cat__img cat__img--un">
-      <a href="/categorie/produits">
-        <div className="cat__center">
-          <div className="cat__center--title">Titre de la catégorie</div>
-        </div>
-      </a>
+  return (
+    <div className="categories">
+    {
+      categories.map((categorie) => (
+
+      <Categorie key={categorie.id} {...categorie} />
+      ))
+    }
     </div>
-
-    <div className="cat cat__img cat__img--deux">
-      <a href="/categorie/produits">
-        <div className="cat__center">
-          <div className="cat__center--title">Titre de la catégorie</div>
-        </div>
-      </a>
-    </div>
-
-    <div className="cat cat__img cat__img--trois">
-      <a href="/categorie/produits">
-        <div className="cat__center">
-          <div className="cat__center--title">Titre de la catégorie</div>
-        </div>
-      </a>
-    </div>
-
-  </div>
-)
+  )
+}
 
 export default Categories;

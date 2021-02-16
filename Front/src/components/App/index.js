@@ -11,12 +11,12 @@ import Bandeau from 'src/components/Bandeau';
 import Header from 'src/components/Header';
 import Slider from 'src/components/Slider';
 import Main from 'src/components/Main';
-import Categories from 'src/components/Categories';
-import Collections from 'src/components/Collections';
+import Categories from 'src/containers/Categories';
+import Collections from 'src/containers/Collections';
 import Products from 'src/components/Products';
 import Product from 'src/components/Product';
 import Footer from 'src/components/Footer';
-import Login from 'src/components/Login';
+import LoginPage from 'src/components/LoginPage';
 import LegalsMentions from 'src/components/LegalsMentions';
 import Presentation from 'src/components/Presentation';
 import Contact from 'src/components/Contact';
@@ -60,7 +60,7 @@ const App = () => {
         <Products />
       </Route>
       <Route path="/login">
-        <Login />
+        <LoginPage />
       </Route>
       <Route path="/mentions-legales">
         <LegalsMentions />
@@ -93,6 +93,7 @@ const App = () => {
     </div>
   );
 }
+
 
 // == Export
 export default App;
