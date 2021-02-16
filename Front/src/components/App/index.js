@@ -43,13 +43,13 @@ const App = () => {
       <Route path="/collections">
         <Collections />
       </Route>
-      <Route path="/collection/produits">
+      <Route path="/:name/produits">
         <Products />
       </Route>
       <Route path="/produit">
         <Product />
       </Route>
-      <Route path="/categorie/produits">
+      <Route path="/:name/produits">
         <Products />
       </Route>
       <Route path="/login">
