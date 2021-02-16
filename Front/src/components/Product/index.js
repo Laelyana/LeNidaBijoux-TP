@@ -4,18 +4,21 @@ import React from 'react';
 import './Product.scss';
 
 
-let general = document.getElementById('general');
+let general = document.getElementById("general");
+let bis = document.getElementById("bis");
+let deux = document.getElementById("deux");
+let trois = document.getElementById("trois");
   
   function bis() {
-    general.className = "product__box__img--un image__bis";
+    general.className = bis;
   };
   
   function deux() {
-    general.className = "product__box__img--un image__deux";
+    general.className = deux;
   };
   
   function trois() {
-    general.className = "product__box__img--un image__trois";
+    general.className = trois;
   };
   
 
