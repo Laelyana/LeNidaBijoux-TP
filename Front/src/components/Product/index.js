@@ -21,10 +21,10 @@ function handleClick__trois() {
 const Product = () => (
 
 <div className="product">
-<div className="product__box__img">
+<div className="product__box__img ">
 <div className="product__box__img--un image__un" id="general"></div>
 <div className="product__box__img__sub">
-<div className="product__box__img__sub--unBis image__un" id="bis" onClick={handleClick__un} onMouseOver={handleClick__un}></div>
+<div className="product__box__img__sub--unBis image__un " id="bis" onClick={handleClick__un} onMouseOver={handleClick__un}></div>
 <div className="product__box__img__sub--deux image__deux" id="deux" onClick={handleClick__deux} onMouseOver={handleClick__deux}></div>
 <div className="product__box__img__sub--trois image__trois" id="trois" onClick={handleClick__trois} onMouseOver={handleClick__trois}></div>
 </div>
