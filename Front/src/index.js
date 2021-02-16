@@ -2,6 +2,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 
 // On importe le provider,
 // C'est lui qui permet de mettre à disposition
@@ -12,7 +13,7 @@ import { Provider } from 'react-redux';
 
 // == Import : local
 // Composants
-import store from 'src/store';
+import { store, persistor } from 'src/store';
 import App from 'src/components/App';
 
 // == Render
@@ -21,7 +22,9 @@ import App from 'src/components/App';
 const rootReactElement = (
   <Provider store={store}>
     <Router>
-      <App />
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
     </Router>
   </Provider>
 
