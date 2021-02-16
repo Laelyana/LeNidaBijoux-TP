@@ -1,5 +1,6 @@
 import axios from "axios";
-import { LOG_IN } from "../actions/user";
+import { LOG_IN, saveUserData } from "../actions/user";
+
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
@@ -12,7 +13,8 @@ export default (store) => (next) => (action) => {
           password,
         },
         ).then((response) => {
-          console.log(response.data)
+          console.log(response.data.data)
+          store.dispatch(saveUserData(response.data));
         }).catch((error) => {
           console.log('error');
         });

@@ -7,7 +7,6 @@ export default (store) => (next) => (action) => {
     case FETCH_CATEGORIES:
       axios.get ('http://0.0.0.0:8000/api/categories')
       .then((response) => {
-        console.log(response.data)
         store.dispatch(saveCategories(response.data));
       }).catch((error) => {
         console.log('error')

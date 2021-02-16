@@ -1,6 +1,5 @@
 // == Import npm
-import React from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 
 // == Import
@@ -29,6 +28,7 @@ import UserShop from 'src/components/UserShop';
 
 // == Composant
 const App = () => {
+
   return (
     <div className="app">
       <Bandeau />
