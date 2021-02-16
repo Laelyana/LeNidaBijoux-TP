@@ -1,7 +1,7 @@
 import { CHANGE_USER_FIELD } from 'src/actions/user';
 
 const initialState = {
-  email: '',
+  username: '',
   password: '',
 };
 

@@ -4,11 +4,11 @@ import { LOG_IN } from "../actions/user";
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case LOG_IN:{
-      const { email, password } = store.getState().user; 
-      axios.get(
-        'http://0.0.0.0:8000/api/login',
+      const { username, password } = store.getState().user; 
+      axios.post(
+        'http://0.0.0.0:8000/api/login_check',
         {
-          email,
+          username,
           password,
         },
         ).then((response) => {
