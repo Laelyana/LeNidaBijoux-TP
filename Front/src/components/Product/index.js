@@ -4,29 +4,38 @@ import React from 'react';
 import './Product.scss';
 
 
-let general = document.getElementById('general');
+// let general = document.getElementById("general");
+// let bis = document.getElementById("bis");
+// let deux = document.getElementById("deux");
+// let trois = document.getElementById("trois");
+
+// bis.addEventListener("click", bisF);
+// deux.addEventListener("click", deuxF);
+// trois.addEventListener("click", troisF);
   
-  function bis() {
-    general.className = "product__box__img--un image__bis";
-  };
+//   function bisF() {
+//     general.className = bis;
+//     console.log("click");
+//   };
   
-  function deux() {
-    general.className = "product__box__img--un image__deux";
-  };
+//   function deuxF() {
+//     general.className = deux;
+//   };
   
-  function trois() {
-    general.className = "product__box__img--un image__trois";
-  };
-  
+//   function troisF() {
+//     general.className = trois;
+//   };
+
+
 
 const Product = () => (
 <div className="product">
 <div className="product__box__img">
 <div className="product__box__img--un image__un" id="general"></div>
 <div className="product__box__img__sub">
-<div className="product__box__img__sub--unBis image__un" id="bis" onClick={bis}></div>
-<div className="product__box__img__sub--deux image__deux" id="deux" onClick={deux}></div>
-<div className="product__box__img__sub--trois image__trois" id="trois" onClick={trois}></div>
+<div className="product__box__img__sub--unBis image__un" id="bis"></div>
+<div className="product__box__img__sub--deux image__deux" id="deux"></div>
+<div className="product__box__img__sub--trois image__trois" id="trois" ></div>
 </div>
 </div>
 <div className="product__box__txt">
@@ -41,7 +50,9 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique a
   <button className="product__box__cart--btn-fav">Ajouter aux favoris</button>
   
   </div>
+  
 </div>
+
 );
 
 
