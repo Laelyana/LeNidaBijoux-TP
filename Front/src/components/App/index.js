@@ -11,7 +11,7 @@ import Bandeau from 'src/components/Bandeau';
 import Header from 'src/components/Header';
 import Slider from 'src/components/Slider';
 import Main from 'src/components/Main';
-import Categories from 'src/components/Categories';
+import Categories from 'src/containers/Categories';
 import Collections from 'src/containers/Collections';
 import Products from 'src/components/Products';
 import Product from 'src/components/Product';

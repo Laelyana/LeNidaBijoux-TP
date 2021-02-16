@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-import { saveCollections, FETCH_COLLECTIONS } from 'src/actions/collections';
+import { saveCategories, FETCH_CATEGORIES } from 'src/actions/categories';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
-    case FETCH_COLLECTIONS:
-      axios.get ('http://0.0.0.0:8000/api/colections')
+    case FETCH_CATEGORIES:
+      axios.get ('http://0.0.0.0:8000/api/categories')
       .then((response) => {
-        store.dispatch(saveCollections(response.data));
+        console.log(response.data)
+        store.dispatch(saveCategories(response.data));
       }).catch((error) => {
         console.log('error')
       }).finally((response) => {

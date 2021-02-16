@@ -11,8 +11,6 @@ const Collections = ({ manageLoad, collections }) => {
     manageLoad,
     [],
     )
-    console.log (collections)
-
   return (
     <div className="collections">
     {
