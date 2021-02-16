@@ -18,4 +18,28 @@ class ProductController extends AbstractController
     {
         return $this->json($product);
     }
+
+    /**
+     * @Route("/api/products/colections/{id}", name="api_products_browse_by_colection", methods={"GET"})
+     */
+    public function browseByColection(ProductRepository $productRepo, $id): Response
+    {
+        return $this->json($productRepo->findBy(['colection' => $id]));
+    }
+
+    /**
+     * @Route("/api/products/categories/{id}", name="api_products_browse_by_category", methods={"GET"})
+     */
+    public function browseByCategory(ProductRepository $productRepo, $id): Response
+    {
+        return $this->json($productRepo->findBy(['category' => $id]));
+    }
+
+    /**
+     * @Route("/api/products/styles/{id}", name="api_products_browse_by_style", methods={"GET"})
+     */
+    public function browseByStyle(ProductRepository $productRepo, $id): Response
+    {
+        return $this->json($productRepo->findBy(['style' => $id]));
+    }
 }
