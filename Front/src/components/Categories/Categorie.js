@@ -6,7 +6,7 @@ import './categories.scss'
 
 const Categories = ({ name }) => (
   <>
-    <a href="/categories/produits">
+    <a href="/categorie/produits">
     <div className="cat cat__img cat__img--un">
         <div className="cat__center">
           <div className="cat__center--title">{name}</div>
