@@ -39,17 +39,17 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $lastname;
 
     /**
-     * @ORM\Column(type="bigint", options={"unsigned":true})
+     * @ORM\Column(type="string", length=15)
      */
     private $phoneNumber;
 

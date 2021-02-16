@@ -5,15 +5,15 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Positive;
-use Symfony\Component\Validator\Constraints\Range;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class UserType extends AbstractType
 {
@@ -28,30 +28,30 @@ class UserType extends AbstractType
                     new Length(['max'=>180])
                 ]
             ])
-            //->add('roles')
             ->add('password')
             ->add('firstname', TextType::class, [
-                'label' => 'Prenom',
+                'label' => 'Prénom',
                 'constraints' => [
                     new NotBlank(),
-                    new Length(['max'=>60]),
+                    new Length(['max'=>50]),
                 ]
             ])
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
                 'constraints' => [
                     new NotBlank(),
-                    new Length(['max'=>60]),
+                    new Length(['max'=>50]),
                 ]
             ])
-            ->add('phoneNumber', null, [
+            ->add('phoneNumber', TelType::class, [
                 'label' => 'Numero de téléphone',
                 'constraints' => [
                     new NotBlank(),
-                    new Range(['max'=>9999999999999]),
-                    new Positive()
+                    new Length(['max'=>15]),
+                    new Regex(['pattern'=>'/\D/','match' => false, 'message' => 'Your phone number must contain just numbers'])
                 ]
             ])
+            //->add('roles')
             //->add('createdAt')
             //->add('updatedAt')
             //->add('product')
