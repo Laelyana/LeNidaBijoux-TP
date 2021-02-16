@@ -18,6 +18,7 @@ function handleClick__trois() {
   general.className = "product__box__img--un image__trois";
 }
 
+
 const Product = () => (
 
 <div className="product">
@@ -33,9 +34,10 @@ const Product = () => (
   <div className="product__box__txt--title">Titre de l'article</div>
   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique ab laboriosam explicabo velit ex, non rerum delectus quod aliquid ut, minus inventore earum dolorum magnam voluptatibus, pariatur accusantium? Eligendi.
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique ab laboriosam explicabo velit ex, non rerum delectus quod aliquid ut, minus inventore earum dolorum magnam voluptatibus, pariatur accusantium? Eligendi.</p>
+<div className="product__box__txt--quantite">Il reste 2 exemplaires en stock</div>
 </div>
 <div className="product__box__cart">
-  <div className="product__box__cart--price">40$</div>
+  <div className="product__box__cart--price" id="prix">40<h5>Euros</h5></div>
   <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité"></input>
   <button className="product__box__cart--btn-add">Ajouter au panier</button>
   <button className="product__box__cart--btn-fav">Ajouter aux favoris</button>

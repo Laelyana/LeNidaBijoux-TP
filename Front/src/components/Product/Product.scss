@@ -99,6 +99,12 @@ flex-wrap: wrap;
   color: #1A3E51;
   margin-bottom: .4rem;
   }
+
+  &--quantite{
+    margin-top: 1rem;
+    color: green;
+    font-weight: 700;
+  }
 }
 
 //bloc droit pour le prix et options
@@ -114,6 +120,11 @@ flex-wrap: wrap;
   font-weight: bold;
   color: #1A3E51;
   font-size: 40px;
+  }
+
+  &--price__quantite{
+    width: 40%;
+    color: green;
   }
 
   //style des btns
