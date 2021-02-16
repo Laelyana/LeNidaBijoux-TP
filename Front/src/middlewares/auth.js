@@ -6,7 +6,7 @@ export default (store) => (next) => (action) => {
     case LOG_IN:{
       const { email, password } = store.getState().user; 
       axios.get(
-        'http://0.0.0.0:8000/api/colections',
+        'http://0.0.0.0:8000/api/login',
         {
           email,
           password,
