@@ -12,7 +12,7 @@ import Header from 'src/components/Header';
 import Slider from 'src/components/Slider';
 import Main from 'src/components/Main';
 import Categories from 'src/components/Categories';
-import Collections from 'src/components/Collections';
+import Collections from 'src/containers/Collections';
 import Products from 'src/components/Products';
 import Product from 'src/components/Product';
 import Footer from 'src/components/Footer';

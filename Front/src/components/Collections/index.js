@@ -1,36 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+
+import Collection from './Collection';
 
 import './collections.scss';
 
 
-const collections = () => (
-  <div className="collections">
+const Collections = ({ manageLoad, collections }) => {
+  useEffect(
+    manageLoad,
+    [],
+    )
+    console.log (collections)
 
-    <div className="col col__img col__img--un">
-      <a href="/collection/produits">
-        <div className="col__center">
-          <div className="col__center--title">Titre de la collection</div>
-        </div>
-      </a>
+  return (
+    <div className="collections">
+    {
+      collections.map((collection) => (
+      <Collection key={collection.id} {...collection}/>
+      
+      ))
+    }
     </div>
+  )
+};
 
-    <div className="col col__img col__img--deux">
-      <a href="/collection/produits">
-        <div className="col__center">
-          <div className="col__center--title">Titre de la collection</div>
-        </div>
-      </a>
-    </div>
-
-    <div className="col col__img col__img--trois">
-      <a href="/collection/produits">
-        <div className="col__center">
-          <div className="col__center--title">Titre de la collection</div>
-        </div>
-      </a>
-    </div>
-
-  </div>
-)
-
-export default collections;
+export default Collections;

@@ -3,12 +3,13 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
 import authMiddleware from 'src/middlewares/auth';
+import collectionMiddleware from 'src/middlewares/collection';
 // import du reducer
 import reducer from 'src/reducers';
 
 // on met en place le store
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(authMiddleware)
+  applyMiddleware(authMiddleware, collectionMiddleware)
 ));
 
 // on rend dispo le store
