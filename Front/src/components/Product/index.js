@@ -3,33 +3,17 @@ import React from 'react';
 
 import './Product.scss';
 
+import Pictures from 'src/components/Product';
 
-let general = document.getElementById("general");
-let bis = document.getElementById("bis");
-let deux = document.getElementById("deux");
-let trois = document.getElementById("trois");
-  
-  function bis() {
-    general.className = bis;
-  };
-  
-  function deux() {
-    general.className = deux;
-  };
-  
-  function trois() {
-    general.className = trois;
-  };
-  
 
 const Product = () => (
 <div className="product">
 <div className="product__box__img">
 <div className="product__box__img--un image__un" id="general"></div>
 <div className="product__box__img__sub">
-<div className="product__box__img__sub--unBis image__un" id="bis" onClick={bis}></div>
-<div className="product__box__img__sub--deux image__deux" id="deux" onClick={deux}></div>
-<div className="product__box__img__sub--trois image__trois" id="trois" onClick={trois}></div>
+<div className="product__box__img__sub--unBis image__un" id="bis"></div>
+<div className="product__box__img__sub--deux image__deux" id="deux"></div>
+<div className="product__box__img__sub--trois image__trois" id="trois" ></div>
 </div>
 </div>
 <div className="product__box__txt">
@@ -44,7 +28,9 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique a
   <button className="product__box__cart--btn-fav">Ajouter aux favoris</button>
   
   </div>
+  
 </div>
+
 );
 
 
