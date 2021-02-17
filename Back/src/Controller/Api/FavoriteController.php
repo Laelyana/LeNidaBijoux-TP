@@ -29,17 +29,13 @@ class FavoriteController extends AbstractController
     }
 
     /**
-     * @Route("/api/favorites/users/{id}", name="api_favorites_add_by_user", methods={"PATCH"})
+     * @Route("/api/favorites/{productId}/users/{userId}", name="api_favorites_add_by_user", methods={"PATCH"})
      */
-    public function addProductToUser(int $id, Request $request, EntityManagerInterface $em, UserRepository $userRepo, ProductRepository $productRepo): Response
+    public function addProductToUser(int $userId, int $productId, Request $request, EntityManagerInterface $em, UserRepository $userRepo, ProductRepository $productRepo): Response
     {
-        if($user = $userRepo->find($id)){
+        if($user = $userRepo->find($userId)){
 
-            $infoRequest = json_decode($request->getContent(), false);
-
-            if($infoRequest != null && property_exists ($infoRequest , "productId")){
-
-                if($product = $productRepo->find($infoRequest->productId)){
+                if($product = $productRepo->find($productId)){
         
                     $user->addProduct($product);
                     $em->persist($user);
@@ -51,11 +47,6 @@ class FavoriteController extends AbstractController
                     return $this->json("this product doesn't exist", 404);
                 }
 
-            }else{
-
-                return $this->json("bad request", 400);
-            }
-
         }else{
 
             return $this->json("this user doesn't exist", 404);
@@ -63,13 +54,13 @@ class FavoriteController extends AbstractController
     }
 
     /**
-     * @Route("/api/favorites/{product_id}/users/{user_id}", name="api_favorites_delete_by_user", methods={"DELETE"})
+     * @Route("/api/favorites/{productId}/users/{userId}", name="api_favorites_delete_by_user", methods={"DELETE"})
      */
-    public function deleteProductFromUser(int $product_id, int $user_id, ProductRepository $productRepo, UserRepository $userRepo, EntityManagerInterface $em): Response
+    public function deleteProductFromUser(int $productId, int $userId, ProductRepository $productRepo, UserRepository $userRepo, EntityManagerInterface $em): Response
     {
-        if($user = $userRepo->find($user_id)){
+        if($user = $userRepo->find($userId)){
 
-            if($product = $productRepo->find($product_id)){
+            if($product = $productRepo->find($productId)){
     
                 $user->removeProduct($product);
                 $em->persist($user);
