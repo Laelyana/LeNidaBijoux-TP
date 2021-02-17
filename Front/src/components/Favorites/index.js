@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import Favorite from './Favorite';
 
 import './favorites.scss';
+import Favorite from './Favorite';
 
 const Favorites = ({ manageLoad, favorites }) => {
   useEffect(
