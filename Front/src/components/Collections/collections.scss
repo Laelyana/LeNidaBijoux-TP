@@ -20,38 +20,34 @@
   margin: 1rem auto 1rem auto; 
   border-radius: 3rem;
   position: relative;
-
-  & a:before{
-    content:'';
-    position:absolute;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    background-color:rgba(0,0,0,0);
-  }
+  
+  
 
 &__img{
   background-position: center;
   perspective: 100px;
   background-repeat: no-repeat;
   background-size: 130%;
+  position: relative;
 }
 
 
 &__center{
-  background-color: white;
-  opacity: .7;
+  background-color: transparent;
   position: absolute;
   height: 5rem;
   width: 100%;
-  top: 40%;
+  height: 100%;
   box-shadow:inset .2rem 0 .5rem .2rem rgb(218, 216, 216);
   overflow: hidden;
 
-  &--title{
-    margin-top: 2rem;
+  &--title-band{
+    margin-top: 50%;
     font-weight: bold;
+    background-color: transparent;
+    color: rgb(47, 47, 51);
+    width: 100%;
+    padding: 2rem;
   }
 }
 
@@ -72,5 +68,15 @@
 
 } 
 
-  
+.col__img--un a::before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top: 0;
+  bottom:0;
+  z-index: 3;
+  background-color:rgba(0,0,0,0);
+}
+
 
