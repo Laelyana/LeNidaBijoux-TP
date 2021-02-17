@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 import './styles.scss';
 
 // Import Local
-import Bandeau from 'src/components/Bandeau';
+import Bandeau from 'src/containers/Bandeau';
 import Header from 'src/components/Header';
 import Slider from 'src/components/Slider';
 import Main from 'src/components/Main';
@@ -83,6 +83,7 @@ const App = () => (
     <Footer />
   </div>
 );
+
 
 // == Export
 export default App;

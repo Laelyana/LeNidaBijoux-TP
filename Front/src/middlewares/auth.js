@@ -14,6 +14,7 @@ export default (store) => (next) => (action) => {
       ).then((response) => {
         console.log(response.data.data);
         store.dispatch(saveUserData(response.data));
+        window.location = '/';
       }).catch((error) => {
         console.log('error');
       });

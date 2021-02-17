@@ -50,6 +50,9 @@
   width: 2rem;
   height: auto;
 }
+.button__hide{
+  display: none;
+}
 
 @media (max-width: 700px) {
   .bandeau__timer{
