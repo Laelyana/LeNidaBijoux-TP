@@ -21,6 +21,7 @@ export default (state = initialState, action = {}) => {
         token: action.data.token,
       };
     case LOG_OUT:
+      window.location = '/';
       return {
         ...state,
         logged: false,

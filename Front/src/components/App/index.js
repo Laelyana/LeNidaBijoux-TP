@@ -21,7 +21,7 @@ import Presentation from 'src/components/Presentation';
 import Contact from 'src/components/Contact';
 import Cgv from 'src/components/Cgv';
 import Dashboard from 'src/components/Dashboard';
-import Favorites from 'src/components/Favorites';
+import Favorites from 'src/containers/Favorites';
 import UserData from 'src/components/UserData';
 import UserOrder from 'src/components/UserOrder';
 import UserShop from 'src/components/UserShop';
