@@ -10,34 +10,33 @@ const LoginForm = ({
   password,
   changeField,
   handleLogin,
-}) => { 
-
+}) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleLogin();
-  }
+  };
   return (
     <div className="form__rightside">
       <h3>Vous avez déjà un compte ? Connectez vous !</h3>
-      <form  onSubmit={handleSubmit}  className="form__login">
+      <form onSubmit={handleSubmit} className="form__login">
         <Field
-        name="username"
-        placeholder="Votre email"
-        onChange={changeField}
-        value={username}
+          name="username"
+          placeholder="Votre email"
+          onChange={changeField}
+          value={username}
         />
-         <Field
-        name="password"
-        type="password"
-        placeholder="Votre mot de passe"
-        onChange={changeField}
-        value={password}
+        <Field
+          name="password"
+          type="password"
+          placeholder="Votre mot de passe"
+          onChange={changeField}
+          value={password}
         />
-        
+
         <button type="submit" className="form__input">Se connecter</button>
       </form>
     </div>
-);
+  );
 }
 LoginForm.propTypes = {
   username: PropTypes.string.isRequired,
