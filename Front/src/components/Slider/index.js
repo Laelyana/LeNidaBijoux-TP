@@ -14,7 +14,7 @@ let slider__items = document.querySelectorAll('.slider__item'); //la div enfant,
 let sliderItemNumber = slider__items.length; //nombre de divs slider__item
 let btnGauche = document.querySelector('.slider__gauche'); //btn gauche
 let btnDroit = document.querySelector('.slider__droite'); //btn droit
-
+console.log(sliderItemNumber);
 
 
 
