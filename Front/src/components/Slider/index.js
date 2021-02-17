@@ -19,11 +19,17 @@ let sliderBtn = document.querySelector(".slider__btn");
 //varable slider list ou sont les slider__item afin de les rassembler, compter et boucler
 let sliderList = document.querySelector("#slider__list");
 //on compte le nombre de class slider__item dans le bloc slider__list
-let number__slider = document.getElementsByTagName('div.slider__item');
+let nombre = document.querySelectorAll('#slider__list > .slider__item').length;
 
-console.log(number__slider);
+//console.log(nombre);
 
+function gauche(){
+alert("clic btn gauche CURIEUX !")
+};
 
+function droit(){
+  alert("clic btn droit CURIEUX !")
+  };
 
 const Slider = () => (
 
@@ -33,10 +39,10 @@ const Slider = () => (
   <div className="slider__item"><img className="slider__img" src={un} alt="" /></div>
   <div className="slider__item"><img className="slider__img" src={goldengate} alt="" /></div>
   </div>
-  <div className="slider__gauche">
-  <div className="slider__btn"></div>
+  <div className="slider__gauche" onClick={gauche}>
+  <div className="slider__btn" ></div>
   </div>
-  <div className="slider__droite">
+  <div className="slider__droite" onClick={droit}>
   <div className="slider__btn"></div>
   </div>
 </div>
