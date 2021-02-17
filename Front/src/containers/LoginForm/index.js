@@ -9,11 +9,11 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   changeField: (fieldValue, fieldName) => {
-    dispatch(changeUserField(fieldValue, fieldName))
+    dispatch(changeUserField(fieldValue, fieldName));
   },
   handleLogin: () => {
     dispatch(logIn());
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

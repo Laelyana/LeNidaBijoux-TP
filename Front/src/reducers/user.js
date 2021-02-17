@@ -8,7 +8,6 @@ const initialState = {
 };
 
 export default (state = initialState, action = {}) => {
-
   switch (action.type) {
     case CHANGE_USER_FIELD:
       return {
@@ -20,7 +19,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         logged: action.data.data.logged,
         token: action.data.token,
-      }
+      };
     default:
       return {
         ...state,

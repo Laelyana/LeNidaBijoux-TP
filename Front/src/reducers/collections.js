@@ -4,7 +4,7 @@ const initialState = {
   collections: [],
 };
 
-export default (state=initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case SAVE_COLLECTIONS:
       return {

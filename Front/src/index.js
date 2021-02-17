@@ -2,29 +2,27 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { PersistGate } from 'redux-persist/integration/react';
 
+import { Provider } from 'react-redux';
+
+import store from 'src/store';
 // On importe le provider,
 // C'est lui qui permet de mettre à disposition
 // le store à notre application
-import { Provider } from 'react-redux';
 
 // On importe notre store
 
 // == Import : local
 // Composants
-import { store, persistor } from 'src/store';
 import App from 'src/components/App';
-
+// import du reducer
 // == Render
 // 1. Élément React racine (celui qui contient l'ensemble de l'app)
 //    => crée une structure d'objets imbriqués (DOM virtuel)
 const rootReactElement = (
   <Provider store={store}>
     <Router>
-      <PersistGate persistor={persistor}>
-        <App />
-      </PersistGate>
+      <App />
     </Router>
   </Provider>
 
