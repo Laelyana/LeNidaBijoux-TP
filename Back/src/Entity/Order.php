@@ -7,6 +7,7 @@ use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Ignore;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
@@ -29,11 +30,13 @@ class Order
 
     /**
      * @ORM\OneToMany(targetEntity=OrderLine::class, mappedBy="orderEntity")
+     * @Ignore()
      */
     private $orderLines;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
+     * @Ignore()
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
