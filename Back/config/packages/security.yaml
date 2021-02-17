@@ -47,7 +47,6 @@ security:
     access_control:
         - { path: ^/api/products/\d+/likes$, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/users/\d+$, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/api/users$, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/favorites/users/\d+$, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/order, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api, roles: IS_AUTHENTICATED_ANONYMOUSLY }
