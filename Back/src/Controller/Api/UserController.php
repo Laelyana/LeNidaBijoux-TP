@@ -16,15 +16,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/api/users", name="api_users_browse", methods={"GET"})
-     */
-    public function browse(UserRepository $userRepo): Response
-    {
-        return $this->json($userRepo->findAll());
-
-    }
-
-    /**
      * @Route("/api/users/{id}", name="api_users_read", methods={"GET"}, requirements={"id": "\d+"})
      */
     public function read(User $user): Response
