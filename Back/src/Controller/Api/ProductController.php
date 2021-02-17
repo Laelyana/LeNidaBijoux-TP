@@ -4,6 +4,7 @@ namespace App\Controller\Api;
 
 use App\Entity\Product;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,5 +42,15 @@ class ProductController extends AbstractController
     public function browseByStyle(ProductRepository $productRepo, $id): Response
     {
         return $this->json($productRepo->findBy(['style' => $id]));
+    }
+
+    /**
+     * @Route("/api/products/{id}/likes", name="api_products_likes_update", methods={"PATCH"})
+     */
+    public function increment(Product $product, EntityManagerInterface $em)
+    {
+        $product->setLiked($product->getLiked() + 1);
+        $em->flush();
+        return $this->json($product,200);
     }
 }

@@ -13,9 +13,11 @@ class AuthenticationSuccessListener{
     public function onAuthenticationSuccessResponse(AuthenticationSuccessEvent $event)
     {
         $data = $event->getData();
+        $user = $event->getUser();
     
         $data['data'] = array(
-            'logged' => true
+            'logged' => true,
+            'userId'=> $user->getId()
         );
     
         $event->setData($data);
