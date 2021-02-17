@@ -11,11 +11,10 @@ const LoginForm = ({
   changeField,
   handleLogin,
 }) => {
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleLogin();
-  }
+  };
   return (
     <div className="form__rightside">
       <h3>Vous avez déjà un compte ? Connectez vous !</h3>
