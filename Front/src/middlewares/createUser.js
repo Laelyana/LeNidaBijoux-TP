@@ -21,7 +21,7 @@ export default (store) => (next) => (action) => {
           phoneNumber,
         },
       ).then((response) => {
-        window.alert('Votre compte est crée, vous pouvez vous connecter');
+        window.alert('Votre compte est créé, vous pouvez vous connecter');
       }).catch((error) => {
         console.log(error);
       });
