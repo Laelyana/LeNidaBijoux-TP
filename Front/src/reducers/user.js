@@ -1,21 +1,40 @@
-import { CHANGE_USER_FIELD } from 'src/actions/user';
+import { CHANGE_USER_FIELD, SAVE_USER_DATA, LOG_OUT } from 'src/actions/user';
 
 const initialState = {
-  email: '',
+  username: '',
   password: '',
+  logged: false,
+  token: null,
+  userId: '',
 };
 
 export default (state = initialState, action = {}) => {
-
-  switch(action.type){
-      case CHANGE_USER_FIELD:
-          return {
-              ...state,
-              [action.fieldName]: action.fieldValue,
-          };
-      default:
-          return {
-              ...state,
-          };
+  switch (action.type) {
+    case CHANGE_USER_FIELD:
+      return {
+        ...state,
+        [action.fieldName]: action.fieldValue,
+      };
+    case SAVE_USER_DATA:
+      return {
+        ...state,
+        logged: action.data.data.logged,
+        token: action.data.token,
+        userId: action.data.data.userId,
+      };
+    case LOG_OUT:
+      window.location = '/';
+      return {
+        ...state,
+        logged: false,
+        username: '',
+        token: null,
+        email: '',
+        password: '',
+      };
+    default:
+      return {
+        ...state,
+      };
   }
-}
+};

@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-import { saveCategories, FETCH_CATEGORIES } from '../actions/categories';
+import { saveSlider, FETCH_SLIDER } from '../actions/slider';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
-    case FETCH_CATEGORIES:
-      axios.get('http://0.0.0.0:8000/api/categories')
+    case FETCH_SLIDER:
+      axios.get('http://0.0.0.0:8000/api/slider')
         .then((response) => {
-          store.dispatch(saveCategories(response.data));
+          store.dispatch(saveSlider(response.data));
+          console.log(response.data);
         }).catch((error) => {
           console.log('error');
         }).finally((response) => {
@@ -19,3 +20,4 @@ export default (store) => (next) => (action) => {
       next(action);
   }
 };
+

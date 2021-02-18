@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './favorites.scss';
+import Favorite from './Favorite';
 
-const Favorites = () => (
-  <div className="favorites">
-    <h2>Mes produits favoris</h2>
-    <a href="/mon-compte" className="favorites__back">Revenir au tableau de bord</a>
-    <div className="favorites__list">
-      <div className="favorites__list--item">
-        <h5 className="favorites__list--item--name">Nom du produit</h5>
-        <button className="favorites__list--item--button">Supprimer</button>
-      </div>
-      <div className="favorites__list--item">
-        <h5 className="favorites__list--item--name">Nom du produit</h5>
-        <button className="favorites__list--item--button">Supprimer</button>
-      </div>
-      <div className="favorites__list--item">
-        <h5 className="favorites__list--item--name">Nom du produit</h5>
-        <button className="favorites__list--item--button">Supprimer</button>
+const Favorites = ({ manageLoad, favorites }) => {
+  useEffect(
+    manageLoad,
+    [],
+  );
+  return (
+    <div className="favorites">
+      <h2>Mes produits favoris</h2>
+      <a href="/mon-compte" className="favorites__back">Revenir au tableau de bord</a>
+      <div className="favorites__list">
+        {
+          favorites.map((favorite) => (
+
+            <Favorite key={favorite.id} {...favorite} />
+          ))
+        }
+
       </div>
     </div>
-  </div>
-)
+  );
+};
 
 export default Favorites;

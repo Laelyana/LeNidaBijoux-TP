@@ -1,15 +1,15 @@
-import { SAVE_COLLECTIONS } from '../actions/collections';
+import { SAVE_SLIDER } from '../actions/slider';
 
 const initialState = {
-  collections: [],
+  slider: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SAVE_COLLECTIONS:
+    case SAVE_SLIDER:
       return {
         ...state,
-        collections: action.collections,
+        slider: action.slider,
       };
     default:
       return {
@@ -17,3 +17,4 @@ export default (state = initialState, action) => {
       };
   }
 };
+

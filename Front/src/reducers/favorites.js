@@ -1,15 +1,15 @@
-import { SAVE_COLLECTIONS } from '../actions/collections';
+import { SAVE_FAVORITES } from '../actions/favorites';
 
 const initialState = {
-  collections: [],
+  favorites: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SAVE_COLLECTIONS:
+    case SAVE_FAVORITES:
       return {
         ...state,
-        collections: action.collections,
+        favorites: action.favorites,
       };
     default:
       return {
