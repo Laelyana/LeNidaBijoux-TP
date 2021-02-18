@@ -56,7 +56,7 @@ class UserController extends AbstractController
         }
         else 
         {
-            return $this->json((string) $form->getErrors(true, false), Response::HTTP_BAD_REQUEST); // sent the errors of the constraints validation
+            return $this->json($form->getErrors(true, true)[0]->getMessage(), Response::HTTP_BAD_REQUEST); // sent the errors of the constraints validation
         }
 
     }
