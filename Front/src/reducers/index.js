@@ -4,6 +4,7 @@ import userReducer from '../reducers/user';
 import collectionsReducer from '../reducers/collections';
 import categoriesReducer from '../reducers/categories';
 import favoritesReducer from '../reducers/favorites';
+import createUserReducer from '../reducers/createUser';
 // on importer les différents reducers
 
 const combineReducer = combineReducers({
@@ -11,6 +12,7 @@ const combineReducer = combineReducers({
   collections: collectionsReducer,
   categories: categoriesReducer,
   favorites: favoritesReducer,
+  createUser: createUserReducer,
   // on combine tous les reducers
 });
 

@@ -12,16 +12,16 @@ const InscriptionForm = ({
   password,
   phoneNumber,
   changeField,
-  handleLogin,
+  handleCreateUser,
 }) => {
-  const handleSubmit = (evt) => {
+  const handleNewSubmit = (evt) => {
     evt.preventDefault();
-    handleLogin();
+    handleCreateUser();
   };
   return (
     <div className="form__leftside">
       <h3>Pas encore inscrit ? Rejoignez nous !</h3>
-      <form onSubmit={handleSubmit} className="form__inscription">
+      <form onSubmit={handleNewSubmit} className="form__inscription">
         <Field
           name="lastname"
           placeholder="Votre nom"
@@ -48,14 +48,10 @@ const InscriptionForm = ({
         />
         <Field
           name="password"
+          type="password"
           placeholder="Votre mot de passe"
           onChange={changeField}
           value={password}
-        />
-        <Field
-          name="confirmPassword"
-          placeholder="Confirmation du mot de passe"
-          onChange={changeField}
         />
         <button type="submit" className="form__input">Envoyer le formulaire</button>
       </form>

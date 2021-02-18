@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import './login-page.scss';
 import LoginForm from 'src/containers/LoginForm';
-import InscriptionForm from './InscriptionForm';
+import InscriptionForm from 'src/containers/InscriptionForm';
 
 const LoginPage = () => (
   <div className="form">
