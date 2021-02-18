@@ -21,8 +21,13 @@ const Bandeau = ({ isLogged, handleLogout }) => (
           </div>
         )}
       <div className="bandeau__icons">
-        <a href="/mon-compte/mes-favoris"> <img className="favoriteLogo" src={favoriteLogo} alt="Favoris" /></a>
-        <a href="/mon-compte/mon-panier"> <img className="favoriteLogo" src={shopLogo} alt="Shop" /></a>
+        {isLogged
+          && (
+            <div>
+              <a href="/mon-compte/mes-favoris"> <img className="favoriteLogo" src={favoriteLogo} alt="Favoris" /></a>
+              <a href="/mon-compte/mon-panier"> <img className="favoriteLogo" src={shopLogo} alt="Shop" /></a>
+            </div>
+          )}
       </div>
     </div>
   </div>

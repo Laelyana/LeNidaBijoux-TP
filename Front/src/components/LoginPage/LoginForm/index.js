@@ -37,12 +37,12 @@ const LoginForm = ({
       </form>
     </div>
   );
-}
+};
 LoginForm.propTypes = {
   username: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
-}
+};
 
 export default LoginForm;

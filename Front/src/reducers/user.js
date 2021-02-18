@@ -23,6 +23,7 @@ export default (state = initialState, action = {}) => {
         userId: action.data.data.userId,
       };
     case LOG_OUT:
+      window.location = '/';
       return {
         ...state,
         logged: false,

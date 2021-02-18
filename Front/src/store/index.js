@@ -8,6 +8,8 @@ import reducer from 'src/reducers';
 import collectionMiddleware from 'src/middlewares/collection';
 import categoriesMiddleware from 'src/middlewares/categories';
 import authMiddleware from 'src/middlewares/auth';
+import favoritesMiddleware from 'src/middlewares/favorites';
+import createUserMiddleware from 'src/middlewares/createUser'
 import sliderMiddleware from 'src/middlewares/slider';
 
 function saveToLocalStorage(state) {
@@ -38,6 +40,13 @@ const store = createStore(
   reducer,
   persistedState,
   composeWithDevTools(
+    applyMiddleware(
+      authMiddleware,
+      categoriesMiddleware,
+      collectionMiddleware,
+      favoritesMiddleware,
+      createUserMiddleware,
+    ),
     applyMiddleware(authMiddleware, categoriesMiddleware, collectionMiddleware, sliderMiddleware),
   ),
 );

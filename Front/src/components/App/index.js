@@ -21,13 +21,13 @@ import Presentation from 'src/components/Presentation';
 import Contact from 'src/components/Contact';
 import Cgv from 'src/components/Cgv';
 import Dashboard from 'src/components/Dashboard';
-import Favorites from 'src/components/Favorites';
+import Favorites from 'src/containers/Favorites';
 import UserData from 'src/components/UserData';
 import UserOrder from 'src/components/UserOrder';
 import UserShop from 'src/components/UserShop';
 
 // == Composant
-const App = () => (
+const App = ({ isLogged }) => (
   <div className="app">
     <Bandeau />
     <Header />
@@ -65,25 +65,39 @@ const App = () => (
     <Route path="/conditions-de-vente">
       <Cgv />
     </Route>
-    <Route path="/mon-compte" exact>
-      <Dashboard />
-    </Route>
-    <Route path="/mon-compte/mes-favoris">
-      <Favorites />
-    </Route>
-    <Route path="/mon-compte/mes-infos">
-      <UserData />
-    </Route>
-    <Route path="/mon-compte/mes-commandes">
-      <UserOrder />
-    </Route>
-    <Route path="/mon-compte/mon-panier">
-      <UserShop />
-    </Route>
+    {isLogged
+      && (
+        <Route path="/mon-compte" exact>
+          <Dashboard />
+        </Route>
+      )}
+    {isLogged
+      && (
+        <Route path="/mon-compte/mes-favoris">
+          <Favorites />
+        </Route>
+      )}
+    {isLogged
+      && (
+        <Route path="/mon-compte/mes-infos">
+          <UserData />
+        </Route>
+      )}
+    {isLogged
+      && (
+        <Route path="/mon-compte/mes-commandes">
+          <UserOrder />
+        </Route>
+      )}
+    {isLogged
+      && (
+        <Route path="/mon-compte/mon-panier">
+          <UserShop />
+        </Route>
+      )}
     <Footer />
   </div>
 );
-
 
 // == Export
 export default App;
