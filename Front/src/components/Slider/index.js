@@ -12,71 +12,63 @@ const Slider = ({ manageLoad, slider }) => {
   );
 
 //code vanilla slider
-var slideIndex = "1";
-showSlides(slideIndex);
+// let slides = document.querySelector("slider__list");
+let slideItems  = document.querySelectorAll("slider__item");
+// let left = document.getElementsByClassName("slider__gauche");
+// let right = document.getElementsByClassName("slider__droite");
+// let state = true;
+// let currentSlide = 0;
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+
+
+
+function Direction(sens) {
+  let slideGeneral = document.getElementById("slider__list");
+  let slides = document.querySelectorAll(".slide__item");
+  var children = slideGeneral.childNodes;
+  
+
+
+  console.log(children);
+  let slideNumber = 0;
+  slideNumber = slideNumber + sens;
+    if (slideNumber < 0){
+      slideNumber = slides.length - 1;
+    slides.index = +1;
+      console.log("clic -1");
+     
+    }
+    if (slideNumber> slides.length - 1)
+    {slideNumber = 0; console.log("clic +1"); }
+    
+    //setInterval("ChangeSlide(1)", 4000);
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slider = document.getElementsByClassName("slider__list");
-  var slides = document.getElementsByClassName("slider__item");
-  var dots = document.getElementsByClassName("slider__btn--haut");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 3; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    console.log("none");
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-      console.log("active");
-  }
- 
-}
-
-
-function gauche() {
-console.log("clic gauche");
-
-};
-
-function droite() {
-  console.log("clic droite");
-  };
 
   return (
 
     <div className="slider">
     <div className="slider__btn--haut"></div>
     <div id="slider__list">
-    <div>
+    
       {
         slider.map((slide) => (
           <Slide key={slide.id} {...slide} />
         
         ))
       }
+    
     </div>
-    </div>
-    <div className="slider__gauche" onClick={plusSlides(-1)}>
+    <div className="slider__gauche" onClick={() => Direction(-1)}>
     <div className="slider__btn"></div>
     </div>
-    <div className="slider__droite" onClick={plusSlides(1)}>
+    <div className="slider__droite" onClick={() => Direction(1)}>
     <div className="slider__btn"></div>
     </div>
     
   </div>
 
- 
+
   );
 };
 
