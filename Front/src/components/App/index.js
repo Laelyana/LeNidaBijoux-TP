@@ -8,7 +8,7 @@ import './styles.scss';
 // Import Local
 import Bandeau from 'src/containers/Bandeau';
 import Header from 'src/components/Header';
-import Slider from 'src/components/Slider';
+import Slider from 'src/containers/Slider';
 import Main from 'src/components/Main';
 import Categories from 'src/containers/Categories';
 import Collections from 'src/containers/Collections';

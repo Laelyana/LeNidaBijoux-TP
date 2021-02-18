@@ -6,7 +6,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SAVE_Slider:
+    case SAVE_SLIDER:
       return {
         ...state,
         slider: action.slider,
@@ -17,3 +17,4 @@ export default (state = initialState, action) => {
       };
   }
 };
+
