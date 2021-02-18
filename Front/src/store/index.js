@@ -10,6 +10,7 @@ import categoriesMiddleware from 'src/middlewares/categories';
 import authMiddleware from 'src/middlewares/auth';
 import favoritesMiddleware from 'src/middlewares/favorites';
 import createUserMiddleware from 'src/middlewares/createUser'
+import sliderMiddleware from 'src/middlewares/slider';
 
 function saveToLocalStorage(state) {
   try {
@@ -46,6 +47,7 @@ const store = createStore(
       favoritesMiddleware,
       createUserMiddleware,
     ),
+    applyMiddleware(authMiddleware, categoriesMiddleware, collectionMiddleware, sliderMiddleware),
   ),
 );
 
