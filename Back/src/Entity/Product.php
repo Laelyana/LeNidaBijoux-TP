@@ -3,9 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Ignore;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -25,7 +27,7 @@ class Product
     private $name;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="float", nullable=true, options={"unsigned":true})
      */
     private $price;
 
@@ -70,22 +72,26 @@ class Product
     private $updatedAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="products")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
+     * @Ignore()
      */
     private $category;
 
     /**
      * @ORM\ManyToOne(targetEntity=Style::class, inversedBy="products")
+     * @Ignore()
      */
     private $style;
 
     /**
      * @ORM\ManyToOne(targetEntity=Colection::class, inversedBy="products")
+     * @Ignore()
      */
     private $colection;
 
     /**
      * @ORM\ManyToMany(targetEntity=User::class, mappedBy="product")
+     * @Ignore()
      */
     private $users;
 
@@ -94,6 +100,7 @@ class Product
         $this->users = new ArrayCollection();
         $this->liked = 0;
         $this->stock = 0;
+        $this->createdAt = new DateTime();
     }
 
     public function getId(): ?int
@@ -283,4 +290,5 @@ class Product
 
         return $this;
     }
+
 }

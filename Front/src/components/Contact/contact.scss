@@ -1,0 +1,31 @@
+.contact__form{
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  margin: 2rem auto;
+
+  &--input{
+    width: 30%;
+    margin: 1rem auto;
+    height: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  &--textarea{
+    width: 50%;
+    margin: 1rem auto;
+    height: 100px;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  &--button{
+    width: 30%;
+    margin: 1rem auto;
+  }
+  &>h3{
+    font-size: 2rem;
+  }
+  &>img{
+    margin: auto 1rem;
+  }
+}

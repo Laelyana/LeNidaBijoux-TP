@@ -6,6 +6,7 @@ use App\Repository\StyleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Ignore;
 
 /**
  * @ORM\Entity(repositoryClass=StyleRepository::class)
@@ -26,12 +27,14 @@ class Style
 
     /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="style")
+     * @Ignore()
      */
     private $products;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="styles")
      * @ORM\JoinColumn(nullable=false)
+     * @Ignore()
      */
     private $category;
 

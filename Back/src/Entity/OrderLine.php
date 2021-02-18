@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\OrderLineRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Ignore;
 
 /**
  * @ORM\Entity(repositoryClass=OrderLineRepository::class)
@@ -18,7 +19,7 @@ class OrderLine
     private $id;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="smallint", options={"unsigned":true})
      */
     private $quantity;
 
@@ -28,13 +29,14 @@ class OrderLine
     private $labelProduct;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", options={"unsigned":true})
      */
     private $priceProduct;
 
     /**
      * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="orderLines")
      * @ORM\JoinColumn(nullable=false)
+     * @Ignore()
      */
     private $orderEntity;
 

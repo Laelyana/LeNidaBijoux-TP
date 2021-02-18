@@ -1,0 +1,207 @@
+@use '/src/styles/vars';
+
+//bloc général product
+.product{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: vars.$mi_full;
+  margin: 3rem auto;
+  justify-content: center;
+  
+//enfant de la classe product pour les images 
+&__box__img{
+width: vars.$productW;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+
+//bloc pour l'image principale
+&--un{
+  width: vars.$productW;
+  height: vars.$productH;
+  border-radius: 3rem;
+  margin: 0 .0 .5rem 0;
+  border: rgb(207, 206, 205) 1px solid;
+  box-shadow: 0 0 1px 2px rgb(230, 229, 229);
+  overflow: hidden;
+  transition: all 0.4s;
+  display: block;
+}
+
+//bloc pour la gestion des miniatures
+&__sub{
+  width: vars.$productW;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+//image un miniature
+&--unBis{
+  width: vars.$productW/3.2;
+  height: vars.$productH/3;
+  background-color: rgb(130, 238, 166);
+  border-radius: 3rem;
+  border: rgb(207, 206, 205) 1px solid;
+  box-shadow: 0 0 1px 2px rgb(230, 229, 229);
+ //survol de l'image on la rend plus claire
+  &:hover{
+    opacity: .6;
+    cursor: zoom-in;
+  }
+}
+
+//image deux miniature
+&--deux{
+  width: vars.$productW/3.2;
+  height: vars.$productH/3;
+  background-color: rgb(130, 238, 166);
+  border-radius: 3rem;
+  border: rgb(207, 206, 205) 1px solid;
+  box-shadow: 0 0 1px 2px rgb(230, 229, 229);
+//survol de l'image on la rend plus claire
+  &:hover{
+    opacity: .6;
+    cursor: zoom-in;
+  }
+}
+
+//image trois miniature
+&--trois{
+  width: vars.$productW/3.2;
+  height: vars.$productH/3;
+  background-color: rgb(130, 238, 166);
+  border-radius: 3rem;
+  border: rgb(207, 206, 205) 1px solid;
+  box-shadow: 0 0 1px 2px rgb(230, 229, 229);
+//survol de l'image on la rend plus claire
+  &:hover{
+    opacity: .6;
+    cursor: zoom-in;
+  }
+}
+}
+
+}
+
+//bloc du milieu pour la deescription du produit
+&__box__txt{
+  width: vars.$productW;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 1rem;
+  text-align: left;
+
+  //classe pour le titre du produit
+  &--title{
+  font-weight: bold;
+  color: #1A3E51;
+  margin-bottom: .4rem;
+  }
+
+  &--quantite{
+    margin-top: 1rem;
+    color: green;
+    font-weight: 700;
+  }
+}
+
+//bloc droit pour le prix et options
+&__box__cart{
+  width: vars.$productW;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 1rem;
+
+  &--price{
+  font-weight: bold;
+  color: #1A3E51;
+  font-size: 40px;
+  }
+
+  &--price__quantite{
+    width: 40%;
+    color: green;
+  }
+
+  //style des btns
+  &--btn-add{
+    background-color: #1A3E51;
+    border-radius: 3rem;
+    color: white;
+    width: 40%;
+    padding: .5rem;
+    border: rgb(207, 206, 205) 1px solid;
+    box-shadow: 0 0 1px 2px rgb(230, 229, 229);
+    margin: .3rem auto .3rem auto;
+
+    &:hover{
+      background-color: white;
+      color: #1A3E51;
+      border: rgb(207, 206, 205) 2px solid;
+    }
+  }
+
+  &--btn-fav{
+    background-color: #b8c53e;
+    border-radius: 3rem;
+    color: white;
+    width: 40%;
+    padding: .5rem;
+    border: rgb(207, 206, 205) 1px solid;
+    box-shadow: 0 0 1px 2px rgb(230, 229, 229);
+    margin: .3rem auto .3rem auto;
+  
+    &:hover{
+      background-color: white;
+      color: #b8c53e;
+      border: rgb(207, 206, 205) 2px solid;
+      
+    }
+
+  }
+
+  &--number{
+    background-color: #DBCAC0;
+    color: black;
+    border-radius: 3rem;
+    width: 40%;
+    padding: .5rem;
+    border: rgb(207, 206, 205) 1px solid;
+    box-shadow: 0 0 1px 2px rgb(230, 229, 229);
+    margin: .3rem auto .3rem auto;
+    text-align: center;
+
+    &:hover{
+      background-color: white;
+      color: #DBCAC0;
+      border: rgb(207, 206, 205) 2px solid;
+      cursor: zoom-in;
+    }
+  }
+}
+}
+
+
+.image__un{
+  background-image: url(./img/goldengate.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image__deux{
+  background-image: url(./img/pendentif-fleur-de-vie-11_1600x.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image__trois{
+  background-image: url(./img/boucles-d-oreille-a7tna-bijoux-1-75-double-color.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+

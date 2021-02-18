@@ -1,25 +1,47 @@
-.header{
+.header {
   padding-top: 4rem;
 
-  &__ul{
+  &__ul {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+    background-color: #d9d9d9;
+    width: 80vw;
+    margin: 2rem auto;
+    border: solid 2px #e0b5ba;
+    border-radius: 1rem;
 
-    &--li{
+    &--li {
       height: 2rem;
-      width: 9rem;
+      width: 10rem;
       align-self: center;
       padding: 0.5rem;
-      border: solid 2px pink;
       border-radius: 1rem;
     }
 
-    &--li:hover{
-      background-color: pink;
+    &--li:hover {
+      background-color: #e0b5ba;
     }
   }
 }
-img{
+
+img {
   height: 8rem;
+}
+
+@media (max-width: 700px) {
+
+  .header {
+    position: relative;
+    &__ul {
+      flex-direction: column;
+      position: absolute;
+      top: 2.5rem;
+
+      &--li{
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
 }

@@ -3,9 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\OrderRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Ignore;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
@@ -25,20 +27,24 @@ class Order
      */
     private $date;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity=OrderLine::class, mappedBy="orderEntity")
+     * @Ignore()
+     */
+    private $orderLines;
+
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
+     * @Ignore()
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
-    /**
-     * @ORM\OneToMany(targetEntity=OrderLine::class, mappedBy="orderEntity")
-     */
-    private $orderLines;
-
     public function __construct()
     {
         $this->orderLines = new ArrayCollection();
+        $this->date = new DateTime();
     }
 
     public function getId(): ?int
@@ -58,17 +64,6 @@ class Order
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 
     /**
      * @return Collection|OrderLine[]
@@ -96,6 +91,18 @@ class Order
                 $orderLine->setOrderEntity(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
