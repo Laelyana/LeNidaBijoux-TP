@@ -12,15 +12,41 @@ const Slider = ({ manageLoad, slider }) => {
   );
 
 //code vanilla slider
-let timerSlide = '2500'; //timer
-let slider__list = document.querySelector('#slider'); //la div parent qui contient les div photos
-let slider__items = document.querySelectorAll('.slider__item'); //la div enfant, la variables sélectionne toutes les class du même nom
-let sliderItemNumber = slider__items.length; //nombre de divs slider__item
-let btnGauche = document.querySelector('.slider__gauche'); //btn gauche
-let btnDroit = document.querySelector('.slider__droite'); //btn droit
+var slideIndex = "1";
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slider = document.getElementsByClassName("slider__list");
+  var slides = document.getElementsByClassName("slider__item");
+  var dots = document.getElementsByClassName("slider__btn--haut");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 3; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    console.log("none");
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+      console.log("active");
+  }
+ 
+}
+
 
 function gauche() {
 console.log("clic gauche");
+
 };
 
 function droite() {
@@ -30,7 +56,7 @@ function droite() {
   return (
 
     <div className="slider">
-    <div className="slider__btn--haut" ></div>
+    <div className="slider__btn--haut"></div>
     <div id="slider__list">
     <div>
       {
@@ -41,10 +67,10 @@ function droite() {
       }
     </div>
     </div>
-    <div className="slider__gauche" onClick={gauche}>
+    <div className="slider__gauche" onClick={plusSlides(-1)}>
     <div className="slider__btn"></div>
     </div>
-    <div className="slider__droite" onClick={droite}>
+    <div className="slider__droite" onClick={plusSlides(1)}>
     <div className="slider__btn"></div>
     </div>
     
