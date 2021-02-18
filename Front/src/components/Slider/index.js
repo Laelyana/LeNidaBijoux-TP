@@ -26,7 +26,10 @@ function Direction(sens) {
   let slideGeneral = document.getElementById("slider__list");
   let slides = document.querySelectorAll(".slide__item");
   var children = slideGeneral.childNodes;
+  let figure = slideGeneral.childElementCount;
+  console.log(figure);
   
+  console.log(figure);
 
 
   console.log(children);
