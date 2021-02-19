@@ -8,12 +8,12 @@ import './slider.scss';
 window.addEventListener('click', onClick, true);
 function onClick(e) {
   e.stopPropagation();
-  //let numImages = figure.childElementCount;
  let slides = document.querySelectorAll(".slider__img");
 console.log(slides);
  let section = document.querySelector("section");
  console.log(section);
  let numImages = section.childElementCount;
+ console.log(numImages);
  let t = e.target;
  let currImage = 0;
  
