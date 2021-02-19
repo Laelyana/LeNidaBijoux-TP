@@ -25,6 +25,7 @@ import Favorites from 'src/containers/Favorites';
 import UserData from 'src/components/UserData';
 import UserOrder from 'src/components/UserOrder';
 import UserShop from 'src/components/UserShop';
+import Products from 'src/components/products';
 
 // == Composant
 const App = ({ isLogged }) => (

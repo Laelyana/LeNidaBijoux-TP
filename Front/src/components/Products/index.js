@@ -1,31 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 import './Products.scss';
+import Products from './Products';
 
-const Products = () => (
-  <div className="products">
+const Products = ({ manageLoad, products }) => {
+  useEffect(
+    manageLoad,
+    [],
+  );
+  return (
+    <div className="products">
+      {
+        products.map((product) => (
 
-    <a href="/produit"><div className="prod prod__img prod__img--un">
-      <div className="prod__band">
-        <div className="prod__band--title">PRODUIT 1</div>
-      </div>
-    </div></a>
-
-    <a href="/produit"><div className="prod prod__img prod__img--deux">
-      <div className="prod__band">
-        <div className="prod__band--title">PRODUIT 2</div>
-      </div>
-    </div></a>
-
-    <a href="/produit"><div className="prod prod__img prod__img--trois">
-      <div className="prod__band">
-        <div className="prod__band--title">PRODUIT 3</div>
-      </div>
-    </div></a>
-
-  </div>
-);
+          <Products key={product.id} {...product} />
+        ))
+      }
+    </div>
+  );
+};
 
 
 export default Products;
