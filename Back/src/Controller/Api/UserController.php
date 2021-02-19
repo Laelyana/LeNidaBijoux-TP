@@ -24,7 +24,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/api/users", name="api_users_add", methods={"POST"})
+     * @Route("/api/users/sign_in", name="api_users_add", methods={"POST"})
      */
     public function add(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder): Response
     {    
