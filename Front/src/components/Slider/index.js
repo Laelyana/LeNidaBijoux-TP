@@ -5,8 +5,8 @@ import Slide from './slide';
 import './slider.scss';
 
 //code vanilla slider
-window.addEventListener('click', onClick, true);
-function onClick(e) {
+window.addEventListener('click', onClickSlider, true);
+function onClickSlider(e) {
   e.stopPropagation();
  let slides = document.querySelectorAll(".slider__img");
 //console.log(slides);
