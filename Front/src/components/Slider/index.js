@@ -5,15 +5,6 @@ import Slide from './slide';
 import './slider.scss';
 
 //code vanilla slider
-// let children  = document.querySelectorAll("slider__img");
-// console.log(children);
-let carousel = document.querySelector("slider__list");
- 
- //let children = figure.childElementCount;
- let nav = document.querySelector('nav');
- //let numImages = figure.childElementCount;
- 
- let currImage = 0;
 
 window.addEventListener('click', onClick, true);
 
