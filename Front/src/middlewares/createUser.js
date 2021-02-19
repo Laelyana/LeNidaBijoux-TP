@@ -12,7 +12,7 @@ export default (store) => (next) => (action) => {
         email,
       } = store.getState().createUser;
       axios.post(
-        'http://0.0.0.0:8000/api/users',
+        'http://0.0.0.0:8000/api/users/sign_in',
         {
           email,
           password,
@@ -21,9 +21,10 @@ export default (store) => (next) => (action) => {
           phoneNumber,
         },
       ).then((response) => {
+        console.log(response);
         window.alert('Votre compte est créé, vous pouvez vous connecter');
       }).catch((response) => {
-        console.log(response);
+        window.alert('ca ne marche pas !');
       });
       next(action);
       break;

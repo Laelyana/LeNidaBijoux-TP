@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
 import UserData from 'src/components/UserData';
+import { fetchUserData } from '../../actions/user';
+
+const mapDispatchToProps = (dispatch) => ({
+  manageLoad: () => {
+    dispatch(fetchUserData());
+  },
+});
 
 const mapStateToProps = (state) => ({
-  lastname: state.user.lastname,
-  firstname: state.user.firstname,
-  phoneNumber: state.user.phoneNumber,
-  email: state.user.email,
+  data: state.editUser.data,
 });
-export default connect(mapStateToProps, null)(UserData);
+export default connect(mapStateToProps, mapDispatchToProps)(UserData);

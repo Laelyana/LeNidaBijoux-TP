@@ -1,28 +1,24 @@
 import axios from 'axios';
-import { EDIT_USER } from '../actions/user';
+
+import { saveUserEditData, FETCH_USER_DATA } from '../actions/user';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
-    case EDIT_USER: {
-      const {
-        lastname,
-        firstname,
-        phoneNumber,
-        email,
-      } = store.getState().user;
-      axios.patch(
-        'http://0.0.0.0:8000/api/users',
-        {
-          email,
-          firstname,
-          lastname,
-          phoneNumber,
+    case FETCH_USER_DATA: {
+      const { token } = store.getState().user;
+      axios.get('http://0.0.0.0:8000/api/users', {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      ).then((response) => {
+      })
+        .then((response) => {
+          console.log(response.data);
+          store.dispatch(saveUserEditData(response.data));
+        }).catch((error) => {
+          console.log('error');
+        }).finally((response) => {
 
-      }).catch((error) => {
-        console.log(error);
-      });
+        });
       next(action);
       break;
     }
