@@ -29,7 +29,7 @@ class Order
 
 
     /**
-     * @ORM\OneToMany(targetEntity=OrderLine::class, mappedBy="orderEntity")
+     * @ORM\OneToMany(targetEntity=OrderLine::class, mappedBy="orderEntity", orphanRemoval=true)
      * @Ignore()
      */
     private $orderLines;
