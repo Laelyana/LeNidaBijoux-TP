@@ -5,17 +5,15 @@ import Slide from './slide';
 import './slider.scss';
 
 //code vanilla slider
-
 window.addEventListener('click', onClick, true);
-
 function onClick(e) {
   e.stopPropagation();
   //let numImages = figure.childElementCount;
- let amount = document.querySelectorAll(".slide__img").length;
- console.log(amount);
- let figure = document.querySelectorAll(".slide__item");
- let children = document.querySelectorAll("slide__img");
- let numImages = figure.childElementCount;
+ let slides = document.querySelectorAll(".slider__img");
+console.log(slides);
+ let section = document.querySelector("section");
+ console.log(section);
+ let numImages = section.childElementCount;
  let t = e.target;
  let currImage = 0;
  
@@ -25,6 +23,7 @@ function onClick(e) {
  if (t.classList.contains('slider__next')) {
    currImage++;
    console.log("clic ++");
+
  }
 
  else {
