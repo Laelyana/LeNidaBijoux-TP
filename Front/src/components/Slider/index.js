@@ -61,7 +61,7 @@ const Slider = ({ manageLoad, slider }) => {
       </div>
     </div>
     <nav>
-    <button className="slider__prev">prev</button>
+    <button className="slider__prev" >prev</button>
     <button className="slider__next">next</button>
     </nav>
   </div>
