@@ -23,7 +23,7 @@ import Cgv from 'src/components/Cgv';
 import Dashboard from 'src/components/Dashboard';
 import Favorites from 'src/containers/Favorites';
 import UserData from 'src/containers/UserData';
-import UserOrders from 'src/components/UserOrders';
+import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/components/UserShop';
 
 // == Composant
