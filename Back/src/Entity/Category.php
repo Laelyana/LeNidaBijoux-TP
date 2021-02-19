@@ -32,13 +32,13 @@ class Category
 
     /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="category")
-     * 
+     * @Ignore()
      */
     private $products;
 
     /**
      * @ORM\OneToMany(targetEntity=Style::class, mappedBy="category")
-     * 
+     * @Ignore()
      */
     private $styles;
 
