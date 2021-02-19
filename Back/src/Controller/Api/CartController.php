@@ -86,7 +86,7 @@ class CartController extends AbstractController
 
             $email = (new Email())
             ->from('nicoOclock@gmail.com')
-            ->to('nicolaspairon@yahoo.fr')
+            ->to($user->getEmail())
             ->subject('Votre Commande du Nid à Bijoux !')
             ->text(
             'Votre commande n° '.$order->getId().' du '.$order->getDate()->format('d-m-Y \à H\hi').' est confirmé !'."\n"."\n".
