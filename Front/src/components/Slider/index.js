@@ -5,33 +5,42 @@ import Slide from './slide';
 import './slider.scss';
 
 //code vanilla slider
-let children  = document.querySelectorAll("slider__img");
-console.log(children);
+// let children  = document.querySelectorAll("slider__img");
+// console.log(children);
 let carousel = document.querySelector("slider__list");
- let figure = document.querySelector("slide__item");
+ 
  //let children = figure.childElementCount;
  let nav = document.querySelector('nav');
  //let numImages = figure.childElementCount;
- //let theta =  2 * Math.PI / numImages;
+ 
  let currImage = 0;
 
 window.addEventListener('click', onClick, true);
 
 function onClick(e) {
+  e.stopPropagation();
+  //let numImages = figure.childElementCount;
+ let amount = document.querySelectorAll(".slide__img").length;
  
- var t = e.target;
+ let figure = document.querySelectorAll(".slide__item");
+ let children = document.querySelectorAll("slide__img");
+ let numImages = figure.childElementCount;
+ let t = e.target;
+ let currImage = 0;
+ 
  if (t.tagName.toUpperCase() != 'BUTTON')
-   return;
+		return;
  
  if (t.classList.contains('slider__next')) {
    currImage++;
-   
+   console.log("clic ++");
  }
+
  else {
    currImage--;
-   
+   console.log("clic --");
  }
- 
+
 }
 
 
