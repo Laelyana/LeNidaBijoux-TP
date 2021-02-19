@@ -52,7 +52,7 @@ class UserController extends AbstractController
             $em->flush();
 
             // after add the data in database we return what we have added
-            return $this->json($user);
+            return $this->json($user,201);
         }
         else 
         {
