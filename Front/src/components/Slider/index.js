@@ -4,6 +4,36 @@ import Slide from './slide';
 
 import './slider.scss';
 
+//code vanilla slider
+let children  = document.querySelectorAll("slider__img");
+console.log(children);
+let carousel = document.querySelector("slider__list");
+ let figure = document.querySelector("slide__item");
+ //let children = figure.childElementCount;
+ let nav = document.querySelector('nav');
+ //let numImages = figure.childElementCount;
+ //let theta =  2 * Math.PI / numImages;
+ let currImage = 0;
+
+window.addEventListener('click', onClick, true);
+
+function onClick(e) {
+ 
+ var t = e.target;
+ if (t.tagName.toUpperCase() != 'BUTTON')
+   return;
+ 
+ if (t.classList.contains('slider__next')) {
+   currImage++;
+   console.log("clic ++");
+ }
+ else {
+   currImage--;
+   console.log("clic --");
+ }
+ 
+}
+
 
 const Slider = ({ manageLoad, slider }) => {
   useEffect(
@@ -11,64 +41,26 @@ const Slider = ({ manageLoad, slider }) => {
     [],
   );
 
-//code vanilla slider
-// let slides = document.querySelector("slider__list");
-let slideItems  = document.querySelectorAll("slider__item");
-// let left = document.getElementsByClassName("slider__gauche");
-// let right = document.getElementsByClassName("slider__droite");
-// let state = true;
-// let currentSlide = 0;
-
-
-
-
-function Direction(sens) {
-  let slideGeneral = document.getElementById("slider__list");
-  let slides = document.querySelectorAll(".slide__item");
-  var children = slideGeneral.childNodes;
-  let figure = slideGeneral.childElementCount;
-  console.log(figure);
   
-  console.log(figure);
-
-
-  console.log(children);
-  let slideNumber = 0;
-  slideNumber = slideNumber + sens;
-    if (slideNumber < 0){
-      slideNumber = slides.length - 1;
-    slides.index = +1;
-      console.log("clic -1");
-     
-    }
-    if (slideNumber> slides.length - 1)
-    {slideNumber = 0; console.log("clic +1"); }
-    
-    //setInterval("ChangeSlide(1)", 4000);
-}
-
 
   return (
 
     <div className="slider">
     <div className="slider__btn--haut"></div>
     <div id="slider__list">
-    
+    <div className="slider__item">
       {
         slider.map((slide) => (
           <Slide key={slide.id} {...slide} />
         
         ))
       }
-    
+      </div>
     </div>
-    <div className="slider__gauche" onClick={() => Direction(-1)}>
-    <div className="slider__btn"></div>
-    </div>
-    <div className="slider__droite" onClick={() => Direction(1)}>
-    <div className="slider__btn"></div>
-    </div>
-    
+    <nav>
+    <button className="slider__prev">prev</button>
+    <button className="slider__next">next</button>
+    </nav>
   </div>
 
 

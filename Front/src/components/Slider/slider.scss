@@ -40,7 +40,7 @@
   }
 }
 //coté défilement gauche
-&__gauche{
+&__prev{
   position: absolute;
   width: 10%;
   height: 100%;
@@ -58,7 +58,7 @@
   }
 }
 //coté défilement droite
-&__droite{
+&__next{
   position: absolute;
   width: 10%;
   height: 100%;
@@ -107,7 +107,7 @@
     border-radius: 3rem 3rem 3rem 3rem;
 }
 
-50% {
+0% {
   border-radius: 4rem 4rem 4rem 4rem;
   width: 20%;
   opacity: .4;
@@ -132,6 +132,13 @@
     opacity: .6;
 }
 }
+nav {
 
-
-
+}
+button {
+  position: absolute;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: rgb(19, 1, 1);
+  font-weight: bold;
+}
