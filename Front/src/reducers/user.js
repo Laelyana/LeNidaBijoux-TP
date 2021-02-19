@@ -18,7 +18,7 @@ export default (state = initialState, action = {}) => {
     case SAVE_USER_DATA:
       return {
         ...state,
-        logged: action.data.data.logged,
+        logged: true,
         token: action.data.token,
         userId: action.data.data.userId,
       };
