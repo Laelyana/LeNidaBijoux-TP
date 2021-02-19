@@ -21,13 +21,13 @@ function onClickSlider(e) {
  if (t.classList.contains('slider__next')) {
    currImage++;
    section.className = "slider__img slider__img--active";
-   console.log("clic ++");
+   //console.log("clic ++");
 
  }
 
  else {
    currImage--;
-   console.log("clic --");
+   //console.log("clic --");
    currImage = currImage.length-1
    section.className = "slider__img slider__img";
  }
