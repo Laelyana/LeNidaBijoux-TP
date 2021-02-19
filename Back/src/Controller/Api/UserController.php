@@ -3,6 +3,7 @@
 namespace App\Controller\Api;
 
 use App\Entity\User;
+use App\Form\UserPatchType;
 use App\Form\UserType;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
@@ -38,7 +39,6 @@ class UserController extends AbstractController
         // we simulate the submission of the form to active the constraints validation
         $form->submit($infoFromClientAsArray);
 
-
         if ($form->isValid())
         {   
             // we retrieve the password in visible
@@ -52,7 +52,7 @@ class UserController extends AbstractController
             $em->flush();
 
             // after add the data in database we return what we have added
-            return $this->json($user);
+            return $this->json($user,201);
         }
         else 
         {
@@ -70,7 +70,7 @@ class UserController extends AbstractController
 
         $user = $this->getUser();
 
-        $form = $this->createForm(UserType::class, $user, ['csrf_protection' => false]);
+        $form = $this->createForm(UserPatchType::class, $user, ['csrf_protection' => false]);
 
         $form->submit($infoFromClientAsArray, false);
 
@@ -84,6 +84,23 @@ class UserController extends AbstractController
                     
                     $user->setPassword($encodedPassword);
             }
+
+            if(isset($infoFromClientAsArray['email'])){
+                $user->setEmail($infoFromClientAsArray['email']);
+            }
+
+            if(isset($infoFromClientAsArray['firstname'])){
+                $user->setFirstname($infoFromClientAsArray['firstname']);
+            }
+
+            if(isset($infoFromClientAsArray['lastname'])){
+                $user->setLastname($infoFromClientAsArray['lastname']);
+            }
+
+            if(isset($infoFromClientAsArray['phoneNumber'])){
+                $user->setPhoneNumber($infoFromClientAsArray['phoneNumber']);
+            }
+
 
             $user->setUpdatedAt(new DateTime());
 
