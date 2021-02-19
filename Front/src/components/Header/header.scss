@@ -1,47 +1,54 @@
 .header {
   padding-top: 4rem;
-
-  &__ul {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-    margin-bottom: 6rem;
-    background-color: #d9d9d9;
-    width: 80vw;
-    margin: 2rem auto;
-    border: solid 2px #e0b5ba;
-    border-radius: 1rem;
-
-    &--li {
-      height: 2rem;
-      width: 10rem;
-      align-self: center;
-      padding: 0.5rem;
-      border-radius: 1rem;
-    }
-
-    &--li:hover {
-      background-color: #e0b5ba;
-    }
-  }
+  
 }
 
 img {
   height: 8rem;
 }
 
-@media (max-width: 700px) {
 
-  .header {
-    position: relative;
-    &__ul {
-      flex-direction: column;
-      position: absolute;
-      top: 2.5rem;
 
-      &--li{
-        margin-bottom: 0.5rem;
-      }
+.navigation{
+ background-color: transparent;
+ margin: 2rem auto;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ overflow: hidden;
+
+  &__ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 2rem auto 2rem auto;
+    background-color: #fcfbfb;
+    width: 80vw;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+    border: .2rem white solid;
+    overflow: hidden;
+  }
+    &__li {
+      height: 2rem;
+      width: 10rem;
+      align-self: center;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      margin: 0 auto;
+      margin: 1rem auto 1rem auto;
+      background-color: #C2858C;
+      color: whitesmoke;
+      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+
+    &:hover {
+      background-color: #1A3E51;
+      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+      border-radius: 2rem;
+      transform: rotate(3deg);
+      color: white;
     }
   }
 }
