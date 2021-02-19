@@ -36,9 +36,13 @@ class FavoriteController extends AbstractController
         if($user = $userRepo->find($userId)){
 
                 if($product = $productRepo->find($productId)){
+                    
+                    $product->setLiked($product->getLiked() + 1);
+                    $em->persist($product);
         
                     $user->addProduct($product);
                     $em->persist($user);
+
                     $em->flush();
                     return $this->json($user->getProduct(), 200);
         
@@ -62,8 +66,12 @@ class FavoriteController extends AbstractController
 
             if($product = $productRepo->find($productId)){
     
+                $product->setLiked($product->getLiked() - 1);
+                $em->persist($product);
+
                 $user->removeProduct($product);
                 $em->persist($user);
+
                 $em->flush();
             }
 

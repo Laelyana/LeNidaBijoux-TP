@@ -51,6 +51,10 @@
   text-align: center;
   opacity: .3;
   overflow: hidden;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: rgb(19, 1, 1);
+  font-weight: bold;
 //lors du hover on lance l'animation en bas de page
   &:hover{
     opacity: .6;
@@ -68,6 +72,10 @@
   top: 0;
   text-align: center;
   opacity: .3;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: rgb(19, 1, 1);
+  font-weight: bold;
 //lors du hover on lance l'animation en bas de page
   &:hover{
     opacity: .6;
@@ -135,10 +143,11 @@
 nav {
 
 }
-button {
-  position: absolute;
-  cursor: pointer;
-  letter-spacing: 1px;
-  color: rgb(19, 1, 1);
-  font-weight: bold;
+
+
+
+.img2 {
+  display: none;
 }
+
+

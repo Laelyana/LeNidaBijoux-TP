@@ -32,13 +32,13 @@ class Category
 
     /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="category")
-     * @Ignore()
+     * 
      */
     private $products;
 
     /**
      * @ORM\OneToMany(targetEntity=Style::class, mappedBy="category")
-     * @Ignore()
+     * 
      */
     private $styles;
 
@@ -46,6 +46,10 @@ class Category
     {
         $this->products = new ArrayCollection();
         $this->styles = new ArrayCollection();
+    }
+    public function __toString()
+    {
+        return $this->name;
     }
 
     public function getId(): ?int

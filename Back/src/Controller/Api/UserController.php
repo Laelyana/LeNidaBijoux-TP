@@ -4,7 +4,6 @@ namespace App\Controller\Api;
 
 use App\Entity\User;
 use App\Form\UserType;
-use App\Repository\UserRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,19 +15,11 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/api/users", name="api_users_browse", methods={"GET"})
+     * @Route("/api/users", name="api_users_read", methods={"GET"})
      */
-    public function browse(UserRepository $userRepo): Response
+    public function read(): Response
     {
-        return $this->json($userRepo->findAll());
-
-    }
-
-    /**
-     * @Route("/api/users/{id}", name="api_users_read", methods={"GET"}, requirements={"id": "\d+"})
-     */
-    public function read(User $user): Response
-    {
+        $user = $this->getUser();
         return $this->json($user);
     }
 
@@ -65,17 +56,19 @@ class UserController extends AbstractController
         }
         else 
         {
-            return $this->json((string) $form->getErrors(true, false), Response::HTTP_BAD_REQUEST); // sent the errors of the constraints validation
+            return $this->json([(string) $form->getErrors(true, false)], Response::HTTP_BAD_REQUEST); // sent the errors of the constraints validation
         }
 
     }
 
     /**
-     * @Route("/api/users/{id}", name="api_users_edit", methods={"PATCH"}, requirements={"id": "\d+"})
+     * @Route("/api/users", name="api_users_edit", methods={"PATCH"})
      */
-    public function edit(User $user, Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function edit(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $infoFromClientAsArray = json_decode($request->getContent(), true);
+
+        $user = $this->getUser();
 
         $form = $this->createForm(UserType::class, $user, ['csrf_protection' => false]);
 
@@ -100,23 +93,24 @@ class UserController extends AbstractController
         }
         else 
         {
-            return $this->json((string) $form->getErrors(true, false), Response::HTTP_BAD_REQUEST);
+            return $this->json([(string) $form->getErrors(true, false)], Response::HTTP_BAD_REQUEST);
         }
 
     }
 
     /**
-     * @Route("/api/users/{id}", name="api_users_delete", methods={"DELETE"}, requirements={"id": "\d+"})
+     * @Route("/api/users", name="api_users_delete", methods={"DELETE"})
      */
-    public function delete(UserRepository $userRepo, EntityManagerInterface $em, int $id): Response
+    public function delete(EntityManagerInterface $em): Response
     {
-        if($userRepo->find($id)){
-            $em->remove($userRepo->find($id));
+        $user = $this->getUser();
+       
+        if ($user) {
+            $em->remove($user);
             $em->flush();
-            return $this->json(null,204);
-        }else{
-            return $this->json(null,204);
         }
+
+        return $this->json(null,204);
         
     }
 

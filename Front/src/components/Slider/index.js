@@ -21,7 +21,11 @@ function onClick(e) {
   e.stopPropagation();
   //let numImages = figure.childElementCount;
  let amount = document.querySelectorAll(".slide__img").length;
+<<<<<<< HEAD
  
+=======
+ console.log(amount);
+>>>>>>> front
  let figure = document.querySelectorAll(".slide__item");
  let children = document.querySelectorAll("slide__img");
  let numImages = figure.childElementCount;
