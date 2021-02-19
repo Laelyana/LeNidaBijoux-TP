@@ -4,6 +4,38 @@ import Slide from './slide';
 
 import './slider.scss';
 
+//code vanilla slider
+window.addEventListener('click', onClick, true);
+function onClick(e) {
+  e.stopPropagation();
+ let slides = document.querySelectorAll(".slider__img");
+//console.log(slides);
+ let section = document.querySelector("section");
+ //console.log(section);
+ let numImages = section.childElementCount;
+ //console.log(numImages);
+ let t = e.target;
+ let currImage = 0;
+ 
+ if (t.tagName.toUpperCase() != 'BUTTON')
+		return;
+ 
+ if (t.classList.contains('slider__next')) {
+   currImage++;
+   section.className = "slider__img active";
+   console.log("clic ++");
+
+ }
+
+ else {
+   currImage--;
+   console.log("clic --");
+   section.className = "slider__img";
+ }
+
+}
+
+
 const Slider = ({ manageLoad, slider }) => {
   useEffect(
     manageLoad,

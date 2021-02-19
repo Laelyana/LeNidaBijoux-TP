@@ -10,9 +10,9 @@ import './slider.scss';
 
 
 const Slide = ({id, picture}) => (
-   
+   <section>
   <img id={id} className="slider__img" src={picture} alt="" />
- 
+ </section>
 );
 
 
