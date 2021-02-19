@@ -4,12 +4,15 @@ namespace App\Controller\Api;
 
 use App\Entity\Order;
 use App\Entity\OrderLine;
+use App\Repository\OrderLineRepository;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -18,7 +21,7 @@ class CartController extends AbstractController
     /**
      * @Route("/api/carts/users", name="api_carts", methods={"POST"})
      */
-    public function add(OrderRepository $orderRepo, ProductRepository $productRepo, Request $request, EntityManagerInterface $em): Response
+    public function add(OrderRepository $orderRepo, ProductRepository $productRepo, OrderLineRepository $orderLineRepo, Request $request, EntityManagerInterface $em, MailerInterface $mailer): Response
     {
         $user = $this->getUser();
 
@@ -67,8 +70,33 @@ class CartController extends AbstractController
             }
 
             $em->flush();
-            
+
+            $orderlines = $orderLineRepo->findBy(['orderEntity' => $order->getId()]); // récupération de la commande en BDD
+
+            $message = '';
+            $total = 0;
+
+            foreach($orderlines as $orderline){
+
+                $ligne = 'Article: " '.$orderline->getLabelProduct().' " / quantité: '.$orderline->getQuantity().' / prix unitaire: '.number_format($orderline->getPriceProduct(), 2, ",", " ").' euros TTC'."\n";
+
+                $message .= $ligne;
+                $total += $orderline->getPriceProduct()*$orderline->getQuantity();
+            } // préparation d'un message récapitulatif de la commande
+
+            $email = (new Email())
+            ->from('nicoOclock@gmail.com')
+            ->to('nicolaspairon@yahoo.fr')
+            ->subject('Votre Commande du Nid à Bijoux !')
+            ->text(
+            'Votre commande n° '.$order->getId().' du '.$order->getDate()->format('d-m-Y \à H\hi').' est confirmé !'."\n"."\n".
+            'Détails: '."\n".$message."\n".' Pour un Total de : '.number_format($total, 2, ",", " ").' euros TTC'       
+            );
+
+            $mailer->send($email); //envoie du mail de confirmation au client
+
             return $this->json($order, 200);
+            
 
         }else{
 
