@@ -5,8 +5,8 @@ import Slide from './slide';
 import './slider.scss';
 
 //code vanilla slider
-// let children  = document.querySelectorAll("slider__img");
-// console.log(children);
+// // let children  = document.querySelectorAll("slider__img");
+// // console.log(children);
 // let carousel = document.querySelector("slider__list");
  
 //  //let children = figure.childElementCount;
@@ -20,7 +20,7 @@ import './slider.scss';
 // function onClick(e) {
 //   e.stopPropagation();
 //   //let numImages = figure.childElementCount;
-//  let amount = document.querySelectorAll(".slide__img");
+//  let amount = document.querySelectorAll(".slide__img").length;
 //  let figure = document.querySelectorAll(".slide__item");
 //  let children = document.querySelectorAll("slide__img");
 //  let numImages = figure.childElementCount;
