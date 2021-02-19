@@ -12,8 +12,6 @@ function onClick(e) {
 //console.log(slides);
  let section = document.querySelector("section");
  //console.log(section);
- let numImages = section.childElementCount;
- //console.log(numImages);
  let t = e.target;
  let currImage = 0;
  
@@ -22,7 +20,7 @@ function onClick(e) {
  
  if (t.classList.contains('slider__next')) {
    currImage++;
-   section.className = "slider__img active";
+   section.className = "slider__img slider__img--active";
    console.log("clic ++");
 
  }
@@ -30,7 +28,8 @@ function onClick(e) {
  else {
    currImage--;
    console.log("clic --");
-   section.className = "slider__img";
+   currImage = currImage.length-1
+   section.className = "slider__img slider__img";
  }
 
 }
