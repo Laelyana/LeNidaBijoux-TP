@@ -23,7 +23,7 @@ import Cgv from 'src/components/Cgv';
 import Dashboard from 'src/components/Dashboard';
 import Favorites from 'src/containers/Favorites';
 import UserData from 'src/containers/UserData';
-import UserOrder from 'src/components/UserOrder';
+import UserOrders from 'src/components/UserOrders';
 import UserShop from 'src/components/UserShop';
 
 // == Composant
@@ -86,7 +86,7 @@ const App = ({ isLogged }) => (
     {isLogged
       && (
         <Route path="/mon-compte/mes-commandes">
-          <UserOrder />
+          <UserOrders />
         </Route>
       )}
     {isLogged
