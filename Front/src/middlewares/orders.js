@@ -1,12 +1,12 @@
 import axios from 'axios';
-
+import apiUrl from 'src/utils/api';
 import { saveOrders, FETCH_ORDERS } from '../actions/orders';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_ORDERS: {
       const { token } = store.getState().user;
-      axios.get('http://0.0.0.0:8000/api/orders/users', {
+      axios.get(`${apiUrl()}orders/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

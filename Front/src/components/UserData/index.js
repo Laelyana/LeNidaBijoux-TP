@@ -11,7 +11,6 @@ const UserData = ({
     manageLoad,
     [],
   );
-console.log(data);
   return (
     <div className="userdata">
       <h2>Vos données personnelles</h2>

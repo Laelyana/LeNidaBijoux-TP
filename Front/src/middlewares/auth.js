@@ -1,4 +1,5 @@
 import axios from 'axios';
+import apiUrl from 'src/utils/api';
 import { LOG_IN, saveUserData } from '../actions/user';
 
 export default (store) => (next) => (action) => {
@@ -6,7 +7,7 @@ export default (store) => (next) => (action) => {
     case LOG_IN: {
       const { username, password } = store.getState().user;
       axios.post(
-        'http://0.0.0.0:8000/api/login_check',
+        `${apiUrl()}login_check`,
         {
           username,
           password,
