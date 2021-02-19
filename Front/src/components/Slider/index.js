@@ -4,7 +4,6 @@ import Slide from './slide';
 
 import './slider.scss';
 
-
 const Slider = ({ manageLoad, slider }) => {
   useEffect(
     manageLoad,
@@ -12,7 +11,7 @@ const Slider = ({ manageLoad, slider }) => {
   );
   console.log(slider);
 
-  //code vanilla slider
+  // code vanilla slider
   // let children  = document.querySelectorAll("slider__img");
   // console.log(children);
   let carousel = document.querySelector("slider__list");
@@ -48,17 +47,12 @@ const Slider = ({ manageLoad, slider }) => {
       currImage--;
       console.log("clic --");
     }
-
   }
-
-
   const Slider = ({ manageLoad, slider }) => {
     useEffect(
       manageLoad,
       [],
     );
-
-
 
     return (
 
@@ -79,8 +73,6 @@ const Slider = ({ manageLoad, slider }) => {
           <button className="slider__next">next</button>
         </nav>
       </div>
-
-
     );
   };
 };
