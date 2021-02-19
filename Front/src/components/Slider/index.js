@@ -25,11 +25,11 @@ function onClick(e) {
  
  if (t.classList.contains('slider__next')) {
    currImage++;
-   console.log("clic ++");
+   
  }
  else {
    currImage--;
-   console.log("clic --");
+   
  }
  
 }
