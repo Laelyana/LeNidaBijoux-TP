@@ -22,7 +22,7 @@ import Contact from 'src/components/Contact';
 import Cgv from 'src/components/Cgv';
 import Dashboard from 'src/components/Dashboard';
 import Favorites from 'src/containers/Favorites';
-import UserData from 'src/components/UserData';
+import UserData from 'src/containers/UserData';
 import UserOrder from 'src/components/UserOrder';
 import UserShop from 'src/components/UserShop';
 

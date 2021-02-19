@@ -5,6 +5,9 @@ export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const CREATE_USER = 'CREATE_USER';
 export const SAVE_NEW_USER_DATA = 'SAVE_NEW_USER_DATA';
 export const CHANGE_NEW_USER_FIELD = 'CHANGE_NEW_USER_FIELD';
+export const EDIT_USER = 'CREATE_USER';
+export const SAVE_EDIT_USER_DATA = 'SAVE_NEW_USER_DATA';
+export const CHANGE_EDIT_USER_FIELD = 'CHANGE_NEW_USER_FIELD';
 
 export const changeUserField = (fieldValue, fieldName) => ({
   type: CHANGE_USER_FIELD,
@@ -32,4 +35,16 @@ export const createUser = () => ({
 export const saveNewUserData = (newData) => ({
   type: SAVE_NEW_USER_DATA,
   newData,
+});
+export const editUser = () => ({
+  type: EDIT_USER,
+});
+export const saveEditUserData = (newData) => ({
+  type: SAVE_EDIT_USER_DATA,
+  newData,
+});
+export const changeEditUserField = (fieldValue, fieldName) => ({
+  type: CHANGE_EDIT_USER_FIELD,
+  fieldValue,
+  fieldName,
 });
