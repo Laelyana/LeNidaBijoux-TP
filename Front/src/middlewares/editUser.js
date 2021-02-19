@@ -9,7 +9,7 @@ export default (store) => (next) => (action) => {
         firstname,
         phoneNumber,
         email,
-      } = store.getState().editUser;
+      } = store.getState().user;
       axios.patch(
         'http://0.0.0.0:8000/api/users',
         {

@@ -7,6 +7,7 @@ export default (store) => (next) => (action) => {
     case FETCH_COLLECTIONS:
       axios.get('http://0.0.0.0:8000/api/colections')
         .then((response) => {
+          console.log(response);
           store.dispatch(saveCollections(response.data));
         }).catch((error) => {
           console.log('error');
