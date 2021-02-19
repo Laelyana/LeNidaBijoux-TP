@@ -4,6 +4,45 @@ import Slide from './slide';
 
 import './slider.scss';
 
+//code vanilla slider
+// let children  = document.querySelectorAll("slider__img");
+// console.log(children);
+let carousel = document.querySelector("slider__list");
+ 
+ //let children = figure.childElementCount;
+ let nav = document.querySelector('nav');
+ //let numImages = figure.childElementCount;
+ 
+ let currImage = 0;
+
+window.addEventListener('click', onClick, true);
+
+function onClick(e) {
+  e.stopPropagation();
+  //let numImages = figure.childElementCount;
+ let amount = document.querySelectorAll(".slide__img").length;
+ console.log(amount);
+ let figure = document.querySelectorAll(".slide__item");
+ let children = document.querySelectorAll("slide__img");
+ let numImages = figure.childElementCount;
+ let t = e.target;
+ let currImage = 0;
+ 
+ if (t.tagName.toUpperCase() != 'BUTTON')
+		return;
+ 
+ if (t.classList.contains('slider__next')) {
+   currImage++;
+   console.log("clic ++");
+ }
+
+ else {
+   currImage--;
+   console.log("clic --");
+ }
+
+}
+
 
 const Slider = ({ manageLoad, slider }) => {
   useEffect(
@@ -11,72 +50,29 @@ const Slider = ({ manageLoad, slider }) => {
     [],
   );
 
-//code vanilla slider
-var slideIndex = "1";
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slider = document.getElementsByClassName("slider__list");
-  var slides = document.getElementsByClassName("slider__item");
-  var dots = document.getElementsByClassName("slider__btn--haut");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 3; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    console.log("none");
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-      console.log("active");
-  }
- 
-}
-
-
-function gauche() {
-console.log("clic gauche");
-
-};
-
-function droite() {
-  console.log("clic droite");
-  };
+  
 
   return (
 
     <div className="slider">
     <div className="slider__btn--haut"></div>
     <div id="slider__list">
-    <div>
+    <div className="slider__item">
       {
         slider.map((slide) => (
           <Slide key={slide.id} {...slide} />
         
         ))
       }
+      </div>
     </div>
-    </div>
-    <div className="slider__gauche" onClick={plusSlides(-1)}>
-    <div className="slider__btn"></div>
-    </div>
-    <div className="slider__droite" onClick={plusSlides(1)}>
-    <div className="slider__btn"></div>
-    </div>
-    
+    <nav>
+    <button className="slider__prev">prev</button>
+    <button className="slider__next">next</button>
+    </nav>
   </div>
 
- 
+
   );
 };
 

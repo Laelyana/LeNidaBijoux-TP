@@ -9,9 +9,9 @@ import './slider.scss';
 
 
 
-const Slide = ({id, picture, active}) => (
+const Slide = ({id, picture}) => (
    
-  <div className="slider__item" id={id}><img className="slider__img" src={picture} alt="" /></div>
+  <img id={id} className="slider__img" src={picture} alt="" />
  
 );
 

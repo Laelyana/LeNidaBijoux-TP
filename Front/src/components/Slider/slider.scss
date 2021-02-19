@@ -40,7 +40,7 @@
   }
 }
 //coté défilement gauche
-&__gauche{
+&__prev{
   position: absolute;
   width: 10%;
   height: 100%;
@@ -51,14 +51,18 @@
   text-align: center;
   opacity: .3;
   overflow: hidden;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: rgb(19, 1, 1);
+  font-weight: bold;
 //lors du hover on lance l'animation en bas de page
   &:hover{
     opacity: .6;
-    animation: move_btn 3s infinite; //nom de l'animation + temp + boucle à l'infinie
+    animation: move_btn 2s infinite; //nom de l'animation + temp + boucle à l'infinie
   }
 }
 //coté défilement droite
-&__droite{
+&__next{
   position: absolute;
   width: 10%;
   height: 100%;
@@ -68,10 +72,14 @@
   top: 0;
   text-align: center;
   opacity: .3;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: rgb(19, 1, 1);
+  font-weight: bold;
 //lors du hover on lance l'animation en bas de page
   &:hover{
     opacity: .6;
-    animation: move_btn 3s infinite; //nom de l'animation + temp + boucle à l'infinie
+    animation: move_btn 2s infinite; //nom de l'animation + temp + boucle à l'infinie
   }
 }
 //class pour la balsie img
@@ -107,7 +115,7 @@
     border-radius: 3rem 3rem 3rem 3rem;
 }
 
-50% {
+0% {
   border-radius: 4rem 4rem 4rem 4rem;
   width: 20%;
   opacity: .4;
@@ -132,6 +140,14 @@
     opacity: .6;
 }
 }
+nav {
 
+}
+
+
+
+.img2 {
+  display: none;
+}
 
 
