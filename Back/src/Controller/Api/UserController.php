@@ -4,7 +4,6 @@ namespace App\Controller\Api;
 
 use App\Entity\User;
 use App\Form\UserType;
-use App\Repository\UserRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -70,9 +69,7 @@ class UserController extends AbstractController
         $infoFromClientAsArray = json_decode($request->getContent(), true);
 
         $user = $this->getUser();
-        //dump($user);
-        //$user2 = new User();
-       // dd($user2);
+
         $form = $this->createForm(UserType::class, $user, ['csrf_protection' => false]);
 
         $form->submit($infoFromClientAsArray, false);
@@ -96,22 +93,21 @@ class UserController extends AbstractController
         }
         else 
         {
-            return $this->json((string) $form->getErrors(true, false), Response::HTTP_BAD_REQUEST);
+            return $this->json([(string) $form->getErrors(true, false)], Response::HTTP_BAD_REQUEST);
         }
 
     }
 
     /**
-     * @Route("/api/users", name="api_users_delete", methods={"DELETE"}, requirements={"id": "\d+"})
+     * @Route("/api/users", name="api_users_delete", methods={"DELETE"})
      */
     public function delete(EntityManagerInterface $em): Response
     {
         $user = $this->getUser();
-
+       
         if ($user) {
             $em->remove($user);
             $em->flush();
-            return $this->json(null, 204);
         }
 
         return $this->json(null,204);
