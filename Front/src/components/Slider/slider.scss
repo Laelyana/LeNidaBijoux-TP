@@ -12,6 +12,7 @@
   height: vars.$cardH;
   overflow: hidden;
 
+
 //une class enfant du slider qui hébergera les images
 &__item{
   background-color: transparent;
@@ -93,6 +94,9 @@
     height: 100%;
     object-fit: cover;
   }
+  &--active{
+    display: none;
+  }
 }
 
 }
@@ -146,8 +150,5 @@ nav {
 
 
 
-.active {
-  display: none;
-}
 
 
