@@ -6,7 +6,6 @@ use App\Entity\Order;
 use App\Entity\OrderLine;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
-use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,11 +16,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class CartController extends AbstractController
 {
     /**
-     * @Route("/api/carts/users/{id}", name="api_carts", methods={"POST"})
+     * @Route("/api/carts/users", name="api_carts", methods={"POST"})
      */
-    public function add(int $id, OrderRepository $orderRepo, ProductRepository $productRepo, UserRepository $userRepo, Request $request, EntityManagerInterface $em): Response
+    public function add(OrderRepository $orderRepo, ProductRepository $productRepo, Request $request, EntityManagerInterface $em): Response
     {
-        if($user = $userRepo->find($id)){
+        $user = $this->getUser();
+
+        if($user){
 
             $infoFromClientAsArray = json_decode($request->getContent(), false);
 
