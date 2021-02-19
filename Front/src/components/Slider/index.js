@@ -48,33 +48,28 @@ const Slider = ({ manageLoad, slider }) => {
       console.log("clic --");
     }
   }
-  const Slider = ({ manageLoad, slider }) => {
-    useEffect(
-      manageLoad,
-      [],
-    );
 
-    return (
+  return (
 
-      <div className="slider">
-        <div className="slider__btn--haut"></div>
-        <div id="slider__list">
-          <div className="slider__item">
-            {
-              slider.map((slide) => (
-                <Slide key={slide.id} {...slide} />
+    <div className="slider">
+      <div className="slider__btn--haut"></div>
+      <div id="slider__list">
+        <div className="slider__item">
+          {
+            slider.map((slide) => (
+              <Slide key={slide.id} {...slide} />
 
-              ))
-            }
-          </div>
+            ))
+          }
         </div>
-        <nav>
-          <button className="slider__prev">prev</button>
-          <button className="slider__next">next</button>
-        </nav>
       </div>
-    );
-  };
+      <nav>
+        <button className="slider__prev">prev</button>
+        <button className="slider__next">next</button>
+      </nav>
+    </div>
+  );
 };
+
 
 export default Slider;
