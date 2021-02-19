@@ -6,7 +6,7 @@ import './slider.scss';
 
 //code vanilla slider
 
-let SliderGenerale = addEventListener('click', onClickSlider, true);
+//let SliderGenerale = addEventListener('click', onClickSlider, true);
 
 
 function onClickSlider(e) {
