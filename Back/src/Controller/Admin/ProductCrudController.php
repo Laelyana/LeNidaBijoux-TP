@@ -24,12 +24,12 @@ class ProductCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name','Nom du produit'),
-            IntegerField::new('price','Prix'),
+            NumberField::new('price','Prix'),
             TextEditorField::new('description','Description'),
-            ImageField::new('picture1','Photo n°1'),
-            ImageField::new('picture2','Photo n°2'),
-            ImageField::new('picture3','Photo n°3'),
-            NumberField::new('stock', 'Stock'),
+            ImageField::new('picture1','Photo n°1')->setUploadDir('public/pictures'),
+            ImageField::new('picture2','Photo n°2')->setUploadDir('public/pictures'),
+            ImageField::new('picture3','Photo n°3')->setUploadDir('public/pictures'),
+            IntegerField::new('stock', 'Stock'),
             AssociationField::new('category', 'Catégorie'),
             AssociationField::new('colection', 'Collection'),
             AssociationField::new('style', 'Style'),
