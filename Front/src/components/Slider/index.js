@@ -10,6 +10,7 @@ const Slider = ({ manageLoad, slider }) => {
     manageLoad,
     [],
   );
+  console.log(slider);
 
 //code vanilla slider
 var slideIndex = "1";
