@@ -1,49 +1,85 @@
 .footer {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: pink;
+  margin: 2rem auto 2rem auto;
+  background-color: #fcfbfb;
   width: 80vw;
-  height: 100px;
-  margin: 0 auto;
-  border-radius: 3rem 3rem 0 0;
+  margin: 1rem auto;
+  border-radius: 1rem;
   box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+  border: .2rem white solid;
+  overflow: hidden;
 
   &__legals{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
 
     &--ul{
       display: flex;
       flex-direction: column;
+      flex-wrap: wrap;
       justify-content: space-evenly;
-      height: 100%;
+    }
+
+    &--li{
+      padding: 0.5rem;
+      border-radius: 1rem;
+      margin: 1rem auto 1rem auto;
+      background-color: #C2858C;
+      color: whitesmoke;
+      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+
+      &:hover {
+        background-color: #1A3E51;
+        box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+        border-radius: 2rem;
+        transform: rotate(3deg);
+        color: white;
+      }
     }
   }
 
   &__social{
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
 
-  &__contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 
-    &--ul{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      height: 100%;
+    &--logo{
+      margin-left: 0rem;
+      padding: .20rem;
     }
   }
+
+ &__contact{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  letter-spacing: .1rem;
+
+  &--li-form{
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin: 1rem auto 1rem auto;
+    background-color: #C2858C;
+    color: whitesmoke;
+    box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+
+    &:hover {
+      background-color: #1A3E51;
+      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+      border-radius: 2rem;
+      transform: rotate(3deg);
+      color: white;
+    }
+  }
+ }
+
 }
 
-.socialLogo{
-  height: 60px;
-  width: auto;
-  margin-left: 1rem;
-}
+
