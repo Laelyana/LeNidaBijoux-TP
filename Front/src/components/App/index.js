@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // == Import
 import './styles.scss';
@@ -76,6 +77,9 @@ const App = ({ isLogged }) => (
     <Footer />
   </div>
 );
+App.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+};
 
 // == Export
 export default App;

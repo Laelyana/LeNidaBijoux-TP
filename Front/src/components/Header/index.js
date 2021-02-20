@@ -1,7 +1,5 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
-
 import reactLogo from './img.jpg';
 
 import './header.scss';
