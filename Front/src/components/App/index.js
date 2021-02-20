@@ -25,6 +25,7 @@ import Favorites from 'src/containers/Favorites';
 import UserData from 'src/containers/UserData';
 import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/components/UserShop';
+import PrivateRoute from 'src/components/PrivateRoute';
 
 // == Composant
 const App = ({ isLogged }) => (
@@ -65,36 +66,11 @@ const App = ({ isLogged }) => (
     <Route path="/conditions-de-vente">
       <Cgv />
     </Route>
-    {isLogged
-      && (
-        <Route path="/mon-compte" exact>
-          <Dashboard />
-        </Route>
-      )}
-    {isLogged
-      && (
-        <Route path="/mon-compte/mes-favoris">
-          <Favorites />
-        </Route>
-      )}
-    {isLogged
-      && (
-        <Route path="/mon-compte/mes-infos">
-          <UserData />
-        </Route>
-      )}
-    {isLogged
-      && (
-        <Route path="/mon-compte/mes-commandes">
-          <UserOrders />
-        </Route>
-      )}
-    {isLogged
-      && (
-        <Route path="/mon-compte/mon-panier">
-          <UserShop />
-        </Route>
-      )}
+    <PrivateRoute path="/mon-compte" isLogged={isLogged} component={Dashboard} exact />
+    <PrivateRoute path="/mon-compte/mes-favoris" isLogged={isLogged} component={Favorites} exact />
+    <PrivateRoute path="/mon-compte/mes-infos" isLogged={isLogged} component={UserData} exact />
+    <PrivateRoute path="/mon-compte/mes-commandes" isLogged={isLogged} component={UserOrders} exact />
+    <PrivateRoute path="/mon-compte/mon-panier" isLogged={isLogged} component={UserShop} exact />
     <Footer />
   </div>
 );
