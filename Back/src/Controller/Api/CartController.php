@@ -73,29 +73,43 @@ class CartController extends AbstractController
 
             $em->flush();
 
-            $orderlines = $orderLineRepo->findBy(['orderEntity' => $order->getId()]); // récupération de la commande en BDD
+            // -------------------return the validation by email to the seller and the buyer:---------------------
 
-            $message = '';
+            $orderlines = $orderLineRepo->findBy(['orderEntity' => $order->getId()]); // retrieve the order from the database
+
+            $messageDetails = '';
             $total = 0;
 
-            foreach($orderlines as $orderline){
-
+            foreach($orderlines as $orderline){ // making a text summary message of the passed order
                 $ligne = 'Article: " '.$orderline->getLabelProduct().' " / quantité: '.$orderline->getQuantity().' / prix unitaire: '.number_format($orderline->getPriceProduct(), 2, ",", " ").' euros TTC'."\n";
-
-                $message .= $ligne;
+                $messageDetails .= $ligne;
                 $total += $orderline->getPriceProduct()*$orderline->getQuantity();
-            } // préparation d'un message récapitulatif de la commande
+            } 
+            $messageDetails .= "\n".' Pour un Total de : '.number_format($total, 2, ",", " ").' euros TTC';
 
-            $email = (new Email())
+            $emailBuyer = (new Email())
             ->from('nicoOclock@gmail.com')
             ->to($user->getEmail())
             ->subject('Votre Commande du Nid à Bijoux !')
             ->text(
-            'Votre commande n° '.$order->getId().' du '.$order->getDate()->format('d-m-Y \à H\hi').' est confirmé !'."\n"."\n".
-            'Détails: '."\n".$message."\n".' Pour un Total de : '.number_format($total, 2, ",", " ").' euros TTC'       
+            'Votre commande n° '.$order->getId().' du '.$order->getDate()->format('d-m-Y \à H\hi\m\i\ns\s').' est confirmé !'."\n"."\n".
+            'Détails: '."\n".$messageDetails       
             );
 
-            $mailer->send($email); //envoie du mail de confirmation au client
+            $mailer->send($emailBuyer); // send the confirmation email to the buyer
+
+            $emailSeller = (new Email())
+            ->from('nicoOclock@gmail.com')
+            ->to('nicoOclock@gmail.com')
+            ->subject('BON DE COMMANDE n° '.$order->getId().' du Nid à Bijoux !')
+            ->text(
+            'Commande n° '.$order->getId().' de '.$user->getFirstname().' '.$user->getLastname().' du '.$order->getDate()->format('d-m-Y \à H\hi\m\i\ns\s').' est confirmé !'."\n"."\n".
+            'Email de l\'acheteur: '.$user->getEmail()."\n".
+            'Téléphone de l\'acheteur: '.$user->getPhoneNumber()."\n"."\n".
+            'Détails: '."\n".$messageDetails      
+            );
+
+            $mailer->send($emailSeller); // send the confirmation email to the seller
 
             return $this->json($order, 200);
             
