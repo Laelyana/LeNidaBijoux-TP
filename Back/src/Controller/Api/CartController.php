@@ -60,12 +60,14 @@ class CartController extends AbstractController
                 $quantity = $cart->quantity;
                 $product = $productRepo->find($productId);
 
+                $product->setStock($product->getStock() - $quantity);
+                $em->persist($product);
+
                 $orderLine = new OrderLine();
                 $orderLine->setQuantity($quantity);
                 $orderLine->setLabelProduct($product->getName());
                 $orderLine->setPriceProduct($product->getPrice());
                 $orderLine->setOrderEntity($order);
-                
                 $em->persist($orderLine);
             }
 
