@@ -1,13 +1,18 @@
 import axios from 'axios';
 import apiUrl from 'src/utils/api';
-import { saveCategories, FETCH_CATEGORIES } from '../actions/categories';
+import { saveUserEditData, FETCH_USER_DATA } from '../actions/user';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
-    case FETCH_CATEGORIES:
-      axios.get(`${apiUrl()}categories`)
+    case FETCH_USER_DATA: {
+      const { token } = store.getState().user;
+      axios.get(`${apiUrl()}users`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
         .then((response) => {
-          store.dispatch(saveCategories(response.data));
+          store.dispatch(saveUserEditData(response.data));
         }).catch((error) => {
           console.log('error');
         }).finally((response) => {
@@ -15,6 +20,7 @@ export default (store) => (next) => (action) => {
         });
       next(action);
       break;
+    }
     default:
       next(action);
   }

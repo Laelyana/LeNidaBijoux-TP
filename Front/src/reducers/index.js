@@ -6,6 +6,8 @@ import categoriesReducer from '../reducers/categories';
 import favoritesReducer from '../reducers/favorites';
 import createUserReducer from '../reducers/createUser';
 import sliderReducer from '../reducers/slider';
+import editUserReducer from '../reducers/editUser';
+import ordersReducer from '../reducers/orders';
 // on importer les différents reducers
 
 const combineReducer = combineReducers({
@@ -15,6 +17,8 @@ const combineReducer = combineReducers({
   favorites: favoritesReducer,
   createUser: createUserReducer,
   slider: sliderReducer,
+  editUser: editUserReducer,
+  orders: ordersReducer,
   // on combine tous les reducers
 });
 
