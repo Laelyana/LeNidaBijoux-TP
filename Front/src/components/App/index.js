@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // == Import
 import './styles.scss';
@@ -32,45 +32,47 @@ const App = ({ isLogged }) => (
   <div className="app">
     <Bandeau />
     <Header />
-    <Route path="/" exact>
-      <Slider />
-      <Main />
-    </Route>
-    <Route path="/categories">
-      <Categories />
-    </Route>
-    <Route path="/collections">
-      <Collections />
-    </Route>
-    <Route path="/:name/produits">
-      <Products />
-    </Route>
-    <Route path="/produit">
-      <Product />
-    </Route>
-    <Route path="/:name/produits">
-      <Products />
-    </Route>
-    <Route path="/login">
-      <LoginPage />
-    </Route>
-    <Route path="/mentions-legales">
-      <LegalsMentions />
-    </Route>
-    <Route path="/l-atelier">
-      <Presentation />
-    </Route>
-    <Route path="/contactez-moi">
-      <Contact />
-    </Route>
-    <Route path="/conditions-de-vente">
-      <Cgv />
-    </Route>
-    <PrivateRoute path="/mon-compte" isLogged={isLogged} component={Dashboard} exact />
-    <PrivateRoute path="/mon-compte/mes-favoris" isLogged={isLogged} component={Favorites} exact />
-    <PrivateRoute path="/mon-compte/mes-infos" isLogged={isLogged} component={UserData} exact />
-    <PrivateRoute path="/mon-compte/mes-commandes" isLogged={isLogged} component={UserOrders} exact />
-    <PrivateRoute path="/mon-compte/mon-panier" isLogged={isLogged} component={UserShop} exact />
+    <Switch>
+      <Route path="/" exact>
+        <Slider />
+        <Main />
+      </Route>
+      <Route path="/categories">
+        <Categories />
+      </Route>
+      <Route path="/collections">
+        <Collections />
+      </Route>
+      <Route path="/:name/produits">
+        <Products />
+      </Route>
+      <Route path="/produit">
+        <Product />
+      </Route>
+      <Route path="/:name/produits">
+        <Products />
+      </Route>
+      <Route path="/login">
+        <LoginPage />
+      </Route>
+      <Route path="/mentions-legales">
+        <LegalsMentions />
+      </Route>
+      <Route path="/l-atelier">
+        <Presentation />
+      </Route>
+      <Route path="/contactez-moi">
+        <Contact />
+      </Route>
+      <Route path="/conditions-de-vente">
+        <Cgv />
+      </Route>
+      <PrivateRoute path="/mon-compte" isLogged={isLogged} component={Dashboard} exact />
+      <PrivateRoute path="/mon-compte/mes-favoris" isLogged={isLogged} component={Favorites} exact />
+      <PrivateRoute path="/mon-compte/mes-infos" isLogged={isLogged} component={UserData} exact />
+      <PrivateRoute path="/mon-compte/mes-commandes" isLogged={isLogged} component={UserOrders} exact />
+      <PrivateRoute path="/mon-compte/mon-panier" isLogged={isLogged} component={UserShop} exact />
+    </Switch>
     <Footer />
   </div>
 );
