@@ -27,35 +27,50 @@ class CartController extends AbstractController
 
         if($user){
 
-            $infoFromClientAsArray = json_decode($request->getContent(), false);
+            $infoFromClientAsArray = json_decode($request->getContent(), false); //we retrive the provided data
 
-            $errors=[];
+            $errorsProduct=[];
+            $errorsStock=[];
 
             foreach ($infoFromClientAsArray as $cart) {
                 $productId = $cart->productId;
                 $quantity = $cart->quantity;
-                
+
+                    // we verify if the provided data is valid
                 if (! $product = $productRepo->find($productId)) {
-                    $errors[]="product doesn't exist";
+                    $errorsProduct[]='the product: - '.$productId.' - doesn\'t exist';
                 }
 
-                if (! is_int($quantity) || $quantity<0) {
-                    $errors[]="the quantity is not valid";
+                if (! is_int($quantity) || $quantity<=0) {
+                    $errorsProduct[]='the quantity: - '.$quantity.' - is not valid';
+                }
+
+                if(count($errorsProduct) > 0){  // if the data has a wrong format we stop the process
+                    return $this->json($errorsProduct, 400);
+                }
+
+                if ($quantity > $product->getStock()) { // we verify if the products are in stock
+                    if($product->getStock()>0){
+                        $errorsStock[]='Il ne reste que '.$product->getStock().' '.$product->getName().' en stock';
+                    }else{
+                        $errorsStock[]='L\'article: '.$product->getName().' n\'est plus en stock';
+                    }
                 }
             }
 
-            if(count($errors) > 0){
-                return $this->json($errors, 400);
+            if(count($errorsStock) > 0){ // if the products are sold out we return a specific response
+                return $this->json($errorsStock, 302);
                 
             }
 
+            // if all the data is ok (user+products+quantity) we save the order in the data base
             $order = new Order();
             $order->setUser($user);
             $em->persist($order);
             $em->flush();
             
-            foreach($infoFromClientAsArray as $cart){
-
+            foreach($infoFromClientAsArray as $cart){ // and we can save the details of the order in database just now
+                                                      // because the object '$order' is a mandatory foreigh key.
                 $productId = $cart->productId;
                 $quantity = $cart->quantity;
                 $product = $productRepo->find($productId);
@@ -81,7 +96,7 @@ class CartController extends AbstractController
             $total = 0;
 
             foreach($orderlines as $orderline){ // making a text summary message of the passed order
-                $ligne = 'Article: " '.$orderline->getLabelProduct().' " / quantité: '.$orderline->getQuantity().' / prix unitaire: '.number_format($orderline->getPriceProduct(), 2, ",", " ").' euros TTC'."\n";
+                $ligne = 'Article: '.$orderline->getLabelProduct().' / quantité: '.$orderline->getQuantity().' / prix unitaire: '.number_format($orderline->getPriceProduct(), 2, ",", " ").' euros TTC'."\n";
                 $messageDetails .= $ligne;
                 $total += $orderline->getPriceProduct()*$orderline->getQuantity();
             } 
@@ -111,7 +126,7 @@ class CartController extends AbstractController
 
             $mailer->send($emailSeller); // send the confirmation email to the seller
 
-            return $this->json($order, 200);
+            return $this->json($order, 201);
             
 
         }else{
