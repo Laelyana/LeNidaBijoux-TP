@@ -19,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CartController extends AbstractController
 {
     /**
-     * @Route("/api/carts/users", name="api_carts", methods={"POST"})
+     * @Route("/api/carts/users", name="api_carts_add", methods={"POST"})
      */
     public function add(OrderRepository $orderRepo, ProductRepository $productRepo, OrderLineRepository $orderLineRepo, Request $request, EntityManagerInterface $em, MailerInterface $mailer): Response
     {
@@ -27,12 +27,12 @@ class CartController extends AbstractController
 
         if($user){
 
-            $infoFromClientAsArray = json_decode($request->getContent(), false); //we retrive the provided data
+            $infoFromClientAsObject = json_decode($request->getContent(), false); //we retrive the provided data
 
             $errorsProduct=[];
             $errorsStock=[];
 
-            foreach ($infoFromClientAsArray as $cart) {
+            foreach ($infoFromClientAsObject as $cart) {
                 $productId = $cart->productId;
                 $quantity = $cart->quantity;
 
@@ -69,13 +69,13 @@ class CartController extends AbstractController
             $em->persist($order);
             $em->flush();
             
-            foreach($infoFromClientAsArray as $cart){ // and we can save the details of the order in database just now
+            foreach($infoFromClientAsObject as $cart){ // and we can save the details of the order in database just now
                                                       // because the object '$order' is a mandatory foreigh key.
                 $productId = $cart->productId;
                 $quantity = $cart->quantity;
                 $product = $productRepo->find($productId);
 
-                $product->setStock($product->getStock() - $quantity);
+                $product->setStock($product->getStock() - $quantity); // update the stock
                 $em->persist($product);
 
                 $orderLine = new OrderLine();
@@ -128,6 +128,72 @@ class CartController extends AbstractController
 
             return $this->json($order, 201);
             
+
+        }else{
+
+            return $this->json("this user doesn't exit", 404);
+
+        }  
+    }
+
+    /**
+     * @Route("/api/carts/{id}/users", name="api_carts_delete", methods={"DELETE"})
+     */
+    public function delete(int $id, OrderRepository $orderRepo, EntityManagerInterface $em, MailerInterface $mailer, OrderLineRepository $orderLineRepo, ProductRepository $productRepo): Response
+    {
+        $user = $this->getUser();
+
+        if($user){
+       
+            if($order = $orderRepo->find($id)){
+
+                $orderlines = $orderLineRepo->findBy(['orderEntity' => $order->getId()]); // retrieve the order from the database
+    
+                $messageDetails = '';
+                $total = 0;
+    
+                foreach($orderlines as $orderline){ // making a text summary message of the passed order
+                    $ligne = 'Article: '.$orderline->getLabelProduct().' / quantité: '.$orderline->getQuantity().' / prix unitaire: '.number_format($orderline->getPriceProduct(), 2, ",", " ").' euros TTC'."\n";
+                    $messageDetails .= $ligne;
+                    $total += $orderline->getPriceProduct()*$orderline->getQuantity();
+
+                    $product = $productRepo->findOneBy(["name"=>$orderline->getLabelProduct(), "price"=>$orderline->getPriceProduct()]); // retrieve the product
+
+                    $product->setStock($product->getStock() + $orderline->getQuantity());// update the stock
+                    $em->persist($product);
+
+                } 
+                $messageDetails .= "\n".' Pour un Total de : '.number_format($total, 2, ",", " ").' euros TTC';
+
+                $emailBuyer = (new Email()) // Preparing the email of cancellation to the buyer
+                ->from('nicoOclock@gmail.com')
+                ->to($user->getEmail())
+                ->subject('ANNULATION de votre Commande du Nid à Bijoux')
+                ->text(
+                'Votre commande n° '.$order->getId().' du '.$order->getDate()->format('d-m-Y \à H\hi\m\i\ns\s').' est ANNULÉE !'."\n"."\n".
+                'Détails: '."\n".$messageDetails."\n"."\n".'ANNULÉE'        
+                );
+
+                $emailSeller = (new Email())// Preparing the email of cancellation to the seller
+                ->from('nicoOclock@gmail.com')
+                ->to('nicoOclock@gmail.com')
+                ->subject('ANNULATION COMMANDE n° '.$order->getId().' du Nid à Bijoux')
+                ->text(
+                'Commande n° '.$order->getId().' de '.$user->getFirstname().' '.$user->getLastname().' du '.$order->getDate()->format('d-m-Y \à H\hi\m\i\ns\s').' est ANNULÉE !'."\n"."\n".
+                'Email de l\'acheteur: '.$user->getEmail()."\n".
+                'Téléphone de l\'acheteur: '.$user->getPhoneNumber()."\n"."\n".
+                'Détails: '."\n".$messageDetails."\n"."\n".'ANNULÉE'    
+                );
+
+                $user->removeOrder($order); // delete the order with all order lines
+
+                $em->flush();
+
+                $mailer->send($emailSeller); // send the cancellation email to the seller
+                $mailer->send($emailBuyer); // send the cancellation email to the buyer
+            }
+
+            return $this->json(null,204);
 
         }else{
 
