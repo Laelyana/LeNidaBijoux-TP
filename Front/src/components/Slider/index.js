@@ -5,10 +5,6 @@ import Slide from './slide';
 import './slider.scss';
 
 //code vanilla slider
-
-//let SliderGenerale = addEventListener('click', onClickSlider, true);
-
-
 function onClickSlider(e) {
   e.stopPropagation();
  let slides = document.querySelectorAll(".slider__img");
@@ -17,7 +13,7 @@ function onClickSlider(e) {
  //console.log(section);
  let t = e.target;
  let currImage = 0;
- 
+
  if (t.tagName.toUpperCase() != 'BUTTON')
 		return;
  
@@ -25,7 +21,6 @@ function onClickSlider(e) {
    currImage++;
    section.className = "slider__img slider__img--active";
    //console.log("clic ++");
-
  }
 
  else {
@@ -34,7 +29,6 @@ function onClickSlider(e) {
    currImage = currImage.length-1
    section.className = "slider__img slider__img";
  }
-
 }
 
 
@@ -45,43 +39,7 @@ const Slider = ({ manageLoad, slider }) => {
   );
   console.log(slider);
 
-  // code vanilla slider
-  // let children  = document.querySelectorAll("slider__img");
-  // console.log(children);
-  let carousel = document.querySelector("slider__list");
 
-  //let children = figure.childElementCount;
-  let nav = document.querySelector('nav');
-  //let numImages = figure.childElementCount;
-
-  let currImage = 0;
-
-  window.addEventListener('click', onClick, true);
-
-  function onClick(e) {
-    e.stopPropagation();
-    //let numImages = figure.childElementCount;
-    let amount = document.querySelectorAll(".slide__img").length;
-    console.log(amount);
-    let figure = document.querySelectorAll(".slide__item");
-    let children = document.querySelectorAll("slide__img");
-    let numImages = figure.childElementCount;
-    let t = e.target;
-    let currImage = 0;
-
-    if (t.tagName.toUpperCase() != 'BUTTON')
-      return;
-
-    if (t.classList.contains('slider__next')) {
-      currImage++;
-      console.log("clic ++");
-    }
-
-    else {
-      currImage--;
-      console.log("clic --");
-    }
-  }
 
   return (
 
@@ -98,8 +56,8 @@ const Slider = ({ manageLoad, slider }) => {
         </div>
       </div>
       <nav>
-        <button className="slider__prev">prev</button>
-        <button className="slider__next">next</button>
+        <button className="slider__prev" onClick={() => onClickSlider(1)}>prev</button>
+        <button className="slider__next" onClick={() => onClickSlider()}>next</button>
       </nav>
     </div>
   );
