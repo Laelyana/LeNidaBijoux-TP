@@ -19,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CartController extends AbstractController
 {
     /**
-     * @Route("/api/carts/users", name="api_carts", methods={"POST"})
+     * @Route("/api/carts/users", name="api_carts_add", methods={"POST"})
      */
     public function add(OrderRepository $orderRepo, ProductRepository $productRepo, OrderLineRepository $orderLineRepo, Request $request, EntityManagerInterface $em, MailerInterface $mailer): Response
     {
