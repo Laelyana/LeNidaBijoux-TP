@@ -22,6 +22,11 @@ export default (state = initialState, action = {}) => {
     case CREATE_USER:
       return {
         ...state,
+        email: '',
+        password: '',
+        firstname: '',
+        lastname: '',
+        phoneNumber: '',
       };
     default:
       return {
