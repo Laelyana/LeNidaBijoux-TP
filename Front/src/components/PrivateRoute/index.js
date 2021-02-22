@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const PrivateRoute = ({ component: Component, isLogged, ...rest }) => (
 
@@ -14,5 +15,9 @@ const PrivateRoute = ({ component: Component, isLogged, ...rest }) => (
     )}
   />
 );
+
+PrivateRoute.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+};
 
 export default PrivateRoute;
