@@ -7,5 +7,7 @@ const Favorite = ({ name }) => (
     <button type="button" className="favorites__list--item--button">Supprimer</button>
   </div>
 );
-
+Favorite.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 export default Favorite;

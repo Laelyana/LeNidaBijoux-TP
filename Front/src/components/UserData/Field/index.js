@@ -39,6 +39,7 @@ Field.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 Field.defaultProps = {

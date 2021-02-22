@@ -27,6 +27,6 @@ const UserShop = () => (
       </div>
     </div>
   </div>
-)
+);
 
 export default UserShop;

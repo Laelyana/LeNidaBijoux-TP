@@ -32,5 +32,9 @@ const Bandeau = ({ isLogged, handleLogout }) => (
     </div>
   </div>
 );
+Bandeau.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+  handleLogout: PropTypes.func.isRequired,
+};
 
 export default Bandeau;

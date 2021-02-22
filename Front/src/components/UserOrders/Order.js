@@ -12,4 +12,7 @@ const Order = ({ date }) => {
     </div>
   );
 };
+Order.propTypes = {
+  date: PropTypes.number.isRequired,
+};
 export default Order;
