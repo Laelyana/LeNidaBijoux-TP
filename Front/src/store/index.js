@@ -50,6 +50,7 @@ const store = createStore(
       createUserMiddleware,
       editUserMiddleware,
       ordersMiddleware,
+      sliderMiddleware,
     ),
   ),
 );
