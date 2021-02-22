@@ -44,14 +44,11 @@ const App = ({ isLogged }) => (
       <Route path="/collections">
         <Collections />
       </Route>
-      <Route path="/:name/produits">
+      <Route path=":name/produits">
         <Products />
       </Route>
       <Route path="/produit">
         <Product />
-      </Route>
-      <Route path="/:name/produits">
-        <Products />
       </Route>
       <Route path="/login">
         <LoginPage />

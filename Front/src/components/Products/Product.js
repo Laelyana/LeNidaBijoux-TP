@@ -6,7 +6,7 @@ import './products.scss';
 
 const Product = ({ name }) => (
   <>
-    <Link to={`/${name}/produits/`}>
+    <Link to={`/${name}/`}>
       <div className="products">
         <div className="prod prod__img prod__img--un">
           <div className="prod__band">

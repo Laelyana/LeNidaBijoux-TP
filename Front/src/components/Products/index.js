@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './products.scss';
-import Product from './product';
+import Product from './Product';
 
 const Products = ({ manageLoad, products }) => {
   useEffect(
