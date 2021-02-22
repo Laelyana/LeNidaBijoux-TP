@@ -12,6 +12,10 @@ export default (state = initialState, action = {}) => {
     case SAVE_USER_EDIT_DATA:
       return {
         ...state,
+        email: action.data.email,
+        firstname: action.data.firstname,
+        lastname: action.data.lastname,
+        phoneNumber: action.data.phoneNumber,
       };
     case CHANGE_EDIT_USER_FIELD:
       return {
