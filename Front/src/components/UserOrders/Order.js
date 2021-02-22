@@ -13,6 +13,6 @@ const Order = ({ date }) => {
   );
 };
 Order.propTypes = {
-  date: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
 };
 export default Order;

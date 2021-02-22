@@ -1,12 +1,14 @@
 export const CHANGE_USER_FIELD = 'CHANGE_USER_FIELD';
+export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
-export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const CREATE_USER = 'CREATE_USER';
-export const SAVE_NEW_USER_DATA = 'SAVE_NEW_USER_DATA';
 export const CHANGE_NEW_USER_FIELD = 'CHANGE_NEW_USER_FIELD';
+export const SAVE_NEW_USER_DATA = 'SAVE_NEW_USER_DATA';
 export const FETCH_USER_DATA = 'FETCH_USER_DATA';
 export const SAVE_USER_EDIT_DATA = 'SAVE_USER_EDIT_DATA';
+export const CHANGE_EDIT_USER_FIELD = 'CHANGE_EDIT_USER_FIELD';
+export const EDIT_USER = 'EDIT_USER';
 
 export const changeUserField = (fieldValue, fieldName) => ({
   type: CHANGE_USER_FIELD,
@@ -18,25 +20,37 @@ export const changeNewUserField = (fieldValue, fieldName) => ({
   fieldValue,
   fieldName,
 });
+export const changeEditUserField = (fieldValue, fieldName) => ({
+  type: CHANGE_EDIT_USER_FIELD,
+  fieldValue,
+  fieldName,
+});
+
 export const logIn = () => ({
   type: LOG_IN,
 });
 export const logOut = () => ({
   type: LOG_OUT,
 });
+
+export const createUser = () => ({
+  type: CREATE_USER,
+});
+export const editUser = () => ({
+  type: EDIT_USER,
+});
+
+export const fetchUserData = () => ({
+  type: FETCH_USER_DATA,
+});
+
 export const saveUserData = (data) => ({
   type: SAVE_USER_DATA,
   data,
 });
-export const createUser = () => ({
-  type: CREATE_USER,
-});
 export const saveNewUserData = (newData) => ({
   type: SAVE_NEW_USER_DATA,
   newData,
-});
-export const fetchUserData = () => ({
-  type: FETCH_USER_DATA,
 });
 export const saveUserEditData = (data) => ({
   type: SAVE_USER_EDIT_DATA,
