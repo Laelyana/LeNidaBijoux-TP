@@ -21,27 +21,25 @@ class AdminController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        // redirect to some CRUD controller
-        $routeBuilder = $this->get(AdminUrlGenerator::class);
-
-        return $this->redirect($routeBuilder->setController(ProductCrudController::class)->generateUrl());
+            return $this->render('@EasyAdmin/page/adminpagecontent.html.twig');
     }
 
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Nid à bijoux - Admin');
+            ->setTitle('Le nid à bijoux');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linktoDashboard('Accueil', 'fa fa-home');
         yield MenuItem::section('Sections');
         yield MenuItem::linkToCrud('Catégories', 'fas fa-edit', Category::class);
         yield MenuItem::linkToCrud('Collections', 'fas fa-list', Colection::class);
         yield MenuItem::linkToCrud('Styles', 'fas fa-list', Style::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-cut', Product::class);
         yield MenuItem::linkToCrud('Slider', 'fas fa-tools', Slider::class);
-        
+        yield MenuItem::section('Site');
+        yield MenuItem::linkToUrl('Voir le site', 'fab fa-google', '/');
     }
 }
