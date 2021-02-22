@@ -19,7 +19,7 @@ class CategoryCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name','Nom de la catégorie'),
-            ImageField::new('picture','Image')->setUploadDir('public/pictures')
+            ImageField::new('picture','Image')->setUploadDir('public/pictures')->setBasePath('/pictures')
         ];
     }
 

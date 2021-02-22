@@ -19,16 +19,19 @@ class ProductCrudController extends AbstractCrudController
         return Product::class;
     }
 
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('name','Nom du produit'),
-            NumberField::new('price','Prix'),
-            TextEditorField::new('description','Description'),
-            ImageField::new('picture1','Photo n°1')->setUploadDir('public/pictures'),
-            ImageField::new('picture2','Photo n°2')->setUploadDir('public/pictures'),
-            ImageField::new('picture3','Photo n°3')->setUploadDir('public/pictures'),
+            TextField::new('name', 'Nom du produit'),
+            NumberField::new('price', 'Prix'),
+            TextEditorField::new('description', 'Description'),
+            ImageField::new('picture1', 'Photo n°1')->setUploadDir('public/pictures')
+                                                    ->setBasePath('/pictures'),
+            ImageField::new('picture2', 'Photo n°2')->setUploadDir('public/pictures')
+                                                    ->setBasePath('/pictures'),
+            ImageField::new('picture3', 'Photo n°3')->setUploadDir('public/pictures')
+                                                    ->setBasePath('/pictures'),
             IntegerField::new('stock', 'Stock'),
             AssociationField::new('category', 'Catégorie'),
             AssociationField::new('colection', 'Collection'),
@@ -40,8 +43,7 @@ class ProductCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-        ->setEntityLabelInSingular('Produit')
-        ->setEntityLabelInPlural('Produits');
+            ->setEntityLabelInSingular('Produit')
+            ->setEntityLabelInPlural('Produits');
     }
-    
 }

@@ -18,7 +18,7 @@ class SliderCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ImageField::new('picture','Image')->setUploadDir('public/pictures'),
+            ImageField::new('picture','Image')->setUploadDir('public/pictures')->setBasePath('/pictures'),
             'active'
         ];
     }
