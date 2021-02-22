@@ -37,13 +37,13 @@ class AdminController extends AbstractDashboardController
     {
         yield MenuItem::linktoDashboard('Accueil', 'fa fa-home');
         yield MenuItem::section('Sections');
-        yield MenuItem::linkToCrud('Catégories', 'fas fa-edit', Category::class);
-        yield MenuItem::linkToCrud('Collections', 'fas fa-list', Colection::class);
-        yield MenuItem::linkToCrud('Styles', 'fas fa-list', Style::class);
-        yield MenuItem::linkToCrud('Produits', 'fas fa-cut', Product::class);
-        yield MenuItem::linkToCrud('Slider', 'fas fa-tools', Slider::class);
+        yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class);
+        yield MenuItem::linkToCrud('Collections', 'fas fa-suitcase', Colection::class);
+        yield MenuItem::linkToCrud('Styles', 'far fa-file', Style::class);
+        yield MenuItem::linkToCrud('Produits', 'fas fa-gem', Product::class);
+        yield MenuItem::linkToCrud('Slider', 'fas fa-map', Slider::class);
         yield MenuItem::section('Site');
-        yield MenuItem::linkToUrl('Voir le site', 'fab fa-google', '/');
+        yield MenuItem::linkToUrl('Voir le site', 'fas fa-globe', '/');
     }
 
 }
