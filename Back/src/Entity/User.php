@@ -70,7 +70,7 @@ class User implements UserInterface
     private $product;
 
     /**
-     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="user", orphanRemoval=true)
      * @Ignore()
      */
     private $orders;

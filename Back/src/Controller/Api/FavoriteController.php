@@ -3,7 +3,6 @@
 namespace App\Controller\Api;
 
 use App\Repository\ProductRepository;
-use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,11 +13,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class FavoriteController extends AbstractController
 {
     /**
-     * @Route("/api/favorites/users/{id}", name="api_favorites_browse_by_user", methods={"GET"})
+     * @Route("/api/favorites/users", name="api_favorites_browse_by_user", methods={"GET"})
      */
-    public function browseByUser(UserRepository $userRepo, int $id): Response
+    public function browseByUser(): Response
     {
-        if($user = $userRepo->find($id)){
+        $user = $this->getUser();
+
+        if($user){
 
             return $this->json($user->getProduct(), 200);
 
@@ -29,16 +30,22 @@ class FavoriteController extends AbstractController
     }
 
     /**
-     * @Route("/api/favorites/{productId}/users/{userId}", name="api_favorites_add_by_user", methods={"PATCH"})
+     * @Route("/api/favorites/{productId}/users", name="api_favorites_add_by_user", methods={"PATCH"})
      */
-    public function addProductToUser(int $userId, int $productId, Request $request, EntityManagerInterface $em, UserRepository $userRepo, ProductRepository $productRepo): Response
+    public function addProductToUser(int $productId, Request $request, EntityManagerInterface $em, ProductRepository $productRepo): Response
     {
-        if($user = $userRepo->find($userId)){
+        $user = $this->getUser();
+
+        if($user){
 
                 if($product = $productRepo->find($productId)){
+                    
+                    $product->setLiked($product->getLiked() + 1);
+                    $em->persist($product);
         
                     $user->addProduct($product);
                     $em->persist($user);
+
                     $em->flush();
                     return $this->json($user->getProduct(), 200);
         
@@ -54,16 +61,22 @@ class FavoriteController extends AbstractController
     }
 
     /**
-     * @Route("/api/favorites/{productId}/users/{userId}", name="api_favorites_delete_by_user", methods={"DELETE"})
+     * @Route("/api/favorites/{productId}/users", name="api_favorites_delete_by_user", methods={"DELETE"})
      */
-    public function deleteProductFromUser(int $productId, int $userId, ProductRepository $productRepo, UserRepository $userRepo, EntityManagerInterface $em): Response
+    public function deleteProductFromUser(int $productId, ProductRepository $productRepo, EntityManagerInterface $em): Response
     {
-        if($user = $userRepo->find($userId)){
+        $user = $this->getUser();
+
+        if($user){
 
             if($product = $productRepo->find($productId)){
     
+                $product->setLiked($product->getLiked() - 1);
+                $em->persist($product);
+
                 $user->removeProduct($product);
                 $em->persist($user);
+
                 $em->flush();
             }
 

@@ -5,9 +5,10 @@ import { saveProducts, FETCH_PRODUCTS } from '../actions/products';
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_PRODUCTS:
-      axios.get('http://0.0.0.0:8000/api/products/categories/')
+      axios.get('http://0.0.0.0:8000/api/categories/')
         .then((response) => {
           store.dispatch(saveProducts(response.data));
+          
         }).catch((error) => {
           console.log('error');
         }).finally((response) => {

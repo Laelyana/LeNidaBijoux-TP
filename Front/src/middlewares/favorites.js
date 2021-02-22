@@ -1,12 +1,12 @@
 import axios from 'axios';
-
+import apiUrl from 'src/utils/api';
 import { saveFavorites, FETCH_FAVORITES } from '../actions/favorites';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_FAVORITES: {
-      const { token, userId } = store.getState().user;
-      axios.get(`http://0.0.0.0:8000/api/favorites/users/${userId}`, {
+      const { token } = store.getState().user;
+      axios.get(`${apiUrl()}favorites/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

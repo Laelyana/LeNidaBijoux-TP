@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-
+import PropTypes from 'prop-types';
 import './favorites.scss';
 import Favorite from './Favorite';
 
@@ -24,5 +24,12 @@ const Favorites = ({ manageLoad, favorites }) => {
     </div>
   );
 };
-
+Favorites.propTypes = {
+  manageLoad: PropTypes.func.isRequired,
+  favorites: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
 export default Favorites;

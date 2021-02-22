@@ -16,5 +16,7 @@ const Categories = ({ name }) => (
     </Link>
   </>
 );
-
+Categories.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 export default Categories;

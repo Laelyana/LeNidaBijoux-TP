@@ -12,12 +12,12 @@ const Bandeau = ({ isLogged, handleLogout }) => (
     <div className="bandeau__timer">Timer boutique : 2 jours 4 heures 23 minutes</div>
     <div className="bandeau__rightside">
       {!isLogged
-        && (<div className="notlogged"> <button type="button"> <a href="/login">Se connecter</a> </button> </div>)}
+        && (<div className="notlogged"> <button className="btn__log" type="button"> <a href="/login">Se connecter</a> </button> </div>)}
       {isLogged
         && (
           <div className="logged">
-            <button onClick={handleLogout} type="button">Se déconnecter</button>
-            <button type="button"> <a href="/mon-compte">Mon compte</a> </button>
+            <button className="btn__log" onClick={handleLogout} type="button">Se déconnecter</button>
+            <button className="btn__log" type="button"> <a href="/mon-compte">Mon compte</a> </button>
           </div>
         )}
       <div className="bandeau__icons">
@@ -32,5 +32,9 @@ const Bandeau = ({ isLogged, handleLogout }) => (
     </div>
   </div>
 );
+Bandeau.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+  handleLogout: PropTypes.func.isRequired,
+};
 
 export default Bandeau;
