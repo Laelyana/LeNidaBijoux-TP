@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 import './categories.scss';
 
-const Categories = ({ name }) => (
+const Categories = ({ id, name }) => (
   <>
-    <Link to={`/${name}/produits`}>
+    <Link to={`/${name}/${id}`}>
       <div className="cat cat__img cat__img--un">
         <div className="cat__center">
           <div className="cat__center--title">{name}</div>

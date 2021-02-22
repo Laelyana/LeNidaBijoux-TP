@@ -44,14 +44,11 @@ const App = ({ isLogged }) => (
       <Route path="/collections">
         <Collections />
       </Route>
-      <Route path="/produits">
+      <Route path="/" component={Products}>
         <Products />
       </Route>
       <Route path="/produit">
         <Product />
-      </Route>
-      <Route path="/produits">
-        <Products />
       </Route>
       <Route path="/login">
         <LoginPage />

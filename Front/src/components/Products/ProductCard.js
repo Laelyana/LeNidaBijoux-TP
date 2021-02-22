@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import './products.scss';
 
-const ProductCard = ({ name }) => (
+const ProductCard = ({ id, name }) => (
   <>
-    <Link to={`/${name}/`}>
+    <Link to={`/${id}/${name}/`}>
       <div className="products">
         <div className="prod prod__img prod__img--un">
           <div className="prod__band">
