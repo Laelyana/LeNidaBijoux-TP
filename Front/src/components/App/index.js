@@ -13,7 +13,7 @@ import Slider from 'src/containers/Slider';
 import Main from 'src/components/Main';
 import Categories from 'src/containers/Categories';
 import Collections from 'src/containers/Collections';
-import Products from 'src/components/Products';
+import Products from 'src/containers/Products';
 import Product from 'src/components/Product';
 import Footer from 'src/components/Footer';
 import LoginPage from 'src/components/LoginPage';

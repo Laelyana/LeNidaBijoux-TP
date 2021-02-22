@@ -1,19 +1,21 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './products.scss';
-import Product from './Product';
+import ProductCard from './ProductCard';
 
 const Products = ({ manageLoad, products }) => {
   useEffect(
     manageLoad,
     [],
   );
+
+  console.log(products);
   return (
     <div className="products">
       {
         products.map((product) => (
 
-          <Product key={product.id} {...product} />
+          <ProductCard key={product.id} {...product} />
         ))
       }
     </div>

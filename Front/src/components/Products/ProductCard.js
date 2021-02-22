@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './products.scss';
 
-const Product = ({ name }) => (
+const ProductCard = ({ name }) => (
   <>
     <Link to={`/${name}/`}>
       <div className="products">
@@ -18,8 +18,8 @@ const Product = ({ name }) => (
   </>
 );
 
-Product.propTypes = {
+ProductCard.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default Product;
+export default ProductCard;
