@@ -15,12 +15,13 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
 
-class UserType extends AbstractType
+class UserPatchType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('email', EmailType::class, [
+                'mapped' => false,
                 'constraints' => [
                     new NotBlank(),
                     new Email(),
@@ -30,18 +31,21 @@ class UserType extends AbstractType
             ->add('password', PasswordType::class, [
                 'mapped' => false, 'constraints'=>[new NotBlank()]])
             ->add('firstname', TextType::class, [
+                'required' => false,
                 'constraints' => [
                     new NotBlank(),
                     new Length(['max'=>50]),
                 ]
             ])
             ->add('lastname', TextType::class, [
+                'mapped' => false,
                 'constraints' => [
                     new NotBlank(),
                     new Length(['max'=>50]),
                 ]
             ])
             ->add('phoneNumber', TelType::class, [
+                'mapped' => false,
                 'constraints' => [
                     new NotBlank(),
                     new Length(['max'=>15]),

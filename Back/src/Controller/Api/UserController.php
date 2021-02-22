@@ -3,6 +3,7 @@
 namespace App\Controller\Api;
 
 use App\Entity\User;
+use App\Form\UserPatchType;
 use App\Form\UserType;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
@@ -24,7 +25,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/api/users", name="api_users_add", methods={"POST"})
+     * @Route("/api/users/sign_in", name="api_users_add", methods={"POST"})
      */
     public function add(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder): Response
     {    
@@ -37,7 +38,6 @@ class UserController extends AbstractController
 
         // we simulate the submission of the form to active the constraints validation
         $form->submit($infoFromClientAsArray);
-
 
         if ($form->isValid())
         {   
@@ -52,11 +52,11 @@ class UserController extends AbstractController
             $em->flush();
 
             // after add the data in database we return what we have added
-            return $this->json($user);
+            return $this->json($user,201);
         }
         else 
         {
-            return $this->json(["error"=>(string) $form->getErrors(true, false)], Response::HTTP_BAD_REQUEST); // sent the errors of the constraints validation
+            return $this->json((string) $form->getErrors(true, false), 400); // sent the errors of the constraints validation
         }
 
     }
@@ -70,7 +70,7 @@ class UserController extends AbstractController
 
         $user = $this->getUser();
 
-        $form = $this->createForm(UserType::class, $user, ['csrf_protection' => false]);
+        $form = $this->createForm(UserPatchType::class, $user, ['csrf_protection' => false]);
 
         $form->submit($infoFromClientAsArray, false);
 
@@ -85,6 +85,23 @@ class UserController extends AbstractController
                     $user->setPassword($encodedPassword);
             }
 
+            if(isset($infoFromClientAsArray['email'])){
+                $user->setEmail($infoFromClientAsArray['email']);
+            }
+
+            if(isset($infoFromClientAsArray['firstname'])){
+                $user->setFirstname($infoFromClientAsArray['firstname']);
+            }
+
+            if(isset($infoFromClientAsArray['lastname'])){
+                $user->setLastname($infoFromClientAsArray['lastname']);
+            }
+
+            if(isset($infoFromClientAsArray['phoneNumber'])){
+                $user->setPhoneNumber($infoFromClientAsArray['phoneNumber']);
+            }
+
+
             $user->setUpdatedAt(new DateTime());
 
             $em->flush();
@@ -93,7 +110,7 @@ class UserController extends AbstractController
         }
         else 
         {
-            return $this->json(["error"=>(string) $form->getErrors(true, false)], Response::HTTP_BAD_REQUEST);
+            return $this->json((string) $form->getErrors(true, false), 400);
         }
 
     }
