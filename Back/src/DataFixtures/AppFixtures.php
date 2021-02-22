@@ -158,11 +158,7 @@ class AppFixtures extends Fixture
                 $manager->persist($orderLine);
             $orderLines[] = $orderLine;
         }
-        
-        
-
-        
-        
+                
         // Statut du site
         $status1 = new StatusSite();
             $manager->persist($status1);
@@ -181,6 +177,15 @@ class AppFixtures extends Fixture
         $slider3->setPicture('slider3.jpg');
         $slider3->setActive(true);
             $manager->persist($slider3);
+
+        $userAdmin = new User();
+        $userAdmin->setFirstname("vendeuse");
+        $userAdmin->setLastname("vendeuse");
+        $userAdmin->setEmail("nicoOclock@gmail.com");
+        $userAdmin->setPassword($this->encoder->encodePassword($user,"vendeuse"));
+        $userAdmin->setPhoneNumber('0111111111');
+        $userAdmin->setRoles(['ROLE_ADMIN']);
+            $manager->persist($userAdmin);
 
         // On envoie le tout en BDD
         $manager->flush();
