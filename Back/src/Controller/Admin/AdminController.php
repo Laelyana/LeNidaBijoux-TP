@@ -21,7 +21,10 @@ class AdminController extends AbstractDashboardController
      */
     public function index(): Response
     {
-            return $this->render('@EasyAdmin/page/adminpagecontent.html.twig');
+            // redirect to some CRUD controller
+        $routeBuilder = $this->get(AdminUrlGenerator::class);
+
+        return $this->redirect($routeBuilder->setController(StatusSiteCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -42,4 +45,5 @@ class AdminController extends AbstractDashboardController
         yield MenuItem::section('Site');
         yield MenuItem::linkToUrl('Voir le site', 'fab fa-google', '/');
     }
+
 }

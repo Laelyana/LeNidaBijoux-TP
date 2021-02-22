@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -20,5 +21,12 @@ class CategoryCrudController extends AbstractCrudController
             TextField::new('name','Nom de la catégorie'),
             ImageField::new('picture','Image')->setUploadDir('public/pictures')
         ];
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+        ->setEntityLabelInSingular('Catégorie')
+        ->setEntityLabelInPlural('Catégories');
     }
 }
