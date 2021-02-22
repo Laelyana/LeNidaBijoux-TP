@@ -17,7 +17,6 @@ const UserData = ({
     manageLoad,
     [],
   );
-  console.log(firstname);
   const handleDataSubmit = (evt) => {
     evt.preventDefault();
     handleEditUser();

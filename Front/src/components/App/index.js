@@ -50,9 +50,6 @@ const App = ({ isLogged }) => (
       <Route path="/produit">
         <Product />
       </Route>
-      <Route path="/:name/produits">
-        <Products />
-      </Route>
       <Route path="/login">
         <LoginPage />
       </Route>
