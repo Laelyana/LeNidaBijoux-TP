@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './products.scss';
-import Product from './Product';
+import Product from './product';
 
 const Products = ({ manageLoad, products }) => {
   useEffect(
@@ -11,7 +11,7 @@ const Products = ({ manageLoad, products }) => {
   return (
     <div className="products">
       {
-       products.map((product) => (
+        products.map((product) => (
 
           <Product key={product.id} {...product} />
         ))
