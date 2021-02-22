@@ -44,6 +44,7 @@ class ProductCrudController extends AbstractCrudController
     {
         return $crud
             ->setEntityLabelInSingular('Produit')
-            ->setEntityLabelInPlural('Produits');
+            ->setEntityLabelInPlural('Produits')
+            ->setDefaultSort(['id' => 'DESC']);
     }
 }
