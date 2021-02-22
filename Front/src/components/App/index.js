@@ -29,9 +29,9 @@ import UserShop from 'src/components/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
 
 // == Composant
-const App = ({ isLogged }) => (
+const App = ({ isLogged, status }) => (
   <div className="app">
-    <Bandeau />
+    <Bandeau status={status} />
     <Header />
     <Switch>
       <Route path="/" exact>
@@ -76,6 +76,7 @@ const App = ({ isLogged }) => (
 );
 App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  status: PropTypes.bool.isRequired,
 };
 
 // == Export

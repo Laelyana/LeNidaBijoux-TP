@@ -13,6 +13,7 @@ import createUserMiddleware from 'src/middlewares/createUser'
 import sliderMiddleware from 'src/middlewares/slider';
 import editUserMiddleware from 'src/middlewares/editUser';
 import ordersMiddleware from 'src/middlewares/orders';
+import statusMiddleware from 'src/middlewares/status';
 
 function saveToLocalStorage(state) {
   try {
@@ -51,6 +52,7 @@ const store = createStore(
       editUserMiddleware,
       ordersMiddleware,
       sliderMiddleware,
+      statusMiddleware,
     ),
   ),
 );
