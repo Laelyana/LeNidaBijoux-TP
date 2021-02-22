@@ -181,7 +181,7 @@ class AppFixtures extends Fixture
         $userAdmin = new User();
         $userAdmin->setFirstname("vendeuse");
         $userAdmin->setLastname("vendeuse");
-        $userAdmin->setEmail("nicoOclock@gmail.com");
+        $userAdmin->setEmail("vendeuse@gmail.com");
         $userAdmin->setPassword($this->encoder->encodePassword($user,"vendeuse"));
         $userAdmin->setPhoneNumber('0111111111');
         $userAdmin->setRoles(['ROLE_ADMIN']);
