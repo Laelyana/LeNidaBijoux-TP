@@ -2,8 +2,6 @@ import axios from 'axios';
 import apiUrl from 'src/utils/api';
 import { saveProducts, FETCH_PRODUCTS } from '../actions/products';
 
-
-
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_PRODUCTS:

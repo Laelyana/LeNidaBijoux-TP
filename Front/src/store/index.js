@@ -53,7 +53,12 @@ const store = createStore(
       ordersMiddleware,
       productsMiddleware,
     ),
-    applyMiddleware(authMiddleware, categoriesMiddleware, collectionMiddleware, sliderMiddleware, productsMiddleware),
+    applyMiddleware(
+      authMiddleware,
+      categoriesMiddleware,
+      collectionMiddleware, sliderMiddleware,
+      productsMiddleware,
+    ),
   ),
 );
 
