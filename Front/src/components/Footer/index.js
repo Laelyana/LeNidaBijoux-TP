@@ -14,8 +14,8 @@ const Footer = () => (
       </ul>
     </div>
     <div className="footer__social">
-    <div><a href="https://www.facebook.com/lenidabijoux"><img className="footer__social--logo" src={faecebookLogo} alt="logo FB" /></a></div>    
-    <div><a href="https://www.instagram.com/le_nid_a_bijoux/"><img className="footer__social--logo" src={instagramLogo} alt="logo Insta" /></a></div>
+   <div> <a href="https://www.facebook.com/lenidabijoux"><img  src={faecebookLogo} alt="logo FB" className="footer__social--logo"/></a>  </div> 
+   <div> <a href="https://www.instagram.com/le_nid_a_bijoux/"><img  src={instagramLogo} alt="logo Insta" className="footer__social--logo" /></a></div>
     </div>
     <div className="footer__contact">
       <ul className="footer__contact--ul">
