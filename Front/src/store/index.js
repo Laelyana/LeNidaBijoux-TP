@@ -51,7 +51,6 @@ const store = createStore(
       editUserMiddleware,
       ordersMiddleware,
     ),
-    applyMiddleware(authMiddleware, categoriesMiddleware, collectionMiddleware, sliderMiddleware),
   ),
 );
 
