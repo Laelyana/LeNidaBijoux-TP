@@ -17,7 +17,7 @@ export default (store) => (next) => (action) => {
         store.dispatch(saveUserData(response.data));
         window.location = '/mon-compte';
       }).catch((error) => {
-        console.log('error');
+        console.log(error.response.data.message);
       }).finally((response) => {
       });
       next(action);

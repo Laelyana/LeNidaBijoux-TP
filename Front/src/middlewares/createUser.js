@@ -24,8 +24,8 @@ export default (store) => (next) => (action) => {
       ).then((response) => {
         console.log(response);
         window.alert('Votre compte est créé, vous pouvez vous connecter');
-      }).catch((response) => {
-        window.alert('ca ne marche pas !');
+      }).catch((error) => {
+        console.log(error.response.data);
       });
       next(action);
       break;
