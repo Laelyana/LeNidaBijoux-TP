@@ -4,9 +4,12 @@ namespace App\Controller\Admin;
 
 use App\Entity\Category;
 use App\Entity\Colection;
+use App\Entity\Order;
+use App\Entity\OrderLine;
 use App\Entity\Product;
 use App\Entity\Slider;
 use App\Entity\Style;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -42,6 +45,8 @@ class AdminController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Styles', 'far fa-file', Style::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-gem', Product::class);
         yield MenuItem::linkToCrud('Slider', 'fas fa-map', Slider::class);
+        yield MenuItem::linkToCrud('Commandes', 'fas fa-shopping-cart', OrderLine::class);
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
         yield MenuItem::section('Site');
         yield MenuItem::linkToUrl('Voir le site', 'fas fa-globe', '/');
     }
