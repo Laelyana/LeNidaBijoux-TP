@@ -6,7 +6,7 @@ import Slid from './slid';
 
 
 import './slide.scss';
-import './slider.scss';
+
 
 
 
