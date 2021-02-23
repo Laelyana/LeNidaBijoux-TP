@@ -22,11 +22,12 @@ class CategoryCrudController extends AbstractCrudController
         }else{
             $required = true;
         }
-
+        
         return [
-            
             TextField::new('name','Nom de la catégorie'),
-            ImageField::new('picture','Image')->setUploadDir('public/pictures')->setBasePath('/pictures')->setRequired($required)
+            ImageField::new('picture','Image')->setUploadDir('public/pictures')
+                                              ->setBasePath('/pictures')
+                                              ->setRequired($required)
         ];
     }
 
