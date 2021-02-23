@@ -6,6 +6,8 @@ use App\Entity\Order;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 
 class OrderCrudController extends AbstractCrudController
 {
@@ -18,7 +20,8 @@ class OrderCrudController extends AbstractCrudController
     {
         return $crud
         ->setEntityLabelInSingular('Commande')
-        ->setEntityLabelInPlural('Commandes');
+        ->setEntityLabelInPlural('Commandes')
+        ->setDateFormat('d/M/y H:m');
     }
 
     
@@ -26,7 +29,7 @@ class OrderCrudController extends AbstractCrudController
     {
         return [
             'id',
-            'date',
+            DateField::new('date', 'Date'),
             AssociationField::new('user', 'Utilisateur')
         ];
     }

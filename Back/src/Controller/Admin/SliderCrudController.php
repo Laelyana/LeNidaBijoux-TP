@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Slider;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class SliderCrudController extends AbstractCrudController
@@ -19,7 +20,7 @@ class SliderCrudController extends AbstractCrudController
     {
         return [
             ImageField::new('picture','Image')->setUploadDir('public/pictures')->setBasePath('/pictures'),
-            'active'
+            Field::new('active', 'Actif sur le slider')
         ];
     }
     
