@@ -1,10 +1,16 @@
+@use '/src/styles/vars';
+
 .react-slideshow-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: transparent;
+  margin: 5rem auto;
+  border-radius: 15rem;
+  position: relative;
+  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+  border: .2rem white solid;
+  width: vars.$mi_full;
+  height: vars.$cardH;
+  overflow: hidden;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .react-slideshow-container .nav {

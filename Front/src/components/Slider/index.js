@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Slide } from 'react-slideshow-image';
 import Slid from './slid';
 
+
 import './slide.scss';
 
 

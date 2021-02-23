@@ -10,9 +10,9 @@ import './slider.scss';
 
 
 const Slid = ({id, picture}) => (
-   <div>
-  <img id={id} className="slider__img noActive" src={picture} alt="" />
- </div>
+   <div className="each-slide">
+  <img id={id} className="slider__img" src={picture} alt="" />
+  </div>
 );
 
 
