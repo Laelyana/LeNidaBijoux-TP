@@ -30,52 +30,57 @@ import PrivateRoute from 'src/components/PrivateRoute';
 
 
 // == Composant
-const App = ({ isLogged }) => (
-  
-  <div className="app">
-    <Bandeau />
-    <Header />
-    <Switch>
-      <Route path="/" exact>
-        <Slider />
-        <Main />
-      </Route>
-      <Route path="/categories">
-        <Categories  />
-      </Route>
-      <Route path="/collections">
-        <Collections />
-      </Route>
-      <Route path="/produits">
-        <Products />
-      </Route>
-      <Route path="/produit">
-        <Product />
-      </Route>
-      <Route path="/login">
-        <LoginPage />
-      </Route>
-      <Route path="/mentions-legales">
-        <LegalsMentions />
-      </Route>
-      <Route path="/l-atelier">
-        <Presentation />
-      </Route>
-      <Route path="/contactez-moi">
-        <Contact />
-      </Route>
-      <Route path="/conditions-de-vente">
-        <Cgv />
-      </Route>
-      <PrivateRoute path="/mon-compte" isLogged={isLogged} component={Dashboard} exact />
-      <PrivateRoute path="/mon-compte/mes-favoris" isLogged={isLogged} component={Favorites} exact />
-      <PrivateRoute path="/mon-compte/mes-infos" isLogged={isLogged} component={UserData} exact />
-      <PrivateRoute path="/mon-compte/mes-commandes" isLogged={isLogged} component={UserOrders} exact />
-      <PrivateRoute path="/mon-compte/mon-panier" isLogged={isLogged} component={UserShop} exact />
-    </Switch>
-    <Footer />
-  </div>
-);
+const App = ({ isLogged, status, manageLoad }) => {
+  useEffect(
+    manageLoad,
+    [],
+  );
+  return (
+    <div className="app">
+      <Bandeau status={status} />
+      <Header />
+      <Switch>
+        <Route path="/" exact>
+          <Slider />
+          <Main />
+        </Route>
+        <Route path="/categories">
+          <Categories />
+        </Route>
+        <Route path="/collections">
+          <Collections />
+        </Route>
+        <Route path="/produits" component={Products}>
+          <Products />
+        </Route>
+        <Route path="/produit">
+          <Product />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        <Route path="/mentions-legales">
+          <LegalsMentions />
+        </Route>
+        <Route path="/l-atelier">
+          <Presentation />
+        </Route>
+        <Route path="/contactez-moi">
+          <Contact />
+        </Route>
+        <Route path="/conditions-de-vente">
+          <Cgv />
+        </Route>
+        <PrivateRoute path="/mon-compte" isLogged={isLogged} component={Dashboard} exact />
+        <PrivateRoute path="/mon-compte/mes-favoris" isLogged={isLogged} component={Favorites} exact />
+        <PrivateRoute path="/mon-compte/mes-infos" isLogged={isLogged} component={UserData} exact />
+        <PrivateRoute path="/mon-compte/mes-commandes" isLogged={isLogged} component={UserOrders} exact />
+        <PrivateRoute path="/mon-compte/mon-panier" isLogged={isLogged} component={UserShop} exact />
+      </Switch>
+      <Footer />
+    </div>
+  );
+};
 App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   status: PropTypes.bool.isRequired,

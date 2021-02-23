@@ -107,7 +107,7 @@ class CartController extends AbstractController
             ->to($user->getEmail())
             ->subject('Votre Commande du Nid à Bijoux !')
             ->text(
-            'Votre commande n° '.$order->getId().' du '.$order->getDate()->format('d-m-Y \à H\hi\m\i\ns\s').' est confirmé !'."\n"."\n".
+            'Votre commande n° '.$order->getId().' du '.$order->getDate()->format('d-m-Y \à H\hi\m\i\ns\s').' est confirmée !'."\n"."\n".
             'Détails: '."\n".$messageDetails       
             );
 
@@ -118,7 +118,7 @@ class CartController extends AbstractController
             ->to('nicoOclock@gmail.com')
             ->subject('BON DE COMMANDE n° '.$order->getId().' du Nid à Bijoux !')
             ->text(
-            'Commande n° '.$order->getId().' de '.$user->getFirstname().' '.$user->getLastname().' du '.$order->getDate()->format('d-m-Y \à H\hi\m\i\ns\s').' est confirmé !'."\n"."\n".
+            'Commande n° '.$order->getId().' de '.$user->getFirstname().' '.$user->getLastname().' du '.$order->getDate()->format('d-m-Y \à H\hi\m\i\ns\s').' est confirmée !'."\n"."\n".
             'Email de l\'acheteur: '.$user->getEmail()."\n".
             'Téléphone de l\'acheteur: '.$user->getPhoneNumber()."\n"."\n".
             'Détails: '."\n".$messageDetails      

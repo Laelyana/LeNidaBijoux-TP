@@ -10,6 +10,7 @@ use App\Entity\Style;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,23 +21,29 @@ class AdminController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+            // redirect to some CRUD controller
+        $routeBuilder = $this->get(AdminUrlGenerator::class);
+
+        return $this->redirect($routeBuilder->setController(StatusSiteCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Nid à bijoux - Admin');
+            ->setTitle('Le nid à bijoux');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Catégories', 'fas fa-edit', Category::class);
-        yield MenuItem::linkToCrud('Collections', 'fas fa-list', Colection::class);
-        yield MenuItem::linkToCrud('Styles', 'fas fa-list', Style::class);
-        yield MenuItem::linkToCrud('Produits', 'fas fa-cut', Product::class);
-        yield MenuItem::linkToCrud('Slider', 'fas fa-tools', Slider::class);
-        
+        yield MenuItem::linktoDashboard('Accueil', 'fa fa-home');
+        yield MenuItem::section('Sections');
+        yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class);
+        yield MenuItem::linkToCrud('Collections', 'fas fa-suitcase', Colection::class);
+        yield MenuItem::linkToCrud('Styles', 'far fa-file', Style::class);
+        yield MenuItem::linkToCrud('Produits', 'fas fa-gem', Product::class);
+        yield MenuItem::linkToCrud('Slider', 'fas fa-map', Slider::class);
+        yield MenuItem::section('Site');
+        yield MenuItem::linkToUrl('Voir le site', 'fas fa-globe', '/');
     }
+
 }

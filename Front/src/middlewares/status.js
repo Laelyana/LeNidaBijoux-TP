@@ -7,7 +7,6 @@ export default (store) => (next) => (action) => {
     case FETCH_STATUS:
       axios.get(`${apiUrl()}status-site/active`)
         .then((response) => {
-          console.log(response.data);
           store.dispatch(saveStatus(response.data));
         }).catch((error) => {
           console.log('error');

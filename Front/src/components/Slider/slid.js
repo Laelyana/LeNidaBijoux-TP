@@ -15,8 +15,5 @@ const Slid = ({id, picture}) => (
   </div>
 );
 
-
-
-
 export default Slid;
 
