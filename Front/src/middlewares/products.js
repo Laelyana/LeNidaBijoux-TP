@@ -7,7 +7,7 @@ export default (store) => (next) => (action) => {
     case FETCH_PRODUCTS:
       axios.get(`${apiUrl()}products`)
         .then((response) => {
-          //console.log(response.data);
+          // console.log(response.data);
           store.dispatch(saveProducts(response.data));
         }).catch((error) => {
           console.log('error');
@@ -19,5 +19,4 @@ export default (store) => (next) => (action) => {
     default:
       next(action);
   }
-
 };
