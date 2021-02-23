@@ -47,8 +47,6 @@ class Order
         $this->date = new DateTime();
     }
 
-    
-
     public function getId(): ?int
     {
         return $this->id;

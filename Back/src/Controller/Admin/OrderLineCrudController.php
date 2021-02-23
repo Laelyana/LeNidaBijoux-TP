@@ -6,6 +6,7 @@ use App\Entity\OrderLine;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 
 class OrderLineCrudController extends AbstractCrudController
 {
@@ -18,9 +19,9 @@ class OrderLineCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            'quantity',
-            'labelProduct',
-            'priceProduct',
+            Field::new('quantity', "Quantité"),
+            Field::new('labelProduct', "Produit"),
+            Field::new('priceProduct', "Prix du produit"),
             AssociationField::new('orderEntity', 'Commande n°')
         ];
     }

@@ -6,6 +6,7 @@ use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -18,9 +19,12 @@ class UserCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            'email',
-            'lastname',
-            'firstname',
+            TextField::new('email', "Email"),
+            TextField::new('lastname','Nom'),
+            TextField::new('firstname','Prénom'),
+            TextField::new('password','Mot de passe')->hideOnIndex(),
+            TextField::new('phoneNumber','Numéro de téléphone')->hideOnIndex(),
+
         ];
     }
     
