@@ -27,6 +27,7 @@ import UserData from 'src/containers/UserData';
 import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/components/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
+import products from '../../middlewares/products';
 
 // == Composant
 const App = ({ isLogged }) => (
@@ -39,15 +40,15 @@ const App = ({ isLogged }) => (
         <Main />
       </Route>
       <Route path="/categories">
-        <Categories />
+        <Categories  />
       </Route>
       <Route path="/collections">
         <Collections />
       </Route>
-      <Route path="/" component={Products}>
+      <Route path="/produits/:id">
         <Products />
       </Route>
-      <Route path="/produit" component={Product}>
+      <Route path="/produit">
         <Product />
       </Route>
       <Route path="/login">
