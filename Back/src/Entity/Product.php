@@ -291,4 +291,31 @@ class Product
         return $this;
     }
 
+    public function getcategoryApi() 
+    {
+        if ($this->category != null){
+            return $this->category->getId();
+        }else{
+            return null;
+        }
+    }
+
+    public function getcolectionApi() 
+    {
+        if ($this->colection != null){
+            return $this->colection->getId();
+        }else{
+            return null;
+        }
+    }
+
+    public function getstyleApi() 
+    {
+        if ($this->style != null){
+            return $this->style->getId();
+        }else{
+            return null;
+        }
+    }
+
 }
