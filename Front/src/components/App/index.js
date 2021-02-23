@@ -28,6 +28,7 @@ import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/components/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
 
+
 // == Composant
 const App = ({ isLogged, status, manageLoad }) => {
   useEffect(

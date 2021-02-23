@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
-
-import Slide from './slide';
-
-import './slider.scss';
-
-//code vanilla slider
-
-//let SliderGenerale = addEventListener('click', onClickSlider, true);
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { Slide } from 'react-slideshow-image';
+import Slid from './slid';
 
 
+import './slide.scss';
 
+
+const proprietes = {
+    duration: 8000,
+    transitionDuration: 500,
+    infinite: true,
+    indicators: true,
+    arrows: true
+}
 
 const Slider = ({ manageLoad, slider }) => {
   useEffect(
@@ -19,26 +24,18 @@ const Slider = ({ manageLoad, slider }) => {
   
 
   return (
-
-    <div className="slider">
-      <div className="slider__btn--haut"></div>
-      <div id="slider__list">
-        <div className="slider__item">
-          {
-            slider.map((slide) => (
-              <Slide key={slide.id} {...slide} />
+        <div className="containerSlide">
+            <Slide {...proprietes}>
+            {
+            slider.map((slid) => (
+              <Slid key={slid.id} {...slid} />
 
             ))
           }
+            </Slide>
         </div>
-      </div>
-      <nav>
-        <button className="slider__prev">prev</button>
-        <button className="slider__next">next</button>
-      </nav>
-    </div>
-  );
-};
-
+    )
+}
 
 export default Slider;
+
