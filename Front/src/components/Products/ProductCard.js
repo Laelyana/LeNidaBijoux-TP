@@ -10,7 +10,7 @@ const ProductCard = ({ name, id }) => (
       <div className="products">
         <div className="prod prod__img prod__img--un">
           <div className="prod__band">
-          <div className="prod__band--title"><a><Link to={`/${id}/`}></Link></a>{name}</div>
+            <div className="prod__band--title">{name}</div>
           </div>
         </div>
       </div>

@@ -5,7 +5,6 @@ const initialState = {
   password: '',
   logged: false,
   token: null,
-  userId: '',
 };
 
 export default (state = initialState, action = {}) => {
@@ -20,7 +19,6 @@ export default (state = initialState, action = {}) => {
         ...state,
         logged: true,
         token: action.data.token,
-        userId: action.data.data.userId,
       };
     case LOG_OUT:
       window.location = '/';

@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 
 import './categories.scss';
 
-const Categories = ({ name }) => (
+const Categorie = ({ name }) => (
   <div className="cat cat__img cat__img--un">
     <div className="cat__center">
-      <div className="cat__center--title-band"><a><Link to={`/${name}/produits`}></Link></a>{name}</div>
+      <div className="cat__center--title-band"><Link to={`/${name}`} />{name}</div>
     </div>
   </div>
 );
-Categories.propTypes = {
+Categorie.propTypes = {
   name: PropTypes.string.isRequired,
 };
-export default Categories;
+export default Categorie;

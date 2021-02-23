@@ -6,6 +6,9 @@ import { fetchStatus } from '../../actions/site';
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
   status: state.status.status,
+  categories: state.categories.categories,
+  products: state.products.products,
+  collections: state.collections.collections,
 });
 const mapDispatchToProps = (dispatch) => ({
   manageLoad: () => {

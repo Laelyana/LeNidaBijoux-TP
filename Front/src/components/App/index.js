@@ -28,11 +28,14 @@ import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/components/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
 
+import getProductsByCategory, { getProductsByCollections } from '../../utils/products';
 
 // == Composant
-const App = ({ isLogged, status, manageLoad }) => {
+const App = ({ isLogged, status, manageLoad, categories, products, collections }) => {
   useEffect(
     manageLoad,
+    [],
+    [],
     [],
   );
   return (
@@ -44,15 +47,50 @@ const App = ({ isLogged, status, manageLoad }) => {
           <Slider />
           <Main />
         </Route>
-        <Route path="/categories">
+        <Route path="/Categories">
           <Categories />
         </Route>
-        <Route path="/collections">
+        <Route path="/Collections">
           <Collections />
         </Route>
-        <Route path="/produits" component={Products}>
-          <Products />
-        </Route>
+        {
+          categories.map(
+            (category) => {
+              const filteredProducts = getProductsByCategory(products, category.id);
+              const pathUrl = `/${category.name}`;
+              return (
+                <Route key={category.name} path={pathUrl} exact>
+                  <Products products={filteredProducts} />
+                </Route>
+              );
+            },
+          )
+        }
+        {
+          collections.map(
+            (collection) => {
+              const filteredProducts = getProductsByCollections(products, collection.id);
+              const pathUrl = `/${collection.name}`;
+              return (
+                <Route key={collection.name} path={pathUrl} exact>
+                  <Products products={filteredProducts} />
+                </Route>
+              );
+            },
+          )
+        }
+        {
+          products.map(
+            (product) => {
+              const pathUrl = `/${product.name}`;
+              return (
+                <Route key={product.name} path={pathUrl} exact>
+                  <Product product={product} />
+                </Route>
+              );
+            },
+          )
+        }
         <Route path="/produit">
           <Product />
         </Route>
@@ -85,6 +123,22 @@ App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   status: PropTypes.bool.isRequired,
   manageLoad: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  collections: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape(
+    ).isRequired,
+  ).isRequired,
 };
 
 // == Export
