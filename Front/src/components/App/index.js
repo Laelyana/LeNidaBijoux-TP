@@ -27,10 +27,11 @@ import UserData from 'src/containers/UserData';
 import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/components/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
-import products from '../../middlewares/products';
+
 
 // == Composant
 const App = ({ isLogged }) => (
+  
   <div className="app">
     <Bandeau />
     <Header />
@@ -45,7 +46,7 @@ const App = ({ isLogged }) => (
       <Route path="/collections">
         <Collections />
       </Route>
-      <Route path="/produits/:id">
+      <Route path="/produits">
         <Products />
       </Route>
       <Route path="/produit">
