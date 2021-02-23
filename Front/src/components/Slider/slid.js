@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 
 
 
-import './slider.scss';
+import './slide.scss';
 
 
 
 const Slid = ({id, picture}) => (
-   <div className="each-slide">
+  
+  <div className="image-container">
   <img id={id} className="slider__img" src={picture} alt="" />
   </div>
 );
