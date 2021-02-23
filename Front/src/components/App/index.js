@@ -28,13 +28,17 @@ import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/components/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
 
+import getProductsByCategory from '../../utils/products';
 
 // == Composant
-const App = ({ isLogged, status, manageLoad }) => {
+const App = ({ isLogged, status, manageLoad, categories, products }) => {
   useEffect(
     manageLoad,
     [],
+    [],
   );
+  console.log(categories);
+  console.log(products);
   return (
     <div className="app">
       <Bandeau status={status} />
@@ -44,15 +48,27 @@ const App = ({ isLogged, status, manageLoad }) => {
           <Slider />
           <Main />
         </Route>
-        <Route path="/categories">
+        <Route path="/Categories">
           <Categories />
         </Route>
-        <Route path="/collections">
+        <Route path="/Collections">
           <Collections />
         </Route>
-        <Route path="/:name/produits">
-          <Products />
-        </Route>
+        {
+        categories.map(
+          (category) => {
+            const filteredProducts = getProductsByCategory(products, category.id);
+            const pathUrl = `/${category.name}`;
+            console.log(filteredProducts);
+            console.log(category.name);
+            return (
+              <Route key={category.name} path={pathUrl} exact>
+                <Products products={filteredProducts} />
+              </Route>
+            );
+          },
+        )
+      }
         <Route path="/produit">
           <Product />
         </Route>

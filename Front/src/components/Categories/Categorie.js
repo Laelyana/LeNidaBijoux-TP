@@ -8,7 +8,7 @@ import './categories.scss';
 const Categories = ({ name, id }) => (
   <div className="cat cat__img cat__img--un">
     <div className="cat__center">
-      <div className="cat__center--title-band"><a><Link to={`/${name}/produits`}></Link></a>{name}</div>
+      <div className="cat__center--title-band"><a><Link to={`/${name}`}></Link></a>{name}</div>
     </div>
   </div>
 );
