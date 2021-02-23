@@ -47,7 +47,7 @@ const App = ({ isLogged }) => (
       <Route path="/" component={Products}>
         <Products />
       </Route>
-      <Route path="/produit">
+      <Route path="/produit" component={Product}>
         <Product />
       </Route>
       <Route path="/login">
