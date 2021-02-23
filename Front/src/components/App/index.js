@@ -49,7 +49,7 @@ const App = ({ isLogged, status, manageLoad }) => {
         <Route path="/collections">
           <Collections />
         </Route>
-        <Route path="/produits" component={Products}>
+        <Route path="/:name/produits">
           <Products />
         </Route>
         <Route path="/produit">
