@@ -56,12 +56,6 @@ const store = createStore(
       statusMiddleware,
       productsMiddleware,
     ),
-    applyMiddleware(
-      authMiddleware,
-      categoriesMiddleware,
-      collectionMiddleware, sliderMiddleware,
-      productsMiddleware,
-    ),
   ),
 );
 

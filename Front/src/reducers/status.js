@@ -1,4 +1,3 @@
-import { SAVE_CATEGORIES } from '../actions/categories';
 import { SAVE_STATUS } from '../actions/site';
 
 const initialState = {
@@ -10,6 +9,7 @@ export default (state = initialState, action) => {
     case SAVE_STATUS:
       return {
         ...state,
+        status: action.status,
       };
     default:
       return {

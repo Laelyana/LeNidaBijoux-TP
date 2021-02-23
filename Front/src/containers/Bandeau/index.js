@@ -4,6 +4,7 @@ import { logOut } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
+  status: state.status.status,
 });
 
 const mapDispatchToProps = (dispatch) => ({

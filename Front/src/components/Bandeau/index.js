@@ -9,7 +9,8 @@ import './bandeau.scss';
 
 const Bandeau = ({ isLogged, handleLogout, status }) => (
   <div className="bandeau">
-    <div className="bandeau__timer">Timer boutique : 2 jours 4 heures 23 minutes</div>
+    {!status && (<div className="bandeau__timer">Passage du site en mode boutique dans : 2 jours 4 heures 23 minutes</div>)}
+    {status && (<div className="bandeau__timer">Fin de la vente dans : 2 jours 4 heures 23 minutes</div>)}
     <div className="bandeau__rightside">
       {!isLogged
         && (<div className="notlogged"> <button className="btn__log" type="button"> <a href="/login">Se connecter</a> </button> </div>)}
@@ -37,5 +38,6 @@ Bandeau.propTypes = {
   handleLogout: PropTypes.func.isRequired,
   status: PropTypes.bool.isRequired,
 };
+
 
 export default Bandeau;
