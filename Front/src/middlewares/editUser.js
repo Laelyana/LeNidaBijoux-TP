@@ -30,19 +30,21 @@ export default (store) => (next) => (action) => {
         phoneNumber,
         email,
       } = store.getState().editUser;
-      axios.patch(`${apiUrl()}users`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      axios.patch(`${apiUrl()}users`,
+        {
+          lastname,
+          firstname,
+          phoneNumber,
+          email,
         },
-      },
-      {
-        lastname,
-        firstname,
-        phoneNumber,
-        email,
-      }).then((response) => {
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      ).then((response) => {
         console.log(response);
-      }).catch((response) => {
+      }).catch((error) => {
         console.log('erreur');
       });
       next(action);
