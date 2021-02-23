@@ -39,6 +39,11 @@ class User implements UserInterface
     private $password;
 
     /**
+     * @Ignore()
+     */
+    private $rawPassword;
+
+    /**
      * @ORM\Column(type="string", length=50)
      */
     private $firstname;
@@ -81,6 +86,11 @@ class User implements UserInterface
         $this->orders = new ArrayCollection();
         $this->createdAt = new DateTime();
         $this->roles = ['ROLE_USER'];
+    }
+
+    public function __toString()
+    {
+        return $this->email;
     }
 
     public function getId(): ?int
@@ -274,6 +284,26 @@ class User implements UserInterface
                 $order->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * Get the value of rawPassword
+     */ 
+    public function getRawPassword()
+    {
+        return $this->rawPassword;
+    }
+
+    /**
+     * Set the value of rawPassword
+     *
+     * @return  self
+     */ 
+    public function setRawPassword($rawPassword)
+    {
+        $this->rawPassword = $rawPassword;
 
         return $this;
     }

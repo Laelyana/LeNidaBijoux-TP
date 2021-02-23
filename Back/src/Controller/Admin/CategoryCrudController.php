@@ -17,9 +17,17 @@ class CategoryCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        if($pageName === Crud::PAGE_EDIT){
+            $required = false;
+        }else{
+            $required = true;
+        }
+        
         return [
             TextField::new('name','Nom de la catégorie'),
-            ImageField::new('picture','Image')->setUploadDir('public/pictures')->setBasePath('/pictures')
+            ImageField::new('picture','Image')->setUploadDir('public/pictures')
+                                              ->setBasePath('/pictures')
+                                              ->setRequired($required)
         ];
     }
 

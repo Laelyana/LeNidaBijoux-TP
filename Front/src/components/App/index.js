@@ -91,9 +91,6 @@ const App = ({ isLogged, status, manageLoad, categories, products, collections }
             },
           )
         }
-        <Route path="/produit">
-          <Product />
-        </Route>
         <Route path="/login">
           <LoginPage />
         </Route>
