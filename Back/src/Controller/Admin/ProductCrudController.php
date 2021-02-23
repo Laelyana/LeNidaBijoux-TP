@@ -23,13 +23,20 @@ class ProductCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        if($pageName === Crud::PAGE_EDIT){
+            $required = false;
+        }else{
+            $required = true;
+        }
         return [
+
             TextField::new('name', 'Nom du produit'),
             NumberField::new('price', 'Prix'),
             TextEditorField::new('description', 'Description'),
             Field::new('liked','Nb de likes'),
             ImageField::new('picture1', 'Photo n°1')->setUploadDir('public/pictures')
-                                                    ->setBasePath('/pictures'),
+                                                    ->setBasePath('/pictures')
+                                                    ->setRequired($required),
             ImageField::new('picture2', 'Photo n°2')->setUploadDir('public/pictures')
                                                     ->setBasePath('/pictures'),
             ImageField::new('picture3', 'Photo n°3')->setUploadDir('public/pictures')
