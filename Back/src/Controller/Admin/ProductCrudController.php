@@ -33,7 +33,7 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('name', 'Nom du produit'),
             NumberField::new('price', 'Prix'),
             TextEditorField::new('description', 'Description'),
-            Field::new('liked','Nb de likes'),
+            IntegerField::new('liked','Nb de likes'),
             ImageField::new('picture1', 'Photo n°1')->setUploadDir('public/pictures')
                                                     ->setBasePath('/pictures')
                                                     ->setRequired($required),
