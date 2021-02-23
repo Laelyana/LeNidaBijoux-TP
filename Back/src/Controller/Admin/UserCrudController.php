@@ -8,7 +8,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -48,10 +47,10 @@ class UserCrudController extends AbstractCrudController
     {
         return [
             EmailField::new('email', "Email"),
-            Field::new('lastname','Nom'),
-            Field::new('firstname','Prénom'),
+            TextField::new('lastname','Nom'),
+            TextField::new('firstname','Prénom'),
             TextField::new('rawPassword', 'Mot de passe')->onlyOnForms()->setHelp('Tapez un nouveau mot de passe pour le modifier'),
-            Field::new('phoneNumber','Numéro de téléphone')->hideOnIndex(),
+            TextField::new('phoneNumber','Numéro de téléphone')->hideOnIndex(),
             ArrayField::new('roles', 'Rôle')
         ];
     }

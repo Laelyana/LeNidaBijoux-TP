@@ -7,8 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 
 class StatusSiteCrudController extends AbstractCrudController
 {
@@ -21,7 +21,7 @@ class StatusSiteCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            Field::new('active', 'Vitrine/e-commerce')->hideOnForm(),
+            BooleanField::new('active', 'Vitrine/e-commerce')->hideOnForm(),
             DateField::new('startDate', 'Date début'),
             DateField::new('endDate', 'Date fin')
         ];

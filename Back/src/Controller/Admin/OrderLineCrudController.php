@@ -8,7 +8,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class OrderLineCrudController extends AbstractCrudController
 {
@@ -21,9 +23,9 @@ class OrderLineCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            Field::new('quantity', "Quantité"),
-            Field::new('labelProduct', "Produit"),
-            Field::new('priceProduct', "Prix du produit"),
+            IntegerField::new('quantity', "Quantité"),
+            TextField::new('labelProduct', "Produit"),
+            NumberField::new('priceProduct', "Prix du produit"),
             AssociationField::new('orderEntity', 'Commande n°')
         ];
     }
