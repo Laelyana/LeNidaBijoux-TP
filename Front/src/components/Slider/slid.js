@@ -9,7 +9,7 @@ import './slider.scss';
 
 
 
-const Slide = ({id, picture}) => (
+const Slid = ({id, picture}) => (
    <div>
   <img id={id} className="slider__img noActive" src={picture} alt="" />
  </div>
@@ -18,4 +18,5 @@ const Slide = ({id, picture}) => (
 
 
 
-export default Slide;
+export default Slid;
+

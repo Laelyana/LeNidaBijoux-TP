@@ -1,13 +1,15 @@
 import axios from 'axios';
 import apiUrl from 'src/utils/api';
-import { saveCategories, FETCH_CATEGORIES } from '../actions/categories';
+import { saveProducts, FETCH_PRODUCTS } from '../actions/products';
 
 export default (store) => (next) => (action) => {
+
   switch (action.type) {
-    case FETCH_CATEGORIES:
-      axios.get(`${apiUrl()}categories/`)
+    case FETCH_PRODUCTS:
+      axios.get(`${apiUrl()}products/categories/1`)
         .then((response) => {
-          store.dispatch(saveCategories(response.data));
+          //console.log(response.data);
+          store.dispatch(saveProducts(response.data));
         }).catch((error) => {
           console.log('error');
         }).finally((response) => {
@@ -18,4 +20,5 @@ export default (store) => (next) => (action) => {
     default:
       next(action);
   }
+
 };

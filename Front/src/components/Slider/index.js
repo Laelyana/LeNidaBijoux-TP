@@ -1,67 +1,40 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { Slide } from 'react-slideshow-image';
+import Slid from './slid';
 
-import Slide from './slide';
+import './slide.scss';
 
-import './slider.scss';
 
-//code vanilla slider
-function onClickSlider(e) {
-  e.stopPropagation();
- let slides = document.querySelectorAll(".slider__img");
-//console.log(slides);
- let section = document.querySelector("section");
- //console.log(section);
- let t = e.target;
- let currImage = 0;
-
- if (t.tagName.toUpperCase() != 'BUTTON')
-		return;
- 
- if (t.classList.contains('slider__next')) {
-   currImage++;
-   section.className = "slider__img slider__img--active";
-   //console.log("clic ++");
- }
-
- else {
-   currImage--;
-   //console.log("clic --");
-   currImage = currImage.length-1
-   section.className = "slider__img slider__img";
- }
+const proprietes = {
+    duration: 8000,
+    transitionDuration: 500,
+    infinite: true,
+    indicators: true,
+    arrows: true
 }
-
 
 const Slider = ({ manageLoad, slider }) => {
   useEffect(
     manageLoad,
     [],
   );
-  console.log(slider);
-
-
+  
 
   return (
-
-    <div className="slider">
-      <div className="slider__btn--haut"></div>
-      <div id="slider__list">
-        <div className="slider__item">
-          {
-            slider.map((slide) => (
-              <Slide key={slide.id} {...slide} />
+        <div className="containerSlide">
+            <Slide {...proprietes}>
+            {
+            slider.map((slid) => (
+              <Slid key={slid.id} {...slid} />
 
             ))
           }
+            </Slide>
         </div>
-      </div>
-      <nav>
-        <button className="slider__prev" onClick={() => onClickSlider(1)}>prev</button>
-        <button className="slider__next" onClick={() => onClickSlider()}>next</button>
-      </nav>
-    </div>
-  );
-};
-
+    )
+}
 
 export default Slider;
+

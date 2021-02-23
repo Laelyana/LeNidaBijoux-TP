@@ -8,6 +8,8 @@ import createUserReducer from '../reducers/createUser';
 import sliderReducer from '../reducers/slider';
 import editUserReducer from '../reducers/editUser';
 import ordersReducer from '../reducers/orders';
+import statusReducer from '../reducers/status';
+import productsReducer from '../reducers/products';
 // on importer les différents reducers
 
 const combineReducer = combineReducers({
@@ -19,6 +21,8 @@ const combineReducer = combineReducers({
   slider: sliderReducer,
   editUser: editUserReducer,
   orders: ordersReducer,
+  status: statusReducer,
+  products: productsReducer,
   // on combine tous les reducers
 });
 

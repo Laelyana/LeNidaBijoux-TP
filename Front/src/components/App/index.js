@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -13,7 +13,7 @@ import Slider from 'src/containers/Slider';
 import Main from 'src/components/Main';
 import Categories from 'src/containers/Categories';
 import Collections from 'src/containers/Collections';
-import Products from 'src/components/Products';
+import Products from 'src/containers/Products';
 import Product from 'src/components/Product';
 import Footer from 'src/components/Footer';
 import LoginPage from 'src/components/LoginPage';
@@ -28,8 +28,10 @@ import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/components/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
 
+
 // == Composant
 const App = ({ isLogged }) => (
+  
   <div className="app">
     <Bandeau />
     <Header />
@@ -39,19 +41,16 @@ const App = ({ isLogged }) => (
         <Main />
       </Route>
       <Route path="/categories">
-        <Categories />
+        <Categories  />
       </Route>
       <Route path="/collections">
         <Collections />
       </Route>
-      <Route path="/:name/produits">
+      <Route path="/produits">
         <Products />
       </Route>
       <Route path="/produit">
         <Product />
-      </Route>
-      <Route path="/:name/produits">
-        <Products />
       </Route>
       <Route path="/login">
         <LoginPage />
@@ -79,6 +78,8 @@ const App = ({ isLogged }) => (
 );
 App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  status: PropTypes.bool.isRequired,
+  manageLoad: PropTypes.func.isRequired,
 };
 
 // == Export
