@@ -38,8 +38,6 @@ const App = ({ isLogged, status, manageLoad, categories, products, collections }
     [],
     [],
   );
-  console.log(categories);
-  console.log(products);
   return (
     <div className="app">
       <Bandeau status={status} />
@@ -60,8 +58,6 @@ const App = ({ isLogged, status, manageLoad, categories, products, collections }
             (category) => {
               const filteredProducts = getProductsByCategory(products, category.id);
               const pathUrl = `/${category.name}`;
-              console.log(filteredProducts);
-              console.log(category.name);
               return (
                 <Route key={category.name} path={pathUrl} exact>
                   <Products products={filteredProducts} />
@@ -72,14 +68,24 @@ const App = ({ isLogged, status, manageLoad, categories, products, collections }
         }
         {
           collections.map(
-            (collections) => {
-              const filteredProducts = getProductsByCollections(products, collections.id);
-              const pathUrl = `/${collections.name}`;
-              console.log(filteredProducts);
-              console.log(collections.name);
+            (collection) => {
+              const filteredProducts = getProductsByCollections(products, collection.id);
+              const pathUrl = `/${collection.name}`;
               return (
-                <Route key={collections.name} path={pathUrl} exact>
+                <Route key={collection.name} path={pathUrl} exact>
                   <Products products={filteredProducts} />
+                </Route>
+              );
+            },
+          )
+        }
+        {
+          products.map(
+            (product) => {
+              const pathUrl = `/${product.name}`;
+              return (
+                <Route key={product.name} path={pathUrl} exact>
+                  <Product product={product} />
                 </Route>
               );
             },
@@ -117,6 +123,22 @@ App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   status: PropTypes.bool.isRequired,
   manageLoad: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  collections: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape(
+    ).isRequired,
+  ).isRequired,
 };
 
 // == Export
