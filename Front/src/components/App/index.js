@@ -28,12 +28,13 @@ import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/components/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
 
-import getProductsByCategory from '../../utils/products';
+import getProductsByCategory, { getProductsByCollections } from '../../utils/products';
 
 // == Composant
-const App = ({ isLogged, status, manageLoad, categories, products }) => {
+const App = ({ isLogged, status, manageLoad, categories, products, collections }) => {
   useEffect(
     manageLoad,
+    [],
     [],
     [],
   );
@@ -55,20 +56,35 @@ const App = ({ isLogged, status, manageLoad, categories, products }) => {
           <Collections />
         </Route>
         {
-        categories.map(
-          (category) => {
-            const filteredProducts = getProductsByCategory(products, category.id);
-            const pathUrl = `/${category.name}`;
-            console.log(filteredProducts);
-            console.log(category.name);
-            return (
-              <Route key={category.name} path={pathUrl} exact>
-                <Products products={filteredProducts} />
-              </Route>
-            );
-          },
-        )
-      }
+          categories.map(
+            (category) => {
+              const filteredProducts = getProductsByCategory(products, category.id);
+              const pathUrl = `/${category.name}`;
+              console.log(filteredProducts);
+              console.log(category.name);
+              return (
+                <Route key={category.name} path={pathUrl} exact>
+                  <Products products={filteredProducts} />
+                </Route>
+              );
+            },
+          )
+        }
+        {
+          collections.map(
+            (collections) => {
+              const filteredProducts = getProductsByCollections(products, collections.id);
+              const pathUrl = `/${collections.name}`;
+              console.log(filteredProducts);
+              console.log(collections.name);
+              return (
+                <Route key={collections.name} path={pathUrl} exact>
+                  <Products products={filteredProducts} />
+                </Route>
+              );
+            },
+          )
+        }
         <Route path="/produit">
           <Product />
         </Route>

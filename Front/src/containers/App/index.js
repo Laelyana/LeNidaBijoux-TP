@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
   status: state.status.status,
   categories: state.categories.categories,
   products: state.products.products,
+  collections: state.collections.collections,
 });
 const mapDispatchToProps = (dispatch) => ({
   manageLoad: () => {

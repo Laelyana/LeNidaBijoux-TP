@@ -4,3 +4,9 @@ function getProductsByCategory(products, categoryId) {
   return filteredProductList;
 }
 export default getProductsByCategory;
+
+export const getProductsByCollections = (products, collectionId) => {
+  const filteredProductList = products.filter((product) => product.colectionApi === collectionId);
+
+  return filteredProductList;
+};
