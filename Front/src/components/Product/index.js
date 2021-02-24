@@ -64,9 +64,7 @@ const Product = ({ product, isLogged }) => {
         {isLogged
           && (
 
-            <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>
-
-          )}
+            <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>)}
       </div>
     </div>
   );
