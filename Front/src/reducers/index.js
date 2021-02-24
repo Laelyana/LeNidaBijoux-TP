@@ -4,6 +4,7 @@ import userReducer from '../reducers/user';
 import collectionsReducer from '../reducers/collections';
 import categoriesReducer from '../reducers/categories';
 import favoritesReducer from '../reducers/favorites';
+import favoritesAddReducer from '../reducers/favoritesAdd';
 import createUserReducer from '../reducers/createUser';
 import sliderReducer from '../reducers/slider';
 import editUserReducer from '../reducers/editUser';
@@ -17,6 +18,7 @@ const combineReducer = combineReducers({
   collections: collectionsReducer,
   categories: categoriesReducer,
   favorites: favoritesReducer,
+  favoritesAdd: favoritesAddReducer,
   createUser: createUserReducer,
   slider: sliderReducer,
   editUser: editUserReducer,
