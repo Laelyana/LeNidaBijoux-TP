@@ -10,7 +10,7 @@ const Presentation = () => (
     <h2>L'atelier</h2>
     <div className="presentation__article">
       <img src={presentation1} alt="#" />
-      <div className="presentation__article--p">
+      <div className="presentation__article--p1">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
         Distinctio similique ab laboriosam explicabo velit ex, non
         rerum delectus quod aliquid ut, minus inventore earum
@@ -23,7 +23,7 @@ const Presentation = () => (
       </div>
     </div>
     <div className="presentation__article">
-      <div className="presentation__article--p">
+      <div className="presentation__article--p2">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique ab laboriosam explicabo velit ex, non
         rerum delectus quod aliquid ut, minus inventore earum dolorum magnam voluptatibus, pariatur accusantium? Eligendi.
         </p>
