@@ -42,7 +42,7 @@ class PasswordRecoveryController extends AbstractController
                 ->subject('Nid à Bijoux')
                 ->text(
                 'Votre nouveau mot de passe est: '.$newPasswordPlain."\n".
-                'Connectez-vous avec ce nouveau mot de passe puis modifier le dans la section "Mon Compte"'
+                'Connectez-vous avec ce nouveau mot de passe puis modifiez le dans la section "Mon Compte"'
                 );
                 $mailer->send($emailBuyer);
 

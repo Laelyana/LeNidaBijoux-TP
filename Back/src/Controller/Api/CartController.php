@@ -27,7 +27,7 @@ class CartController extends AbstractController
 
         if($user){
 
-            $infoFromClientAsObject = json_decode($request->getContent(), false); //we retrive the provided data
+            $infoFromClientAsObject = json_decode($request->getContent(), false); //we retrieve the provided data
 
             $errorsProduct=[];
             $errorsStock=[];
