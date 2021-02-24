@@ -1,5 +1,5 @@
-import { ADD_TO_CARD } from '../actions/shop';
-import { handleAddToCart } from '../utils/card';
+import { ADD_TO_CARD, REMOVE_CARD } from '../actions/shop';
+import { handleAddToCart, handleRemoveCartItem } from '../utils/card';
 
 const initialState = {
   cartItems: [],
@@ -13,6 +13,14 @@ export default (state = initialState, action) => {
         cartItems: handleAddToCart({
           prevCartItems: state.cartItems,
           nextCartItem: action.payload,
+        }),
+      };
+    case REMOVE_CARD:
+      return {
+        ...state,
+        cartItems: handleRemoveCartItem({
+          prevCartItems: state.cartItems,
+          cartItemToRemove: action.payload,
         }),
       };
     default:

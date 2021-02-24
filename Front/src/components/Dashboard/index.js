@@ -11,6 +11,6 @@ const Dashboard = () => (
       <a className="dashboard__items--box" href="/mon-compte/mes-commandes"><div><h4>Mes commandes</h4></div></a>
     </div>
   </div>
-)
+);
 
 export default Dashboard;
