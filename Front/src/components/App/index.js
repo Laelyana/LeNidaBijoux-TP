@@ -41,10 +41,11 @@ const App = ({ isLogged, status, manageLoad, categories, products, collections }
   return (
     <div className="app">
       <Bandeau status={status} />
+      <Slider />
       <Header />
       <Switch>
         <Route path="/" exact>
-          <Slider />
+          
           <Main />
         </Route>
         <Route path="/Categories">

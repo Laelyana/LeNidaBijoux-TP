@@ -2,12 +2,11 @@
 
 .react-slideshow-container {
   background-color: transparent;
-  margin: 5rem auto;
-  border-radius: 15rem;
+  margin: 0rem auto;
   position: relative;
   box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
   border: .2rem white solid;
-  width: vars.$mi_full;
+  width: 100vw;
   height: vars.$cardH;
   overflow: hidden;
   display: flex;
@@ -20,20 +19,11 @@
 
 
 .react-slideshow-container .default-nav {
-  width: 10%;
-  height: 100%;
-  background-color: transparent;
-  border-radius: 5rem 0 0 5rem;
-  text-align: center;
-  opacity: .3;
-  overflow: hidden;
-  cursor: pointer;
-  color: rgb(19, 1, 1);
-  font-weight: bold;
+ background-color: transparent;
 //lors du hover on lance l'animation en bas de page
   &:hover{
     opacity: .6;
-    animation: move_btn 2s infinite; //nom de l'animation + temp + boucle à l'infinie
+    
   }
 }
 

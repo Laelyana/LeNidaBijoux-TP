@@ -1,17 +1,8 @@
-.header {
-  padding-top: 4rem;
-  
-}
-
-img {
-  height: 8rem;
-}
-
 
 
 .navigation{
  background-color: transparent;
- margin: 2rem auto;
+ margin: 0rem auto;
  display: flex;
  flex-direction: row;
  flex-wrap: wrap;
@@ -22,27 +13,21 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 2rem auto 2rem auto;
-    background-color: #fcfbfb;
-    width: 80vw;
-    margin: 2rem auto;
-    border-radius: 1rem;
+    margin: 0rem auto 0rem auto;
+    background-color: #C2858C;
+    width: 100vw;
     box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
     border: .2rem white solid;
     overflow: hidden;
   }
     &__li {
-      height: 2rem;
-      width: 10rem;
+      width: 5rem;
       align-self: center;
       padding: 0.5rem;
-      border-radius: 1rem;
-
-      margin: 1rem auto 1rem auto;
-      background-color: #C2858C;
+      margin:  auto auto;
       color: whitesmoke;
-      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
       position: relative;
+      background-color: #C2858C;
 
       &:after{
         content: "";
@@ -52,15 +37,15 @@ img {
         height: 10%;
         position: absolute;
         display: block;
-        border-radius: 50%;
         opacity: .4;
       }
 
     &:hover {
-      background-color: #1A3E51;
-      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
-      border-radius: 2rem;
+      background-color: #d8949c;
+      // box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
       color: white;
+      width: 100%;
+      padding: 0.5rem;
     }
   }
 }

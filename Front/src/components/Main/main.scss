@@ -13,12 +13,10 @@
 .card{
   width: vars.$cardW;
   height: vars.$cardH;
-  border: rgb(207, 206, 205) 1px solid;
-  box-shadow: 0 0 1px 2px rgb(230, 229, 229);
   overflow: hidden;
   z-index: 1;
   margin: 1rem auto 1rem auto; 
-  border-radius: 3rem;
+  
   position: relative;
 
 

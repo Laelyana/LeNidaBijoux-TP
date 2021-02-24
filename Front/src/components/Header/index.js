@@ -7,7 +7,7 @@ import './header.scss';
 const Header = () => (
   <div>
     <header className="header">
-      <a href="/"><img src={reactLogo} alt="react logo" /></a>
+      {/* <a href="/"><img src={reactLogo} alt="react logo" /></a> */}
     </header>
     <div className="navigation">
       <ul className="navigation__ul">

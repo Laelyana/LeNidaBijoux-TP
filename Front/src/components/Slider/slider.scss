@@ -3,7 +3,7 @@
 //une class pour contenir le slider, longueur et largeur font référence aux datas du fichier vars dans le dossier styles
 .slider{
   background-color: transparent;
-  margin: 5rem auto;
+  margin: 0rem auto;
   border-radius: 15rem;
   position: relative;
   box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
@@ -83,21 +83,7 @@
     animation: move_btn 2s infinite; //nom de l'animation + temp + boucle à l'infinie
   }
 }
-//class pour la balsie img
-&__img{
-  width: auto;
-  height: 100%;
-  object-fit: cover;
-//cause balise img on utilise object-fit avec des media queries
-  @media screen and (min-width: 800px){
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  &--active{
-    display: none;
-  }
-}
+
 
 }
 //animation on part de 0 border-radius à ce que l'on veut atteindre (50%) puis on redescend à 0% en modifiant la largeur du bloc légerement
