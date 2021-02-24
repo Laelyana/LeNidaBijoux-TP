@@ -6,7 +6,7 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_FAVORITES_ADD: {
       const { token } = store.getState().user;
-      axios.get(`${apiUrl()}/api/favorites/${id}/users`, {
+      axios.get(`${apiUrl()}/api/favorites/${product.id}/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
