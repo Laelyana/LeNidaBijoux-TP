@@ -56,7 +56,8 @@
     "react-router-dom": "^5.2.0",
     "react-slideshow-image": "^3.4.3",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.8",
+    "reselect": "^4.0.0"
   },
   "version": "1",
   "description": "site vitrine bijoux apothéose React",
