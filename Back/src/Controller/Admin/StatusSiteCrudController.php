@@ -8,7 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 
 class StatusSiteCrudController extends AbstractCrudController
 {
@@ -22,8 +22,8 @@ class StatusSiteCrudController extends AbstractCrudController
     {
         return [
             BooleanField::new('active', 'Vitrine/e-commerce')->hideOnForm(),
-            DateField::new('startDate', 'Date début'),
-            DateField::new('endDate', 'Date fin')
+            DateTimeField::new('startDate', 'Date début'),
+            DateTimeField::new('endDate', 'Date fin')
         ];
     }
 
@@ -32,7 +32,7 @@ class StatusSiteCrudController extends AbstractCrudController
         return $crud
         ->setEntityLabelInSingular('Statut du site')
         ->setEntityLabelInPlural('Statut du site')
-        ->setDateFormat('d/m/y')
+        ->setDateTimeFormat('dd/MM/y à HH:mm:ss')
         ->setSearchFields(null);
     }
     

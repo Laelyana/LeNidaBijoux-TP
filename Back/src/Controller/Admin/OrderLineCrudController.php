@@ -41,7 +41,5 @@ class OrderLineCrudController extends AbstractCrudController
     {
     return $actions
         ->remove(Crud::PAGE_INDEX, Action::EDIT);
-   
-        
     }
 }

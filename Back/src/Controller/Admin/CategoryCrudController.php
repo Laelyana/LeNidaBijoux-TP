@@ -7,6 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class CategoryCrudController extends AbstractCrudController
 {
@@ -24,10 +26,11 @@ class CategoryCrudController extends AbstractCrudController
         }
         
         return [
-            TextField::new('name','Nom de la catégorie'),
+            TextField::new('name','Nom de la catégorie')->setFormTypeOptions(["constraints"=>[new Length(['max'=>255]),new NotBlank()]]),
             ImageField::new('picture','Image')->setUploadDir('public/pictures')
                                               ->setBasePath('/pictures')
                                               ->setRequired($required)
+                                              ->setFormTypeOptions(["constraints"=>[new Length(['max'=>255])]])
         ];
     }
 
