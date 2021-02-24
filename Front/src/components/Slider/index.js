@@ -7,9 +7,6 @@ import Slid from './slid';
 
 import './slide.scss';
 
-
-
-
 const proprietes = {
     duration: 5000,
     transitionDuration: 500,
