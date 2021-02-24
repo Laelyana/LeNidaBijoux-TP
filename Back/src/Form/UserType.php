@@ -45,7 +45,7 @@ class UserType extends AbstractType
                 'constraints' => [
                     new NotBlank(),
                     new Length(['max'=>15]),
-                    new Regex(['pattern'=>'/\D/','match' => false, 'message' => 'Your phone number must contain just numbers'])
+                    new Regex(['pattern'=>'/\D/','match' => false, 'message' => 'Votre numéro de téléphone ne doit contenir que des chiffres'])
                 ]
             ])
             //->add('roles')

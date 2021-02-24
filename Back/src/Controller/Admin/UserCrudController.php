@@ -10,6 +10,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\NotNull;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -45,13 +49,21 @@ class UserCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        if($pageName === Crud::PAGE_EDIT){
+            $required = false;
+        }else{
+            $required = true;
+        }
+
         return [
-            EmailField::new('email', "Email"),
-            TextField::new('lastname','Nom'),
-            TextField::new('firstname','Prénom'),
-            TextField::new('rawPassword', 'Mot de passe')->onlyOnForms()->setHelp('Tapez un nouveau mot de passe pour le modifier'),
-            TextField::new('phoneNumber','Numéro de téléphone')->hideOnIndex(),
-            ArrayField::new('roles', 'Rôle')
+            EmailField::new('email', "Email")->setFormTypeOptions(["constraints"=>[new Length(['max'=>180]),new NotBlank()]]),
+            TextField::new('lastname','Nom')->setFormTypeOptions(["constraints"=>[new Length(['max'=>50]),new NotBlank()]]),
+            TextField::new('firstname','Prénom')->setFormTypeOptions(["constraints"=>[new Length(['max'=>50]),new NotBlank()]]),
+            TextField::new('rawPassword', 'Mot de passe')->onlyOnForms()
+                                                         ->setHelp('Tapez un nouveau mot de passe pour le modifier')
+                                                         ->setRequired($required),
+            TextField::new('phoneNumber','Numéro de téléphone')->setFormTypeOptions(["constraints"=>[new Length(['max'=>15]),new NotBlank(), new Regex(['pattern'=>'/\D/','match' => false, 'message' => 'Votre numéro de téléphone ne doit contenir que des chiffres'])]]),
+            ArrayField::new('roles', 'Rôle')->setFormTypeOptions(["constraints"=>[new NotBlank()]])
         ];
     }
     

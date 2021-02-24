@@ -7,6 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class StyleCrudController extends AbstractCrudController
 {
@@ -18,8 +20,8 @@ class StyleCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('name','Nom du style'),
-            AssociationField::new('category', 'Catégorie'),
+            TextField::new('name','Nom du style')->setFormTypeOptions(["constraints"=>[new Length(['max'=>255]),new NotBlank()]]),
+            AssociationField::new('category', 'Catégorie')->setFormTypeOptions(["constraints"=>[new NotBlank()]]),
         ];
     }
 

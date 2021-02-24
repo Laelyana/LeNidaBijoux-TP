@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class PasswordRecoveryController extends AbstractController
 {
     /**
-     * @Route("/api/passwords_recovery", name="api_passwords_recovery")
+     * @Route("/api/passwords_recovery", name="api_passwords_recovery", methods={"PATCH"})
      */
     public function send(Request $request, UserRepository $userRepo, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer): Response
     {
