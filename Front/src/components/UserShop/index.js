@@ -1,32 +1,25 @@
 import React from 'react';
+import CartItem from './CartItems';
 
 import './usershop.scss';
 
-const UserShop = () => (
-  <div className="usershop">
-    <h2>Mon panier</h2>
-    <a href="/mon-compte" className="usershop__back">Revenir au tableau de bord</a>
-    <div className="usershop__list">
-      <div className="usershop__list--item">
-        <h5 className="usershop__list--item--name">Produit n°1</h5>
-        <input type="number" placeholder="Quantité"></input>
-        <div>Prix</div>
-        <button className="usershop__list--item--button">Consulter</button>
-      </div>
-      <div className="usershop__list--item">
-        <h5 className="usershop__list--item--name">Produit n°2</h5>
-        <input type="number" placeholder="Quantité"></input>
-        <div>Prix</div>
-        <button className="usershop__list--item--button">Consulter</button>
-      </div>
-      <div className="usershop__list--item">
-        <h5 className="usershop__list--item--name">Produit n°3</h5>
-        <input type="number" placeholder="Quantité"></input>
-        <div>Prix</div>
-        <button className="usershop__list--item--button">Consulter</button>
+const UserShop = ({ cartItems }) => {
+  console.log(cartItems);
+  return (
+    <div className="usershop">
+      <h2>Mon panier</h2>
+      <a href="/mon-compte" className="usershop__back"><div>Revenir au tableau de bord</div></a>
+      <a href="/" className="usershop__back"><div>Continuez mes achats</div></a>
+
+      <h2> Détails de votre commande</h2>
+      <div className="usershop__list">
+        {
+          cartItems.map((cartItem) => (
+            <CartItem key={cartItem.id} {...cartItem} />
+          ))
+        }
       </div>
     </div>
-  </div>
-);
-
+  );
+};
 export default UserShop;

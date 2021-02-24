@@ -14,7 +14,7 @@ import Main from 'src/components/Main';
 import Categories from 'src/containers/Categories';
 import Collections from 'src/containers/Collections';
 import Products from 'src/containers/Products';
-import Product from 'src/components/Product';
+import Product from 'src/containers/Product';
 import Footer from 'src/components/Footer';
 import LoginPage from 'src/components/LoginPage';
 import LegalsMentions from 'src/components/LegalsMentions';
@@ -25,7 +25,7 @@ import Dashboard from 'src/components/Dashboard';
 import Favorites from 'src/containers/Favorites';
 import UserData from 'src/containers/UserData';
 import UserOrders from 'src/containers/UserOrders';
-import UserShop from 'src/components/UserShop';
+import UserShop from 'src/containers/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
 
 import getProductsByCategory, { getProductsByCollections } from '../../utils/products';
