@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use Symfony\Component\Validator\Constraints\Length;
 
 class SliderCrudController extends AbstractCrudController
 {
@@ -25,7 +26,10 @@ class SliderCrudController extends AbstractCrudController
         }
 
         return [
-            ImageField::new('picture','Image')->setUploadDir('public/pictures')->setBasePath('/pictures')->setRequired($required),
+            ImageField::new('picture','Image')->setUploadDir('public/pictures')
+                                              ->setBasePath('/pictures')
+                                              ->setFormTypeOptions(["constraints"=>[new Length(['max'=>255])]])
+                                              ->setRequired($required),
             BooleanField::new('active', 'Actif sur le slider')
         ];
     }
