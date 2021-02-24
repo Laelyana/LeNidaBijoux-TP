@@ -10,6 +10,7 @@ import editUserReducer from '../reducers/editUser';
 import ordersReducer from '../reducers/orders';
 import statusReducer from '../reducers/status';
 import productsReducer from '../reducers/products';
+import cartReducer from '../reducers/cart';
 // on importer les différents reducers
 
 const combineReducer = combineReducers({
@@ -23,6 +24,7 @@ const combineReducer = combineReducers({
   orders: ordersReducer,
   status: statusReducer,
   products: productsReducer,
+  cart: cartReducer,
   // on combine tous les reducers
 });
 
