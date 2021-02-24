@@ -18,6 +18,19 @@ function handleClick__trois() {
   general.className = 'product__box__img--un image__trois';
 }
 
+function handleClick__fav() {
+  const btnFav = document.getElementById('fav');
+  let txtFav = document.querySelector('product__box__cart--btn-fav-txt');
+  if(btnFav.className == "product__box__cart--btn-fav"){
+    btnFav.className = "product__box__cart--btn-fav-add";
+    btnFav.innerHTML = "&#9733;";
+  }
+  else {
+    btnFav.className = "product__box__cart--btn-fav";
+    btnFav.innerHTML = "Ajouter aux favoris";
+  }
+}
+
 const Product = ({ product }) => (
 
   <div className="product">
@@ -38,7 +51,7 @@ const Product = ({ product }) => (
       <div className="product__box__cart--price" id="prix">{product.price}<h5>Euros</h5></div>
       <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" />
       <button type="submit" className="product__box__cart--btn-add">Ajouter au panier</button>
-      <button type="submit" className="product__box__cart--btn-fav">Ajouter aux favoris</button>
+      <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>
 
     </div>
 
