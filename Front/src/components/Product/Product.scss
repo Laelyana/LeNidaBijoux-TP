@@ -154,6 +154,10 @@ flex-wrap: wrap;
     border: rgb(207, 206, 205) 1px solid;
     box-shadow: 0 0 1px 2px rgb(230, 229, 229);
     margin: .3rem auto .3rem auto;
+
+    &-inactive{
+      display: none;
+    }
   
     &:hover{
       background-color: white;
@@ -177,6 +181,8 @@ flex-wrap: wrap;
       &:hover{
         color: #1A3E51;
       }
+
+    
     }
 
   }
@@ -196,7 +202,6 @@ flex-wrap: wrap;
       background-color: white;
       color: #DBCAC0;
       border: rgb(207, 206, 205) 2px solid;
-      cursor: zoom-in;
     }
   }
 }

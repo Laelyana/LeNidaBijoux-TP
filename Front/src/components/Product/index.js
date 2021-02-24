@@ -31,7 +31,7 @@ function handleClick__fav() {
   }
 }
 
-const Product = ({ product }) => (
+const Product = ({ isLogged, handleLogout, product }) => (
 
   <div className="product">
     <div className="product__box__img ">
@@ -51,8 +51,15 @@ const Product = ({ product }) => (
       <div className="product__box__cart--price" id="prix">{product.price}<h5>Euros</h5></div>
       <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" />
       <button type="submit" className="product__box__cart--btn-add">Ajouter au panier</button>
-      <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>
-
+      {!isLogged
+        && (
+          <button type="submit" className="product__box__cart--btn-fav-inactive" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>)}
+      {isLogged
+        && (
+          
+          <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>
+          
+        )}
     </div>
 
   </div>
