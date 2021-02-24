@@ -1,12 +1,20 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectCartItems, selectCartTotal } from 'src/utils/card.selectors';
+import { createStructuredSelector } from 'reselect';
 import CartItem from './CartItems';
 
 import './usershop.scss';
 
-const UserShop = ({ cartItems }) => {
-  console.log(cartItems);
+const mapState = createStructuredSelector({
+  cartItems: selectCartItems,
+  total: selectCartTotal,
+});
+
+const UserShop = () => {
   const errMsg = "Vous n'avez pas de produit dans votre panier";
+  const { cartItems, total } = useSelector(mapState);
   const history = useHistory();
   return (
     <div className="checkout">
@@ -64,7 +72,7 @@ const UserShop = ({ cartItems }) => {
                               <tr>
                                 <td>
                                   <h3>
-                                    Total: {}€
+                                    Total: {total}€
                                   </h3>
                                 </td>
                               </tr>
