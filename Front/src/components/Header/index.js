@@ -1,5 +1,4 @@
 import React from 'react';
-
 import reactLogo from './img.jpg';
 
 import './header.scss';
@@ -14,7 +13,7 @@ const Header = () => (
         <a href="/Collections"><li className="navigation__li">Collections</li></a>
       </ul>
     </div>
- 
+
 );
 
 export default Header;

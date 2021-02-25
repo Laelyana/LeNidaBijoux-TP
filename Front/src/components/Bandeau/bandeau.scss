@@ -4,15 +4,11 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #f5a7b5;
-  padding: .2rem 0 0 0;
+  padding: .4rem 0 0 0;
   width: 100vw;
   overflow: hidden;
   font-family: 'Palanquin', sans-serif;
-  position: fixed;
-  z-index: 10;
   
-  
- 
   &__timer{
     align-self: center;
     margin: 0 0 .3rem 0;
@@ -62,20 +58,17 @@
 
 .btn__log{
   background-color: transparent;
-  padding: .3rem;
   color: #000;
   font-family: 'Palanquin', sans-serif;
-
-
+  border: none;
 
   &:hover{
-    background-color: #fcfbfb;
     color: #000;
     animation: move_btn 3s;
   }
 }
 
-//animation on part de 0 border-radius à ce que l'on veut atteindre (50%) puis on redescend à 0% en modifiant la largeur du bloc légerement
+
 @keyframes move_btn {
   0% {
       border-bottom: 1px solid white;

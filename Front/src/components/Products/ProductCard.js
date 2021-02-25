@@ -5,17 +5,15 @@ import { Link } from 'react-router-dom';
 import './products.scss';
 
 const ProductCard = ({ name, id }) => (
-  <>
-    <Link to={`/${name}/`}>
-      <div className="products">
+
+  <div className="prod">
         <div className="prod prod__img prod__img--un">
           <div className="prod__band">
-            <div className="prod__band--title">{name}</div>
+            <div className="prod__band--title"><Link to={`/${name}`} />{name}</div>
           </div>
         </div>
       </div>
-    </Link>
-  </>
+
 );
 
 ProductCard.propTypes = {

@@ -7,6 +7,7 @@ import shopLogo from './shopping.png';
 
 import './bandeau.scss';
 
+
 const Bandeau = ({ isLogged, handleLogout, status, cartItems }) => (
 
   <div className="bandeau">
@@ -43,4 +44,4 @@ Bandeau.propTypes = {
 };
 
 
-export default Bandeau;
+export default  Bandeau;

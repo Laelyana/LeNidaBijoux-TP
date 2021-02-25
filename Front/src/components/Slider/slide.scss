@@ -1,5 +1,9 @@
 @use '/src/styles/vars';
 
+.carousel{
+margin-top: 30rem;
+}
+
 .slide-container{
   position: relative;
  
@@ -12,8 +16,7 @@
   overflow: hidden;
   display: flex;
   position: relative;
-
-  
+  margin-top: 0rem;
 }
 
 .react-slideshow-container .nav {
@@ -41,9 +44,6 @@
 
 .react-slideshow-container .default-nav.disabled:hover {
   cursor: not-allowed;
-}
-
-.react-slideshow-container .default-nav:first-of-type {
   margin-right: -30px;
   border-right: none;
   border-top: none;
