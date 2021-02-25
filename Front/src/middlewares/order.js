@@ -1,8 +1,9 @@
 import axios from 'axios';
 import apiUrl from 'src/utils/api';
 import {
-  clearCart, clearOrder, CLEAR_ORDER, createOrder, CREATE_ORDER,
+  createOrder, CREATE_ORDER,
 } from '../actions/orders';
+import { clearCart } from '../actions/shop';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
@@ -26,18 +27,16 @@ export default (store) => (next) => (action) => {
         })
         .then((response) => {
           console.log(response);
-          store.dispatch(createOrder());
+          if (newOrder !== { }) {
+            store.dispatch(createOrder(newOrder));
+            store.dispatch(clearCart());
+          }
         }).catch((error) => {
           console.log('error');
         })
         .finally((response) => {
-
+          console.log("c'est fini");
         });
-      next(action);
-      break;
-    }
-    case CLEAR_ORDER: {
-      store.dispatch(clearOrder());
       next(action);
       break;
     }
