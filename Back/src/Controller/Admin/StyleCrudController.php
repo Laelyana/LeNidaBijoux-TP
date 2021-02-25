@@ -29,6 +29,7 @@ class StyleCrudController extends AbstractCrudController
     {
         return $crud
         ->setEntityLabelInSingular('Style')
-        ->setEntityLabelInPlural('Styles');
+        ->setEntityLabelInPlural('Styles')
+        ->setPaginatorPageSize(1000000);
     }
 }

@@ -23,7 +23,8 @@ class OrderCrudController extends AbstractCrudController
         return $crud
         ->setEntityLabelInSingular('Commande')
         ->setEntityLabelInPlural('Commandes')
-        ->setDateTimeFormat('dd/MM/y à HH:mm:ss');
+        ->setDateTimeFormat('dd/MM/y à HH:mm:ss')
+        ->setPaginatorPageSize(1000000);
     }
 
     

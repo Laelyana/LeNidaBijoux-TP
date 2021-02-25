@@ -35,7 +35,8 @@ class OrderLineCrudController extends AbstractCrudController
         return $crud
         ->setEntityLabelInSingular('Commande')
         ->setEntityLabelInPlural('Commandes')
-        ->setDefaultSort(['orderEntity' => 'DESC']);
+        ->setDefaultSort(['orderEntity' => 'DESC'])
+        ->setPaginatorPageSize(1000000);
     }
     public function configureActions(Actions $actions): Actions
     {
