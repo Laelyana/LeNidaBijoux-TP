@@ -37,15 +37,15 @@ export const handleReduceCartItem = ({
   prevCartItems,
   cartItemToReduce,
 }) => {
-  const existingCartItem = prevCartItems.find((cartItem) => cartItem.documentID === cartItemToReduce.documentID);
+  const existingCartItem = prevCartItems.find((cartItem) => cartItem.id === cartItemToReduce.id);
 
   if (existingCartItem.quantity === 1) {
     return prevCartItems.filter(
-      (cartItem) => cartItem.documentID !== existingCartItem.documentID,
+      (cartItem) => cartItem.id !== existingCartItem.id,
     );
   }
 
-  return prevCartItems.map((cartItem) => (cartItem.documentID === existingCartItem.documentID
+  return prevCartItems.map((cartItem) => (cartItem.id === existingCartItem.id
     ? {
       ...cartItem,
       quantity: cartItem.quantity - 1,
