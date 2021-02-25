@@ -26,15 +26,11 @@ export default (store) => (next) => (action) => {
         })
         .then((response) => {
           console.log(response);
-          store.dispatch(createOrder(newOrder));
-          console.log('je suis la 1');
-          sessionStorage.clear('cart');
-          console.log('je suis la 2');
-          store.dispatch(clearCart());
-          console.log('je suis la 3');
+          store.dispatch(createOrder());
         }).catch((error) => {
           console.log('error');
-        }).finally((response) => {
+        })
+        .finally((response) => {
 
         });
       next(action);
