@@ -3,25 +3,26 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 0 auto 0 auto;
-  background-color: #fcfbfb;
-  padding: .4rem;
+  background-color: #fff;
+  padding: .2rem 0 0 0;
   width: 100vw;
-  border-radius: 0 0 5rem 5rem;
-  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
-  border: .2rem white solid;
   overflow: hidden;
-
-
+  font-family: 'Palanquin', sans-serif;
+  position: fixed;
+  z-index: 11;
+  margin-top: 0rem;
+  
+  
+ 
   &__timer{
     align-self: center;
-    width: 60%;
-    color: #C2858C;
-    font-weight: bolder;
+    margin: 0 0 .3rem 0;
+  
+    color: #000;
   }
   &__rightside{
     display: flex;
-    width: 40%;
+    
   }
   &__form{
     display: flex;
@@ -60,22 +61,19 @@
   display: none;
 }
 
-@media (max-width: 700px) {
-  .bandeau__timer{
-    font-size: 0.8rem;
-  }
-}
+
 
 .btn__log{
-  background-color: #C2858C;
-  border-radius: 3rem;
-  padding: .4rem;
-  color: #fcfbfb;
+  background-color: #fff;
+  padding: .3rem;
+  color: #000;
   border: .1rem solid white;
+  font-family: 'Palanquin', sans-serif;
+
 
   &:hover{
     background-color: #fcfbfb;
-    color: #C2858C;
-    border: .1rem solid #C2858C;
+    color: #000;
+    border-bottom: .1rem solid #ffcad4;
   }
 }

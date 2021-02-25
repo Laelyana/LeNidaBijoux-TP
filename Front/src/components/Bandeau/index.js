@@ -33,6 +33,7 @@ const Bandeau = ({ isLogged, handleLogout, status, cartItems }) => (
       </div>
     </div>
   </div>
+
 );
 
 Bandeau.propTypes = {

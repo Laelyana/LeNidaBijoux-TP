@@ -1,16 +1,20 @@
 @use '/src/styles/vars';
 
+.slide-container{
+  position: relative;
+  top: 10rem;
+
+}
+
 .react-slideshow-container {
   background-color: transparent;
-  margin: 5rem auto;
-  border-radius: 15rem;
-  position: relative;
-  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
-  border: .2rem white solid;
-  width: vars.$mi_full;
+  width: vars.$full;
   height: vars.$cardH;
   overflow: hidden;
   display: flex;
+  position: relative;
+
+  
 }
 
 .react-slideshow-container .nav {
@@ -20,27 +24,19 @@
 
 
 .react-slideshow-container .default-nav {
-  width: 10%;
+  width: 5%;
   height: 100%;
   background-color: transparent;
-  border-radius: 5rem 0 0 5rem;
   text-align: center;
-  opacity: .3;
   overflow: hidden;
   cursor: pointer;
-  color: rgb(19, 1, 1);
   font-weight: bold;
-//lors du hover on lance l'animation en bas de page
-  &:hover{
-    opacity: .6;
-    animation: move_btn 2s infinite; //nom de l'animation + temp + boucle à l'infinie
-  }
 }
 
 .react-slideshow-container .default-nav:hover,
 .react-slideshow-container .default-nav:focus {
   background: transparent;
-  color: C2858C;
+  color: #C2858C;
   outline: none;
 }
 
@@ -162,52 +158,6 @@
 }
 
 
-//animation on part de 0 border-radius à ce que l'on veut atteindre (50%) puis on redescend à 0% en modifiant la largeur du bloc légerement
-@keyframes move_btn {
-  0% {
-      border-radius: 0 0 0 0;
-      opacity: .6;
-  }
-  
-  5% {
-      border-radius: 1rem 1rem 1rem 1rem;
-  }
-  
-  10% {
-      border-radius: 2rem 2rem 2rem 2rem;
-  }
-  
-  25% {
-      border-radius: 3rem 3rem 3rem 3rem;
-  }
-  
-  50% {
-    border-radius: 4rem 4rem 4rem 4rem;
-    width: 20%;
-    opacity: .4;
-  }
-  
-  75% {
-    border-radius: 3rem 3rem 3rem 3rem;
-  }
-  
-  90% {
-    border-radius: 2rem 2rem 2rem 2rem;
-  }
-  
-  95% {
-    border-radius: 1rem 1rem 1rem 1rem;
-  }
-  
-  
-  100% {
-      border-radius: 0 0 0 0;
-      height: 100%;
-      opacity: .6;
-  }
-  }
-
- 
 //class pour la balsie img
 .slider__img{
   object-fit: cover;
@@ -215,5 +165,17 @@
   height: 420px;
 }
 
+.default-nav{
+  border: none;
+  opacity: .6;
+
+  &:hover{
+    opacity: .6;
+  }
+}
+
+.nav .default-nav{
+  background-color: transparent;
+}
 
 
