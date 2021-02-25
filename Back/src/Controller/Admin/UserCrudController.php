@@ -12,7 +12,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Constraints\Regex;
 
 class UserCrudController extends AbstractCrudController
@@ -43,6 +42,7 @@ class UserCrudController extends AbstractCrudController
             $encodedPassword = $this->userPasswordEncoderInterface->encodePassword($entityInstance, $entityInstance->getRawPassword());
             $entityInstance->setPassWord($encodedPassword);
         }
+        $entityInstance->setUpdatedAt(new \DateTime());
         parent::updateEntity($entityManager, $entityInstance);
         $entityInstance->setRawPassword(null);
     }
@@ -71,6 +71,8 @@ class UserCrudController extends AbstractCrudController
     {
         return $crud
         ->setEntityLabelInSingular('Utilisateur')
-        ->setEntityLabelInPlural('Utilisateurs');
+        ->setEntityLabelInPlural('Utilisateurs')
+        ->setPaginatorPageSize(1000000);
     }
+    
 }

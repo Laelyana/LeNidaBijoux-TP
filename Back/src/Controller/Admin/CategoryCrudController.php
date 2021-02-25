@@ -38,6 +38,7 @@ class CategoryCrudController extends AbstractCrudController
     {
         return $crud
         ->setEntityLabelInSingular('Catégorie')
-        ->setEntityLabelInPlural('Catégories');
+        ->setEntityLabelInPlural('Catégories')
+        ->setPaginatorPageSize(1000000);
     }
 }
