@@ -1,0 +1,243 @@
+-- Adminer 4.7.6 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+SET NAMES utf8mb4;
+
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `category` (`id`, `name`, `picture`) VALUES
+(51,	'Boucles d\'oreilles',	'boucles.jpg'),
+(52,	'Colliers',	'colliers.jpg'),
+(53,	'Bagues',	'bagues.png'),
+(54,	'Bracelets',	'bracelets.jpg');
+
+DROP TABLE IF EXISTS `colection`;
+CREATE TABLE `colection` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `colection` (`id`, `name`, `picture`, `created_at`, `updated_at`) VALUES
+(32,	'Printemps',	'printemps.png',	'2021-02-25 11:51:37',	NULL),
+(33,	'Automne',	'automne.png',	'2021-02-25 11:51:55',	NULL),
+(34,	'Hiver',	'hiver.png',	'2021-02-25 11:52:10',	NULL),
+(36,	'Été',	'ete.png',	'2021-02-25 11:55:07',	NULL);
+
+DROP TABLE IF EXISTS `doctrine_migration_versions`;
+CREATE TABLE `doctrine_migration_versions` (
+  `version` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
+  `executed_at` datetime DEFAULT NULL,
+  `execution_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
+('DoctrineMigrations\\Version20210211124636',	'2021-02-11 13:48:28',	320),
+('DoctrineMigrations\\Version20210212103737',	'2021-02-12 11:38:31',	42),
+('DoctrineMigrations\\Version20210212105840',	'2021-02-12 11:59:13',	68),
+('DoctrineMigrations\\Version20210212111009',	'2021-02-12 12:14:35',	69),
+('DoctrineMigrations\\Version20210212111920',	'2021-02-12 12:19:24',	42),
+('DoctrineMigrations\\Version20210212142021',	'2021-02-12 15:20:55',	73),
+('DoctrineMigrations\\Version20210213092235',	'2021-02-13 10:23:38',	60),
+('DoctrineMigrations\\Version20210215094614',	'2021-02-15 10:47:42',	89);
+
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_F5299398A76ED395` (`user_id`),
+  CONSTRAINT `FK_F5299398A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+DROP TABLE IF EXISTS `order_line`;
+CREATE TABLE `order_line` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_entity_id` int(11) NOT NULL,
+  `quantity` smallint(5) unsigned NOT NULL,
+  `label_product` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price_product` double unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_9CE58EE13DA206A5` (`order_entity_id`),
+  CONSTRAINT `FK_9CE58EE13DA206A5` FOREIGN KEY (`order_entity_id`) REFERENCES `order` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) DEFAULT NULL,
+  `style_id` int(11) DEFAULT NULL,
+  `colection_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` double unsigned DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `picture1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `picture3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stock` smallint(6) DEFAULT NULL,
+  `liked` smallint(6) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_D34A04AD12469DE2` (`category_id`),
+  KEY `IDX_D34A04ADBACD6074` (`style_id`),
+  KEY `IDX_D34A04ADA394B00` (`colection_id`),
+  CONSTRAINT `FK_D34A04AD12469DE2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
+  CONSTRAINT `FK_D34A04ADA394B00` FOREIGN KEY (`colection_id`) REFERENCES `colection` (`id`),
+  CONSTRAINT `FK_D34A04ADBACD6074` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `product` (`id`, `category_id`, `style_id`, `colection_id`, `name`, `price`, `description`, `picture1`, `picture2`, `picture3`, `stock`, `liked`, `created_at`, `updated_at`) VALUES
+(166,	52,	62,	36,	'Couronne',	30.5,	'Ce magnifique collier fera ressortir votre royauté.',	'collier_couronne.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 12:31:14',	NULL),
+(167,	52,	63,	33,	'Cœur de verre',	10,	'Un cœur à prendre!',	'collier_coeur.png',	NULL,	NULL,	3,	0,	'2021-02-25 12:36:01',	NULL),
+(168,	52,	63,	NULL,	'Cœur de jade',	9.63,	'Jolie cœur tressé qui accompagnera vos escapades...',	'collier_coeur_bleu.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 12:38:01',	NULL),
+(169,	52,	63,	33,	'Cœur précieux',	26,	'Pour montrer les milles facettes de vos sentiments !',	'collier_coeur_multiple.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 12:40:29',	NULL),
+(170,	52,	62,	NULL,	'Cœur satiné',	15,	'Une idée pour la Saint Valentin ?',	'collier_coeur_rouge.png',	NULL,	NULL,	4,	0,	'2021-02-25 12:42:39',	NULL),
+(171,	52,	62,	32,	'Geodia',	15,	'Rendra votre teint plein d\'éclats !',	'collier_geode.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 12:44:30',	NULL),
+(172,	52,	63,	32,	'Aqua',	16.25,	NULL,	'collier_goutte.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 12:46:10',	NULL),
+(173,	52,	63,	NULL,	'Carol',	25,	NULL,	'collier_mixte.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 12:47:08',	NULL),
+(174,	52,	63,	NULL,	'Jasmine',	35,	'Pour vos soirées orientales.',	'collier_oriental.jpg',	NULL,	NULL,	5,	0,	'2021-02-25 12:49:18',	NULL),
+(175,	52,	63,	NULL,	'Paon',	40,	'On ne verra que vous !',	'collier_paon.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 12:50:54',	NULL),
+(176,	52,	63,	32,	'Greenland',	26,	'Un éclat de la nature.',	'collier_precieu.jpg',	NULL,	NULL,	1,	0,	'2021-02-25 12:52:27',	NULL),
+(177,	53,	NULL,	NULL,	'Cristalys',	50,	'La bague de lumière...',	'bague_cristal.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:08:45',	NULL),
+(178,	53,	NULL,	NULL,	'Wedding',	90,	'Une idée de mariage?',	'bague_fillancail.jpg',	NULL,	NULL,	1,	0,	'2021-02-25 13:10:46',	NULL),
+(179,	53,	NULL,	32,	'Floralis',	NULL,	'C\'est vous la plus belle fleur !!',	'bague_fleur.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:11:45',	NULL),
+(180,	53,	NULL,	33,	'Rosetta',	10,	NULL,	'bague_rose.png',	NULL,	NULL,	0,	0,	'2021-02-25 13:14:02',	NULL),
+(181,	53,	NULL,	36,	'Tresor',	NULL,	'Si précieux !',	'bague_tresor.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:14:57',	NULL),
+(182,	53,	NULL,	34,	'Criscri',	NULL,	NULL,	'bague_verte.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:16:21',	NULL),
+(183,	51,	61,	NULL,	'Coco',	40,	'De belles boules pour vos oreilles !',	'boucle_coco.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:18:03',	NULL),
+(184,	51,	60,	33,	'Tempo',	NULL,	'Avec vous êtes sûr de vous !',	'boucles_afro.png',	NULL,	NULL,	0,	0,	'2021-02-25 13:19:16',	NULL),
+(185,	51,	61,	34,	'Sling',	15,	'Aiguisé comme un couteau.',	'boucles_couteau.png',	NULL,	NULL,	0,	0,	'2021-02-25 13:20:32',	NULL),
+(186,	51,	61,	36,	'Pakpak',	NULL,	'Ne passer plus inaperçu !',	'boucles_ecriteau.png',	NULL,	NULL,	0,	0,	'2021-02-25 13:22:11',	NULL),
+(187,	51,	59,	NULL,	'Etoiles',	25,	'Une étoile parmi les étoiles....',	'boucles_etolie.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:23:22',	NULL),
+(188,	51,	61,	32,	'Bouquet',	15,	'Une explosion printanière !',	'boucles_fleur.png',	NULL,	NULL,	0,	0,	'2021-02-25 13:24:55',	NULL),
+(189,	51,	60,	36,	'Girafes',	NULL,	'De belles formes pour vos oreilles...',	'boucles_girafes.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:26:13',	NULL),
+(190,	51,	61,	NULL,	'Grenada',	20.3,	'Pour vos soirées espagnoles...',	'boucles_grenade.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:27:36',	NULL),
+(191,	51,	61,	NULL,	'Hindi',	25,	'On se fait un indien ce soir ?',	'boucles_hindi.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:28:50',	NULL),
+(192,	51,	61,	32,	'Paon-Paon',	24.3,	'On vous remarque !',	'boucles_paon.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:30:07',	NULL),
+(193,	51,	60,	NULL,	'Certi',	42.35,	'Madame est servi.',	'boucles_parure.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:31:09',	NULL),
+(194,	51,	61,	NULL,	'Gouttelettes',	15,	'Discret mais voyant.',	'boucles_perles.png',	NULL,	NULL,	0,	0,	'2021-02-25 13:32:23',	NULL),
+(195,	51,	61,	36,	'Persian',	16.4,	'Au top avec le bleu de vos yeux.',	'boucles_perse.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:33:34',	NULL),
+(196,	51,	59,	NULL,	'Vivi',	NULL,	'Un beau style en V.',	'boucles_v.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:34:57',	NULL),
+(197,	54,	NULL,	34,	'Cristalrond',	13,	'Tout en finesse...',	'bracelet_cristal.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:36:56',	NULL),
+(198,	54,	NULL,	33,	'Fantasia',	26,	'Pour toutes vos fantaisies !',	'bracelet_fantaisie.png',	NULL,	NULL,	0,	0,	'2021-02-25 13:38:33',	NULL),
+(199,	52,	NULL,	34,	'Blear',	16.34,	'Pierre noire pour garder votre mystère...',	'bracelet_gouttes.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:40:49',	NULL),
+(200,	54,	NULL,	NULL,	'Blé d\'or',	53,	'Parce que vous le valez bien !',	'bracelet_or.jpg',	NULL,	NULL,	0,	0,	'2021-02-25 13:42:43',	NULL),
+(201,	NULL,	NULL,	NULL,	'Montre',	15,	'Une montre vintage.',	'montre.png',	NULL,	NULL,	0,	0,	'2021-02-25 13:55:48',	NULL);
+
+DROP TABLE IF EXISTS `slider`;
+CREATE TABLE `slider` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `slider` (`id`, `picture`, `active`) VALUES
+(26,	'bague_amethyste.png',	1),
+(27,	'boucles_tisse.png',	1),
+(28,	'bracelet_coeur_metal.jpg',	1),
+(29,	'collier_paon.jpg',	1);
+
+DROP TABLE IF EXISTS `status_site`;
+CREATE TABLE `status_site` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `active` tinyint(1) NOT NULL,
+  `start_date` datetime DEFAULT NULL,
+  `end_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `status_site` (`id`, `active`, `start_date`, `end_date`) VALUES
+(8,	0,	NULL,	NULL);
+
+DROP TABLE IF EXISTS `style`;
+CREATE TABLE `style` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_33BDB86A12469DE2` (`category_id`),
+  CONSTRAINT `FK_33BDB86A12469DE2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `style` (`id`, `category_id`, `name`) VALUES
+(59,	51,	'Puces'),
+(60,	51,	'Créoles'),
+(61,	51,	'Crochets'),
+(62,	52,	'Courts'),
+(63,	52,	'Longs');
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_number` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '(DC2Type:json)',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `password`, `phone_number`, `created_at`, `updated_at`, `roles`) VALUES
+(170,	'Clémence',	'Petit',	'xavier87@noos.fr',	'$argon2id$v=19$m=65536,t=4,p=1$7wTs7RrqNO1J6ACjCIQg6g$3dIdrMPVTJMb6yyG79IJlq06ypo8kRjhqd7uEo4L5wM',	'1438715136',	'2021-02-25 11:01:31',	NULL,	'[\"ROLE_USER\"]'),
+(171,	'Stéphanie',	'Rodriguez',	'remy30@orange.fr',	'$argon2id$v=19$m=65536,t=4,p=1$p2KxWdGZ13h1dBxdZiIcWg$BFEibzL960mrpmxdf+fnUB88b6unjVLC8WxZ1cric0U',	'3231239048',	'2021-02-25 11:01:31',	NULL,	'[\"ROLE_USER\"]'),
+(172,	'Adrien',	'Lemaitre',	'julien.lucas@alexandre.com',	'$argon2id$v=19$m=65536,t=4,p=1$vsufWfoRfgB2BxltqY7j+w$IUQnDT6Q4ZvtJhuayYH82Un45wpuZYUyG2nsZswTE68',	'8958092526',	'2021-02-25 11:01:31',	NULL,	'[\"ROLE_USER\"]'),
+(173,	'Jacqueline',	'Letellier',	'robert48@breton.fr',	'$argon2id$v=19$m=65536,t=4,p=1$dgtTkNAYwqx17aVkTZc3Dw$PehEYfA0qsfyq7eX00AA+vQTv19Q0ev4NE9/mgFAkM8',	'5903766670',	'2021-02-25 11:01:32',	NULL,	'[\"ROLE_USER\"]'),
+(174,	'Grégoire',	'Reynaud',	'nicole.tessier@live.com',	'$argon2id$v=19$m=65536,t=4,p=1$6P5rMYkBQW1Y/sMpxbNHGQ$5gvnJ8ArSAvazrjObbhWHZdp+VUigfZ2qPzbOijHeP8',	'4244274298',	'2021-02-25 11:01:32',	NULL,	'[\"ROLE_USER\"]'),
+(175,	'Henri',	'Faure',	'khoareau@bouygtel.fr',	'$argon2id$v=19$m=65536,t=4,p=1$4pzjXz/m9tDzTZdn8G3Ufg$81V3kc3tqHj7DnTQg6+zML33PI7Y2pm8d7bnbe8nX8U',	'798900559',	'2021-02-25 11:01:32',	NULL,	'[\"ROLE_USER\"]'),
+(176,	'Andrée',	'Gauthier',	'nicole45@renard.com',	'$argon2id$v=19$m=65536,t=4,p=1$xarJFGyJCjg+BUE8Lgu8PQ$YVS6Un+/fBK7iQEoFrizlG/5M6r9UvxMOI0ga7+zI9E',	'945193292',	'2021-02-25 11:01:32',	NULL,	'[\"ROLE_USER\"]'),
+(177,	'Olivie',	'Leroy',	'lambert.isaac@vincent.fr',	'$argon2id$v=19$m=65536,t=4,p=1$aKCx6K7k1Es6ZCUgVfIA9Q$al26UiR6d9R4jHCxjqwG9iQL9co7iHstNIWYxKJHdD4',	'5133231972',	'2021-02-25 11:01:32',	NULL,	'[\"ROLE_USER\"]'),
+(178,	'vendeuse',	'vendeuse',	'vendeuse@gmail.com',	'$argon2id$v=19$m=65536,t=4,p=1$tIFarwvyUD1w4+zi1TB1Rg$FmpeRBTO3V8iibqOT80vt//AtJgavcDfNTCP23fices',	'0111111111',	'2021-02-25 11:01:32',	NULL,	'[\"ROLE_ADMIN\"]');
+
+DROP TABLE IF EXISTS `user_product`;
+CREATE TABLE `user_product` (
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`,`product_id`),
+  KEY `IDX_8B471AA7A76ED395` (`user_id`),
+  KEY `IDX_8B471AA74584665A` (`product_id`),
+  CONSTRAINT `FK_8B471AA74584665A` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_8B471AA7A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `user_product` (`user_id`, `product_id`) VALUES
+(170,	166),
+(170,	174),
+(170,	182),
+(170,	183),
+(170,	184),
+(170,	190),
+(170,	191),
+(170,	192),
+(171,	184),
+(171,	185),
+(171,	186),
+(172,	166),
+(172,	167),
+(172,	168),
+(175,	184),
+(175,	190);
+
+-- 2021-02-25 13:14:08
