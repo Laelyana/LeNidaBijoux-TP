@@ -1,66 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap');
+
+
 .header {
-  padding-top: 4rem;
-  
+  padding-top: 0rem;
 }
-
-img {
-  height: 8rem;
-}
-
-
 
 .navigation{
- background-color: transparent;
- margin: 2rem auto;
+ background-color: white;
+ margin: 0rem auto 0rem auto;
  display: flex;
  flex-direction: row;
  flex-wrap: wrap;
  overflow: hidden;
+ padding: 1rem;
+
 
   &__ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 2rem auto 2rem auto;
-    background-color: #fcfbfb;
-    width: 80vw;
+    margin: 0rem auto 0rem auto;
+    background-color: #fff;
+    width: 100vw;
     margin: 2rem auto;
-    border-radius: 1rem;
-    box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+    
     border: .2rem white solid;
     overflow: hidden;
   }
     &__li {
       height: 2rem;
-      width: 10rem;
       align-self: center;
       padding: 0.5rem;
-      border-radius: 1rem;
-
-      margin: 1rem auto 1rem auto;
-      background-color: #C2858C;
-      color: whitesmoke;
-      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+      margin: 0rem auto 0rem auto;
+      color: #000;
       position: relative;
-
-      &:after{
-        content: "";
-        background-color: #beb8b8;
-        bottom: -.5rem;
-        width: 100%;
-        height: 10%;
-        position: absolute;
-        display: block;
-        border-radius: 50%;
-        opacity: .4;
-      }
+      font-family: 'Palanquin', sans-serif;
+      font-size: 1.2rem;
 
     &:hover {
-      background-color: #1A3E51;
-      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
-      border-radius: 2rem;
-      color: white;
+      color: #000;
+      border-bottom: 2px solid #f5a7b5;
     }
   }
 }

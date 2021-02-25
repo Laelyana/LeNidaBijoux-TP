@@ -50,23 +50,18 @@ const Product = ({ product, isLogged }) => {
         </div>
       </div>
       <div className="product__box__txt">
-        <div className="product__box__txt--title">{product.name}</div>
-        <p>{product.description}</p>
+        <div className="product__box__txt--title"><h5>{product.name}</h5></div>
+        <div className="product__box__cart--price" id="prix">{product.price} Euros</div>
         <div className="product__box__txt--quantite">Il reste {product.stock} exemplaires en stock</div>
-      </div>
-      <div className="product__box__cart">
-        <div className="product__box__cart--price" id="prix">{product.price}<h5>Euros</h5></div>
+
+        <div className="product__box__cart">
         <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" />
         <button type="button" onClick={() => handleAddToCart(product)} className="product__box__cart--btn-add">Ajouter au panier</button>
-        {!isLogged
-          && (
-            <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>)}
-        {isLogged
-          && (
-
-            <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>)}
+        <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>
       </div>
-    </div>
+        <div className="product__box__txt--description">{product.description}</div>
+        </div>
+        </div>
   );
 };
 Product.propTypes = {

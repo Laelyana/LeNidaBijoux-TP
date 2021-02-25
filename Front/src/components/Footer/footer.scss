@@ -1,81 +1,79 @@
 .footer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 2rem auto 2rem auto;
-  background-color: #fcfbfb;
-  width: 80vw;
-  margin: 1rem auto;
-  border-radius: 1rem;
-  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
-  border: .2rem white solid;
+  background-color: #f5a7b5;
+  width: 100vw;
+  margin: 0 auto;
   overflow: hidden;
+  font-family: 'Palanquin', sans-serif;
 
-  &__legals{
+
+  &__center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    margin: .5rem auto;
+  }
+
+  &--left{
+    width: 50vw;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    background-color: turquoise;
+    justify-content: right;
+  }
+
+  &--right{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: red;
+    justify-content: left;
+  }
+
+  &__legals{
+   
 
     &--ul{
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
+
     }
 
     &--li{
-      padding: 0.5rem;
-      border-radius: 1rem;
+      padding: 1rem;
       margin: 1rem auto 1rem auto;
-      background-color: #C2858C;
-      color: whitesmoke;
-      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+      color: #000;
 
       &:hover {
-        background-color: #1A3E51;
-        box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
-        border-radius: 2rem;
-        transform: rotate(3deg);
-        color: white;
+        border-bottom: .1rem solid #ffcad4;
+        color: #000;
       }
     }
   }
 
   &__social{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+
   
     &--logo{
       margin: 0 0 0 1rem;
       padding: .4rem;
-      width: 5rem;
-      height: 5rem;
+      width: 3rem;
+      height: 3rem;
     }
   }
 
  &__contact{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  letter-spacing: .1rem;
+
+
 
   &--li-form{
-    padding: 0.5rem;
-    border-radius: 1rem;
+    padding: 1rem;
     margin: 1rem auto 1rem auto;
-    background-color: #C2858C;
-    color: whitesmoke;
-    box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+    color: #000;
 
     &:hover {
-      background-color: #1A3E51;
-      box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
-      border-radius: 2rem;
-      transform: rotate(3deg);
-      color: white;
+      color: #000;
+      border-bottom: .1rem solid #ffcad4;
     }
   }
  }

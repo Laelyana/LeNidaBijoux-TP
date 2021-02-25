@@ -33,5 +33,10 @@ class SliderCrudController extends AbstractCrudController
             BooleanField::new('active', 'Actif sur le slider')
         ];
     }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud->setPaginatorPageSize(1000000);
+    }
     
 }

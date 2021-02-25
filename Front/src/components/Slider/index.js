@@ -24,7 +24,7 @@ const Slider = ({ manageLoad, slider }) => {
   
 
   return (
-        <div className="slide-container">
+        
         
             <Slide {...proprietes}>
             {
@@ -35,7 +35,7 @@ const Slider = ({ manageLoad, slider }) => {
           }
             </Slide>
             
-        </div>
+       
     )
 }
 

@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 // Import Local
-import Bandeau from 'src/containers/Bandeau';
 import Header from 'src/components/Header';
+import Bandeau from 'src/containers/Bandeau';
 import Slider from 'src/containers/Slider';
 import Main from 'src/components/Main';
 import Categories from 'src/containers/Categories';
@@ -40,8 +40,8 @@ const App = ({ isLogged, status, manageLoad, categories, products, collections }
   );
   return (
     <div className="app">
-      <Bandeau status={status} />
-      <Header />
+     <Header />
+     <Bandeau status={status} />
       <Switch>
         <Route path="/" exact>
           <Slider />

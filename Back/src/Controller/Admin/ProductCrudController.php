@@ -3,13 +3,14 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
+use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -34,8 +35,8 @@ class ProductCrudController extends AbstractCrudController
         return [
 
             TextField::new('name', 'Nom du produit')->setFormTypeOptions(["constraints"=>[new Length(['max'=>255]),new NotBlank()]]),
-            NumberField::new('price', 'Prix')->setFormTypeOptions(["constraints"=>[new Positive(),new NotBlank()]]),
-            TextEditorField::new('description', 'Description')->setFormTypeOptions(["constraints"=>[new Length(['max'=>8000])]]),
+            NumberField::new('price', 'Prix')->setFormTypeOptions(["constraints"=>[new Positive()]]),
+            TextareaField::new('description', 'Description')->setFormTypeOptions(["constraints"=>[new Length(['max'=>8000])]]),
             IntegerField::new('liked','Nb de likes')->setFormTypeOptions(["constraints"=>[new Range(['max'=>32767])]]),
             ImageField::new('picture1', 'Photo n°1')->setUploadDir('public/pictures')
                                                     ->setBasePath('/pictures')
@@ -60,6 +61,13 @@ class ProductCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Produit')
             ->setEntityLabelInPlural('Produits')
-            ->setDefaultSort(['id' => 'DESC']);
+            ->setDefaultSort(['id' => 'DESC'])
+            ->setPaginatorPageSize(1000000);
+    }
+
+    public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        $entityInstance->setUpdatedAt(new \DateTime());
+        parent::updateEntity($entityManager, $entityInstance);
     }
 }
