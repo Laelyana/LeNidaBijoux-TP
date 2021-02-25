@@ -21,6 +21,7 @@ const UserShop = () => {
   const handleCreateOrder = (order) => {
     dispatch(createOrder(order));
   };
+  const newTotal = Math.round(total * 100) / 100;
   return (
     <div className="checkout">
       <h2>Mon panier</h2>
@@ -77,7 +78,7 @@ const UserShop = () => {
                               <tr>
                                 <td>
                                   <h3>
-                                    Total: {total}€
+                                    Total: {newTotal}€
                                   </h3>
                                 </td>
                               </tr>
@@ -116,11 +117,6 @@ const UserShop = () => {
             {errMsg}
           </p>
         )}
-        {/* {
-          cartItems.map((cartItem) => (
-            <CartItem key={cartItem.id} {...cartItem} />
-          ))
-        } */}
       </div>
     </div>
   );
