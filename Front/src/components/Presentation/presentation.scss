@@ -6,7 +6,12 @@
     width: 30%;
     height: auto;
   }
-  &--p{
+  &--p1{
     margin: auto 2rem;
+    text-align: left;
+  }
+  &--p2{
+    margin: auto 2rem;
+    text-align: right;
   }
 }
