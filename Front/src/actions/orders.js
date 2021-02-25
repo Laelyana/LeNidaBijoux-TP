@@ -12,11 +12,11 @@ export const saveOrders = (orders) => ({
   type: SAVE_ORDERS,
   orders,
 });
-export const createOrders = (order) => ({
+export const createOrder = (order) => ({
   type: CREATE_ORDER,
   order,
 });
-export const clearOrders = () => ({
+export const clearOrder = () => ({
   type: CLEAR_ORDER,
 });
 export const clearCart = () => ({

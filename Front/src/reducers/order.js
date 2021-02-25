@@ -1,16 +1,17 @@
-import { SAVE_ORDERS } from '../actions/orders';
+import { CLEAR_ORDER, CREATE_ORDER } from '../actions/orders';
 
 const initialState = {
-  orders: [],
+  order: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SAVE_ORDERS:
+    case CREATE_ORDER:
       return {
-        ...state,
-        orders: action.orders,
+        order: action.payload,
       };
+    case CLEAR_ORDER:
+      return { order: null };
     default:
       return {
         ...state,

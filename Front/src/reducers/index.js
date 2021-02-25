@@ -12,6 +12,7 @@ import ordersReducer from '../reducers/orders';
 import statusReducer from '../reducers/status';
 import productsReducer from '../reducers/products';
 import cartReducer from '../reducers/cart';
+import orderReducer from '../reducers/order';
 // on importer les différents reducers
 
 const combineReducer = combineReducers({
@@ -27,6 +28,7 @@ const combineReducer = combineReducers({
   status: statusReducer,
   products: productsReducer,
   cart: cartReducer,
+  order: orderReducer,
   // on combine tous les reducers
 });
 
