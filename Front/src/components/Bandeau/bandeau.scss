@@ -3,14 +3,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #fff;
+  background-color: #f5a7b5;
   padding: .2rem 0 0 0;
   width: 100vw;
   overflow: hidden;
   font-family: 'Palanquin', sans-serif;
   position: fixed;
-  z-index: 11;
-  margin-top: 0rem;
+  z-index: 10;
   
   
  
@@ -61,19 +60,30 @@
   display: none;
 }
 
-
-
 .btn__log{
-  background-color: #fff;
+  background-color: transparent;
   padding: .3rem;
   color: #000;
-  border: .1rem solid white;
   font-family: 'Palanquin', sans-serif;
+
 
 
   &:hover{
     background-color: #fcfbfb;
     color: #000;
-    border-bottom: .1rem solid #ffcad4;
+    animation: move_btn 3s;
   }
 }
+
+//animation on part de 0 border-radius à ce que l'on veut atteindre (50%) puis on redescend à 0% en modifiant la largeur du bloc légerement
+@keyframes move_btn {
+  0% {
+      border-bottom: 1px solid white;
+  }
+  
+  
+  100% {
+    border-bottom: 1px solid #cc6d7e;
+  }
+  }
+  

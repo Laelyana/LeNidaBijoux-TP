@@ -1,5 +1,5 @@
 .footer {
-  background-color: #fff6f8;
+  background-color: #f5a7b5;
   width: 100vw;
   margin: 0 auto;
   overflow: hidden;
@@ -12,23 +12,24 @@
     justify-content: center;
     width: 100vw;
     margin: .5rem auto;
-    background-color: yellow;
   }
 
   &--left{
-    width: 30vw;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: turquoise;
+    justify-content: right;
   }
 
   &--right{
-    width: 30vw;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: red;
+    justify-content: left;
   }
 
   &__legals{
