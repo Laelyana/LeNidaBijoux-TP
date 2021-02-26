@@ -28,12 +28,17 @@
   position: relative;
 }
 
+&-card{
+  object-fit: cover;
+  width: vars.$productionsW;
+  height: 420px;
+}
 
 &__center{
   background-color: transparent;
   position: absolute;
   height: 5rem;
-  width: 100%;
+  width: vars.$productionsW;
   height: 100%;
   overflow: hidden;
 
@@ -42,8 +47,11 @@
     font-weight: bold;
     background-color: transparent;
     color: rgb(47, 47, 51);
-    width: 100%;
+    width: vars.$productionsW;
     padding: 2rem;
+    position: absolute;
+    z-index: 100;
+    bottom: 2rem;
   }
 }
 

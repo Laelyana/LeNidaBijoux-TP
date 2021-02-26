@@ -40,8 +40,8 @@ const App = ({ isLogged, status, manageLoad, categories, products, collections }
   );
   return (
     <div className="app">
+    <Bandeau status={status} />
      <Header />
-     <Bandeau status={status} />
       <Switch>
         <Route path="/" exact>
           <Slider />
