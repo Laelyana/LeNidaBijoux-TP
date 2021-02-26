@@ -3,7 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Colection;
-use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -43,9 +42,4 @@ class ColectionCrudController extends AbstractCrudController
         ->setPaginatorPageSize(1000000);
     }
 
-    public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
-    {
-        $entityInstance->setUpdatedAt(new \DateTime());
-        parent::updateEntity($entityManager, $entityInstance);
-    }
 }
