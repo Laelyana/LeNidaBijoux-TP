@@ -1,4 +1,4 @@
-import { ADD_TO_CARD, REMOVE_CARD, REDUCE_CART_ITEM } from '../actions/shop';
+import { ADD_TO_CARD, REMOVE_CARD, REDUCE_CART_ITEM, CLEAR_CART } from '../actions/shop';
 import { handleAddToCart, handleRemoveCartItem, handleReduceCartItem } from '../utils/card';
 
 const initialState = {
@@ -30,6 +30,10 @@ export default (state = initialState, action) => {
           prevCartItems: state.cartItems,
           cartItemToReduce: action.payload,
         }),
+      };
+    case CLEAR_CART:
+      return {
+        cartItems: [],
       };
     default:
       return {

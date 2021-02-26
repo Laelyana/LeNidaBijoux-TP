@@ -1,11 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectCartItems, selectCartTotal } from 'src/utils/card.selectors';
 import { createStructuredSelector } from 'reselect';
 import CartItem from './CartItems';
 
 import './usershop.scss';
+import { createOrder } from '../../actions/orders';
 
 const mapState = createStructuredSelector({
   cartItems: selectCartItems,
@@ -16,6 +17,11 @@ const UserShop = () => {
   const errMsg = "Vous n'avez pas de produit dans votre panier";
   const { cartItems, total } = useSelector(mapState);
   const history = useHistory();
+  const dispatch = useDispatch();
+  const handleCreateOrder = (order) => {
+    dispatch(createOrder(order));
+  };
+  const newTotal = Math.round(total * 100) / 100;
   return (
     <div className="checkout">
       <h2>Mon panier</h2>
@@ -72,7 +78,7 @@ const UserShop = () => {
                               <tr>
                                 <td>
                                   <h3>
-                                    Total: {total}€
+                                    Total: {newTotal}€
                                   </h3>
                                 </td>
                               </tr>
@@ -91,7 +97,7 @@ const UserShop = () => {
                                   </button>
                                 </td>
                                 <td>
-                                  <button type="button">
+                                  <button type="button" onClick={() => handleCreateOrder()}>
                                     Checkout
                                   </button>
                                 </td>
@@ -111,13 +117,9 @@ const UserShop = () => {
             {errMsg}
           </p>
         )}
-        {/* {
-          cartItems.map((cartItem) => (
-            <CartItem key={cartItem.id} {...cartItem} />
-          ))
-        } */}
       </div>
     </div>
   );
 };
+
 export default UserShop;
