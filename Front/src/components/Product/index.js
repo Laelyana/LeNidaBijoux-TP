@@ -20,7 +20,7 @@ function handleClick__trois() {
   const general = document.getElementById('general');
   general.className = 'product__box__img--un image__trois';
 }
-function handleClick__fav() {
+/* function handleClick__fav() {
   const btnFav = document.getElementById('fav');
   const txtFav = document.querySelector('product__box__cart--btn-fav-txt');
   if (btnFav.className === 'product__box__cart--btn-fav') {
@@ -31,19 +31,21 @@ function handleClick__fav() {
     btnFav.className = 'product__box__cart--btn-fav';
     btnFav.innerHTML = 'Ajouter aux favoris';
   }
-}
+} */
 
-const Product = ({ product, status }) => {
+const Product = ({ product, status, favorites }) => {
   const dispatch = useDispatch();
   const handleAddToCart = (product) => {
     dispatch(addToCard(product));
   };
   const handleAddToFavorite = (product) => {
     dispatch(addToFavorite(product));
+    dispatch(addToFavorite(product));
   };
   const handleRemoveFavorite = (product) => {
     dispatch(removeFavorite(product));
   };
+  const productId = product.id;
   return (
 
     <div className="product">
@@ -64,12 +66,12 @@ const Product = ({ product, status }) => {
           <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" />
           {status && (<button type="button" onClick={() => handleAddToCart(product)} className="product__box__cart--btn-add">Ajouter au panier</button>)}
           {!status && (
-          <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleAddToFavorite(product)}>
+          <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleAddToFavorite(product)}>
             <div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div>
           </button>
           )}
           {!status && (
-          <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleRemoveFavorite(product)}>
+          <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleRemoveFavorite(product)}>
             <div className="product__box__cart--btn-fav-txt">&#9733;</div>
           </button>
           )}

@@ -1,7 +1,7 @@
-import { ADD_TO_FAVORITE } from "../actions/favoritesAdd";
+import { ADD_TO_FAVORITE, CLEAR_FAVORITE } from '../actions/favoritesAdd';
 
 const initialState = {
-  favoritesAdd: [],
+  favorite: [],
 };
 
 export default (state = initialState, action) => {
@@ -9,7 +9,11 @@ export default (state = initialState, action) => {
     case ADD_TO_FAVORITE:
       return {
         ...state,
-        favoritesAdd: action.favoritesAdd,
+        favorite: action.favorite,
+      };
+    case CLEAR_FAVORITE:
+      return {
+        favorite: [],
       };
     default:
       return {

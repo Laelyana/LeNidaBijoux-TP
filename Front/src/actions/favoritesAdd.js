@@ -1,12 +1,16 @@
 export const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE';
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
+export const CLEAR_FAVORITE = 'CLEAR_FAVORITE';
 
-export const addToFavorite = (product) => ({
+export const addToFavorite = (favorite) => ({
   type: ADD_TO_FAVORITE,
-  product,
+  favorite,
 });
 
-export const removeFavorite = (product) => ({
+export const removeFavorite = (favorite) => ({
   type: REMOVE_FAVORITE,
-  product,
+  favorite,
+});
+export const clearFavorite = () => ({
+  type: CLEAR_FAVORITE,
 });
