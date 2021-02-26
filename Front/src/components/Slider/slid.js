@@ -7,7 +7,7 @@ import './slide.scss';
 
 const Slid = ({id, picture}) => (
   
-  <img id={id} className="slider__img" src={picture} alt="" />
+  <img id={id} className="slider__img" src={`http://0.0.0.0:8000/pictures/` + picture} alt="" />
 );
 
 
