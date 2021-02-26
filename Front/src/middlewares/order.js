@@ -27,10 +27,8 @@ export default (store) => (next) => (action) => {
         })
         .then((response) => {
           console.log(response);
-          if (newOrder !== { }) {
-            store.dispatch(createOrder(newOrder));
-            store.dispatch(clearCart());
-          }
+          store.dispatch(clearCart());
+          window.alert('Votre commande a été créée');
         }).catch((error) => {
           console.log('error');
         })
