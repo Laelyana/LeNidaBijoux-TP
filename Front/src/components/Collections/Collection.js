@@ -7,18 +7,16 @@ import './collections.scss';
 
 const Collection = ({ name, picture }) => (
   
-  <Link to={`/${name}`}>
-  <div className="col__img">
+  <div className="col col__img cat__img--un">
+  <div className="col__center">
+  <div className="col-card--title-band"><Link to={`/${name}`} />{name}</div></div>
   <img  className="col-card" src={`http://0.0.0.0:8000/pictures/` + picture} alt="" />
-    <div className="col__center">
-      <div className="col__center--title-band"><Link to={`/${name}`} />{name}</div>
-    </div>
   </div>
-  </Link>
 );
 Collection.propTypes = {
   name: PropTypes.string.isRequired,
 };
 export default Collection;
+
 
 

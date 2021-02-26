@@ -17,6 +17,7 @@
   z-index: 1;
   margin: 1rem auto 1rem auto; 
   position: relative;
+  font-size: 2rem;
   
   
 
@@ -38,7 +39,7 @@
   background-color: transparent;
   position: absolute;
   height: 5rem;
-  width: vars.$productionsW;
+  width: 100%;
   height: 100%;
   overflow: hidden;
 
@@ -47,11 +48,8 @@
     font-weight: bold;
     background-color: transparent;
     color: rgb(47, 47, 51);
-    width: vars.$productionsW;
+    width: 100%;
     padding: 2rem;
-    position: absolute;
-    z-index: 100;
-    bottom: 2rem;
   }
 }
 
