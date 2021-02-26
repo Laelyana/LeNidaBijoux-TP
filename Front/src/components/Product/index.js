@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Product.scss';
 import { addToCard } from '../../actions/shop';
+import { addToFavorite, removeFavorite } from '../../actions/favoritesAdd';
 
 function handleClick__un() {
   const general = document.getElementById('general');
@@ -21,22 +22,27 @@ function handleClick__trois() {
 }
 function handleClick__fav() {
   const btnFav = document.getElementById('fav');
-  let txtFav = document.querySelector('product__box__cart--btn-fav-txt');
-  if (btnFav.className == "product__box__cart--btn-fav") {
-    btnFav.className = "product__box__cart--btn-fav-add";
-    btnFav.innerHTML = "&#9733;";
+  const txtFav = document.querySelector('product__box__cart--btn-fav-txt');
+  if (btnFav.className === 'product__box__cart--btn-fav') {
+    btnFav.className = 'product__box__cart--btn-fav-add';
+    btnFav.innerHTML = '&#9733;';
   }
   else {
-    btnFav.className = "product__box__cart--btn-fav";
-    btnFav.innerHTML = "Ajouter aux favoris";
+    btnFav.className = 'product__box__cart--btn-fav';
+    btnFav.innerHTML = 'Ajouter aux favoris';
   }
 }
 
-const Product = ({ product, isLogged }) => {
-  console.log(product);
+const Product = ({ product, status }) => {
   const dispatch = useDispatch();
   const handleAddToCart = (product) => {
     dispatch(addToCard(product));
+  };
+  const handleAddToFavorite = (product) => {
+    dispatch(addToFavorite(product));
+  };
+  const handleRemoveFavorite = (product) => {
+    dispatch(removeFavorite(product));
   };
   return (
 
@@ -55,13 +61,22 @@ const Product = ({ product, isLogged }) => {
         <div className="product__box__txt--quantite">Il reste {product.stock} exemplaires en stock</div>
 
         <div className="product__box__cart">
-        <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" />
-        <button type="button" onClick={() => handleAddToCart(product)} className="product__box__cart--btn-add">Ajouter au panier</button>
-        <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleClick__fav} ><div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div></button>
-      </div>
+          <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" />
+          {status && (<button type="button" onClick={() => handleAddToCart(product)} className="product__box__cart--btn-add">Ajouter au panier</button>)}
+          {!status && (
+          <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleAddToFavorite(product)}>
+            <div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div>
+          </button>
+          )}
+          {!status && (
+          <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={handleRemoveFavorite(product)}>
+            <div className="product__box__cart--btn-fav-txt">&#9733;</div>
+          </button>
+          )}
+        </div>
         <div className="product__box__txt--description">{product.description}</div>
-        </div>
-        </div>
+      </div>
+    </div>
   );
 };
 Product.propTypes = {

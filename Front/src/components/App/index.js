@@ -31,7 +31,9 @@ import PrivateRoute from 'src/components/PrivateRoute';
 import getProductsByCategory, { getProductsByCollections } from '../../utils/products';
 
 // == Composant
-const App = ({ isLogged, status, manageLoad, categories, products, collections }) => {
+const App = ({
+  isLogged, status, manageLoad, categories, products, collections,
+}) => {
   useEffect(
     manageLoad,
     [],
@@ -40,8 +42,8 @@ const App = ({ isLogged, status, manageLoad, categories, products, collections }
   );
   return (
     <div className="app">
-     <Header />
-     <Bandeau status={status} />
+      <Header />
+      <Bandeau status={status} />
       <Switch>
         <Route path="/" exact>
           <Slider />

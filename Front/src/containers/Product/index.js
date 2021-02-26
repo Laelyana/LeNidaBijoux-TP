@@ -8,5 +8,9 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(addToCard());
   },
 });
+const mapStateToProps = (state) => ({
+  status: state.status.status,
+  favorites: state.favorites.favorites,
+});
 
-export default connect(null, mapDispatchToProps)(Product);
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

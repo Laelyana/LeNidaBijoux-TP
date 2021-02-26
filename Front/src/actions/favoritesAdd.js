@@ -1,11 +1,12 @@
-export const FETCH_FAVORITES_ADD = 'FETCH_FAVORITES_ADD';
-export const SAVE_FAVORITES_ADD = 'SAVE_FAVORITES_ADD';
+export const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE';
+export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
 
-export const fetchFavoritesAdd = () => ({
-  type: FETCH_FAVORITES_ADD,
+export const addToFavorite = (product) => ({
+  type: ADD_TO_FAVORITE,
+  product,
 });
 
-export const saveFavoritesAdd = (favoritesAdd) => ({
-  type: SAVE_FAVORITES_ADD,
-  favoritesAdd,
+export const removeFavorite = (product) => ({
+  type: REMOVE_FAVORITE,
+  product,
 });

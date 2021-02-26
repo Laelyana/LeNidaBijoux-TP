@@ -1,19 +1,20 @@
 import axios from 'axios';
 import apiUrl from 'src/utils/api';
-import { saveFavoritesAdd, FETCH_FAVORITES_ADD } from '../actions/favoritesAdd';
+import { ADD_TO_FAVORITE } from '../actions/favoritesAdd';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
-    case FETCH_FAVORITES_ADD: {
+    case ADD_TO_FAVORITE: {
       const { token } = store.getState().user;
-      axios.get(`${apiUrl()}/api/favorites/${id}/users`, {
+      console.log(token);
+      const { id } = store.getState().products;
+      axios.patch(`${apiUrl()}favorites/180/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
         .then((response) => {
           console.log(response.data);
-          store.dispatch(saveFavoritesAdd(response.data));
         }).catch((error) => {
           console.log('error');
         }).finally((response) => {
