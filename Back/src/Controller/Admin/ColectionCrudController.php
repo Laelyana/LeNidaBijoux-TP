@@ -39,6 +39,7 @@ class ColectionCrudController extends AbstractCrudController
         return $crud
         ->setEntityLabelInSingular('Collection')
         ->setEntityLabelInPlural('Collections')
+        ->setDefaultSort(['id' => 'DESC'])
         ->setPaginatorPageSize(1000000);
     }
 
