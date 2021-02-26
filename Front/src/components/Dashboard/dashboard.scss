@@ -1,29 +1,73 @@
+@use '/src/styles/vars';
+
 .dashboard{
-  width: 60vw;
-  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: vars.$mi-full;
+  margin: 1rem auto;
+  padding: 2rem;
 
   &__items{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: vars.$collectionsW;
+    height: vars.$collectionsH;
+    overflow: hidden;
+    z-index: 1;
+    margin: 1rem auto 1rem auto; 
+    position: relative;
 
-    &--box{
-      width: 40%;
-      height: 100px;
-      margin: 3rem 2rem 2rem 2rem;
-      display: flex;
-      justify-content: center;
+    &--haut{
+      height: 370px;
+      width: vars.$collectionsW;
       align-items: center;
-      background-color: rgba(194,133,140, 0.8);
+      justify-content: center;
+    }
 
-      &>h4{
-        width: 100%;
-        padding: 1rem;
-        font-weight: bold;
-      }
+    &--bas{
+      width: vars.$collectionsW;
+      height: 50px;
+      border: .1rem solid #ffcbd9;
+      margin: auto auto;
     }
   }
-  &>h2{
-    font-size: 2rem;
-  }
+
+ 
+}
+
+.profil{
+  background-image: url(./images/profil.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+}
+
+.favoris{
+  background-image: url(./images/favoris.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+}
+
+.commandes{
+  background-image: url(./images/commandes.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+}
+
+.cat__img--un a::before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top: 0;
+  bottom:0;
+  z-index: 3;
+  background-color:rgba(0,0,0,0);
 }
