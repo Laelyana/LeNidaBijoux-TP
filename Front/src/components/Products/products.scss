@@ -32,7 +32,7 @@
 
   &-card{
       object-fit: cover;
-      width: 100%;
+      width: vars.$productionsW;
       height: 420px;
   }
 }
@@ -42,13 +42,17 @@
   background-color: white;
   opacity: .7;
   height: 5rem;
-  width: 100%;
+  width: vars.$productionsW;
   overflow: hidden;
   padding: 2rem;
   margin-top: 90%;
+  position: absolute;
+  z-index: 100;
  
   &--title{
     font-weight: bold;
+    position: absolute;
+  z-index: 100;
   }
 }
 

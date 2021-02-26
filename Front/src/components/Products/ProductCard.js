@@ -9,6 +9,7 @@ const ProductCard = ({ name, id, picture1}) => (
 
 
   <div className="prod">
+ <div className="prod__band--title"><Link to={`/${name}`} />{name}</div>
   <Link to={`/${name}`}>
         <div className="prod prod__img">
         
