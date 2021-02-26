@@ -4,77 +4,67 @@
   margin: 0 auto;
   overflow: hidden;
   font-family: 'Palanquin', sans-serif;
+  font-size: 1rem;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
 
-
-  &__center{
+  &__left{
+    width: 50vw;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
-    width: 100vw;
-    margin: .5rem auto;
-  }
 
-  &--left{
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    background-color: turquoise;
-    justify-content: right;
-  }
-
-  &--right{
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    background-color: red;
-    justify-content: left;
-  }
-
-  &__legals{
-   
-
-    &--ul{
-
+    &--title{
+      font-weight: bolder;
     }
 
-    &--li{
-      padding: 1rem;
-      margin: 1rem auto 1rem auto;
-      color: #000;
-
-      &:hover {
-        border-bottom: .1rem solid #ffcad4;
+    &--legals{
+   
+      &-li{
+        padding: .1rem;
+        margin: 1rem auto 1rem auto;
         color: #000;
+  
       }
     }
   }
 
-  &__social{
+  &__right{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 
+    &--social{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
   
-    &--logo{
-      margin: 0 0 0 1rem;
-      padding: .4rem;
-      width: 3rem;
-      height: 3rem;
+      &-logo{
+        margin: 0 0 0 1rem;
+        padding: .4rem;
+        width: 3rem;
+        height: 3rem;
+      }
     }
   }
 
+
+
+  
+
  &__contact{
-
-
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   
 
   &--li-form{
-    padding: 1rem;
+    padding: .3rem;
     margin: 1rem auto 1rem auto;
     color: #000;
-
-    &:hover {
-      color: #000;
-      border-bottom: .1rem solid #ffcad4;
-    }
   }
  }
 

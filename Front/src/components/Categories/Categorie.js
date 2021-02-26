@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 import './categories.scss';
 
-const Categorie = ({ name }) => (
+const Categorie = ({ name, picture }) => (
   <div className="cat cat__img cat__img--un">
-    <div className="cat__center">
-      <div className="cat__center--title-band"><Link to={`/${name}`} />{name}</div>
-    </div>
+  <div className="cat__center">
+  <div className="cat-card--title-band"><Link to={`/${name}`} />{name}</div></div>
+  <img  className="cat-card" src={`http://0.0.0.0:8000/pictures/` + picture} alt="" />
   </div>
 );
 Categorie.propTypes = {
