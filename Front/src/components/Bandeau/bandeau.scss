@@ -3,20 +3,23 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #f5a7b5;
-  padding: .4rem 0 0 0;
+  background-color: #ffcbd9;
+  padding: .5rem 0 .5rem 0;
   width: 100vw;
+  margin: 0 auto;
   overflow: hidden;
   font-family: 'Palanquin', sans-serif;
   
+
   &__timer{
     align-self: center;
-    margin: 0 0 .3rem 0;
-  
+    margin: 0 0 0 1rem;
+
     color: #000;
   }
   &__rightside{
     display: flex;
+    margin: 0 1rem 0 0;
     
   }
   &__form{
@@ -52,19 +55,24 @@
   width: 2rem;
   height: auto;
 }
+
 .button__hide{
   display: none;
 }
 
 .btn__log{
-  background-color: transparent;
+  background-color: #fcdee6;
+  padding: 0 1rem 0 1rem;
+  border-radius: 1rem;
   color: #000;
   font-family: 'Palanquin', sans-serif;
   border: none;
+  border: .1rem solid #f5cad5;
+ 
 
   &:hover{
-    color: #000;
-    animation: move_btn 3s;
+    background-color: #f8f6f6;
+    color: black;
   }
 }
 

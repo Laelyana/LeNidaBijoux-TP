@@ -6,7 +6,6 @@ import { createStructuredSelector } from 'reselect';
 import { useSelector } from 'react-redux';
 import favoriteLogo from './heart.png';
 import shopLogo from './shopping.png';
-
 import './bandeau.scss';
 import { selectCartItemsCount } from '../../utils/card.selectors';
 
@@ -23,7 +22,7 @@ const Bandeau = ({ isLogged, handleLogout, status }) => {
       {status && (<div className="bandeau__timer">Fin de la vente dans : 2 jours 4 heures 23 minutes</div>)}
       <div className="bandeau__rightside">
         {!isLogged
-          && (<div className="notlogged"> <button className="btn__log" type="button"> <a href="/login">Se connecter</a> </button> </div>)}
+          && (<div className="notlogged"> <button className="btn__log" type="button"> <a href="/login">S'inscrire / Se connecter</a> </button> </div>)}
         {isLogged
           && (
             <div className="logged">

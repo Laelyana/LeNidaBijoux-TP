@@ -42,8 +42,8 @@ const App = ({
   );
   return (
     <div className="app">
-      <Header />
       <Bandeau status={status} />
+      <Header />
       <Switch>
         <Route path="/" exact>
           <Slider />
