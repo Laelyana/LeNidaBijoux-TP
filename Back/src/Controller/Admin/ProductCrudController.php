@@ -54,7 +54,6 @@ class ProductCrudController extends AbstractCrudController
             ->setBasePath('/pictures')
             ->setFormTypeOptions(["constraints"=>[new Length(['max'=>255])]]),
             TextareaField::new('description', 'Description')->setFormTypeOptions(["constraints"=>[new Length(['max'=>8000])]]),
-
         ];
     }
 

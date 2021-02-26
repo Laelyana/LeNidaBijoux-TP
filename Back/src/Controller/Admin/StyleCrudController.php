@@ -30,6 +30,7 @@ class StyleCrudController extends AbstractCrudController
         return $crud
         ->setEntityLabelInSingular('Style')
         ->setEntityLabelInPlural('Styles')
+        ->setDefaultSort(['id' => 'DESC'])
         ->setPaginatorPageSize(1000000);
     }
 }

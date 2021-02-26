@@ -36,7 +36,8 @@ class SliderCrudController extends AbstractCrudController
 
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud->setPaginatorPageSize(1000000);
+        return $crud->setPaginatorPageSize(1000000)
+                    ->setDefaultSort(['id' => 'DESC']);
     }
     
 }
