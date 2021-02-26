@@ -1,4 +1,4 @@
-const imgUrl = () => 'http://0.0.0.0:8000/api/Back/public/pictures/';
+const imgUrl = () => 'http://0.0.0.0:8000/pictures/';
 
 
 export default imgUrl;
