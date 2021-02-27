@@ -40,16 +40,16 @@ class AdminController extends AbstractDashboardController
     {
         yield MenuItem::linktoDashboard('Accueil', 'fa fa-home');
         yield MenuItem::section('Sections');
+        yield MenuItem::linkToCrud('Slider', 'fas fa-map', Slider::class);
         yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('Collections', 'fas fa-suitcase', Colection::class);
         yield MenuItem::linkToCrud('Styles', 'fas fa-palette', Style::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-gem', Product::class);
-        yield MenuItem::linkToCrud('Slider', 'fas fa-map', Slider::class);
-        yield MenuItem::linkToCrud('Détail commandes', 'fas fa-info-circle', OrderLine::class);
         yield MenuItem::linkToCrud('Commandes', 'fas fa-shopping-cart', Order::class);
+        yield MenuItem::linkToCrud('Détail commandes', 'fas fa-info-circle', OrderLine::class);
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
         yield MenuItem::section('Site');
-        yield MenuItem::linkToUrl('Voir le site', 'fas fa-globe', '/')->setLinkTarget('_BLANK');
+        yield MenuItem::linkToUrl('Voir le site', 'fas fa-globe', 'http://hypnotic-ticket.surge.sh/')->setLinkTarget('_BLANK');
     }
 
 }

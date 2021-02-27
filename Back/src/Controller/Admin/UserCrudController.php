@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -63,6 +64,7 @@ class UserCrudController extends AbstractCrudController
                                                          ->setHelp('Tapez un nouveau mot de passe pour le modifier')
                                                          ->setRequired($required),
             TextField::new('phoneNumber','Numéro de téléphone')->setFormTypeOptions(["constraints"=>[new Length(['max'=>15]),new NotBlank(), new Regex(['pattern'=>'/\D/','match' => false, 'message' => 'Votre numéro de téléphone ne doit contenir que des chiffres'])]]),
+            DateTimeField::new('createdAt', 'Inscrit le'),
             ArrayField::new('roles', 'Rôle')->setFormTypeOptions(["constraints"=>[new NotBlank()]])
         ];
     }
@@ -72,6 +74,8 @@ class UserCrudController extends AbstractCrudController
         return $crud
         ->setEntityLabelInSingular('Utilisateur')
         ->setEntityLabelInPlural('Utilisateurs')
+        ->setDefaultSort(['id' => 'DESC'])
+        ->setDateTimeFormat('dd/MM/y')
         ->setPaginatorPageSize(1000000);
     }
     
