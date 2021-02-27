@@ -39,6 +39,7 @@ class CategoryCrudController extends AbstractCrudController
         return $crud
         ->setEntityLabelInSingular('Catégorie')
         ->setEntityLabelInPlural('Catégories')
+        ->setDefaultSort(['id' => 'DESC'])
         ->setPaginatorPageSize(1000000);
     }
 }

@@ -28,6 +28,10 @@ class CartController extends AbstractController
         if($user){
 
             $infoFromClientAsObject = json_decode($request->getContent(), false); //we retrieve the provided data
+            
+            if(empty($infoFromClientAsObject)){
+                return $this->json("request is not valid",400);
+            }
 
             $errorsProduct=[];
             $errorsStock=[];
@@ -37,7 +41,7 @@ class CartController extends AbstractController
                 $quantity = $cart->quantity;
 
                     // we verify if the provided data is valid
-                if (! $product = $productRepo->find($productId)) {
+                if (! is_int($productId) || ! $product = $productRepo->find($productId)) {
                     $errorsProduct[]='the product: - '.$productId.' - doesn\'t exist';
                 }
 

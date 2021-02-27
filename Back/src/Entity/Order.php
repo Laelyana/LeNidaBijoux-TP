@@ -41,6 +41,11 @@ class Order
      */
     private $user;
 
+    /**
+     * @Ignore()
+     */
+    private $details;
+
     public function __construct()
     {
         $this->orderLines = new ArrayCollection();
@@ -103,6 +108,27 @@ class Order
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of details
+     */ 
+    public function getDetails()
+    {
+        return $this->details;
+    }
+
+    /**
+     * Set the value of details
+     *
+     * @return  self
+     */ 
+    public function setDetails($details)
+    {
+        $this->details = $details;
 
         return $this;
     }

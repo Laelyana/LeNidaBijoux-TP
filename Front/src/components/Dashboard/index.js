@@ -11,11 +11,11 @@ const Dashboard = () => (
       </div>
       <div className="dashboard__items">
       <div className="dashboard__items--haut favoris"></div>
-      <div className="dashboard__items--bas"><a href="mon-compte/mes-favoris"><h4>Mon profil</h4></a></div>
+      <div className="dashboard__items--bas"><a href="mon-compte/mes-favoris"><h4>Mes favoris</h4></a></div>
       </div>
       <div className="dashboard__items">
       <div className="dashboard__items--haut commandes"></div>
-      <div className="dashboard__items--bas"><a href="mon-compte/mes-commandes"><h4>Mon profil</h4></a></div>
+      <div className="dashboard__items--bas"><a href="mon-compte/mes-commandes"><h4>Mes commandes</h4></a></div>
       </div>
     </div>
 );

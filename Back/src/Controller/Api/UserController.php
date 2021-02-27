@@ -5,11 +5,14 @@ namespace App\Controller\Api;
 use App\Entity\User;
 use App\Form\UserPatchType;
 use App\Form\UserType;
+use App\Repository\UserRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -27,11 +30,19 @@ class UserController extends AbstractController
     /**
      * @Route("/api/users/sign_in", name="api_users_add", methods={"POST"})
      */
-    public function add(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function add(Request $request, UserRepository $userRepo, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer): Response
     {    
         // we retrieve the json data and we convert in a php array
         $infoFromClientAsArray = json_decode($request->getContent(), true);
 
+        if(empty($infoFromClientAsArray)){
+            return $this->json("request is not valid",400);
+        }
+
+        if($userRepo->findOneby(['email'=>$infoFromClientAsArray['email']])){
+            return $this->json("This user already exist",403);
+        }
+        
         // we create a form with User type
         $user = new User();
         $form = $this->createForm(UserType::class, $user, ['csrf_protection' => false]); // we stop the csrf token verification because the data is sent by a react form
@@ -51,6 +62,18 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
 
+            $emailBuyer = (new Email())
+            ->from('nicoOclock@gmail.com')
+            ->to($user->getEmail())
+            ->subject('Bienvenue au Nid à Bijoux !')
+            ->text(
+            'Bonjour '.$user->getFirstname().' '.$user->getLastname().' !'."\n"."\n".
+            'Votre inscription à bien été pris en compte.'."\n".
+            'Vous pouvez vous connecter quand vous voulez en saisissant votre mot de passe et votre email: '.$user->getEmail()       
+            );
+
+            $mailer->send($emailBuyer); // send the confirmation email to the buyer
+
             // after add the data in database we return what we have added
             return $this->json($user,201);
         }
@@ -67,6 +90,10 @@ class UserController extends AbstractController
     public function edit(Request $request, EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $infoFromClientAsArray = json_decode($request->getContent(), true);
+
+        if(empty($infoFromClientAsArray)){
+            return $this->json("request is not valid",400);
+        }
 
         $user = $this->getUser();
 
