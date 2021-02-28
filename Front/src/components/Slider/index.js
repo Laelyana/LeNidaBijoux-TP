@@ -20,15 +20,21 @@ const Slider = ({ manageLoad, slider }) => {
     manageLoad,
     [],
   );
+  console.log(slider);
+  const activeSlide = [];
+  slider.forEach((slide) => {
+    slide.active === true ? activeSlide.push(slide) : null;
+  });
+  console.log(activeSlide);
 
   return (
 
     <Slide {...proprietes}>
       {
-            slider.map((slid) => (
-              <Slid key={slid.id} {...slid} />
+        activeSlide.map((slid) => (
+          <Slid key={slid.id} {...slid} />
 
-            ))
+        ))
           }
     </Slide>
 
