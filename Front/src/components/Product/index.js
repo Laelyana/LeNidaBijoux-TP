@@ -48,7 +48,7 @@ return (
 
   <div className="product">
     <div className="product__box__img ">
-      <div className="product__box__img--un image__un" id="general" />
+      <div style={{backgroundImage: "url(http://0.0.0.0:8000/pictures/" + product.picture1 + ")"}} className="product__box__img--un image__un" id="general" />
       <div className="product__box__img__sub">
         <div className="product__box__img__sub--unBis image__un " id="bis" onClick={handleClick__un} onMouseOver={handleClick__un}/>
         {product.picture2 != null &&(<img src={`http://0.0.0.0:8000/pictures/` + product.picture2} className="product__box__img__sub--deux image__deux" id="deux" onClick={handleClick__deux} onMouseOver={handleClick__deux} />)}
@@ -74,5 +74,6 @@ return (
 Product.propTypes = {
   product: PropTypes.object.isRequired,
 };
+
 
 export default Product;
