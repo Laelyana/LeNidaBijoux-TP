@@ -6,7 +6,6 @@ import './Product.scss';
 import { addToCard } from '../../actions/shop';
 
 const Product = ({ product, isLogged }) => {
-  console.log(product); 
   const dispatch = useDispatch();
   const handleAddToCart = (product) => {
     dispatch(addToCard(product));
@@ -16,7 +15,7 @@ const Product = ({ product, isLogged }) => {
 
 function handleClick__un() {
   const general = document.getElementById('general');
-  general.setAttribute("src", "http://0.0.0.0:8000/pictures/" + product.picture1);
+  general.style.backgroundImage = "url(http://0.0.0.0:8000/pictures/"+product.picture1+")";
 }
 
 function handleClick__deux() {
@@ -44,12 +43,14 @@ function handleClick__fav() {
 }
 
 
+
 return (
+
   <div className="product">
     <div className="product__box__img ">
-      <img src={`http://0.0.0.0:8000/pictures/` + product.picture1} className="product__box__img--un image__un" id="general" />
+      <div className="product__box__img--un image__un" id="general" />
       <div className="product__box__img__sub">
-        <img src={`http://0.0.0.0:8000/pictures/` + product.picture1} className="product__box__img__sub--unBis image__un " id="bis" onClick={handleClick__un} onMouseOver={handleClick__un} />
+        <div className="product__box__img__sub--unBis image__un " id="bis" onClick={handleClick__un} onMouseOver={handleClick__un}/>
         {product.picture2 != null &&(<img src={`http://0.0.0.0:8000/pictures/` + product.picture2} className="product__box__img__sub--deux image__deux" id="deux" onClick={handleClick__deux} onMouseOver={handleClick__deux} />)}
         {product.picture3 != null &&(<img src={`http://0.0.0.0:8000/pictures/` + product.picture3} className="product__box__img__sub--trois image__trois" id="trois" onClick={handleClick__trois} onMouseOver={handleClick__trois} />)}
       </div>
