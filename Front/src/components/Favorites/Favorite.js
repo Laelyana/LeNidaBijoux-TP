@@ -10,10 +10,11 @@ const Favorite = ({ name, id }) => {
     dispatch(addToFavorite(id));
     dispatch(removeFavorite(id));
   };
+  const pathUrl = `/${name}`;
 
   return (
     <div className="favorites__list--item">
-      <h5 className="favorites__list--item--name">{name}</h5>
+      <a className="favorites__list--item--name" href={pathUrl}><h5>{name}</h5></a>
       <button type="button" onClick={() => handleRemoveFavorite(id)} className="favorites__list--item--button">Supprimer</button>
     </div>
   );
