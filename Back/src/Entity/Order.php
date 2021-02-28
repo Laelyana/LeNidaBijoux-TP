@@ -29,7 +29,7 @@ class Order
 
 
     /**
-     * @ORM\OneToMany(targetEntity=OrderLine::class, mappedBy="orderEntity")
+     * @ORM\OneToMany(targetEntity=OrderLine::class, mappedBy="orderEntity", orphanRemoval=true)
      * @Ignore()
      */
     private $orderLines;
@@ -40,6 +40,11 @@ class Order
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+    /**
+     * @Ignore()
+     */
+    private $details;
 
     public function __construct()
     {
@@ -103,6 +108,27 @@ class Order
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of details
+     */ 
+    public function getDetails()
+    {
+        return $this->details;
+    }
+
+    /**
+     * Set the value of details
+     *
+     * @return  self
+     */ 
+    public function setDetails($details)
+    {
+        $this->details = $details;
 
         return $this;
     }

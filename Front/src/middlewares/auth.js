@@ -1,4 +1,5 @@
 import axios from 'axios';
+import apiUrl from 'src/utils/api';
 import { LOG_IN, saveUserData } from '../actions/user';
 
 export default (store) => (next) => (action) => {
@@ -6,7 +7,7 @@ export default (store) => (next) => (action) => {
     case LOG_IN: {
       const { username, password } = store.getState().user;
       axios.post(
-        'http://0.0.0.0:8000/api/login_check',
+        `${apiUrl()}login_check`,
         {
           username,
           password,
@@ -16,7 +17,10 @@ export default (store) => (next) => (action) => {
         store.dispatch(saveUserData(response.data));
         window.location = '/mon-compte';
       }).catch((error) => {
-        console.log('error');
+        const errMsg = error.response.data.code;
+        if (errMsg === 401) {
+          window.alert('Mauvais email ou mot de passe');
+        }
       }).finally((response) => {
       });
       next(action);

@@ -2,11 +2,17 @@
   display: flex;
   width: 80vw;
   margin: 2rem auto;
+  font-family: 'Palanquin', sans-serif;
   &>img{
     width: 30%;
     height: auto;
   }
-  &--p{
+  &--p1{
     margin: auto 2rem;
+    text-align: left;
+  }
+  &--p2{
+    margin: auto 2rem;
+    text-align: right;
   }
 }

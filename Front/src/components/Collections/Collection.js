@@ -2,15 +2,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import imgUrl from 'src/utils/imgUrl';
 
-import './collections.scss'
+import './collections.scss';
 
-const Collection = ({ name }) => (
-    <div className="col col__img col__img--un">
+const Collection = ({ name, picture }) => (
+
+  <div className="col col__img cat__img--un">
+    <Link to={`/${name}`}>
       <div className="col__center">
-        <div className="col__center--title-band"><a><Link to={`/${name}/produits`}></Link></a>{name}</div>
+        <div className="prod__band">
+          <div className="col-card--title-band">{name}</div>
+        </div>
+        <img className="col-card" src={`${imgUrl()}${picture}`} alt="" />
       </div>
-    </div>
-    );
-
+    </Link>
+  </div>
+);
+Collection.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 export default Collection;

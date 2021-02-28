@@ -1,21 +1,26 @@
 .bandeau{
-  width: 100vw;
-  background-color: #e0b5ba;
   display: flex;
-  height: 50px;
-  position: fixed;
-  z-index: 3;
-  border-radius: 0 0 3rem 3rem;
-  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
-
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #ffcbd9;
+  padding: .5rem 0 .5rem 0;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Palanquin', sans-serif;
+  
 
   &__timer{
     align-self: center;
-    width: 60%;
+    margin: 0 0 0 1rem;
+
+    color: #000;
   }
   &__rightside{
     display: flex;
-    width: 40%;
+    margin: 0 1rem 0 0;
+    
   }
   &__form{
     display: flex;
@@ -50,12 +55,36 @@
   width: 2rem;
   height: auto;
 }
+
 .button__hide{
   display: none;
 }
 
-@media (max-width: 700px) {
-  .bandeau__timer{
-    font-size: 0.8rem;
+.btn__log{
+  background-color: #fcdee6;
+  padding: 0 1rem 0 1rem;
+  border-radius: 1rem;
+  color: #000;
+  font-family: 'Palanquin', sans-serif;
+  border: none;
+  border: .1rem solid #f5cad5;
+ 
+
+  &:hover{
+    background-color: #f8f6f6;
+    color: black;
   }
 }
+
+
+@keyframes move_btn {
+  0% {
+      border-bottom: 1px solid white;
+  }
+  
+  
+  100% {
+    border-bottom: 1px solid #cc6d7e;
+  }
+  }
+  
