@@ -44,6 +44,7 @@ export default (store) => (next) => (action) => {
         },
       ).then((response) => {
         console.log(response);
+        window.alert('Votre profil a été mis à jour');
       }).catch((error) => {
         console.log('erreur');
       });

@@ -38,6 +38,7 @@ const Product = ({ product, status, favorites, isLogged }) => {
   const productId = product.id;
   const handleAddToCart = (product) => {
     dispatch(addToCard(product));
+    window.alert('Produit ajouté au panier')
   };
   const handleAddToFavorite = (product) => {
     dispatch(addToFavorite(product));
