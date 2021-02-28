@@ -8,6 +8,7 @@ const Favorites = ({ manageLoad, favorites }) => {
     manageLoad,
     [],
   );
+  console.log(favorites);
   return (
     <div className="favorites">
       <h2>Mes produits favoris</h2>

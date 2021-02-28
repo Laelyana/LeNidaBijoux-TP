@@ -43,9 +43,10 @@ const Product = ({ product, status, favorites }) => {
     dispatch(addToFavorite(product));
   };
   const handleRemoveFavorite = (product) => {
+    dispatch(addToFavorite(product));
     dispatch(removeFavorite(product));
   };
-  const productId = product.id;
+  console.log(favorites);
   return (
 
     <div className="product">

@@ -1,4 +1,4 @@
-import { ADD_TO_FAVORITE, CLEAR_FAVORITE } from '../actions/favoritesAdd';
+import { ADD_TO_FAVORITE, CLEAR_FAVORITE, REMOVE_FAVORITE } from '../actions/favoritesAdd';
 
 const initialState = {
   favorite: [],
@@ -14,6 +14,10 @@ export default (state = initialState, action) => {
     case CLEAR_FAVORITE:
       return {
         favorite: [],
+      };
+    case REMOVE_FAVORITE:
+      return {
+        ...state,
       };
     default:
       return {
