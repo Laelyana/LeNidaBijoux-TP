@@ -30,7 +30,7 @@ export default (store) => (next) => (action) => {
     }
     case REMOVE_FAVORITE: {
       const { token } = store.getState().user;
-      const { id } = store.getState().favoritesAdd.favorite;
+      const id = store.getState().favoritesAdd.favorite;
       console.log(token);
       axios.delete(`${apiUrl()}favorites/${id}/users`,
         {

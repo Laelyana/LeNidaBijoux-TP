@@ -35,6 +35,7 @@ function handleClick__trois() {
 
 const Product = ({ product, status, favorites }) => {
   const dispatch = useDispatch();
+  const productId = product.id;
   const handleAddToCart = (product) => {
     dispatch(addToCard(product));
   };
@@ -42,12 +43,11 @@ const Product = ({ product, status, favorites }) => {
     dispatch(addToFavorite(product));
     dispatch(addToFavorite(product));
   };
-  const handleRemoveFavorite = (product) => {
-    dispatch(addToFavorite(product));
-    dispatch(removeFavorite(product));
+  const handleRemoveFavorite = (productId) => {
+    dispatch(addToFavorite(productId));
+    dispatch(removeFavorite(productId));
   };
 
-  const productId = product.id;
   console.log(productId);
   console.log(favorites);
   const newArray = [];
@@ -81,7 +81,7 @@ const Product = ({ product, status, favorites }) => {
             </button>
           )}
           {!status && compare && (
-            <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleRemoveFavorite(product)}>
+            <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleRemoveFavorite(productId)}>
               <div className="product__box__cart--btn-fav-txt">&#9733;</div>
             </button>
           )}
