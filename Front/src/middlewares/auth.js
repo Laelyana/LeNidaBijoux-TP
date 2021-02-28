@@ -19,7 +19,7 @@ export default (store) => (next) => (action) => {
       }).catch((error) => {
         const errMsg = error.response.data.code;
         if (errMsg === 401) {
-          window.alert('Mauvais email ou mot de passe')
+          window.alert('Mauvais email ou mot de passe');
         }
       }).finally((response) => {
       });
