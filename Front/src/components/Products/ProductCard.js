@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import imgUrl from 'src/utils/imgUrl';
 
 import './products.scss';
 
@@ -11,7 +12,7 @@ const ProductCard = ({ name, id, picture1 }) => (
     <Link to={`/${name}`}>
       <div className="prod prod__img">
 
-        <img id={id} className="prod__img-card" src={`http://0.0.0.0:8000/pictures/${picture1}`} alt="" />
+        <img id={id} className="prod__img-card" src={`${imgUrl()}${picture1}`} alt="" />
 
         <div className="prod__band">
           <div className="prod__band--title">{name}</div>
