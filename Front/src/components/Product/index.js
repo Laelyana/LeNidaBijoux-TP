@@ -46,7 +46,16 @@ const Product = ({ product, status, favorites }) => {
     dispatch(addToFavorite(product));
     dispatch(removeFavorite(product));
   };
+
+  const productId = product.id;
+  console.log(productId);
   console.log(favorites);
+  const newArray = [];
+  favorites.forEach((favorite) => newArray.push(favorite.id));
+  console.log(newArray);
+  const compare = newArray.includes(productId);
+  console.log(compare);
+
   return (
 
     <div className="product">
@@ -64,17 +73,17 @@ const Product = ({ product, status, favorites }) => {
         <div className="product__box__txt--quantite">Il reste {product.stock} exemplaires en stock</div>
 
         <div className="product__box__cart">
-          <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" />
+          {/* <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" /> */}
           {status && (<button type="button" onClick={() => handleAddToCart(product)} className="product__box__cart--btn-add">Ajouter au panier</button>)}
-          {!status && (
-          <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleAddToFavorite(product)}>
-            <div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div>
-          </button>
+          {!status && !compare && (
+            <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleAddToFavorite(product)}>
+              <div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div>
+            </button>
           )}
-          {!status && (
-          <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleRemoveFavorite(product)}>
-            <div className="product__box__cart--btn-fav-txt">&#9733;</div>
-          </button>
+          {!status && compare && (
+            <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleRemoveFavorite(product)}>
+              <div className="product__box__cart--btn-fav-txt">&#9733;</div>
+            </button>
           )}
         </div>
         <div className="product__box__txt--description">{product.description}</div>
