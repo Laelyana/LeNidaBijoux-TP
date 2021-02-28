@@ -30,7 +30,7 @@ export default (store) => (next) => (action) => {
           store.dispatch(clearCart());
           window.alert('Votre commande a été créée');
         }).catch((error) => {
-          console.log('error');
+          window(error.response.data);
         })
         .finally((response) => {
           console.log("c'est fini");
