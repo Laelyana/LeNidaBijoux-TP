@@ -6,19 +6,22 @@ import './Product.scss';
 import { addToCard } from '../../actions/shop';
 import { addToFavorite, removeFavorite } from '../../actions/favoritesAdd';
 
+
+const Product = ({ product, status, favorites, isLogged }) => {
+
 function handleClick__un() {
   const general = document.getElementById('general');
-  general.className = 'product__box__img--un image__un';
+  general.style.backgroundImage = "url(http://0.0.0.0:8000/pictures/"+product.picture1+")";
 }
 
 function handleClick__deux() {
   const general = document.getElementById('general');
-  general.className = 'product__box__img--un image__deux';
+  general.style.backgroundImage = "url(http://0.0.0.0:8000/pictures/"+product.picture2+")";
 }
 
 function handleClick__trois() {
   const general = document.getElementById('general');
-  general.className = 'product__box__img--un image__trois';
+  general.style.backgroundImage = "url(http://0.0.0.0:8000/pictures/"+product.picture3+")";
 }
 /* function handleClick__fav() {
   const btnFav = document.getElementById('fav');
@@ -33,7 +36,7 @@ function handleClick__trois() {
   }
 } */
 
-const Product = ({ product, status, favorites, isLogged }) => {
+
   const dispatch = useDispatch();
   const productId = product.id;
   const handleAddToCart = (product) => {
@@ -61,16 +64,16 @@ const Product = ({ product, status, favorites, isLogged }) => {
 
     <div className="product">
       <div className="product__box__img ">
-        <div className="product__box__img--un image__un" id="general" />
+        <div style={{backgroundImage: "url(http://0.0.0.0:8000/pictures/" + product.picture1 + ")"}} className="product__box__img--un image__un" id="general" />
         <div className="product__box__img__sub">
-          <div className="product__box__img__sub--unBis image__un " id="bis" onClick={handleClick__un} onMouseOver={handleClick__un} />
-          <div className="product__box__img__sub--deux image__deux" id="deux" onClick={handleClick__deux} onMouseOver={handleClick__deux} />
-          <div className="product__box__img__sub--trois image__trois" id="trois" onClick={handleClick__trois} onMouseOver={handleClick__trois} />
+          <div style={{backgroundImage: "url(http://0.0.0.0:8000/pictures/" + product.picture1 + ")"}} className="product__box__img__sub--unBis image__un " id="bis" onClick={handleClick__un} onMouseOver={handleClick__un} />
+          {product.picture2 != null &&(<div style={{backgroundImage: "url(http://0.0.0.0:8000/pictures/" + product.picture2 + ")"}} className="product__box__img__sub--deux image__deux" id="deux" onClick={handleClick__deux} onMouseOver={handleClick__deux} />)}
+          {product.picture3 != null &&(<div style={{backgroundImage: "url(http://0.0.0.0:8000/pictures/" + product.picture3 + ")"}} className="product__box__img__sub--trois image__trois" id="trois" onClick={handleClick__trois} onMouseOver={handleClick__trois} />)}
         </div>
       </div>
       <div className="product__box__txt">
         <div className="product__box__txt--title"><h5>{product.name}</h5></div>
-        <div className="product__box__cart--price" id="prix">{product.price} Euros</div>
+        <div className="product__box__cart--price" id="prix">{product.price !=null &&(product.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' }))}</div>
         {status && (<div className="product__box__txt--quantite">Il reste {product.stock} exemplaires en stock</div>)}
 
         <div className="product__box__cart">
@@ -92,6 +95,7 @@ const Product = ({ product, status, favorites, isLogged }) => {
     </div>
   );
 };
+
 Product.propTypes = {
   product: PropTypes.object.isRequired,
 };
