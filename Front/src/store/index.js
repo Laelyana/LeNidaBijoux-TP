@@ -9,7 +9,7 @@ import collectionMiddleware from 'src/middlewares/collection';
 import categoriesMiddleware from 'src/middlewares/categories';
 import authMiddleware from 'src/middlewares/auth';
 import favoritesMiddleware from 'src/middlewares/favorites';
-import favoritesAddMiddleware from 'src/middlewares/favoritesAdd';
+import favoriteAddMiddleware from 'src/middlewares/favoritesAdd';
 import createUserMiddleware from 'src/middlewares/createUser'
 import sliderMiddleware from 'src/middlewares/slider';
 import editUserMiddleware from 'src/middlewares/editUser';
@@ -51,7 +51,7 @@ const store = createStore(
       categoriesMiddleware,
       collectionMiddleware,
       favoritesMiddleware,
-      favoritesAddMiddleware,
+      favoriteAddMiddleware,
       createUserMiddleware,
       editUserMiddleware,
       ordersMiddleware,

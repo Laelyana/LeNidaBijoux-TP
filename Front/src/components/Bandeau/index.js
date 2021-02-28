@@ -14,7 +14,7 @@ const mapState = createStructuredSelector({
 });
 const Bandeau = ({ isLogged, handleLogout, status }) => {
   const { cartItemsCount } = useSelector(mapState);
-
+  console.log(status);
   return (
 
     <div className="bandeau">

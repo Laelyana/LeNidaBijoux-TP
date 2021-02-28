@@ -17,7 +17,10 @@ export default (store) => (next) => (action) => {
         store.dispatch(saveUserData(response.data));
         window.location = '/mon-compte';
       }).catch((error) => {
-        console.log(error.response.data.message);
+        const errMsg = error.response.data.code;
+        if (errMsg === 401) {
+          window.alert('Mauvais email ou mot de passe');
+        }
       }).finally((response) => {
       });
       next(action);

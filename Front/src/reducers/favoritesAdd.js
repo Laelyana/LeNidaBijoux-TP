@@ -1,15 +1,23 @@
-import { SAVE_FAVORITES_ADD } from '../actions/favoritesAdd';
+import { ADD_TO_FAVORITE, CLEAR_FAVORITE, REMOVE_FAVORITE } from '../actions/favoritesAdd';
 
 const initialState = {
-  favoritesAdd: [],
+  favorite: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SAVE_FAVORITES_ADD:
+    case ADD_TO_FAVORITE:
       return {
         ...state,
-        favoritesAdd: action.favoritesAdd,
+        favorite: action.favorite,
+      };
+    case CLEAR_FAVORITE:
+      return {
+        favorite: [],
+      };
+    case REMOVE_FAVORITE:
+      return {
+        ...state,
       };
     default:
       return {
