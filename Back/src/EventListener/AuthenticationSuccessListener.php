@@ -16,8 +16,7 @@ class AuthenticationSuccessListener{
         $user = $event->getUser();
     
         $data['data'] = array(
-            'logged' => true,
-            'userId'=> $user->getId()
+            'logged' => true
         );
     
         $event->setData($data);

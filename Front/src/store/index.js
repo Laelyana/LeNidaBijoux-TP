@@ -9,8 +9,14 @@ import collectionMiddleware from 'src/middlewares/collection';
 import categoriesMiddleware from 'src/middlewares/categories';
 import authMiddleware from 'src/middlewares/auth';
 import favoritesMiddleware from 'src/middlewares/favorites';
+import favoriteAddMiddleware from 'src/middlewares/favoritesAdd';
 import createUserMiddleware from 'src/middlewares/createUser'
 import sliderMiddleware from 'src/middlewares/slider';
+import editUserMiddleware from 'src/middlewares/editUser';
+import ordersMiddleware from 'src/middlewares/orders';
+import statusMiddleware from 'src/middlewares/status';
+import productsMiddleware from 'src/middlewares/products';
+import orderMiddleware from 'src/middlewares/order';
 
 function saveToLocalStorage(state) {
   try {
@@ -45,9 +51,15 @@ const store = createStore(
       categoriesMiddleware,
       collectionMiddleware,
       favoritesMiddleware,
+      favoriteAddMiddleware,
       createUserMiddleware,
+      editUserMiddleware,
+      ordersMiddleware,
+      sliderMiddleware,
+      statusMiddleware,
+      productsMiddleware,
+      orderMiddleware,
     ),
-    applyMiddleware(authMiddleware, categoriesMiddleware, collectionMiddleware, sliderMiddleware),
   ),
 );
 

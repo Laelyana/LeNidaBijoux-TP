@@ -1,49 +1,73 @@
 .footer {
+  background-color: #ffcbd9;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Palanquin', sans-serif;
+  font-size: 1rem;
+  justify-content: space-between;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  background-color: pink;
-  width: 80vw;
-  height: 100px;
-  margin: 0 auto;
-  border-radius: 3rem 3rem 0 0;
-  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
 
-  &__legals{
+  &__left{
+    width: 50vw;
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
 
-    &--ul{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      height: 100%;
+    &--title{
+      font-weight: bolder;
+    }
+
+    &--legals{
+   
+      &-li{
+        padding: .1rem;
+        margin: 1rem auto 1rem auto;
+        color: #000;
+  
+      }
     }
   }
 
-  &__social{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__contact{
+  &__right{
+    width: 50vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-wrap: nowrap;
 
-    &--ul{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      height: 100%;
+    &--social{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+  
+      &-logo{
+        margin: 0 0 0 1rem;
+        padding: .4rem;
+        width: 3rem;
+        height: 3rem;
+      }
     }
   }
+
+
+
+  
+
+ &__contact{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   
+
+  &--li-form{
+    padding: .3rem;
+    margin: 1rem auto 1rem auto;
+    color: #000;
+  }
+ }
+
 }
 
-.socialLogo{
-  height: 60px;
-  width: auto;
-  margin-left: 1rem;
-}
+

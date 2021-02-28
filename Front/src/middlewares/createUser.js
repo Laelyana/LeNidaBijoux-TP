@@ -1,4 +1,5 @@
 import axios from 'axios';
+import apiUrl from 'src/utils/api';
 import { CREATE_USER } from '../actions/user';
 
 export default (store) => (next) => (action) => {
@@ -12,7 +13,7 @@ export default (store) => (next) => (action) => {
         email,
       } = store.getState().createUser;
       axios.post(
-        'http://0.0.0.0:8000/api/users',
+        `${apiUrl()}users/sign_in`,
         {
           email,
           password,
@@ -21,9 +22,10 @@ export default (store) => (next) => (action) => {
           phoneNumber,
         },
       ).then((response) => {
+        console.log(response);
         window.alert('Votre compte est créé, vous pouvez vous connecter');
       }).catch((error) => {
-        console.log(error);
+        window.alert(error.response.data);
       });
       next(action);
       break;

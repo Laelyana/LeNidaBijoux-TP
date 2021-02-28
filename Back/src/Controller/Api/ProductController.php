@@ -13,6 +13,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
     /**
+     * @Route("/api/products", name="api_products_browse", methods={"GET"})
+     */
+    public function browse(ProductRepository $productRepo): Response
+    {
+        return $this->json($productRepo->findAll());
+    }
+    
+    /**
      * @Route("/api/products/{id}", name="api_products_read", methods={"GET"})
      */
     public function read(Product $product): Response

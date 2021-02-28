@@ -1,0 +1,182 @@
+@use '/src/styles/vars';
+
+.carousel{
+margin-top: 30rem;
+}
+
+.slide-container{
+  position: relative;
+ 
+}
+
+.react-slideshow-container {
+  background-color: transparent;
+  width: vars.$full;
+  height: vars.$cardH;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  margin-top: 0rem;
+}
+
+.react-slideshow-container .nav {
+  z-index: 10;
+  text-align: center;
+}
+
+
+.react-slideshow-container .default-nav {
+  width: 0%;
+  height: 100%;
+  background-color: transparent;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.react-slideshow-container .default-nav:hover,
+.react-slideshow-container .default-nav:focus {
+  background: transparent;
+  color: #C2858C;
+  outline: none;
+}
+
+.react-slideshow-container .default-nav.disabled:hover {
+  cursor: not-allowed;
+  margin-right: -30px;
+  border-right: none;
+  border-top: none;
+}
+
+
+.react-slideshow-container .default-nav:last-of-type {
+  margin-left: -30px;
+}
+
+
+.react-slideshow-container + ul.indicators {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.react-slideshow-container + ul.indicators li {
+  display: inline-block;
+  position: relative;
+  width: .7rem;
+  height: .7rem;
+  padding: .5rem;
+  margin: 0;
+}
+
+.react-slideshow-container + ul.indicators .each-slideshow-indicator {
+  border: none;
+  opacity: 0.25;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+}
+
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:before {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+  content: '';
+  background: #1A3E51;
+  text-align: center;
+}
+
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:hover,
+.react-slideshow-container + ul.indicators .each-slideshow-indicator.active,
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:focus {
+  opacity: 0.75;
+  outline: none;
+}
+
+.react-slideshow-fade-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.react-slideshow-fade-wrapper .react-slideshow-fade-images-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.react-slideshow-fade-wrapper .react-slideshow-fade-images-wrap > div {
+  position: relative;
+  opacity: 0;
+}
+
+.react-slideshow-wrapper.slide {
+  width: 100%;
+  overflow: hidden;
+}
+
+.react-slideshow-wrapper .images-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.react-slideshow-zoom-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.react-slideshow-zoom-wrapper .zoom-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.react-slideshow-zoom-wrapper .zoom-wrapper > div {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+//class pour la balsie img
+.slider__img{
+  object-fit: cover;
+  width: 100%;
+  height: 420px;
+}
+
+.default-nav{
+  border: none;
+  opacity: .6;
+  margin-left: -1%;
+  background-color: transparent;
+
+  &:hover{
+    opacity: .6;
+  }
+}
+
+.nav .default-nav{
+  background-color: transparent;
+}
+
+

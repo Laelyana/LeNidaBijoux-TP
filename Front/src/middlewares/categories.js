@@ -1,11 +1,11 @@
 import axios from 'axios';
-
+import apiUrl from 'src/utils/api';
 import { saveCategories, FETCH_CATEGORIES } from '../actions/categories';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_CATEGORIES:
-      axios.get('http://0.0.0.0:8000/api/categories')
+      axios.get(`${apiUrl()}categories/`)
         .then((response) => {
           store.dispatch(saveCategories(response.data));
         }).catch((error) => {

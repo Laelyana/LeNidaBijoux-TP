@@ -13,13 +13,11 @@
 .col{
   width: vars.$collectionsW;
   height: vars.$collectionsH;
-  border: rgb(207, 206, 205) 1px solid;
-  box-shadow: 0 0 1px 2px rgb(230, 229, 229);
   overflow: hidden;
   z-index: 1;
   margin: 1rem auto 1rem auto; 
-  border-radius: 3rem;
   position: relative;
+  font-size: 2rem;
   
   
 
@@ -31,6 +29,11 @@
   position: relative;
 }
 
+&-card{
+  object-fit: cover;
+  width: vars.$productionsW;
+  height: 420px;
+}
 
 &__center{
   background-color: transparent;
@@ -38,7 +41,6 @@
   height: 5rem;
   width: 100%;
   height: 100%;
-  box-shadow:inset .2rem 0 .5rem .2rem rgb(218, 216, 216);
   overflow: hidden;
 
   &--title-band{

@@ -1,0 +1,77 @@
+@use '/src/styles/vars';
+
+//bloc général de collections
+.products{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: vars.$mi-full;
+  margin: 1rem auto;
+  padding: 2rem;
+}
+
+.prod{
+  width: vars.$productionsW;
+  height: vars.$productionsH;
+  overflow: hidden;
+  z-index: 1;
+  margin: 1rem auto 1rem auto; 
+  position: relative;
+
+
+&__img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 130%;
+  position: relative;
+
+  &:hover{
+    opacity: .7;
+    
+  }
+
+  &-card{
+      object-fit: cover;
+      width: vars.$productionsW;
+      height: 420px;
+  }
+}
+
+
+&__band{
+  background-color: white;
+  opacity: .7;
+  height: 5rem;
+  width: vars.$productionsW;
+  overflow: hidden;
+  padding: 2rem;
+  margin-top: 90%;
+  position: absolute;
+  z-index: 100;
+  bottom: 2rem;
+ 
+  &--title{
+    font-weight: bold;
+
+
+  }
+}
+
+
+
+} 
+
+  
+.prod__img-card a:before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top: 0;
+  bottom:0;
+  z-index: 3;
+  background-color:rgba(0,0,0,0);
+}
+
+
+

@@ -21,34 +21,31 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'E-mail',
                 'constraints' => [
                     new NotBlank(),
                     new Email(),
                     new Length(['max'=>180])
                 ]
             ])
-            ->add('password')
+            ->add('password', PasswordType::class, [
+                'mapped' => false, 'constraints'=>[new NotBlank()]])
             ->add('firstname', TextType::class, [
-                'label' => 'Prénom',
                 'constraints' => [
                     new NotBlank(),
                     new Length(['max'=>50]),
                 ]
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Nom',
                 'constraints' => [
                     new NotBlank(),
                     new Length(['max'=>50]),
                 ]
             ])
             ->add('phoneNumber', TelType::class, [
-                'label' => 'Numero de téléphone',
                 'constraints' => [
                     new NotBlank(),
                     new Length(['max'=>15]),
-                    new Regex(['pattern'=>'/\D/','match' => false, 'message' => 'Your phone number must contain just numbers'])
+                    new Regex(['pattern'=>'/\D/','match' => false, 'message' => 'Votre numéro de téléphone ne doit contenir que des chiffres'])
                 ]
             ])
             //->add('roles')

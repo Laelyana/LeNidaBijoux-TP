@@ -1,82 +1,43 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { Slide } from 'react-slideshow-image';
+import Slid from './slid';
 
-import Slide from './slide';
+import './slide.scss';
 
-import './slider.scss';
-
+const proprietes = {
+  duration: 5000,
+  transitionDuration: 500,
+  infinite: true,
+  indicators: true,
+  pauseOnHover: true,
+  canSwipe: true,
+};
 
 const Slider = ({ manageLoad, slider }) => {
   useEffect(
     manageLoad,
     [],
   );
-
-//code vanilla slider
-var slideIndex = "1";
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slider = document.getElementsByClassName("slider__list");
-  var slides = document.getElementsByClassName("slider__item");
-  var dots = document.getElementsByClassName("slider__btn--haut");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 3; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    console.log("none");
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-      console.log("active");
-  }
- 
-}
-
-
-function gauche() {
-console.log("clic gauche");
-
-};
-
-function droite() {
-  console.log("clic droite");
-  };
+  console.log(slider);
+  const activeSlide = [];
+  slider.forEach((slide) => {
+    slide.active === true ? activeSlide.push(slide) : null;
+  });
+  console.log(activeSlide);
 
   return (
 
-    <div className="slider">
-    <div className="slider__btn--haut"></div>
-    <div id="slider__list">
-    <div>
+    <Slide {...proprietes}>
       {
-        slider.map((slide) => (
-          <Slide key={slide.id} {...slide} />
-        
-        ))
-      }
-    </div>
-    </div>
-    <div className="slider__gauche" onClick={plusSlides(-1)}>
-    <div className="slider__btn"></div>
-    </div>
-    <div className="slider__droite" onClick={plusSlides(1)}>
-    <div className="slider__btn"></div>
-    </div>
-    
-  </div>
+        activeSlide.map((slid) => (
+          <Slid key={slid.id} {...slid} />
 
- 
+        ))
+          }
+    </Slide>
+
   );
 };
 

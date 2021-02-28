@@ -1,31 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import './products.scss';
+import ProductCard from './ProductCard';
 
+const Products = ({ manageLoad, products }) => {
+  useEffect(
+    manageLoad,
+    [],
+  );
 
-import './Products.scss';
+  console.log(products);
+  return (
+    <div className="products">
+      {
+        products.map((product) => (
 
-const Products = () => (
-  <div className="products">
-
-    <a href="/produit"><div className="prod prod__img prod__img--un">
-      <div className="prod__band">
-        <div className="prod__band--title">PRODUIT 1</div>
-      </div>
-    </div></a>
-
-    <a href="/produit"><div className="prod prod__img prod__img--deux">
-      <div className="prod__band">
-        <div className="prod__band--title">PRODUIT 2</div>
-      </div>
-    </div></a>
-
-    <a href="/produit"><div className="prod prod__img prod__img--trois">
-      <div className="prod__band">
-        <div className="prod__band--title">PRODUIT 3</div>
-      </div>
-    </div></a>
-
-  </div>
-);
-
-
+          <ProductCard key={product.id} {...product} />
+        ))
+      }
+    </div>
+  );
+};
+Products.propTypes = {
+  manageLoad: PropTypes.func.isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
 export default Products;

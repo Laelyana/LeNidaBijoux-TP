@@ -4,6 +4,8 @@ import { logOut } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
+  status: state.status.status,
+  cartItems: state.cart.cartItems,
 });
 
 const mapDispatchToProps = (dispatch) => ({

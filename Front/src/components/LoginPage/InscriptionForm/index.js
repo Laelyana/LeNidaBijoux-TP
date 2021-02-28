@@ -1,9 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Field from './Field';
 
-import PropTypes from 'prop-types';
-
-import "./inscriptionform.scss";
+import './inscriptionform.scss';
 
 const InscriptionForm = ({
   firstname,
@@ -57,6 +56,16 @@ const InscriptionForm = ({
       </form>
     </div>
   );
+};
+
+InscriptionForm.propTypes = {
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  phoneNumber: PropTypes.string.isRequired,
+  changeField: PropTypes.func.isRequired,
+  handleCreateUser: PropTypes.func.isRequired,
 };
 
 export default InscriptionForm;
