@@ -5,23 +5,24 @@ import PropTypes from 'prop-types';
 import './Product.scss';
 import { addToCard } from '../../actions/shop';
 import { addToFavorite, removeFavorite } from '../../actions/favoritesAdd';
+import imgUrl from 'src/utils/imgUrl';
 
 
 const Product = ({ product, status, favorites, isLogged }) => {
 
 function handleClick__un() {
   const general = document.getElementById('general');
-  general.style.backgroundImage = "url(http://0.0.0.0:8000/pictures/"+product.picture1+")";
+  general.style.backgroundImage = "url("+imgUrl()+product.picture1+")";
 }
 
 function handleClick__deux() {
   const general = document.getElementById('general');
-  general.style.backgroundImage = "url(http://0.0.0.0:8000/pictures/"+product.picture2+")";
+  general.style.backgroundImage = "url("+imgUrl()+product.picture2+")";
 }
 
 function handleClick__trois() {
   const general = document.getElementById('general');
-  general.style.backgroundImage = "url(http://0.0.0.0:8000/pictures/"+product.picture3+")";
+  general.style.backgroundImage = "url("+imgUrl()+product.picture3+")";
 }
 /* function handleClick__fav() {
   const btnFav = document.getElementById('fav');
@@ -64,11 +65,11 @@ function handleClick__trois() {
 
     <div className="product">
       <div className="product__box__img ">
-        <div style={{backgroundImage: "url(http://0.0.0.0:8000/pictures/" + product.picture1 + ")"}} className="product__box__img--un image__un" id="general" />
+        <div style={{backgroundImage: "url("+imgUrl()+product.picture1+")"}} className="product__box__img--un image__un" id="general" />
         <div className="product__box__img__sub">
-          <div style={{backgroundImage: "url(http://0.0.0.0:8000/pictures/" + product.picture1 + ")"}} className="product__box__img__sub--unBis image__un " id="bis" onClick={handleClick__un} onMouseOver={handleClick__un} />
-          {product.picture2 != null &&(<div style={{backgroundImage: "url(http://0.0.0.0:8000/pictures/" + product.picture2 + ")"}} className="product__box__img__sub--deux image__deux" id="deux" onClick={handleClick__deux} onMouseOver={handleClick__deux} />)}
-          {product.picture3 != null &&(<div style={{backgroundImage: "url(http://0.0.0.0:8000/pictures/" + product.picture3 + ")"}} className="product__box__img__sub--trois image__trois" id="trois" onClick={handleClick__trois} onMouseOver={handleClick__trois} />)}
+          <div style={{backgroundImage: "url("+imgUrl()+product.picture1+")"}} className="product__box__img__sub--unBis image__un " id="bis" onClick={handleClick__un} onMouseOver={handleClick__un} />
+          {product.picture2 != null &&(<div style={{backgroundImage: "url("+imgUrl()+product.picture2 +")"}} className="product__box__img__sub--deux image__deux" id="deux" onClick={handleClick__deux} onMouseOver={handleClick__deux} />)}
+          {product.picture3 != null &&(<div style={{backgroundImage: "url("+imgUrl()+product.picture3 +")"}} className="product__box__img__sub--trois image__trois" id="trois" onClick={handleClick__trois} onMouseOver={handleClick__trois} />)}
         </div>
       </div>
       <div className="product__box__txt">
