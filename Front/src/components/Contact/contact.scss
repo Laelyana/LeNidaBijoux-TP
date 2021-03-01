@@ -20,16 +20,45 @@
 
   }
   &--button{
-    width: 350px;
-    margin: 1rem auto;
-    padding: 1rem;
     border: none;
-    background-color: #ffcbd9;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
     color: white;
-    font-size: 1rem;
-    &:hover{
-      background-color: #f7b2c4;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: #ffcbd9;
+    padding: 17px 60px;
+    margin: 1rem auto;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 490%;
+      width: 140%;
+      background: #fcbdcd;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      -webkit-transform: translateX(-98%) translateY(-20%) rotate(45deg);
+      transform: translateX(-98%) translateY(-20%) rotate(45deg);
     }
+    
+    &:hover:after {
+      -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    }
+
+    & span {
+      position: relative; 
+      z-index: 1;
+    }
+
   }
   &>h3{
     font-size: 2rem;
@@ -94,27 +123,7 @@ textarea {
   color: #000;
 
 }
-
-// hr.style-seven {
-//   overflow: visible; /* For IE */
-//   height: 30px;
-//   border-style: solid;
-//   border-color: #f8a4ba;
-//   border-width: 5px 0 0 0;
-//   border-radius: 20px;
-//   width: 50vw;
-// }
-// hr.style-seven:before { /* Not really supposed to work, but does */
-//   display: block;
-//   content: "";
-//   height: 30px;
-//   margin-top: -28px;
-//   border-style: solid;
-//   border-color: #f8a4ba;
-//   border-width: 0 0 5px 0;
-//   border-radius: 20px;
-// }
-
+//style pour le hr
 hr.style-two {
   border: 0;
   height: 2px;

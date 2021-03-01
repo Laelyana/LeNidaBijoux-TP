@@ -11,13 +11,16 @@
   font-family: 'Palanquin', sans-serif;
   position: fixed;
   z-index: 1000;
-
+ 
   
 
   &__timer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-self: center;
     margin: 0 0 0 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     //text-shadow: 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19);
     color: #fd80a1;
@@ -74,24 +77,41 @@
 }
 
 .btn__log{
-  background-color: #fff;
-  padding: 0 1rem 0 1rem;
-  color: #000;
-  font-family: 'Palanquin', sans-serif;
   border: none;
-  margin-right: .5rem;
-  border: 2px solid #fff;
-  transition: 2s;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: black;
+  font-size: 15px;
+  background-color: #fff;
+  padding: .3rem .5rem;
+  margin: 1rem 1rem auto auto;
 
   &:after {
+    content: "";
+    position: absolute;
     left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #fcbdcd;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-98%) translateY(-20%) rotate(45deg);
+    transform: translateX(-98%) translateY(-20%) rotate(45deg);
+  }
+  
+  &:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
   }
 
-  &:hover{
-    color: black;
-    transition: 1s;
-    overflow: hidden;
-    border: 2px solid #ffcbd9;
+  & span {
+    position: relative; 
+    z-index: 1;
   }
 }
 

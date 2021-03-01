@@ -40,15 +40,15 @@ const Contact = ({
           onChange={changeField}
           value={email}
         />
-         <textarea>
+     
         <Field
           name="message"
           placeholder="Votre message"
           onChange={changeField}
           value={message}
           type="textarea"
-        /></textarea>
-        <button type="submit" className="contact__form--button">Envoyer</button>
+        />
+        <button type="submit" className="contact__form--button"><span>Envoyer</span></button>
       </form>
     </>
   );
