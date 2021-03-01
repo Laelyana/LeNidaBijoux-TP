@@ -36,7 +36,7 @@
       font-family: 'Palanquin', sans-serif;
       font-size: 1.2rem;
 
-    &:hover {
+    &:hover, :active {
       color: #000;
       border-bottom: 2px solid #f5a7b5;
     }
