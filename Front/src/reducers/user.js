@@ -1,10 +1,13 @@
-import { CHANGE_USER_FIELD, SAVE_USER_DATA, LOG_OUT } from 'src/actions/user';
+import {
+  CHANGE_USER_FIELD, SAVE_USER_DATA, LOG_OUT, ERR_MSG,
+} from 'src/actions/user';
 
 const initialState = {
   username: '',
   password: '',
   logged: false,
   token: null,
+  errMsg: '',
 };
 
 export default (state = initialState, action = {}) => {
@@ -19,6 +22,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         logged: true,
         token: action.data.token,
+        errMsg: '',
       };
     case LOG_OUT:
       window.location = '/';
@@ -29,6 +33,12 @@ export default (state = initialState, action = {}) => {
         token: null,
         email: '',
         password: '',
+        errMsg: '',
+      };
+    case ERR_MSG:
+      return {
+        ...state,
+        errMsg: 'Mauvais identifiants',
       };
     default:
       return {

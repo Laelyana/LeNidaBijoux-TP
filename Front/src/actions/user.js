@@ -9,6 +9,7 @@ export const FETCH_USER_DATA = 'FETCH_USER_DATA';
 export const SAVE_USER_EDIT_DATA = 'SAVE_USER_EDIT_DATA';
 export const CHANGE_EDIT_USER_FIELD = 'CHANGE_EDIT_USER_FIELD';
 export const EDIT_USER = 'EDIT_USER';
+export const ERR_MSG = 'ERR_MSG';
 
 export const changeUserField = (fieldValue, fieldName) => ({
   type: CHANGE_USER_FIELD,
@@ -55,4 +56,8 @@ export const saveNewUserData = (newData) => ({
 export const saveUserEditData = (data) => ({
   type: SAVE_USER_EDIT_DATA,
   data,
+});
+export const errMsg = (msg) => ({
+  type: ERR_MSG,
+  msg,
 });

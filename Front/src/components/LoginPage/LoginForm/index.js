@@ -10,6 +10,7 @@ const LoginForm = ({
   password,
   changeField,
   handleLogin,
+  errMsg,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -24,6 +25,7 @@ const LoginForm = ({
           placeholder="Votre email"
           onChange={changeField}
           value={username}
+          label="Votre email"
         />
         <Field
           name="password"
@@ -31,7 +33,9 @@ const LoginForm = ({
           placeholder="Votre mot de passe"
           onChange={changeField}
           value={password}
+          label="Votre mot de passe"
         />
+        {errMsg && (<div className="errorDiv"> {errMsg} </div>) }
 
         <button type="submit" className="form__input">Se connecter</button>
       </form>
