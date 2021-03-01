@@ -1,25 +1,29 @@
 .contact__form{
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  width: 350px;
   margin: 2rem auto;
+  font-family: 'Palanquin', sans-serif;
 
   &--input{
-    width: 30%;
+    width: 350px;
     margin: 1rem auto;
     height: 3rem;
     padding: 1rem;
-    border-radius: 1rem;
+
+    &:focus{
+      border: 3px solid #ffcbd9;
+    }
   }
   &--textarea{
-    width: 50%;
+    width: 350px;
     margin: 1rem auto;
     height: 100px;
     padding: 1rem;
-    border-radius: 1rem;
+
   }
   &--button{
-    width: 30%;
+    width: 350px;
     margin: 1rem auto;
   }
   &>h3{

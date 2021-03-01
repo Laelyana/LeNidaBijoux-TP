@@ -81,7 +81,11 @@
   border: none;
   margin-right: .5rem;
   border: 2px solid #fff;
- 
+  transition: 2s;
+
+  &:after {
+    left: 0;
+  }
 
   &:hover{
     color: black;
