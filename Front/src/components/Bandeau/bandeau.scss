@@ -9,13 +9,25 @@
   margin: 0 auto;
   overflow: hidden;
   font-family: 'Palanquin', sans-serif;
+  position: fixed;
+  z-index: 1000;
   
 
   &__timer{
     align-self: center;
     margin: 0 0 0 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    //text-shadow: 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19);
+    color: rgb(255, 0, 0);
+  }
 
-    color: #000;
+  &__boutique_attente{
+    font-family: 'verdana', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    text-shadow: 0px 0px 0px rgb(255, 255, 255), 0px 0px 0px rgb(255, 255, 255), 0px 0px 0px rgb(255, 255, 255), 0px 0px 0px rgb(255, 255, 255);
+    color: rgb(29, 29, 19);
   }
   &__rightside{
     display: flex;
