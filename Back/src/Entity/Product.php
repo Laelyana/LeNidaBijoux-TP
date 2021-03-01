@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProductRepository;
 use DateTime;
+use DateTimeZone;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -100,7 +101,7 @@ class Product
         $this->users = new ArrayCollection();
         $this->liked = 0;
         $this->stock = 0;
-        $this->createdAt = new DateTime();
+        $this->createdAt = new DateTime('now', new DateTimeZone('Europe/Paris'));
     }
 
     public function getId(): ?int

@@ -43,7 +43,7 @@ class UserCrudController extends AbstractCrudController
             $encodedPassword = $this->userPasswordEncoderInterface->encodePassword($entityInstance, $entityInstance->getRawPassword());
             $entityInstance->setPassWord($encodedPassword);
         }
-        $entityInstance->setUpdatedAt(new \DateTime());
+        $entityInstance->setUpdatedAt(new \DateTime('now', new \DateTimeZone('Europe/Paris')));
         parent::updateEntity($entityManager, $entityInstance);
         $entityInstance->setRawPassword(null);
     }
