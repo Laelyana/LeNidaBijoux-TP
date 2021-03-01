@@ -16,15 +16,75 @@ const InscriptionForm = ({
   badMail,
   badPhone,
   badPassword,
-  /*   emptyInput,
-    badMail,
-    badPhone,
-    badPassword, */
 }) => {
   const handleNewSubmit = (evt) => {
     evt.preventDefault();
     handleCreateUser();
   };
+  // validation lastname input
+  function lastnameIsEmpty() {
+    let str = lastname;
+    if (!str.replace(/\s+/, '').length || !str) {
+      return false;
+    }
+    return true;
+  }
+  function lastnameTooLong() {
+    let str = lastname;
+    if (str.length > 50) {
+      return false;
+    }
+    return true;
+  }
+  // validation firstname input
+  function firstnameIsEmpty() {
+    let str = firstname;
+    if (!str.replace(/\s+/, '').length || !str) {
+      return false;
+    }
+    return true;
+  }
+  function firstnameTooLong() {
+    let str = firstname;
+    if (str.length > 50) {
+      return false;
+    }
+    return true;
+  }
+  // validation phoneNumber input
+  function phoneIsEmpty() {
+    let str = phoneNumber;
+    if (!str.replace(/\s+/, '').length || !str) {
+      return false;
+    }
+    return true;
+  }
+  function phoneNumberTooLong() {
+    let str = phoneNumber;
+    if (str.length > 15) {
+      return false;
+    }
+    return true;
+  }
+  const regexPhone = new RegExp('^[0-9]+$');
+
+  // validation email input
+  function emailIsEmpty() {
+    let str = email;
+    if (!str.replace(/\s+/, '').length || !str) {
+      return false;
+    }
+    return true;
+  }
+  const regexEmail = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
+
+  // validation password input
+  const regexPassword = new RegExp('[/\\s/g]');
+
+  // error message
+  const msgRegex = '--- Espace non autorisé ---';
+  const msgTooLong = '--- Maximum de caractères atteints ---';
+
   return (
     <div className="form__leftside">
       <h3>Pas encore inscrit ? Rejoignez nous !</h3>
@@ -36,7 +96,8 @@ const InscriptionForm = ({
           value={lastname}
           label="Nom : "
         />
-        {!lastname && emptyInput}
+        {!lastnameIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
+        {!lastnameTooLong() && <div className="errorDiv">{msgTooLong}</div>}
         <Field
           name="firstname"
           placeholder="Votre prénom"
@@ -44,7 +105,8 @@ const InscriptionForm = ({
           value={firstname}
           label="Prénom : "
         />
-        {!firstname && emptyInput}
+        {!firstnameIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
+        {!firstnameTooLong() && <div className="errorDiv">{msgTooLong}</div>}
         <Field
           name="phoneNumber"
           placeholder="Votre téléphone"
@@ -52,7 +114,9 @@ const InscriptionForm = ({
           value={phoneNumber}
           label="Téléphone : "
         />
-        {!phoneNumber && emptyInput}
+        {!phoneIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
+        {!phoneNumberTooLong() && <div className="errorDiv">{msgTooLong}</div>}
+        {!regexPhone.test(phoneNumber) && <div className="errorDiv">{badPhone}</div>}
         <Field
           name="email"
           placeholder="Votre email"
@@ -60,8 +124,9 @@ const InscriptionForm = ({
           value={email}
           label="Email : "
         />
-        {!email && emptyInput}
-        {!email.includes('@') && badMail}
+        {!emailIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
+        {/* {!email.includes('@') && <div className="errorDiv">{badMail}</div>} */}
+        {!regexEmail.test(email) && <div className="errorDiv">{badMail}</div>}
         <Field
           name="password"
           type="password"
@@ -70,7 +135,9 @@ const InscriptionForm = ({
           value={password}
           label="Mot de passe : "
         />
-        {!password && emptyInput}
+        {!password && <div className="errorDiv">{emptyInput}</div>}
+        {regexPassword.test(password) && <div className="errorDiv">{msgRegex}</div>}
+
         <button type="submit" className="form__input">Envoyer le formulaire</button>
       </form>
     </div>

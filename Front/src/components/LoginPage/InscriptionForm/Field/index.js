@@ -18,7 +18,7 @@ const Field = ({
     onChange(evt.target.value, name);
   };
 
-  const inputId = `field-${name}`;
+  /* const inputId = `field-${name}`; */
 
   return (
     <div>
@@ -26,7 +26,7 @@ const Field = ({
       <input
         value={value}
         onChange={handleChange}
-        id={inputId}
+        // id={inputId}
         type={type}
         className="form__input"
         placeholder={placeholder}

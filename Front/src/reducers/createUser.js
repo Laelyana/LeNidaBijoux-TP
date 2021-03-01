@@ -41,10 +41,10 @@ export default (state = initialState, action = {}) => {
     case ERR_MSG_CREATE_USER:
       return {
         ...state,
-        emptyInput: 'Ce champ est requis',
-        badMail: 'Ce mail n\'est pas un email valide',
-        badPhone: 'Ce champ ne doit contenir que des chiffres',
-        badPassword: 'Les mots de passe ne correspondent pas',
+        emptyInput: '--- Ce champ est requis ---',
+        badMail: '--- Ce mail n\'est pas un email valide ---',
+        badPhone: '--- Ce champ ne doit contenir que des chiffres ---',
+        badPassword: '--- Les mots de passe ne correspondent pas ---',
       };
     default:
       return {

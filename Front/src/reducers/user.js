@@ -38,7 +38,7 @@ export default (state = initialState, action = {}) => {
     case ERR_MSG:
       return {
         ...state,
-        errMsg: 'Mauvais identifiants',
+        errMsg: '--- Mauvais identifiants ---',
       };
     default:
       return {
