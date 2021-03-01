@@ -1,5 +1,6 @@
 @use '/src/styles/vars';
 
+
 //bloc général product
 .product{
   display: flex;
@@ -192,21 +193,21 @@ flex-wrap: wrap;
 
 
 .image__un{
-  background-image: url(./img/goldengate.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .image__deux{
-  background-image: url(./img/pendentif-fleur-de-vie-11_1600x.webp);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .image__trois{
-  background-image: url(./img/boucles-d-oreille-a7tna-bijoux-1-75-double-color.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 
