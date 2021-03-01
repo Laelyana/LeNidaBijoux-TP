@@ -9,6 +9,8 @@
   margin: 0 auto;
   overflow: hidden;
   font-family: 'Palanquin', sans-serif;
+  position: fixed;
+  z-index: 1000;
   
 
   &__timer{

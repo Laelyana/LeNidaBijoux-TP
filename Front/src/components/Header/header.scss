@@ -1,16 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap');
 
 
-.header {
-  position: absolute;
-  z-index: 1000;
-  top: 2.2rem;
-
-  &__logo{
-    width: 200px;
-    height: auto;
-  }
-}
 
 .navigation{
  background-color: white;
@@ -29,10 +19,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
     margin: 0rem auto 0rem auto;
     background-color: #fff;
     width: 100vw;
-    margin: 1.2rem auto;
     border: .2rem white solid;
     overflow: hidden;
   }
@@ -50,5 +40,22 @@
       color: #000;
       border-bottom: 2px solid #f5a7b5;
     }
+  }
+  &__logo{
+    max-width: 15rem;
+    height: auto;
+    margin-top: 0rem;
+  }
+}
+
+@media (max-width: 700px) { 
+  .navigation__logo{
+    display: none;
+  }
+  .navigation__li {
+    height: 2rem;
+    padding: 0rem;
+    margin: 0rem auto 0rem auto;
+    font-size: 1rem;
   }
 }
