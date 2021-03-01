@@ -10,7 +10,7 @@
  flex-wrap: wrap;
  overflow: hidden;
  padding: 3rem 1rem 1rem 1rem;
- border-bottom: .1rem solid #fcbdce;
+ border-bottom: .1rem solid #ffcbd9;
 
 
 
@@ -39,6 +39,7 @@
     &:hover, :active {
       color: #000;
       border-bottom: 2px solid #f5a7b5;
+      
     }
   }
   &__logo{
@@ -49,6 +50,9 @@
 }
 
 @media (max-width: 700px) { 
+  .navigation{
+    padding-top: 7rem;
+  }
   .navigation__logo{
     display: none;
   }

@@ -3,7 +3,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #ffcbd9;
+  background-color: #fff;
   padding: .5rem 0 .5rem 0;
   width: 100vw;
   margin: 0 auto;
@@ -11,6 +11,7 @@
   font-family: 'Palanquin', sans-serif;
   position: fixed;
   z-index: 1000;
+
   
 
   &__timer{
@@ -19,7 +20,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     //text-shadow: 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19);
-    color: rgb(255, 0, 0);
+    color: #fd80a1;
   }
 
   &__boutique_attente{
@@ -73,30 +74,22 @@
 }
 
 .btn__log{
-  background-color: #fcdee6;
+  background-color: #fff;
   padding: 0 1rem 0 1rem;
-  border-radius: 1rem;
   color: #000;
   font-family: 'Palanquin', sans-serif;
   border: none;
-  border: .1rem solid #f5cad5;
+  margin-right: .5rem;
+  border: 2px solid #fff;
  
 
   &:hover{
-    background-color: #f8f6f6;
     color: black;
+    transition: 1s;
+    overflow: hidden;
+    border: 2px solid #ffcbd9;
   }
 }
 
 
-@keyframes move_btn {
-  0% {
-      border-bottom: 1px solid white;
-  }
-  
-  
-  100% {
-    border-bottom: 1px solid #cc6d7e;
-  }
-  }
-  
+ 
