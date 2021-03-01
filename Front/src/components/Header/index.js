@@ -1,11 +1,12 @@
 import React from 'react';
-import reactLogo from './img.jpg';
+import logo from './logo.png';
 
 import './header.scss';
 
 const Header = () => (
   
     <div className="navigation">
+    <div className="header"> <a href="/"><img  src={logo} alt="logo" className="header__logo"/></a>  </div> 
       <ul className="navigation__ul">
         <a href="/"><li className="navigation__li">Accueil</li></a>
         <a href="/l-atelier"><li className="navigation__li">L'atelier</li></a>

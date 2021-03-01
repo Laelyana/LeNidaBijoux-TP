@@ -2,7 +2,14 @@
 
 
 .header {
-  padding-top: 0rem;
+  position: absolute;
+  z-index: 1000;
+  top: 2.2rem;
+
+  &__logo{
+    width: 200px;
+    height: auto;
+  }
 }
 
 .navigation{
@@ -25,8 +32,7 @@
     margin: 0rem auto 0rem auto;
     background-color: #fff;
     width: 100vw;
-    margin: 2rem auto;
-    
+    margin: 1.2rem auto;
     border: .2rem white solid;
     overflow: hidden;
   }
