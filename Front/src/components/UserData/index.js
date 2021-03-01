@@ -50,7 +50,7 @@ const UserData = ({
           value={email}
           onChange={changeField}
         />
-        <button type="submit" className="userdata__form--button">Mettre à jour mon profil</button>
+        <button type="submit" className="userdata__form--button"><span>Mettre à jour mon profil</span></button>
       </form>
     </div>
   );

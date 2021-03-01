@@ -23,12 +23,12 @@ const Bandeau = ({ isLogged, handleLogout, status }) => {
       {status && (<div className="bandeau__timer">LA BOUTIQUE EST ACTUELLEMENT OUVERTE !</div>)}
       <div className="bandeau__rightside">
         {!isLogged
-          && (<div className="notlogged"> <button className="btn__log" type="button"> <a href="/login">S'inscrire / Se connecter</a> </button> </div>)}
+          && (<div className="notlogged"> <button className="btn__log" type="button"> <a href="/login"><span>S'inscrire / Se connecter</span></a> </button> </div>)}
         {isLogged
           && (
             <div className="logged">
-              <button className="btn__log" onClick={handleLogout} type="button">Se déconnecter</button>
-              <button className="btn__log" type="button"> <a href="/mon-compte">Mon compte</a></button>
+              <button className="btn__log" onClick={handleLogout} type="button"><span>Se déconnecter</span></button>
+              <button className="btn__log" type="button"> <a href="/mon-compte"><span>Mon compte</span></a></button>
             </div>
           )}
         <div className="bandeau__icons">

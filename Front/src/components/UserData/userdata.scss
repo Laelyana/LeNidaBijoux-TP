@@ -1,6 +1,9 @@
 .userdata{
-  width: 60vw;
-  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  margin: 2rem auto;
+  font-family: 'Palanquin', sans-serif;
 
   &>h2{
     margin-bottom: 2rem;
@@ -10,16 +13,55 @@
   &__form{
     display: flex;
     flex-direction: column;
+    width: 350px;
 
     &--input{
-      width: 50%;
+      width: 350px;
       margin: 0.5rem auto;
       border-radius: 5px;
     }
 
-    &--button{
-      width: 50%;
-      margin: 0.5rem auto;
+  }
+  &__form--button{
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: #ffcbd9;
+    padding: 17px 70px;
+    margin: 1rem auto;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 490%;
+      width: 140%;
+      background: #fcbdcd;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      -webkit-transform: translateX(-98%) translateY(-20%) rotate(45deg);
+      transform: translateX(-98%) translateY(-20%) rotate(45deg);
     }
+    
+    &:hover:after {
+      -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    }
+
+    & span {
+      position: relative; 
+      z-index: 1;
+    }
+
   }
 }
+

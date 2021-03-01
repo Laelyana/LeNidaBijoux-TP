@@ -17,14 +17,17 @@ const Contact = ({
   };
   return (
     <>
-      <h3>Formulaire de contact</h3>
+      <div className="title__contact"><h3>Formulaire de contact</h3></div>
+      <hr className="style-two"></hr>
       <form className="contact__form" onSubmit={handleFormContactSubmit}>
+ 
         <Field
           name="lastname"
           placeholder="Votre nom"
           onChange={changeField}
           value={lastname}
         />
+       
         <Field
           name="firstname"
           placeholder="Votre prénom"
@@ -37,13 +40,15 @@ const Contact = ({
           onChange={changeField}
           value={email}
         />
+     
         <Field
           name="message"
           placeholder="Votre message"
           onChange={changeField}
           value={message}
+          type="textarea"
         />
-        <button type="submit" className="contact__form--button">Envoyer</button>
+        <button type="submit" className="contact__form--button"><span>Envoyer</span></button>
       </form>
     </>
   );

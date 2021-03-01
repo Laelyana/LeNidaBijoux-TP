@@ -75,7 +75,7 @@ function handleClick__trois() {
       <div className="product__box__txt">
         <div className="product__box__txt--title"><h5>{product.name}</h5></div>
         <div className="product__box__cart--price" id="prix">{product.price !=null &&(product.price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' }))}</div>
-        {status && (<div className="product__box__txt--quantite">Il reste {product.stock} exemplaires en stock</div>)}
+        {status && (<div className="product__box__txt--quantite">Il reste {product.stock} exemplaire(s) en stock</div>)}
 
         <div className="product__box__cart">
           {/* <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" /> */}

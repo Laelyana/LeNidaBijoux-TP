@@ -3,7 +3,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #ffcbd9;
+  background-color: #fff;
   padding: .5rem 0 .5rem 0;
   width: 100vw;
   margin: 0 auto;
@@ -11,15 +11,19 @@
   font-family: 'Palanquin', sans-serif;
   position: fixed;
   z-index: 1000;
+ 
   
 
   &__timer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-self: center;
     margin: 0 0 0 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     //text-shadow: 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19);
-    color: rgb(255, 0, 0);
+    color: #fd80a1;
   }
 
   &__boutique_attente{
@@ -73,30 +77,43 @@
 }
 
 .btn__log{
-  background-color: #fcdee6;
-  padding: 0 1rem 0 1rem;
-  border-radius: 1rem;
-  color: #000;
-  font-family: 'Palanquin', sans-serif;
   border: none;
-  border: .1rem solid #f5cad5;
- 
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: black;
+  font-size: 15px;
+  background-color: #fff;
+  padding: .3rem .5rem;
+  margin: 1rem 1rem auto auto;
 
-  &:hover{
-    background-color: #f8f6f6;
-    color: black;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #fcbdcd;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-98%) translateY(-20%) rotate(45deg);
+    transform: translateX(-98%) translateY(-20%) rotate(45deg);
+  }
+  
+  &:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  }
+
+  & span {
+    position: relative; 
+    z-index: 1;
   }
 }
 
 
-@keyframes move_btn {
-  0% {
-      border-bottom: 1px solid white;
-  }
-  
-  
-  100% {
-    border-bottom: 1px solid #cc6d7e;
-  }
-  }
-  
+ 
