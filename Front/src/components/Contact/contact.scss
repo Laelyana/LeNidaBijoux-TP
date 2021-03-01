@@ -107,6 +107,16 @@ form{
   }
 }
 
+#field-phoneNumber{
+  border-radius: 0;
+  width: 350px;
+  height: 5rem;
+  height: 100%;
+  &:focus{
+    border: 2px solid #ffcbd9;
+  }
+}
+
 textarea {
   width: 100%;
   height: 150px;

@@ -20,4 +20,44 @@
       }
     }
   }
+  &__list--item--button{
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    font-size: 15px;
+    background-color: #ffcbd9;
+    padding: 10px 30px;
+    margin: 1rem auto;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 490%;
+      width: 140%;
+      background: #fcbdcd;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      -webkit-transform: translateX(-98%) translateY(-20%) rotate(45deg);
+      transform: translateX(-98%) translateY(-20%) rotate(45deg);
+    }
+    
+    &:hover:after {
+      -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    }
+
+    & span {
+      position: relative; 
+      z-index: 1;
+    }
+
+  }
 }
