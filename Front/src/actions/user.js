@@ -10,6 +10,7 @@ export const SAVE_USER_EDIT_DATA = 'SAVE_USER_EDIT_DATA';
 export const CHANGE_EDIT_USER_FIELD = 'CHANGE_EDIT_USER_FIELD';
 export const EDIT_USER = 'EDIT_USER';
 export const ERR_MSG = 'ERR_MSG';
+export const ERR_MSG_CREATE_USER = 'ERR_MSG_CREATE_USER';
 
 export const changeUserField = (fieldValue, fieldName) => ({
   type: CHANGE_USER_FIELD,
@@ -59,5 +60,9 @@ export const saveUserEditData = (data) => ({
 });
 export const errMsg = (msg) => ({
   type: ERR_MSG,
+  msg,
+});
+export const errMsgCreateUser = (msg) => ({
+  type: ERR_MSG_CREATE_USER,
   msg,
 });

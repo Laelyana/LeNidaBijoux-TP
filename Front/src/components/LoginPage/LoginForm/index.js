@@ -25,7 +25,7 @@ const LoginForm = ({
           placeholder="Votre email"
           onChange={changeField}
           value={username}
-          label="Votre email"
+          label="Email : "
         />
         <Field
           name="password"
@@ -33,7 +33,7 @@ const LoginForm = ({
           placeholder="Votre mot de passe"
           onChange={changeField}
           value={password}
-          label="Votre mot de passe"
+          label="Mot de passe : "
         />
         {errMsg && (<div className="errorDiv"> {errMsg} </div>) }
 
@@ -47,6 +47,7 @@ LoginForm.propTypes = {
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
+  errMsg: PropTypes.string.isRequired,
 };
 
 export default LoginForm;
