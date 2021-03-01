@@ -7,6 +7,7 @@ use App\Form\UserPatchType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use DateTime;
+use DateTimeZone;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -129,7 +130,7 @@ class UserController extends AbstractController
             }
 
 
-            $user->setUpdatedAt(new DateTime());
+            $user->setUpdatedAt(new DateTime('now', new DateTimeZone('Europe/Paris')));
 
             $em->flush();
 

@@ -69,7 +69,7 @@ class ProductCrudController extends AbstractCrudController
 
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
-        $entityInstance->setUpdatedAt(new \DateTime());
+        $entityInstance->setUpdatedAt(new \DateTime('now', new \DateTimeZone('Europe/Paris')));
         parent::updateEntity($entityManager, $entityInstance);
     }
 }
