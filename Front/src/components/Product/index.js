@@ -87,7 +87,7 @@ function handleClick__trois() {
           )}
           {isLogged && !status && compare && (
             <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleRemoveFavorite(productId)}>
-              <div className="product__box__cart--btn-fav-txt">&#9733;</div>
+              <div className="product__box__cart--btn-fav-txt-star">&#9733;</div>
             </button>
           )}
         </div>
