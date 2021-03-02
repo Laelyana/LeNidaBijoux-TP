@@ -49,6 +49,8 @@
   position: absolute;
   z-index: 100;
   bottom: 2rem;
+  display: flex;
+  justify-content: center;
  
   &--title{
     font-weight: bold;

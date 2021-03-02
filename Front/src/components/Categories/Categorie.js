@@ -7,7 +7,7 @@ import imgUrl from 'src/utils/imgUrl';
 import './categories.scss';
 
 const Categorie = ({ name, picture }) => (
-  <div className="cat cat__img cat__img--un">
+  <div className="cat cat__img ">
     <Link to={`/${name}`}>
       <div className="cat__center">
         <div className="prod__band">

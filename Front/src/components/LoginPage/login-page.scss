@@ -1,38 +1,43 @@
+@use '/src/styles/vars';
+
 .form {
   display: flex;
-  margin-bottom: 2rem;
-  width: 80%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: vars.$full;
   margin: 2rem auto;
 
   &__leftside {
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    border: 3px #C2858C;
+    flex-wrap: nowrap;
+    width: vars.$collectionsW;
     border-style: dashed solid;
-    padding: 2rem;
+    overflow: hidden;
   }
 
   &__inscription {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 340px;
     padding: 0.5rem;
-
   }
 
   &__rightside {
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    border: 3px #C2858C;
-    border-style: dashed solid;
-    padding: 2rem;
+    width: vars.$collectionsW;
+    overflow: hidden;
   }
 
   &__login {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 340px;
+    padding: 0.5rem;
 
   }
   & h3{
@@ -41,8 +46,7 @@
 }
 
 .form__input {
-  margin: 0.5rem auto;
-  width: 50%;
+
+  width: 3rem;
   padding: 0.5rem;
-  border-radius: 10px;
 }
