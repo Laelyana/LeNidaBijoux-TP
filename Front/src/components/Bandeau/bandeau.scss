@@ -1,6 +1,6 @@
 .bandeau{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #ffcbd9;
@@ -15,15 +15,13 @@
   
 
   &__timer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-self: center;
-    margin: 0 0 0 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    //text-shadow: 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19), 1px 1px 2px rgb(29, 29, 19);
-    color: #fd80a1;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    top: 25%;
+    width: 100%;
+    padding: .2rem;
   }
 
   &__boutique_attente{
@@ -35,7 +33,9 @@
   }
   &__rightside{
     display: flex;
-    margin: 0 1rem 0 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0 3rem 0 0;
     
   }
   &__form{
@@ -90,29 +90,6 @@
   padding: .3rem .5rem;
   margin: auto 1rem auto auto ;
 
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 370%;
-    width: 140%;
-    background: #fff;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-    -webkit-transform: translateX(-98%) translateY(-20%) rotate(45deg);
-    transform: translateX(-98%) translateY(-20%) rotate(45deg);
-  }
-  
-  &:hover:after {
-    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
-    transform: translateX(-9%) translateY(-25%) rotate(45deg);
-  }
-
-  & span {
-    position: relative; 
-    z-index: 1;
-  }
 }
 
 
