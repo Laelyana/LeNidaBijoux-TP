@@ -37,7 +37,7 @@ const LoginForm = ({
         />
         {errMsg && (<div className="errorDiv"> {errMsg} </div>) }
 
-        <button type="submit" className="form__input">Se connecter</button>
+        <button type="submit" className="form__input--button"><span>Se connecter</span></button>
       </form>
     </div>
   );

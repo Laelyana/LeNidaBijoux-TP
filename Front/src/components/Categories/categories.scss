@@ -18,8 +18,12 @@
   margin: 1rem auto 1rem auto; 
   position: relative;
   font-size: 2rem;
+
+
   
-  
+  &-card--title-band{
+    text-align: center;
+  }
 
 &__img{
   background-position: center;
@@ -37,10 +41,10 @@
 &__center{
   background-color: transparent;
   position: absolute;
-  height: 5rem;
-  width: 100%;
+  width: vars.$collectionsW;
   height: 100%;
   overflow: hidden;
+
 
   &--title-band{
     margin-top: 50%;
@@ -49,6 +53,7 @@
     color: rgb(47, 47, 51);
     width: 100%;
     padding: 2rem;
+   
 
     &:hover{
       color: white;
@@ -57,20 +62,6 @@
   }
 }
 
-
-
-
-&__img--un{
-  background-image: url(./img/1.jpg);
- }
- 
- &__img--deux{
-  background-image: url(./img/2.jpg);
- }
- 
- &__img--trois{
-  background-image: url(./img/3.jpg);
- }
 
 } 
 
