@@ -12,7 +12,7 @@ const UserOrder = ({ manageLoad, orders }) => {
 
   return (
     <div className="userorder">
-      <h2>Mes commandes</h2>
+      <h2 className="userorder--title">Mes commandes</h2>
       <a href="/mon-compte" className="userorder__back">Revenir au tableau de bord</a>
       <div className="userorder__list">
         {

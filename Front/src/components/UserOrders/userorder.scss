@@ -1,9 +1,17 @@
 .userorder{
   width: 60vw;
   margin: 1rem auto;
+
+  &--title{
+    color: #fcbdcd;
+    font-weight: bolder;
+    padding: .3rem;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+  }
+
   &>h2{
     font-size: 2rem;
-    margin: 2rem;
   }
   &__list{
     margin: 2rem auto;
