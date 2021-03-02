@@ -69,12 +69,22 @@
 }
 
 form{
-  width: 350px;
+  width: 330px;
 }
 
 #field-lastname{
   border-radius: 0;
-  width: 350px;
+  width: 300px;
+
+  &:focus{
+    border: 2px solid #ffcbd9;
+  }
+}
+
+
+#field-username{
+  border-radius: 0;
+  width: 300px;
 
   &:focus{
     border: 2px solid #ffcbd9;
@@ -83,7 +93,23 @@ form{
 
 #field-firstname{
   border-radius: 0;
-  width: 350px;
+  width: 300px;
+  &:focus{
+    border: 2px solid #ffcbd9;
+  }
+}
+
+#field-password{
+  border-radius: 0;
+  width: 300px;
+  &:focus{
+    border: 2px solid #ffcbd9;
+  }
+}
+
+#field-confirmPassword{
+  border-radius: 0;
+  width: 300px;
   &:focus{
     border: 2px solid #ffcbd9;
   }
@@ -91,7 +117,7 @@ form{
 
 #field-email{
   border-radius: 0;
-  width: 350px;
+  width: 300px;
   &:focus{
     border: 2px solid #ffcbd9;
   }
@@ -99,7 +125,7 @@ form{
 
 #field-message {
   border-radius: 0;
-  width: 350px;
+  width: 300px;
   &:focus{
     border: 2px solid #ffcbd9;
   }
@@ -108,7 +134,7 @@ form{
 
 #field-phoneNumber{
   border-radius: 0;
-  width: 350px;
+  width: 300px;
   &:focus{
     border: 2px solid #ffcbd9;
   }
