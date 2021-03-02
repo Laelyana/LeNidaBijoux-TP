@@ -5,9 +5,22 @@
   margin: 2rem auto;
   font-family: 'Palanquin', sans-serif;
 
+&__back{
+  margin-bottom: 1rem;
+  width: 200px;
+  margin-left: 20%;
+  border-bottom: 2px solid #f7f5f5;
+  text-align: center;
+  &:hover, :active {
+    color: #000;
+    border-bottom: 2px solid #f5a7b5;
+    width: 200px;
+  }
+}
+
   &>h2{
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   &__form{
@@ -62,6 +75,11 @@
       z-index: 1;
     }
 
+  }
+  &--title{
+    color: #fcbdcd;
+    font-weight: bolder;
+    padding: .3rem;
   }
 }
 

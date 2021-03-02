@@ -23,8 +23,7 @@ const UserData = ({
   };
   return (
     <div className="userdata">
-      <h2>Vos données personnelles</h2>
-      <a href="/mon-compte" className="userdata__back">Revenir au tableau de bord</a>
+      <h2 className="userdata--title">Vos données personnelles</h2>
       <form className="userdata__form" onSubmit={handleDataSubmit}>
         <Field
           name="lastname"
@@ -52,6 +51,8 @@ const UserData = ({
         />
         <button type="submit" className="userdata__form--button"><span>Mettre à jour mon profil</span></button>
       </form>
+      <a href="/mon-compte" className="userdata__back">Revenir au tableau de bord</a>
+
     </div>
   );
 };
