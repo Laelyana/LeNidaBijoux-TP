@@ -8,66 +8,90 @@
   margin: 1rem auto;
   padding: 2rem;
 
-  &__items{
+  &--title{
+    color: #fcbdcd;
+    font-weight: bolder;
+    padding: .3rem;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+  }
+
+  .cat{
     width: vars.$collectionsW;
     height: vars.$collectionsH;
     overflow: hidden;
     z-index: 1;
     margin: 1rem auto 1rem auto; 
     position: relative;
-
-    &--haut{
-      max-height: 200px;
-      width: vars.$collectionsW;
-      align-items: center;
-      justify-content: center;
-    }
-
-    &--bas{
-      width: vars.$collectionsW;
-      height: 50px;
-      border: .1rem solid #ffcbd9;
-      margin: auto auto;
+    font-size: 2rem;
+    
+    
+  
+  &__img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    position: relative;
+  
+    &:hover{
+      opacity: .6;
+      
     }
   }
-
- 
+  
+  
+  &__center{
+    background-color: transparent;
+    position: absolute;
+    height: 5rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  
+    &--title-band{
+      margin-top: 50%;
+      font-weight: bold;
+      background-color: transparent;
+      color: rgb(47, 47, 51);
+      width: 100%;
+      padding: 2rem;
+  
+      &:hover{
+        color: white;
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  
+  
+  
+  &__img--un{
+    background-image: url(./images/profil.webp);
+   }
+   
+   &__img--deux{
+    background-image: url(./images/favoris.webp);
+   }
+   
+   &__img--trois{
+    background-image: url(./images/commandes.webp);
+   }
+  
+  } 
+  
+  .cat-card--title-band a::before{
+    content:'';
+    position:absolute;
+    left:0;
+    right:0;
+    top: 0;
+    bottom:0;
+    z-index: 3;
+    background-color:rgba(0,0,0,0);
+  }
+  
+  
 }
-
-.profil{
-  background-image: url(./images/profil.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 200px;
-}
-
-.favoris{
-  background-image: url(./images/favoris.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 200px;
-}
-
-.commandes{
-  background-image: url(./images/commandes.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 200px;
-}
-
-.cat__img--un a::before{
-  content:'';
-  position:absolute;
-  left:0;
-  right:0;
-  top: 0;
-  bottom:0;
-  z-index: 3;
-  background-color:rgba(0,0,0,0);
-}
+  
+    
