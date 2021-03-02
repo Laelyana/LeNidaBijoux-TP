@@ -1,15 +1,4 @@
-.form__rightside {
-  display: flex;
-  flex-direction: column;
-  width: 50vw;
-  border: 3px #C2858C;
-  border-style: dashed solid;
-  padding: 2rem;
-
-  & h3 {
-    margin-bottom: 2rem;
-  }
-}
+@use '/src/styles/vars';
 
 .form__login {
   display: flex;
@@ -27,10 +16,9 @@
 .errorDiv {
   padding: 0;
   color: #C2858C;
-  width: 50%;
-  margin: 0 auto;
-  border-radius: 10px;
-  font-size: 0.8rem;
+  width: 95%;
+  margin: .1rem auto;
+  font-size: .9rem;
   font-style: italic;
   font-weight: bold;
 }
