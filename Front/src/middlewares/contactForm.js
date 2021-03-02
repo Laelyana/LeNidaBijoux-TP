@@ -1,32 +1,29 @@
 import axios from 'axios';
 import apiUrl from 'src/utils/api';
-import { CREATE_USER, errMsgCreateUser, saveNewUserData } from '../actions/user';
+import { errMsgContactForm, SAVE_CONTACT_FORM } from '../actions/contactForm';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
-    case CREATE_USER: {
+    case SAVE_CONTACT_FORM: {
       const {
         lastname,
         firstname,
-        password,
-        phoneNumber,
         email,
-      } = store.getState().createUser;
+        message,
+      } = store.getState().contactForm;
       axios.post(
-        `${apiUrl()}users/sign_in`,
+        `${apiUrl()}contacts`,
         {
           email,
-          password,
+          message,
           firstname,
           lastname,
-          phoneNumber,
         },
       ).then((response) => {
         console.log(response);
-        store.dispatch(saveNewUserData());
-        window.alert('Votre compte est créé, vous pouvez vous connecter');
+        window.alert('Votre message a été envoyé');
       }).catch((error) => {
-        store.dispatch(errMsgCreateUser(error.response));
+        store.dispatch(errMsgContactForm(error.response));
       });
       next(action);
       break;

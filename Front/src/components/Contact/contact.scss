@@ -1,26 +1,64 @@
 .contact__form{
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  width: 360px;
   margin: 2rem auto;
+  font-family: 'Palanquin', sans-serif;
 
   &--input{
-    width: 30%;
+    width: 350px;
     margin: 1rem auto;
     height: 3rem;
     padding: 1rem;
-    border-radius: 1rem;
   }
+
   &--textarea{
-    width: 50%;
+    width: 350px;
     margin: 1rem auto;
     height: 100px;
     padding: 1rem;
-    border-radius: 1rem;
+
   }
   &--button{
-    width: 30%;
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: #ffcbd9;
+    padding: 17px 60px;
     margin: 1rem auto;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 490%;
+      width: 140%;
+      background: #fcbdcd;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      -webkit-transform: translateX(-98%) translateY(-20%) rotate(45deg);
+      transform: translateX(-98%) translateY(-20%) rotate(45deg);
+    }
+    
+    &:hover:after {
+      -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    }
+
+    & span {
+      position: relative; 
+      z-index: 1;
+    }
+
   }
   &>h3{
     font-size: 2rem;
@@ -28,4 +66,65 @@
   &>img{
     margin: auto 1rem;
   }
+}
+
+form{
+  width: 350px;
+}
+
+#field-lastname{
+  border-radius: 0;
+  width: 350px;
+
+  &:focus{
+    border: 2px solid #ffcbd9;
+  }
+}
+
+#field-firstname{
+  border-radius: 0;
+  width: 350px;
+  &:focus{
+    border: 2px solid #ffcbd9;
+  }
+}
+
+#field-email{
+  border-radius: 0;
+  width: 350px;
+  &:focus{
+    border: 2px solid #ffcbd9;
+  }
+}
+
+#field-message {
+  border-radius: 0;
+  width: 350px;
+  &:focus{
+    border: 2px solid #ffcbd9;
+  }
+  height: 100px;
+}
+
+#field-phoneNumber{
+  border-radius: 0;
+  width: 350px;
+  &:focus{
+    border: 2px solid #ffcbd9;
+  }
+}
+
+
+
+.title__contact{
+  margin-top: 2rem;
+  color: #000;
+
+}
+//style pour le hr
+hr.style-two {
+  border: 0;
+  height: 2px;
+  width: 50vw;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #f8a4ba, rgba(0, 0, 0, 0));
 }

@@ -1,11 +1,17 @@
 import { CHANGE_NEW_USER_FIELD, SAVE_NEW_USER_DATA, CREATE_USER } from 'src/actions/user';
+import { ERR_MSG_CREATE_USER } from '../actions/user';
 
 const initialState = {
   email: '',
   password: '',
+  confirmPassword: '',
   firstname: '',
   lastname: '',
   phoneNumber: '',
+  emptyInput: '',
+  badMail: '',
+  badPhone: '',
+  badPassword: '',
 };
 
 export default (state = initialState, action = {}) => {
@@ -18,15 +24,33 @@ export default (state = initialState, action = {}) => {
     case SAVE_NEW_USER_DATA:
       return {
         ...state,
-      };
-    case CREATE_USER:
-      return {
-        ...state,
         email: '',
         password: '',
         firstname: '',
         lastname: '',
         phoneNumber: '',
+        emptyInput: '',
+        badMail: '',
+        badPhone: '',
+        badPassword: '',
+        confirmPassword: '',
+      };
+    case CREATE_USER:
+      return {
+        ...state,
+        emptyInput: '',
+        badMail: '',
+        badPhone: '',
+        badPassword: '',
+
+      };
+    case ERR_MSG_CREATE_USER:
+      return {
+        ...state,
+        emptyInput: '--- Ce champ est requis ---',
+        badMail: '--- Email invalide ---',
+        badPhone: '--- Ce champ ne doit contenir que des chiffres ---',
+        badPassword: '--- Les mots de passe ne correspondent pas ---',
       };
     default:
       return {

@@ -6,6 +6,7 @@ const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
   status: state.status.status,
   cartItems: state.cart.cartItems,
+  favorites: state.favorites.favorites,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -19,7 +19,7 @@ import Footer from 'src/components/Footer';
 import LoginPage from 'src/components/LoginPage';
 import LegalsMentions from 'src/components/LegalsMentions';
 import Presentation from 'src/components/Presentation';
-import Contact from 'src/components/Contact';
+import Contact from 'src/containers/Contact';
 import Cgv from 'src/components/Cgv';
 import Dashboard from 'src/components/Dashboard';
 import Favorites from 'src/containers/Favorites';

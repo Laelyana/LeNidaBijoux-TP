@@ -49,7 +49,7 @@ class AdminController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Détail commandes', 'fas fa-info-circle', OrderLine::class);
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
         yield MenuItem::section('Site');
-        yield MenuItem::linkToUrl('Voir le site', 'fas fa-globe', 'http://hypnotic-ticket.surge.sh/')->setLinkTarget('_BLANK');
+        yield MenuItem::linkToUrl('Voir le site', 'fas fa-globe', 'http://nid-a-bijoux.surge.sh/')->setLinkTarget('_BLANK');
     }
 
 }

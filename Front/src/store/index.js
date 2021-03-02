@@ -17,6 +17,7 @@ import ordersMiddleware from 'src/middlewares/orders';
 import statusMiddleware from 'src/middlewares/status';
 import productsMiddleware from 'src/middlewares/products';
 import orderMiddleware from 'src/middlewares/order';
+import contactMiddleware from 'src/middlewares/contactForm';
 
 function saveToLocalStorage(state) {
   try {
@@ -59,6 +60,7 @@ const store = createStore(
       statusMiddleware,
       productsMiddleware,
       orderMiddleware,
+      contactMiddleware,
     ),
   ),
 );

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ColectionRepository;
 use DateTime;
+use DateTimeZone;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -45,7 +46,7 @@ class Colection
     public function __construct()
     {
         $this->products = new ArrayCollection();
-        $this->createdAt = new DateTime();
+        $this->createdAt = new DateTime('now', new DateTimeZone('Europe/Paris'));
     }
     public function __toString()
     {
