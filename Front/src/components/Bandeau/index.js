@@ -13,8 +13,10 @@ const mapState = createStructuredSelector({
   cartItemsCount: selectCartItemsCount,
 });
 
-const Bandeau = ({ isLogged, handleLogout, status }) => {
+const Bandeau = ({ isLogged, handleLogout, status, favorites }) => {
   const { cartItemsCount } = useSelector(mapState);
+  const favoritesCount = favorites.length;
+  console.log(favoritesCount);
   console.log(status);
   return (
 
@@ -35,7 +37,7 @@ const Bandeau = ({ isLogged, handleLogout, status }) => {
           {isLogged
             && (
               <div>
-                {!status && (<a href="/mon-compte/mes-favoris"> <img className="favoriteLogo" src={favoriteLogo} alt="Favoris" />()</a>)}
+                {!status && (<a href="/mon-compte/mes-favoris"> <img className="favoriteLogo" src={favoriteLogo} alt="Favoris" />({favoritesCount})</a>)}
                 {status && (<a href="/mon-compte/mon-panier"> Mon panier ({cartItemsCount}){/* <img className="favoriteLogo" src={shopLogo} alt="Shop" /> */}</a>)}
               </div>
             )}
