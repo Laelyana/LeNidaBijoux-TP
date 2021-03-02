@@ -26,7 +26,10 @@ export default (store) => (next) => (action) => {
         store.dispatch(saveNewUserData());
         window.alert('Votre compte est créé, vous pouvez vous connecter');
       }).catch((error) => {
-        store.dispatch(errMsgCreateUser(error.response));
+        store.dispatch(errMsgCreateUser(error.response.status));
+        if (error.response.status === 403) {
+          window.alert('Cet utilisateur existe déjà');
+        }
       });
       next(action);
       break;

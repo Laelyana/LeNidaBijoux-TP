@@ -93,9 +93,12 @@ const App = ({
             },
           )
         }
-        <Route path="/login">
-          <LoginPage />
-        </Route>
+        {!isLogged
+          && (
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          )}
         <Route path="/mentions-legales">
           <LegalsMentions />
         </Route>
