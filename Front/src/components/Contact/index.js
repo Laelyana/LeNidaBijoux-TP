@@ -1,5 +1,6 @@
 import React from 'react';
 import Field from './Field';
+import Textarea from './Textarea';
 
 import './contact.scss';
 
@@ -18,16 +19,16 @@ const Contact = ({
   return (
     <>
       <div className="title__contact"><h3>Formulaire de contact</h3></div>
-      <hr className="style-two"></hr>
+      <hr className="style-two" />
       <form className="contact__form" onSubmit={handleFormContactSubmit}>
- 
+
         <Field
           name="lastname"
           placeholder="Votre nom"
           onChange={changeField}
           value={lastname}
         />
-       
+
         <Field
           name="firstname"
           placeholder="Votre prénom"
@@ -40,14 +41,12 @@ const Contact = ({
           onChange={changeField}
           value={email}
         />
-     
-        <Field
+
+        <Textarea
           name="message"
           placeholder="Votre message"
           onChange={changeField}
           value={message}
-          type="textarea"
-
         />
         <button type="submit" className="contact__form--button"><span>Envoyer</span></button>
       </form>
