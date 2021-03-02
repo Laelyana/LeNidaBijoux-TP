@@ -12,6 +12,7 @@ const Textarea = ({
   name,
   placeholder,
   onChange,
+  label
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
@@ -21,6 +22,7 @@ const Textarea = ({
 
   return (
     <div>
+      <label htmlFor={name}>{label}</label>
       <textarea
         value={value}
         onChange={handleChange}

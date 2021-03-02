@@ -84,6 +84,7 @@ const Contact = ({
           placeholder="Votre nom"
           onChange={changeField}
           value={lastname}
+          label="Nom : "
         />
         {!lastnameIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
         {!lastnameTooLong() && <div className="errorDiv">{msgTooLong}</div>}
@@ -93,6 +94,7 @@ const Contact = ({
           placeholder="Votre prénom"
           onChange={changeField}
           value={firstname}
+          label="Prénom : "
         />
         {!firstnameIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
         {!firstnameTooLong() && <div className="errorDiv">{msgTooLong}</div>}
@@ -101,6 +103,7 @@ const Contact = ({
           placeholder="Votre email"
           onChange={changeField}
           value={email}
+          label="Email : "
         />
         {!emailIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
         {!regexEmail.test(email) && <div className="errorDiv">{badMail}</div>}
@@ -109,6 +112,7 @@ const Contact = ({
           placeholder="Votre message"
           onChange={changeField}
           value={message}
+          label="Message : "
         />
         {!messageIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
         {!messageTooLong() && <div className="errorDiv">{msgTooLong}</div>}

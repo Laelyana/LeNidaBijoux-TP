@@ -12,6 +12,7 @@ const Field = ({
   name,
   placeholder,
   onChange,
+  label,
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
@@ -21,6 +22,7 @@ const Field = ({
 
   return (
     <div>
+      <label htmlFor={name}>{label}</label>
       <input
         value={value}
         onChange={handleChange}
@@ -29,6 +31,7 @@ const Field = ({
         className="form__input"
         placeholder={placeholder}
         name={name}
+        label={label}
       />
     </div>
   );
