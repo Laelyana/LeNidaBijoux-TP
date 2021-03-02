@@ -79,7 +79,7 @@ function handleClick__trois() {
 
         <div className="product__box__cart">
           {/* <input className="product__box__cart--number" type="number" id="number" name="number" min="0" max="100" placeholder="Quantité" /> */}
-          {isLogged && status && (<button type="button" onClick={() => handleAddToCart(product)} className="product__box__cart--btn-add">Ajouter au panier</button>)}
+          {isLogged && status && product.price !=null &&  product.stock>0 &&(<button type="button" onClick={() => handleAddToCart(product)} className="product__box__cart--btn-add">Ajouter au panier</button>)}
           {isLogged && !status && !compare && (
             <button type="submit" className="product__box__cart--btn-fav" id="fav" onClick={() => handleAddToFavorite(product)}>
               <div className="product__box__cart--btn-fav-txt">Ajouter aux favoris</div>
