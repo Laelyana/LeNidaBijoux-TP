@@ -85,7 +85,7 @@ const InscriptionForm = ({
   const msgRegex = '--- Espace non autorisé ---';
   const msgTooLong = '--- Maximum de caractères atteint ---';
   // confirm password
-  function conmparePassword() {
+  function comparePassword() {
     let password1 = password;
     let password2 = confirmPassword;
     if (password1 === password2) {
@@ -153,7 +153,7 @@ const InscriptionForm = ({
           value={confirmPassword}
           label="Confirmation mot de passe : "
         />
-        {conmparePassword() && <div className="errorDiv">{badPassword}</div>}
+        {!comparePassword() && <div className="errorDiv">{badPassword}</div>}
         <button type="submit" className="form__input">Envoyer le formulaire</button>
       </form>
     </div>
