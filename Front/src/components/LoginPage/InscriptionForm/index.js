@@ -153,7 +153,7 @@ const InscriptionForm = ({
           value={confirmPassword}
           label="Confirmation mot de passe : "
         />
-        {conmparePassword() && <div className="errorDiv">{badPassword}</div>}
+        {comparePassword() && <div className="errorDiv">{badPassword}</div>}
         <button type="submit" className="form__input--button"><span>Envoyer le formulaire</span></button>
       </form>
     </div>
