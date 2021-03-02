@@ -125,7 +125,6 @@ const InscriptionForm = ({
           label="Email : "
         />
         {!emailIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
-        {/* {!email.includes('@') && <div className="errorDiv">{badMail}</div>} */}
         {!regexEmail.test(email) && <div className="errorDiv">{badMail}</div>}
         <Field
           name="password"
