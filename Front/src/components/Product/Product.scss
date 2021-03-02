@@ -14,6 +14,11 @@
   display:none;
   position: absolute;
   border: 2px solid #ffcbd9;
+  width:40vw;
+  top:center;
+  left:50%;
+  transform: translate(-50%);
+
 }
   
 //enfant de la classe product pour les images 
