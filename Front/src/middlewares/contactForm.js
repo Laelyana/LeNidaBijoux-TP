@@ -1,6 +1,6 @@
 import axios from 'axios';
 import apiUrl from 'src/utils/api';
-import { SAVE_CONTACT_FORM } from '../actions/contactForm';
+import { errMsgContactForm, SAVE_CONTACT_FORM } from '../actions/contactForm';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
@@ -23,7 +23,7 @@ export default (store) => (next) => (action) => {
         console.log(response);
         window.alert('Votre message a été envoyé');
       }).catch((error) => {
-        window.alert(error.response.data);
+        store.dispatch(errMsgContactForm(error.response));
       });
       next(action);
       break;

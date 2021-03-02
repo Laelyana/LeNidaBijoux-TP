@@ -1,11 +1,12 @@
-import { CHANGE_NEW_USER_FIELD, SAVE_NEW_USER_DATA, CREATE_USER } from 'src/actions/user';
-import { CHANGE_CONTACT_FORM_FIELD, SAVE_CONTACT_FORM } from '../actions/contactForm';
+import { CHANGE_CONTACT_FORM_FIELD, ERR_MSG_CONTACT_FORM, SAVE_CONTACT_FORM } from '../actions/contactForm';
 
 const initialState = {
   email: '',
   firstname: '',
   lastname: '',
   message: '',
+  emptyInput: '',
+  badMail: '',
 };
 
 export default (state = initialState, action = {}) => {
@@ -18,6 +19,18 @@ export default (state = initialState, action = {}) => {
     case SAVE_CONTACT_FORM:
       return {
         ...state,
+        email: '',
+        firstname: '',
+        lastname: '',
+        message: '',
+        emptyInput: '',
+        badMail: '',
+      };
+    case ERR_MSG_CONTACT_FORM:
+      return {
+        ...state,
+        emptyInput: '--- Ce champ est requis ---',
+        badMail: '--- Email invalide ---',
       };
     default:
       return {

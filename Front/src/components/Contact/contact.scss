@@ -97,12 +97,13 @@ form{
   }
 }
 
-#textarea {
+#field-message {
   border-radius: 0;
   width: 350px;
   &:focus{
     border: 2px solid #ffcbd9;
   }
+  height: 100px;
 }
 
 #field-phoneNumber{

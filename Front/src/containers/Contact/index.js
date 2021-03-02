@@ -7,6 +7,8 @@ const mapStateToProps = (state) => ({
   firstname: state.contactForm.firstname,
   message: state.contactForm.message,
   email: state.contactForm.email,
+  emptyInput: state.contactForm.emptyInput,
+  badMail: state.contactForm.badMail,
 });
 
 const mapDispatchToProps = (dispatch) => ({
