@@ -1,22 +1,56 @@
+@use '/src/styles/vars';
+
 .favorites{
-  width: 60vw;
-  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: vars.$mi_full;
+  margin: 3rem auto;
+  justify-content: center;
+
+
   &>h2{
     font-size: 2rem;
     margin: 2rem;
   }
+
+  &--title{
+    color: #fcbdcd;
+    font-weight: bolder;
+    padding: .3rem;
+  }
+
+  &__back{
+    width: 200px;
+    border-bottom: 2px solid #f7f5f5;
+    text-align: center;
+
+    &:hover, :active {
+      color: #000;
+      border-bottom: 2px solid #f5a7b5;
+      width: 200px;
+    }
+  }
+
   &__list{
-    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: vars.$mi_full;
+    margin: 3rem auto;
+    justify-content: center;
+
 
     &--item{
+      width: vars.$productW;
       display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin: 1rem;
+     
       
       &--name{
-        border: 1px black solid;
-        width: 70%;
-        padding: 0.5rem;
+        padding: 1rem;
       }
     }
   }
