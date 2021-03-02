@@ -10,19 +10,33 @@ import imgUrl from 'src/utils/imgUrl';
 
 const Product = ({ product, status, favorites, isLogged }) => {
 
+
+function handleClick__general() {
+  const imgFull = document.getElementById('imgFull');
+  imgFull.style.display = "block";
+}
+
+function handleClick__general_out() {
+  const imgFull = document.getElementById('imgFull');
+  imgFull.style.display = "none";
+}
+
 function handleClick__un() {
   const general = document.getElementById('general');
   general.style.backgroundImage = "url("+imgUrl()+product.picture1+")";
+  document.getElementById('imgFull').setAttribute("src", imgUrl()+product.picture1);
 }
 
 function handleClick__deux() {
   const general = document.getElementById('general');
   general.style.backgroundImage = "url("+imgUrl()+product.picture2+")";
+  document.getElementById('imgFull').setAttribute("src", imgUrl()+product.picture2);
 }
 
 function handleClick__trois() {
   const general = document.getElementById('general');
   general.style.backgroundImage = "url("+imgUrl()+product.picture3+")";
+  document.getElementById('imgFull').setAttribute("src", imgUrl()+product.picture3);
 }
 /* function handleClick__fav() {
   const btnFav = document.getElementById('fav');
@@ -64,8 +78,9 @@ function handleClick__trois() {
   return (
 
     <div className="product">
+      <img id="imgFull" className="product__img_full" src={imgUrl()+product.picture1} onMouseOut={handleClick__general_out} onClick={handleClick__general_out}/>
       <div className="product__box__img ">
-        <div style={{backgroundImage: "url("+imgUrl()+product.picture1+")"}} className="product__box__img--un image__un" id="general" />
+        <div style={{backgroundImage: "url("+imgUrl()+product.picture1+")"}} className="product__box__img--un image__un" id="general" onClick={handleClick__general} />
         <div className="product__box__img__sub">
           <div style={{backgroundImage: "url("+imgUrl()+product.picture1+")"}} className="product__box__img__sub--unBis image__un " id="bis" onClick={handleClick__un} onMouseOver={handleClick__un} />
           {product.picture2 != null &&(<div style={{backgroundImage: "url("+imgUrl()+product.picture2 +")"}} className="product__box__img__sub--deux image__deux" id="deux" onClick={handleClick__deux} onMouseOver={handleClick__deux} />)}

@@ -9,6 +9,12 @@
   width: vars.$mi_full;
   margin: 3rem auto;
   justify-content: center;
+
+&__img_full{
+  display:none;
+  position: absolute;
+  border: 2px solid #ffcbd9;
+}
   
 //enfant de la classe product pour les images 
 &__box__img{
