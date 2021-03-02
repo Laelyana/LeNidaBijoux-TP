@@ -47,6 +47,7 @@ const Contact = ({
           onChange={changeField}
           value={message}
           type="textarea"
+
         />
         <button type="submit" className="contact__form--button"><span>Envoyer</span></button>
       </form>

@@ -3,10 +3,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #fff;
-  padding: .5rem 0 .5rem 0;
+  background-color: #ffcbd9;
+  padding: .5rem 0 .3rem 0;
   width: 100vw;
-  margin: 0 auto;
+  margin: auto auto;
   overflow: hidden;
   font-family: 'Palanquin', sans-serif;
   position: fixed;
@@ -86,18 +86,18 @@
   position: relative;
   color: black;
   font-size: 15px;
-  background-color: #fff;
+  background-color:#ffcbd9;
   padding: .3rem .5rem;
-  margin: 1rem 1rem auto auto;
+  margin: auto 1rem auto auto ;
 
   &:after {
     content: "";
     position: absolute;
     left: 0;
     top: 0;
-    height: 490%;
+    height: 370%;
     width: 140%;
-    background: #fcbdcd;
+    background: #fff;
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
     -webkit-transform: translateX(-98%) translateY(-20%) rotate(45deg);
@@ -116,4 +116,7 @@
 }
 
 
- 
+ .logged{
+   display: flex;
+   flex-direction: row;
+ }
