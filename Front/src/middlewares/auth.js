@@ -1,6 +1,6 @@
 import axios from 'axios';
 import apiUrl from 'src/utils/api';
-import { LOG_IN, saveUserData } from '../actions/user';
+import { errMsg, LOG_IN, saveUserData } from '../actions/user';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
@@ -17,10 +17,8 @@ export default (store) => (next) => (action) => {
         store.dispatch(saveUserData(response.data));
         window.location = '/mon-compte';
       }).catch((error) => {
-        const errMsg = error.response.data.code;
-        if (errMsg === 401) {
-          window.alert('Mauvais email ou mot de passe');
-        }
+        console.log(error.response);
+        store.dispatch(errMsg(error.response));
       }).finally((response) => {
       });
       next(action);

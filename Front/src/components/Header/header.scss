@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap');
 
 
-.header {
-  padding-top: 0rem;
-}
 
 .navigation{
  background-color: white;
@@ -12,8 +9,8 @@
  flex-direction: row;
  flex-wrap: wrap;
  overflow: hidden;
- padding: 1rem;
- border-bottom: .1rem solid #fcbdce;
+ padding: 3rem 1rem 1rem 1rem;
+ border-bottom: .1rem solid #ffcbd9;
 
 
 
@@ -22,11 +19,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
     margin: 0rem auto 0rem auto;
     background-color: #fff;
     width: 100vw;
-    margin: 2rem auto;
-    
     border: .2rem white solid;
     overflow: hidden;
   }
@@ -40,9 +36,30 @@
       font-family: 'Palanquin', sans-serif;
       font-size: 1.2rem;
 
-    &:hover {
+    &:hover, :active {
       color: #000;
       border-bottom: 2px solid #f5a7b5;
+      
     }
+  }
+  &__logo{
+    max-width: 15rem;
+    height: auto;
+    margin-top: 0rem;
+  }
+}
+
+@media (max-width: 700px) { 
+  .navigation{
+    padding-top: 7rem;
+  }
+  .navigation__logo{
+    display: none;
+  }
+  .navigation__li {
+    height: 2rem;
+    padding: 0rem;
+    margin: 0rem auto 0rem auto;
+    font-size: 1rem;
   }
 }

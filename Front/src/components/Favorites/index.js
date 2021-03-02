@@ -11,8 +11,8 @@ const Favorites = ({ manageLoad, favorites }) => {
   console.log(favorites);
   return (
     <div className="favorites">
-      <h2>Mes produits favoris</h2>
-      <a href="/mon-compte" className="favorites__back">Revenir au tableau de bord</a>
+      <h2 className="favorites--title">Mes produits favoris</h2>
+ 
       <div className="favorites__list">
         {
           favorites.map((favorite) => (
@@ -22,6 +22,7 @@ const Favorites = ({ manageLoad, favorites }) => {
         }
 
       </div>
+      <a href="/mon-compte" className="favorites__back">Revenir au tableau de bord</a>
     </div>
   );
 };

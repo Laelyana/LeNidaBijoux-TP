@@ -10,6 +10,7 @@ const LoginForm = ({
   password,
   changeField,
   handleLogin,
+  errMsg,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -24,6 +25,7 @@ const LoginForm = ({
           placeholder="Votre email"
           onChange={changeField}
           value={username}
+          label="Email : "
         />
         <Field
           name="password"
@@ -31,7 +33,9 @@ const LoginForm = ({
           placeholder="Votre mot de passe"
           onChange={changeField}
           value={password}
+          label="Mot de passe : "
         />
+        {errMsg && (<div className="errorDiv"> {errMsg} </div>) }
 
         <button type="submit" className="form__input">Se connecter</button>
       </form>
@@ -43,6 +47,7 @@ LoginForm.propTypes = {
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
+  errMsg: PropTypes.string.isRequired,
 };
 
 export default LoginForm;

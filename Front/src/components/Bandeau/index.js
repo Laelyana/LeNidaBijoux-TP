@@ -12,29 +12,32 @@ import { selectCartItemsCount } from '../../utils/card.selectors';
 const mapState = createStructuredSelector({
   cartItemsCount: selectCartItemsCount,
 });
-const Bandeau = ({ isLogged, handleLogout, status }) => {
+
+const Bandeau = ({ isLogged, handleLogout, status, favorites }) => {
   const { cartItemsCount } = useSelector(mapState);
+  const favoritesCount = favorites.length;
+  console.log(favoritesCount);
   console.log(status);
   return (
 
     <div className="bandeau">
-      {!status && (<div className="bandeau__timer">Passage du site en mode boutique dans : 2 jours 4 heures 23 minutes</div>)}
-      {status && (<div className="bandeau__timer">Fin de la vente dans : 2 jours 4 heures 23 minutes</div>)}
+      {!status && (<div className="bandeau__timer"><span className="bandeau__boutique_attente">La boutique ouvrira bientôt...</span></div>)}
+      {status && (<div className="bandeau__timer">LA BOUTIQUE EST ACTUELLEMENT OUVERTE !</div>)}
       <div className="bandeau__rightside">
         {!isLogged
-          && (<div className="notlogged"> <button className="btn__log" type="button"> <a href="/login">S'inscrire / Se connecter</a> </button> </div>)}
+          && (<div className="notlogged"> <button className="btn__log" type="button"> <a href="/login"><span>S'inscrire / Se connecter</span></a> </button> </div>)}
         {isLogged
           && (
             <div className="logged">
-              <button className="btn__log" onClick={handleLogout} type="button">Se déconnecter</button>
-              <button className="btn__log" type="button"> <a href="/mon-compte">Mon compte</a></button>
+              <button className="btn__log" onClick={handleLogout} type="button"><span>Se déconnecter</span></button>
+              <button className="btn__log" type="button"> <a href="/mon-compte"><span>Mon compte</span></a></button>
             </div>
           )}
         <div className="bandeau__icons">
           {isLogged
             && (
               <div>
-                {!status && (<a href="/mon-compte/mes-favoris"> <img className="favoriteLogo" src={favoriteLogo} alt="Favoris" /></a>)}
+                {!status && (<a href="/mon-compte/mes-favoris"> <img className="favoriteLogo" src={favoriteLogo} alt="Favoris" />({favoritesCount})</a>)}
                 {status && (<a href="/mon-compte/mon-panier"> Mon panier ({cartItemsCount}){/* <img className="favoriteLogo" src={shopLogo} alt="Shop" /> */}</a>)}
               </div>
             )}

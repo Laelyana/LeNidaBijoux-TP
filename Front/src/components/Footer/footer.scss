@@ -1,20 +1,29 @@
 .footer {
-  background-color: #ffcbd9;
+  background-color: #fff;
   width: 100vw;
   margin: 0 auto;
   overflow: hidden;
   font-family: 'Palanquin', sans-serif;
   font-size: 1rem;
-  justify-content: space-between;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 2rem solid #ffcbd9;
+  
 
   &__left{
-    width: 50vw;
+    width: 350px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
+    padding: .3rem;
+
+    &__logo{
+      width: 300px;
+      height: auto;
+      }
 
     &--title{
       font-weight: bolder;
@@ -31,16 +40,26 @@
     }
   }
 
-  &__right{
-    width: 50vw;
+  &__center{
+    width: 350px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    padding: .3rem;
+  }
+
+  &__right{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: .3rem;
 
     &--social{
      display: flex;
      flex-direction: row;
      justify-content: center;
+     margin-bottom: 1rem;
   
       &-logo{
         margin: 0 0 0 1rem;
@@ -62,11 +81,14 @@
    
 
   &--li-form{
-    padding: .3rem;
+    padding: 1rem .3rem .3rem .3rem;
     margin: 1rem auto 1rem auto;
     color: #000;
+    border-top: 1px dashed #fc9fb8;
   }
  }
+
+
 
 }
 

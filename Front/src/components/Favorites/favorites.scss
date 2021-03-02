@@ -1,23 +1,97 @@
+@use '/src/styles/vars';
+
 .favorites{
-  width: 60vw;
-  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: vars.$mi_full;
+  margin: 3rem auto;
+  justify-content: center;
+
+
   &>h2{
     font-size: 2rem;
     margin: 2rem;
   }
+
+  &--title{
+    color: #fcbdcd;
+    font-weight: bolder;
+    padding: .3rem;
+  }
+
+  &__back{
+    width: 200px;
+    border-bottom: 2px solid #f7f5f5;
+    text-align: center;
+
+    &:hover, :active {
+      color: #000;
+      border-bottom: 2px solid #f5a7b5;
+      width: 200px;
+    }
+  }
+
   &__list{
-    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: vars.$mi_full;
+    margin: 3rem auto;
+    justify-content: center;
+
 
     &--item{
+      width: vars.$productW;
       display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin: 1rem;
+     
       
       &--name{
-        border: 1px black solid;
-        width: 70%;
-        padding: 0.5rem;
+        padding: 1rem;
       }
     }
+  }
+  &__list--item--button{
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    font-size: 15px;
+    background-color: #ffcbd9;
+    padding: 10px 30px;
+    margin: 1rem auto;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 490%;
+      width: 140%;
+      background: #fcbdcd;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      -webkit-transform: translateX(-98%) translateY(-20%) rotate(45deg);
+      transform: translateX(-98%) translateY(-20%) rotate(45deg);
+    }
+    
+    &:hover:after {
+      -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    }
+
+    & span {
+      position: relative; 
+      z-index: 1;
+    }
+
   }
 }
