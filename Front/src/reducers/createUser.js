@@ -4,6 +4,7 @@ import { ERR_MSG_CREATE_USER } from '../actions/user';
 const initialState = {
   email: '',
   password: '',
+  confirmPassword: '',
   firstname: '',
   lastname: '',
   phoneNumber: '',
@@ -32,17 +33,22 @@ export default (state = initialState, action = {}) => {
         badMail: '',
         badPhone: '',
         badPassword: '',
+        confirmPassword: '',
       };
     case CREATE_USER:
       return {
         ...state,
+        emptyInput: '',
+        badMail: '',
+        badPhone: '',
+        badPassword: '',
 
       };
     case ERR_MSG_CREATE_USER:
       return {
         ...state,
         emptyInput: '--- Ce champ est requis ---',
-        badMail: '--- Ce mail n\'est pas un email valide ---',
+        badMail: '--- Email invalide ---',
         badPhone: '--- Ce champ ne doit contenir que des chiffres ---',
         badPassword: '--- Les mots de passe ne correspondent pas ---',
       };

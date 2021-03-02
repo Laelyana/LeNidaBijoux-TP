@@ -9,6 +9,7 @@ const InscriptionForm = ({
   lastname,
   email,
   password,
+  confirmPassword,
   phoneNumber,
   changeField,
   handleCreateUser,
@@ -77,14 +78,21 @@ const InscriptionForm = ({
     return true;
   }
   const regexEmail = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
-
   // validation password input
   const regexPassword = new RegExp('[/\\s/g]');
 
   // error message
   const msgRegex = '--- Espace non autorisé ---';
-  const msgTooLong = '--- Maximum de caractères atteints ---';
-
+  const msgTooLong = '--- Maximum de caractères atteint ---';
+  // confirm password
+  function conmparePassword() {
+    let password1 = password;
+    let password2 = confirmPassword;
+    if (password1 === password2) {
+      return true;
+    }
+    return false;
+  }
   return (
     <div className="form__leftside">
       <h3>Pas encore inscrit ? Rejoignez nous !</h3>
@@ -137,6 +145,15 @@ const InscriptionForm = ({
         {!password && <div className="errorDiv">{emptyInput}</div>}
         {regexPassword.test(password) && <div className="errorDiv">{msgRegex}</div>}
 
+        <Field
+          name="confirmPassword"
+          type="password"
+          placeholder="Confirmer votre mot de passe"
+          onChange={changeField}
+          value={confirmPassword}
+          label="Confirmation mot de passe : "
+        />
+        {conmparePassword() && <div className="errorDiv">{badPassword}</div>}
         <button type="submit" className="form__input">Envoyer le formulaire</button>
       </form>
     </div>

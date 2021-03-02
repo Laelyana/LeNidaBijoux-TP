@@ -21,7 +21,7 @@ const Bandeau = ({ isLogged, handleLogout, status, favorites }) => {
   return (
 
     <div className="bandeau">
-      {!status && (<div className="bandeau__timer"><span class="bandeau__boutique_attente">La boutique ouvrira bientôt...</span></div>)}
+      {!status && (<div className="bandeau__timer"><span className="bandeau__boutique_attente">La boutique ouvrira bientôt...</span></div>)}
       {status && (<div className="bandeau__timer">LA BOUTIQUE EST ACTUELLEMENT OUVERTE !</div>)}
       <div className="bandeau__rightside">
         {!isLogged

@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
   phoneNumber: state.createUser.phoneNumber,
   email: state.createUser.email,
   password: state.createUser.password,
+  confirmPassword: state.createUser.confirmPassword,
   emptyInput: state.createUser.emptyInput,
   badMail: state.createUser.badMail,
   badPhone: state.createUser.badPhone,
