@@ -3,10 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // == Import : local
-import './field.scss';
+import '../Field/field.scss';
 
 // == Composant
-const Field = ({
+const Textarea = ({
   value,
   type,
   name,
@@ -21,7 +21,7 @@ const Field = ({
 
   return (
     <div>
-      <input
+      <textarea
         value={value}
         onChange={handleChange}
         id={inputId}
@@ -34,7 +34,7 @@ const Field = ({
   );
 };
 
-Field.propTypes = {
+Textarea.propTypes = {
   value: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
@@ -42,9 +42,9 @@ Field.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-Field.defaultProps = {
+Textarea.defaultProps = {
   value: '',
   type: 'text',
 };
 
-export default Field;
+export default Textarea;
