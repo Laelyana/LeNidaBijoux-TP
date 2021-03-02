@@ -19,4 +19,14 @@ class StatusSiteController extends AbstractController
         
         return $this->json($status[0]->getActive());
     }
+
+    /**
+     * @Route("/api/status-site/dates", name="api_status_dates_read", methods={"GET"})
+     */
+    public function readStatusDates(StatusSiteRepository $statusRepo)
+    {
+        $status = $statusRepo->findAll();
+        
+        return $this->json([$status[0]->getStartDate(), $status[0]->getEndDate()]);
+    }
 }

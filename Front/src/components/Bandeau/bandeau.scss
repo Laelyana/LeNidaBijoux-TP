@@ -1,0 +1,81 @@
+.bandeau{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto 0 auto;
+  background-color: #fcfbfb;
+  padding: .4rem;
+  width: 100vw;
+  border-radius: 0 0 5rem 5rem;
+  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+  border: .2rem white solid;
+  overflow: hidden;
+
+
+  &__timer{
+    align-self: center;
+    width: 60%;
+    color: #C2858C;
+    font-weight: bolder;
+  }
+  &__rightside{
+    display: flex;
+    width: 40%;
+  }
+  &__form{
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    width: 70%;
+    flex-wrap: wrap;
+    margin-left: 4rem;
+  }
+  &__form > a{
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    margin-right: 5rem;
+  }
+  &__icons{
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+  }
+  &__input--email{
+    width: 40%;
+    border-radius: 5px;
+  }
+  &__input--password{
+    width: 30%;
+    margin: auto 1rem;
+    border-radius: 5px;
+  }
+  
+}
+.favoriteLogo{
+  width: 2rem;
+  height: auto;
+}
+.button__hide{
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .bandeau__timer{
+    font-size: 0.8rem;
+  }
+}
+
+.btn__log{
+  background-color: #C2858C;
+  border-radius: 3rem;
+  padding: .4rem;
+  color: #fcfbfb;
+  border: .1rem solid white;
+
+  &:hover{
+    background-color: #fcfbfb;
+    color: #C2858C;
+    border: .1rem solid #C2858C;
+  }
+}

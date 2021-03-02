@@ -1,0 +1,29 @@
+.dashboard{
+  width: 60vw;
+  margin: 2rem auto;
+
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &--box{
+      width: 40%;
+      height: 100px;
+      margin: 3rem 2rem 2rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(194,133,140, 0.8);
+
+      &>h4{
+        width: 100%;
+        padding: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+  &>h2{
+    font-size: 2rem;
+  }
+}

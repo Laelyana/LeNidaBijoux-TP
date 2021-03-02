@@ -1,0 +1,219 @@
+@use '/src/styles/vars';
+
+.react-slideshow-container {
+  background-color: transparent;
+  margin: 5rem auto;
+  border-radius: 15rem;
+  position: relative;
+  box-shadow: .3rem .3rem .3rem .3rem rgb(235, 233, 233);
+  border: .2rem white solid;
+  width: vars.$mi_full;
+  height: vars.$cardH;
+  overflow: hidden;
+  display: flex;
+}
+
+.react-slideshow-container .nav {
+  z-index: 10;
+  text-align: center;
+}
+
+
+.react-slideshow-container .default-nav {
+  width: 10%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 5rem 0 0 5rem;
+  text-align: center;
+  opacity: .3;
+  overflow: hidden;
+  cursor: pointer;
+  color: rgb(19, 1, 1);
+  font-weight: bold;
+//lors du hover on lance l'animation en bas de page
+  &:hover{
+    opacity: .6;
+    animation: move_btn 2s infinite; //nom de l'animation + temp + boucle à l'infinie
+  }
+}
+
+.react-slideshow-container .default-nav:hover,
+.react-slideshow-container .default-nav:focus {
+  background: transparent;
+  color: C2858C;
+  outline: none;
+}
+
+.react-slideshow-container .default-nav.disabled:hover {
+  cursor: not-allowed;
+}
+
+.react-slideshow-container .default-nav:first-of-type {
+  margin-right: -30px;
+  border-right: none;
+  border-top: none;
+}
+
+
+.react-slideshow-container .default-nav:last-of-type {
+  margin-left: -30px;
+}
+
+
+.react-slideshow-container + ul.indicators {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.react-slideshow-container + ul.indicators li {
+  display: inline-block;
+  position: relative;
+  width: .7rem;
+  height: .7rem;
+  padding: .5rem;
+  margin: 0;
+}
+
+.react-slideshow-container + ul.indicators .each-slideshow-indicator {
+  border: none;
+  opacity: 0.25;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+}
+
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:before {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+  content: '';
+  background: #1A3E51;
+  text-align: center;
+}
+
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:hover,
+.react-slideshow-container + ul.indicators .each-slideshow-indicator.active,
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:focus {
+  opacity: 0.75;
+  outline: none;
+}
+
+.react-slideshow-fade-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.react-slideshow-fade-wrapper .react-slideshow-fade-images-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.react-slideshow-fade-wrapper .react-slideshow-fade-images-wrap > div {
+  position: relative;
+  opacity: 0;
+}
+
+.react-slideshow-wrapper.slide {
+  width: 100%;
+  overflow: hidden;
+}
+
+.react-slideshow-wrapper .images-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.react-slideshow-zoom-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.react-slideshow-zoom-wrapper .zoom-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.react-slideshow-zoom-wrapper .zoom-wrapper > div {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+//animation on part de 0 border-radius à ce que l'on veut atteindre (50%) puis on redescend à 0% en modifiant la largeur du bloc légerement
+@keyframes move_btn {
+  0% {
+      border-radius: 0 0 0 0;
+      opacity: .6;
+  }
+  
+  5% {
+      border-radius: 1rem 1rem 1rem 1rem;
+  }
+  
+  10% {
+      border-radius: 2rem 2rem 2rem 2rem;
+  }
+  
+  25% {
+      border-radius: 3rem 3rem 3rem 3rem;
+  }
+  
+  50% {
+    border-radius: 4rem 4rem 4rem 4rem;
+    width: 20%;
+    opacity: .4;
+  }
+  
+  75% {
+    border-radius: 3rem 3rem 3rem 3rem;
+  }
+  
+  90% {
+    border-radius: 2rem 2rem 2rem 2rem;
+  }
+  
+  95% {
+    border-radius: 1rem 1rem 1rem 1rem;
+  }
+  
+  
+  100% {
+      border-radius: 0 0 0 0;
+      height: 100%;
+      opacity: .6;
+  }
+  }
+
+ 
+//class pour la balsie img
+.slider__img{
+  object-fit: cover;
+  width: 100%;
+  height: 420px;
+}
+
+
+
