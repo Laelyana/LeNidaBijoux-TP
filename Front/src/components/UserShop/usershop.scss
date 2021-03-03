@@ -7,6 +7,14 @@
   width: 360px;
   margin: 1rem auto;
   justify-content: center;
+
+  &--title{
+    color: #fcbdcd;
+    font-weight: bolder;
+    padding: .3rem;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+  }
 }
 
 h2 {
@@ -21,7 +29,7 @@ p {
 }
 
 .checkoutHeader {
-  border-bottom: 1px solid black;
+  color: #000;
 }
 
 .cart {
@@ -34,6 +42,7 @@ p {
 
 table {
   width: 100%;
+
 }
 
 
@@ -44,6 +53,9 @@ td {
   text-align: center;
   border: 1px solid #fff;
   vertical-align: middle;
+  &:hover{
+    background-color: #fdb7ca;
+  }
 }
 
 .cartBtns {
@@ -56,4 +68,54 @@ td {
 }
 
 
+.btn__achats{
+  border: none;
+  background-color: #ffcbd9;
 
+  &:hover{
+    background-color: #fdb7ca;
+     color: white;
+  }
+}
+
+.btn__achats--validation{
+  border: none;
+  background-color: #ffcbd9;
+
+  &:hover{
+    background-color: #fdb7ca;
+    color: white;
+  }
+}
+
+.ligne__produits{
+  background-color: white;
+  border: 1px solid #ffcbd9;;
+}
+
+.usershop__back{
+margin-top: 1rem;
+}
+
+.cartBtn__plus{
+  color: yellowgreen;
+  text-align: center;
+  width: .5rem;
+  height: .1rem;
+  padding: .1rem;
+  margin-left: .5rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.cartBtn__moins{
+  color: rgb(205, 81, 50);
+  text-align: center;
+  width: .5rem;
+  height: .1rem;
+  padding: .1rem;
+  margin-right: .5rem;
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+}
