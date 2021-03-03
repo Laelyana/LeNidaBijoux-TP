@@ -29,7 +29,7 @@ const Main = () => (
     <div className="card__infos--lauriane">
         <div className="card__title--dev">Lauriane</div>
         <span className="txt">
-        <h6>Backend </h6>
+        <h6>Backend</h6>
         <h5>Scrum Master</h5>
        </span>
       </div>
