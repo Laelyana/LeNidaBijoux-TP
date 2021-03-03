@@ -102,7 +102,7 @@ const InscriptionForm = ({
       handleCreateUser();
     }
     else {
-      window.alert('Merci de remplir tous les champs du formulaires');
+      window.alert('Merci de vérifier tous les champs du formulaire');
     }
   };
   return (
