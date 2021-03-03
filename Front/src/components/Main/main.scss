@@ -26,7 +26,11 @@
     opacity: .7;
   }
 
-&__infos{
+ 
+  
+
+  //lauriane card
+&__infos--lauriane{
   position: relative;
   opacity: 0;
   width: 310px;
@@ -41,32 +45,114 @@
 
   &:hover {
     opacity: 1;
-    color: rgb(3, 3, 3);
+    color: white;
     background-color: rgb(226, 222, 219);
     font-size: large;
     font-weight: bolder;
-    background-image: url(./img/3.png);
+    background-image: url(./img/laulau.jpg);
     background-size: cover;
     width: 310px;
     height: 100%;
   }
 }
 
+ //lauriane pierre
+ &__infos--pierre{
+  position: relative;
+  opacity: 0;
+  width: 310px;
+  height: 100%;
+  padding: 2rem;
+  background-color: rgb(16, 91, 114);
+  background-size: cover;
+  width: 310px;
+  height: 100%;
+  padding-top: 70%;
 
 
+  &:hover {
+    opacity: 1;
+    color: white;
+    background-color: rgb(226, 222, 219);
+    font-size: large;
+    font-weight: bolder;
+    background-image: url(./img/pierre.jpg);
+    background-size: cover;
+    width: 310px;
+    height: 100%;
+  }
+}
 
-&__img--un{
-  background-image: url(./img/1.jpg);
+ //benoit card
+ &__infos{
+  position: relative;
+  opacity: 0;
+  width: 310px;
+  height: 100%;
+  padding: 2rem;
+  background-color: rgb(16, 91, 114);
+  background-size: cover;
+  width: 310px;
+  height: 100%;
+  padding-top: 70%;
+
+
+  &:hover {
+    opacity: 1;
+    color: white;
+    background-color: rgb(226, 222, 219);
+    font-size: large;
+    font-weight: bolder;
+    background-image: url(./img/2.jpg);
+    background-size: cover;
+    width: 310px;
+    height: 100%;
+  }
+}
+
+ //lauriane card
+ &__infos--nicolas{
+  position: relative;
+  opacity: 0;
+  width: 310px;
+  height: 100%;
+  padding: 2rem;
+  background-color: rgb(16, 91, 114);
+  background-size: cover;
+  width: 310px;
+  height: 100%;
+  padding-top: 70%;
+
+
+  &:hover {
+    opacity: 1;
+    color: white;
+    background-color: rgb(226, 222, 219);
+    font-size: large;
+    font-weight: bolder;
+    background-image: url(./img/nicolas.jpg);
+    background-size: cover;
+    width: 310px;
+    height: 100%;
+  }
+}
+
+&__img--pierre{
+  background-image: url(./img/pierre.jpg);
+ }
+
+&__img--lauriane{
+  background-image: url(./img/laulau1.jpg);
  }
  
- &__img--deux{
- background-image: url(./img/2.jpg);
+ &__img--un{
+ background-image: url(./img/1.jpg);
  }
  
- &__img--trois{
-background-image: url(./img/3.png);
+ &__img--nicolas{
+background-image: url(./img/nicolas.jpg);
  }
 
-      }
+}
 
   
