@@ -41,19 +41,19 @@ const CartItem = (product) => {
           </td>
           <td>
             <span
-              className="cartBtn"
+              className="cartBtn__moins"
               onClick={() => handleReduceItem(product)}
             >
-              {'< '}
+              {'- '}
             </span>
             <span>
               {quantity}
             </span>
             <span
-              className="cartBtn"
+              className="cartBtn__plus"
               onClick={() => handleAddProduct(product)}
             >
-              {' >'}
+              {' +'}
             </span>
           </td>
           <td>
@@ -61,7 +61,7 @@ const CartItem = (product) => {
           </td>
           <td align="center">
             <span className="cartBtn remove" onClick={() => handleRemoveCartItem(id)}>
-              X
+            &#128465;
             </span>
           </td>
         </tr>

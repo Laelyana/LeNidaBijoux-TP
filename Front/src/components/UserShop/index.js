@@ -24,8 +24,8 @@ const UserShop = () => {
   const newTotal = Math.round(total * 100) / 100;
   return (
     <div className="checkout">
-      <h2>Mon panier</h2>
-      <a href="/mon-compte" className="usershop__back"><div>Revenir au tableau de bord</div></a>
+      <h2 className="checkout--title">Mon panier</h2>
+    
       <div className="cart">
         {cartItems.length > 0 ? (
           <table border="0" cellPadding="0" cellSpacing="0">
@@ -55,7 +55,7 @@ const UserShop = () => {
               <tr>
                 <td>
                   <table border="0" cellSpacing="0" cellPadding="0">
-                    <tbody>
+                    <tbody className="ligne__produits">
                       {cartItems.map((cartItem) => (
                         <tr key={cartItem.id}>
                           <td>
@@ -74,7 +74,7 @@ const UserShop = () => {
                       <tr>
                         <td>
                           <table border="0" cellPadding="10" cellSpacing="0">
-                            <tbody>
+                            <tbody className="ligne__produits">
                               <tr>
                                 <td>
                                   <h3>
@@ -92,12 +92,12 @@ const UserShop = () => {
                             <tbody>
                               <tr>
                                 <td>
-                                  <button type="button" onClick={() => history.goBack()}>
+                                  <button type="button" className="btn__achats" onClick={() => history.goBack()}>
                                     Continuer mes achats
                                   </button>
                                 </td>
                                 <td>
-                                  <button type="button" onClick={() => handleCreateOrder()}>
+                                  <button type="button" className="btn__achats--validation" onClick={() => handleCreateOrder()}>
                                     Valider mon panier
                                   </button>
                                 </td>
@@ -118,6 +118,7 @@ const UserShop = () => {
           </p>
         )}
       </div>
+      <a href="/mon-compte" className="usershop__back"><div>Revenir au tableau de bord</div></a>
     </div>
   );
 };
