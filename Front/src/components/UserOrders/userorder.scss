@@ -1,6 +1,13 @@
+@use '/src/styles/vars';
+
+
 .userorder{
-  width: 60vw;
-  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: vars.$mi_full;
+  margin: 3rem auto;
+  justify-content: center;
 
   &--title{
     color: #fcbdcd;
@@ -22,9 +29,13 @@
       margin-top: 1rem;
       
       &--name{
-        border: 1px black solid;
+        border: 2px rgb(73, 73, 73) solid;
         width: 70%;
         padding: 0.5rem;
+
+        &:hover{
+          border: 2px solid #ffcbd9;
+        }
       }
     }
   }
