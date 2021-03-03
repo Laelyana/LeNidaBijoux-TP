@@ -25,7 +25,7 @@ const UserShop = () => {
   return (
     <div className="checkout">
       <h2>Mon panier</h2>
-      <a href="/mon-compte" className="usershop__back"><div>Revenir au tableau de bord</div></a>
+    
       <div className="cart">
         {cartItems.length > 0 ? (
           <table border="0" cellPadding="0" cellSpacing="0">
@@ -118,6 +118,7 @@ const UserShop = () => {
           </p>
         )}
       </div>
+      <a href="/mon-compte" className="usershop__back"><div>Revenir au tableau de bord</div></a>
     </div>
   );
 };
