@@ -26,7 +26,11 @@
     opacity: .7;
   }
 
- 
+ &__title--dev{
+   margin-bottom: .4rem;
+   font-size: 1.5rem;
+   text-decoration: underline white;
+ }
   
 
   //lauriane card
@@ -56,7 +60,7 @@
   }
 }
 
- //lauriane pierre
+ //Pierre
  &__infos--pierre{
   position: relative;
   opacity: 0;
@@ -67,12 +71,12 @@
   background-size: cover;
   width: 310px;
   height: 100%;
-  padding-top: 70%;
+  padding-top: 10%;
 
 
   &:hover {
     opacity: 1;
-    color: white;
+    color: black;
     background-color: rgb(226, 222, 219);
     font-size: large;
     font-weight: bolder;
@@ -94,7 +98,7 @@
   background-size: cover;
   width: 310px;
   height: 100%;
-  padding-top: 70%;
+  padding-top: 60%;
 
 
   &:hover {
@@ -110,7 +114,7 @@
   }
 }
 
- //lauriane card
+ //Nicolas card
  &__infos--nicolas{
   position: relative;
   opacity: 0;
@@ -121,16 +125,16 @@
   background-size: cover;
   width: 310px;
   height: 100%;
-  padding-top: 70%;
+  padding-top: 90%;
 
 
   &:hover {
     opacity: 1;
-    color: white;
+    color: rgb(252, 248, 248);
     background-color: rgb(226, 222, 219);
     font-size: large;
     font-weight: bolder;
-    background-image: url(./img/nicolas.jpg);
+    background-image: url(./img/nicolas2.jpg);
     background-size: cover;
     width: 310px;
     height: 100%;
