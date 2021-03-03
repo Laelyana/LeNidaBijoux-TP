@@ -36,16 +36,16 @@ const UserShop = () => {
                     <tbody>
                       <tr>
                         <th>
-                          Product
+                          Produit
                         </th>
                         <th>
-                          Quantity
+                          Quantité
                         </th>
                         <th>
-                          Price
+                          Prix
                         </th>
                         <th>
-                          Remove
+                          Supprimer
                         </th>
                       </tr>
                     </tbody>
@@ -93,12 +93,12 @@ const UserShop = () => {
                               <tr>
                                 <td>
                                   <button type="button" onClick={() => history.goBack()}>
-                                    Continue Shopping
+                                    Continuer mes achats
                                   </button>
                                 </td>
                                 <td>
                                   <button type="button" onClick={() => handleCreateOrder()}>
-                                    Checkout
+                                    Valider mon panier
                                   </button>
                                 </td>
                               </tr>
