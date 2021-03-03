@@ -12,6 +12,7 @@ const CartItem = (product) => {
     id,
   } = product;
   const newPrice = quantity * price;
+  const goodPrice = Math.round(newPrice * 100) / 100;
   const handleRemoveCartItem = (id) => {
     dispatch(
       removeCard({
@@ -57,11 +58,11 @@ const CartItem = (product) => {
             </span>
           </td>
           <td>
-            {newPrice}€
+            {goodPrice}€
           </td>
           <td align="center">
             <span className="cartBtn remove" onClick={() => handleRemoveCartItem(id)}>
-            &#128465;
+              &#128465;
             </span>
           </td>
         </tr>
