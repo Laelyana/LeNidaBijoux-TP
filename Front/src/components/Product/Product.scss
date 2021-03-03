@@ -122,17 +122,18 @@ flex-wrap: wrap;
 
   //style des btns
   &--btn-add{
-    background: rgb(92,184,228);
+    background: #ffcbd9;
     color: black;
     padding: .5rem;
     margin: 0 .3rem 0rem .3rem;
     width: 6rem;
-    border: #2483b6 .1rem solid;
+    border: #fcc2d1 .1rem solid;
     
-    // &:hover{
-      
-
-    // }
+    &:hover{
+     background-color: #fabece; 
+     border: #ffcbd9 .1rem solid;
+     color: #fff;
+    }
   }
 
   &--btn-fav{

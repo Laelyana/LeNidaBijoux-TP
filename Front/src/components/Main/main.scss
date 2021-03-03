@@ -40,7 +40,7 @@
   background-size: cover;
   width: 310px;
   height: 100%;
-  padding-top: 70%;
+  padding-top: 90%;
 
 
   &:hover {
@@ -84,7 +84,7 @@
 }
 
  //benoit card
- &__infos{
+ &__infos--benoit{
   position: relative;
   opacity: 0;
   width: 310px;
@@ -103,7 +103,7 @@
     background-color: rgb(226, 222, 219);
     font-size: large;
     font-weight: bolder;
-    background-image: url(./img/2.jpg);
+    background-image: url(./img/benoit2.jpg);
     background-size: cover;
     width: 310px;
     height: 100%;
@@ -141,12 +141,12 @@
   background-image: url(./img/pierre.jpg);
  }
 
+ &__img--benoit{
+  background-image: url(./img/benoit1.jpg);
+  }
+
 &__img--lauriane{
   background-image: url(./img/laulau1.jpg);
- }
- 
- &__img--un{
- background-image: url(./img/1.jpg);
  }
  
  &__img--nicolas{

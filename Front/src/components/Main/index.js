@@ -12,17 +12,17 @@ const Main = () => (
       </div>
     </div>
 
-    <div className="card card__img--un">
-    <div className="card__infos">
+    <div className="card card__img--benoit">
+    <div className="card__infos--benoit">
         <div className="card__title">Titre de l'article</div>
-        <span className="txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique ab laboriosam explicabo velit ex, non rerum delectus quod aliquid ut, minus inventore earum dolorum magnam voluptatibus, pariatur accusantium? Eligendi.</span>
+        <span className="txt">Lorem ipsum dolor sit amet consectetur</span>
       </div>
     </div>
     
     <div className="card card__img--lauriane">
     <div className="card__infos--lauriane">
         <div className="card__title">Titre de l'article</div>
-        <span className="txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique ab laboriosam explicabo velit ex, non rerum delectus quod aliquid ut, minus inventore earum dolorum magnam voluptatibus, pariatur accusantium? Eligendi.</span>
+        <span className="txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio similique </span>
       </div>
     </div>
 
