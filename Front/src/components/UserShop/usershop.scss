@@ -94,7 +94,13 @@ td {
 }
 
 .usershop__back{
-margin-top: 1rem;
+margin: 2rem auto 2rem auto;
+
+&:hover, :active {
+  color: #000;
+  border-bottom: 2px solid #f5a7b5;
+  width: 200px;
+}
 }
 
 .cartBtn__plus{
