@@ -13,11 +13,6 @@ const UserOrder = ({ manageLoad, orders }) => {
   return (
     <div className="userorder">
       <h2 className="userorder--title">Mes commandes</h2>
-<<<<<<< HEAD
-   
-=======
-      
->>>>>>> newdesign
       <div className="userorder__list">
         {
           orders.map((order) => (
