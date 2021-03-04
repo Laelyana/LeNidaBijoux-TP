@@ -27,7 +27,7 @@ import UserData from 'src/containers/UserData';
 import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/containers/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
-// import NotFound from 'src/components/404';
+/* import NotFound from 'src/components/404'; */
 
 import getProductsByCategory, { getProductsByCollections } from '../../utils/products';
 
