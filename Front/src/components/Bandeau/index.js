@@ -30,7 +30,7 @@ const Bandeau = ({ isLogged, handleLogout, status, favorites }) => {
           && (
             <div className="logged">
               <button className="btn__log" onClick={handleLogout} type="button"><span>Se déconnecter</span></button>
-              <a href="/mon-compte"><button className="btn__log" type="button"> <span>Mon compte</span></button></a>
+              <a href="/mon-compte"><button className="btn__log" type="button"> <span className="btn__log-h">Mon compte</span></button></a>
             </div>
           )}
         <div className="bandeau__icons">

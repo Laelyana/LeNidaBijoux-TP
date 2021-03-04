@@ -86,7 +86,7 @@
   color: black;
   font-size: 15px;
   background-color:#fff;
-  padding: .3rem .3rem .2rem .3rem;
+  padding: .3rem;
   margin: auto 1rem auto auto ;
 
   &:hover{
@@ -98,4 +98,8 @@
  .logged{
    display: flex;
    flex-direction: row;
+ }
+
+ .btn__log-h{
+   margin-top: .2rem;
  }
