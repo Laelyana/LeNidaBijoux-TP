@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   width: vars.$mi-full;
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 0rem;
 }
 
 .card{
@@ -18,6 +18,7 @@
   margin: 1rem auto 1rem auto; 
   position: relative;
   background-size: cover;
+  
 
   &:hover{
     transition: 2s;
@@ -37,7 +38,6 @@
 &__infos--lauriane{
   position: relative;
   opacity: 0;
-  width: 310px;
   height: 100%;
   padding: 2rem;
   background-color: rgb(16, 91, 114);
@@ -69,7 +69,6 @@
   padding: 2rem;
   background-color: rgb(16, 91, 114);
   background-size: cover;
-  width: 310px;
   height: 100%;
   padding-top: 10%;
 
@@ -91,7 +90,6 @@
  &__infos--benoit{
   position: relative;
   opacity: 0;
-  width: 310px;
   height: 100%;
   padding: 2rem;
   background-color: rgb(16, 91, 114);
@@ -118,7 +116,6 @@
  &__infos--nicolas{
   position: relative;
   opacity: 0;
-  width: 310px;
   height: 100%;
   padding: 2rem;
   background-color: rgb(16, 91, 114);
