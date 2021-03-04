@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   width: vars.$mi-full;
   margin: 1rem auto;
-  padding: 2rem;
+  position: relative;
 }
 
 .prod{
@@ -44,18 +44,18 @@
   height: 5rem;
   width: vars.$productionsW;
   overflow: hidden;
-  padding: 2rem;
+  padding: 1.2rem;
   margin-top: 90%;
   position: absolute;
   z-index: 100;
   bottom: 2rem;
   display: flex;
   justify-content: center;
+  
+
  
   &--title{
     font-weight: bold;
-
-
   }
 }
 
@@ -77,3 +77,9 @@
 
 
 
+@media screen and (max-width: 400px) {
+  .prod__band {
+  //correction de decalage du titre dans bandeau
+left: -1rem;
+  }
+}

@@ -18,20 +18,16 @@ const InscriptionForm = ({
   badPhone,
   badPassword,
 }) => {
-  const handleNewSubmit = (evt) => {
-    evt.preventDefault();
-    handleCreateUser();
-  };
   // validation lastname input
   function lastnameIsEmpty() {
-    let str = lastname;
+    const str = lastname;
     if (!str.replace(/\s+/, '').length || !str) {
       return false;
     }
     return true;
   }
   function lastnameTooLong() {
-    let str = lastname;
+    const str = lastname;
     if (str.length > 50) {
       return false;
     }
@@ -39,14 +35,14 @@ const InscriptionForm = ({
   }
   // validation firstname input
   function firstnameIsEmpty() {
-    let str = firstname;
+    const str = firstname;
     if (!str.replace(/\s+/, '').length || !str) {
       return false;
     }
     return true;
   }
   function firstnameTooLong() {
-    let str = firstname;
+    const str = firstname;
     if (str.length > 50) {
       return false;
     }
@@ -54,14 +50,14 @@ const InscriptionForm = ({
   }
   // validation phoneNumber input
   function phoneIsEmpty() {
-    let str = phoneNumber;
+    const str = phoneNumber;
     if (!str.replace(/\s+/, '').length || !str) {
       return false;
     }
     return true;
   }
   function phoneNumberTooLong() {
-    let str = phoneNumber;
+    const str = phoneNumber;
     if (str.length > 15) {
       return false;
     }
@@ -71,7 +67,7 @@ const InscriptionForm = ({
 
   // validation email input
   function emailIsEmpty() {
-    let str = email;
+    const str = email;
     if (!str.replace(/\s+/, '').length || !str) {
       return false;
     }
@@ -85,14 +81,30 @@ const InscriptionForm = ({
   const msgRegex = '--- Espace non autorisé ---';
   const msgTooLong = '--- Maximum de caractères atteint ---';
   // confirm password
+  function passWordIsEmpty() {
+    const str = password;
+    if (!str.replace(/\s+/, '').length || !str) {
+      return false;
+    }
+    return true;
+  }
   function comparePassword() {
-    let password1 = password;
-    let password2 = confirmPassword;
+    const password1 = password;
+    const password2 = confirmPassword;
     if (password1 === password2) {
       return true;
     }
     return false;
   }
+  const handleNewSubmit = (evt) => {
+    evt.preventDefault();
+    if (passWordIsEmpty() && comparePassword()) {
+      handleCreateUser();
+    }
+    else {
+      window.alert('Merci de vérifier tous les champs du formulaire');
+    }
+  };
   return (
     <div className="form__leftside">
       <h3>Pas encore inscrit ? Rejoignez nous !</h3>
@@ -142,7 +154,7 @@ const InscriptionForm = ({
           value={password}
           label="Mot de passe : "
         />
-        {!password && <div className="errorDiv">{emptyInput}</div>}
+        {!passWordIsEmpty() && <div className="errorDiv">{emptyInput}</div>}
         {regexPassword.test(password) && <div className="errorDiv">{msgRegex}</div>}
 
         <Field

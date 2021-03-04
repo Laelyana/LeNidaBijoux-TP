@@ -1,12 +1,29 @@
+@use '/src/styles/vars';
+
 .userorder{
-  width: 60vw;
-  margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: vars.$mi_full;
+    margin: 3rem auto;
+    justify-content: center;
+
+    &__back{
+      margin: 1rem auto;
+      border-bottom: 2px solid #fcfafa;
+
+      &:hover {
+        color: #000;
+        border-bottom: 2px solid #f5a7b5;
+        width: 200px;
+      }
+    }
 
   &--title{
     color: #fcbdcd;
     font-weight: bolder;
     padding: .3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.7rem;
   }
 
@@ -14,7 +31,7 @@
     font-size: 2rem;
   }
   &__list{
-    margin: 2rem auto;
+    margin: 1rem auto;
 
     &--item{
       display: flex;
@@ -22,9 +39,14 @@
       margin-top: 1rem;
       
       &--name{
-        border: 1px black solid;
+        border: 2px rgb(73, 73, 73) solid;
         width: 70%;
         padding: 0.5rem;
+
+        &:hover{
+          border: 1px solid #fcbdcd;
+          background-color: #fab2c4;
+        }
       }
     }
   }

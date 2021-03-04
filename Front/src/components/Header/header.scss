@@ -36,7 +36,7 @@
       font-family: 'Palanquin', sans-serif;
       font-size: 1.2rem;
 
-    &:hover, :active {
+    &:hover{
       color: #000;
       border-bottom: 2px solid #f5a7b5;
       
@@ -47,6 +47,10 @@
     height: auto;
     margin-top: 0rem;
   }
+}
+.selected{
+  color: #000;
+  border-bottom: 2px solid #f5a7b5;
 }
 
 @media (max-width: 700px) { 
