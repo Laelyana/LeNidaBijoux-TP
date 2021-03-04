@@ -27,7 +27,7 @@ import UserData from 'src/containers/UserData';
 import UserOrders from 'src/containers/UserOrders';
 import UserShop from 'src/containers/UserShop';
 import PrivateRoute from 'src/components/PrivateRoute';
-import NotFound from 'src/components/404';
+// import NotFound from 'src/components/404';
 
 import getProductsByCategory, { getProductsByCollections } from '../../utils/products';
 
@@ -117,7 +117,7 @@ const App = ({
         <PrivateRoute path="/mon-compte/mes-infos" isLogged={isLogged} component={UserData} exact />
         <PrivateRoute path="/mon-compte/mes-commandes" isLogged={isLogged} component={UserOrders} exact />
         <PrivateRoute path="/mon-compte/mon-panier" isLogged={isLogged} component={UserShop} exact />
-        <NotFound />
+        {/* <NotFound /> */}
       </Switch>
       <Footer />
     </div>
